@@ -1,0 +1,259 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:OuinexDesktop.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="OuinexDesktop.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+		xmlns:controls="using:OuinexDesktop.Views.Controls"
+        Icon="/Assets/window-ico.ico"		
+		WindowState="Maximized"
+        Title="Ouinex Pro - Alpha version 0.1"
+		ExtendClientAreaToDecorationsHint="True"
+		ExtendClientAreaChromeHints="Default"
+		TransparencyLevelHint="Mica"
+		ExtendClientAreaTitleBarHeightHint="0">
+    <Design.DataContext>
+		<vm:MainWindowViewModel/>
+    </Design.DataContext>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition/>
+			<RowDefinition Height="auto"/>
+	    	<RowDefinition Height="200"/>
+		</Grid.RowDefinitions>
+		<Image Source="/Assets/favicon.png"
+			   Grid.ColumnSpan="20"
+			   Grid.RowSpan="20"
+			   HorizontalAlignment="Center"
+			   VerticalAlignment="Center"
+			   Height="150"
+			   Opacity="0.1"
+			   Margin="50"/>
+		<Border x:Name="titleBar"
+				Background="#07131e">
+			<Grid ColumnDefinitions="auto,*,auto">
+				<Menu Background="Transparent">
+					<MenuItem Header="File" 
+							  Foreground="White"
+							  Background="Transparent"/>
+					<MenuItem Header="Chart"
+							  Foreground="White"
+							  Background="Transparent">
+						<MenuItem Header="New"/>
+					</MenuItem>
+					<MenuItem Header="Window"
+							  Foreground="White"
+							  Background="Transparent">
+						<MenuItem Header="New Market Watch"
+								  Command="{Binding OpenMarketWatchWindow}"/>
+					</MenuItem>
+				</Menu>
+				<StackPanel Orientation="Horizontal"
+							HorizontalAlignment="Center"
+							Grid.ColumnSpan="3">
+					<Image Source="/Assets/favicon.png"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center"
+						   Height="15"/>
+					<TextBlock Text="Ouinex Pro : Bêta 0.01"
+							   Margin="3,0"
+							   Foreground="White"
+							   VerticalAlignment="Center"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal"
+							Grid.Column="2"
+							Margin="8,0">
+					<Ellipse Height="10"
+							 Width="10"
+							 x:Name="minimizeButton"
+							 Fill="LimeGreen"/>
+					<Ellipse Height="10"
+							 Width="10"
+							 Margin="5,0"
+							 x:Name="maximizeButton"
+							 Fill="Orange"/>
+					<Ellipse Height="10"
+							 Width="10"
+							 x:Name="closeButton"
+							 Fill="OrangeRed"/>
+					
+				</StackPanel>
+			</Grid>
+		</Border>
+		
+		<Border Grid.Row="1"
+				x:Name="secondMenu"
+				Theme="{StaticResource RadioButtonGroupBorder}">
+			<StackPanel Orientation="Horizontal">
+				<Button Theme="{DynamicResource BorderlessButton}" 
+						Command="{Binding OpenMarketWatchWindow}"
+						Content="Sell"/>
+				<Separator Width="1.5"
+						   Height="12"/>
+				<Button Theme="{DynamicResource BorderlessButton}" 
+						Content="Buy"/>
+				<Separator Width="1.5"
+						   Height="12"/>
+				<Button Theme="{DynamicResource BorderlessButton}"
+						Content="Close"/>
+				<Separator Width="1.5"
+						   Height="12"/>
+				<Button Theme="{DynamicResource BorderlessButton}" 
+						Content="Entry"/>
+				<Separator Width="1.5"
+						   Height="12"/>
+				<Button Theme="{DynamicResource BorderlessButton}"
+						Content="Trading settings"/>
+				<Separator Width="1.5"
+						   Height="12"/>               
+				<Button Theme="{DynamicResource BorderlessButton}"
+						IsEnabled="False"
+						Content="Strategies"/>
+				<Separator Width="1.5"
+						   Height="12"/>
+				<Button Theme="{DynamicResource BorderlessButton}" 
+						Content="Symbols"/>
+			</StackPanel>
+		</Border>
+		<ToggleSwitch Grid.Row="1"
+					  Padding="4"
+					  HorizontalAlignment="Right"
+					  IsCheckedChanged="ToggleButton_OnIsCheckedChanged"
+					  Theme="{DynamicResource ButtonToggleSwitch}">
+			<ToggleSwitch.OnContent>
+				<PathIcon
+					Width="16"
+					Height="16"
+					Data="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM17 15C17.476 15 17.9408 14.9525 18.3901 14.862C17.296 17.3011 14.8464 19 12 19C8.13401 19 5 15.866 5 12C5 8.60996 7.40983 5.78277 10.6099 5.13803C10.218 6.01173 10 6.98041 10 8C10 11.866 13.134 15 17 15Z"
+					Foreground="{DynamicResource ButtonDefaultTertiaryForeground}" />
+			</ToggleSwitch.OnContent>
+			<ToggleSwitch.OffContent>
+				<PathIcon
+					Width="16"
+					Height="16"
+					Data="M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04 20.5L20.45 19.09L18.66 17.29M20.45 5L19.04 3.6L17.24 5.39L18.66 6.81M13 1H11V4H13M6.76 5.39L4.96 3.6L3.55 5L5.34 6.81L6.76 5.39M1 13H4V11H1M13 20H11V23H13"
+					Foreground="{DynamicResource ButtonDefaultTertiaryForeground}"
+							/>
+			</ToggleSwitch.OffContent>
+		</ToggleSwitch>
+		<!-- grille des graphiques et prix -->
+		<Grid Grid.Row="2"
+			  ColumnDefinitions="auto, auto, *,auto, auto"
+			  Margin="3">
+			<controls:MarketsTreeView/>
+			<GridSplitter Grid.Column="1"/>
+			<controls:MarketWatchWidgets DataContext="{Binding MarketWatchMVVM}" 
+										 Name="marketWatch"
+										 Grid.Column="2"/>
+			<GridSplitter Grid.Column="3"/>
+			<TabControl Grid.Column="4">
+				<TabItem Header="Market Depth">
+					<StackPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
+						<ItemsControl Items="{Binding MarketWatchMVVM.OrderBook.Asks}"
+									  VerticalAlignment="Bottom">
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<Grid ColumnDefinitions="*,*"
+										  Margin="3">
+										<Border VerticalAlignment="Stretch"
+												HorizontalAlignment="Right"
+												Grid.Column="1"
+												Background="#EC5656"
+												Width="{Binding Percent}"/>
+										<TextBlock Text="{Binding Price}"
+												   FontSize="10"/>
+										<TextBlock Text="{Binding Volume}"
+												   Grid.Column="1"
+												   HorizontalAlignment="Right"
+												   Margin="3,0"
+												   FontSize="10"/>
+									</Grid>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
+						<Border Grid.Row="1"
+								Theme="{StaticResource RadioButtonGroupBorder}"/>
+						<TextBlock Grid.Row="1"
+								   Margin="5"
+								   Text="Spead"/>
+						<ItemsControl Items="{Binding MarketWatchMVVM.OrderBook.Bids}"
+									  VerticalAlignment="Top"
+									  Grid.Row="2">
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<Grid ColumnDefinitions="*,*"
+										  Margin="3">
+										<Border VerticalAlignment="Stretch"
+												Grid.Column="1"
+												Grid.ColumnSpan="2"
+												HorizontalAlignment="Right"
+												Background="#34a560"
+												Width="{Binding Percent}"/>
+										<TextBlock Text="{Binding Price}"
+												   FontSize="10"/>
+										<TextBlock Text="{Binding Volume}"
+												   HorizontalAlignment="Right"
+												   Margin="3,0"
+												   FontSize="10"
+												   Grid.Column="1"/>
+									</Grid>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
+					</StackPanel>				
+				</TabItem>
+			</TabControl>			
+		</Grid>
+		<GridSplitter Grid.Row="3"/>
+		<Grid Grid.Row="4"
+			  ColumnDefinitions="*, auto, 200">
+			<TabControl>
+				<TabItem Header="Wallets">
+					<controls:WalletsGrid/>
+				</TabItem>
+				<TabItem Header="Margin trades">
+
+				</TabItem>
+			</TabControl>
+			<GridSplitter Grid.Column="1"/>
+			<Grid Grid.Column="4">
+				<TabControl>
+					<TabItem Header="Messages"/>
+					<TabItem Header="News (0)">
+						<DataGrid>
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="From"/>
+								<DataGridTextColumn Header="Time"/>
+							</DataGrid.Columns>
+						</DataGrid>
+					</TabItem>
+					<TabItem Header="Activity logs"/>
+				</TabControl>
+			</Grid>
+		</Grid>
+		<Grid Grid.RowSpan="20"
+			  IsVisible="{Binding LoginMVVM.SuccesfulLogin}"
+			  Background="#07131e">
+			<Grid VerticalAlignment="Center"
+				  HorizontalAlignment="Center"
+				  RowDefinitions="auto, auto">
+				<Image Source="/Assets/favicon.png"
+					   HorizontalAlignment="Center"
+					   Height="100"
+					   Margin="10"/>
+				<Border Classes="Shadow"
+						Grid.Row="1"
+						Background="#102545"
+						Theme="{StaticResource CardBorder}"
+						VerticalAlignment="Center"
+						HorizontalAlignment="Center">
+					<controls:LoginControl DataContext="{Binding LoginMVVM}"/>
+				</Border>
+			</Grid>
+		</Grid>
+	</Grid>
+</Window>

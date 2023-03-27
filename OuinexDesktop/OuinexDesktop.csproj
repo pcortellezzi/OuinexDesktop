@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <AvaloniaResource Include="Assets\**" />
+    <Folder Include="Views\Controls\Charting\NewFolder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\abstract.gif" />
+    <None Remove="Assets\favicon.png" />
+    <None Remove="Assets\logo-white.png" />
+    <None Remove="Assets\window-ico.ico" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.0-preview5" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.0-preview5" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0-preview5" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-preview5" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-preview5" />
+    <PackageReference Include="Binance.Net" Version="8.4.3" />
+    <PackageReference Include="Dove.Avalonia.Controls.Extensions.ChineseInputSupoort" Version="1.3.0" />
+    <PackageReference Include="OxyPlot.Avalonia" Version="2.1.0" />
+    <PackageReference Include="ScottPlot.Avalonia" Version="4.1.61" />
+    <PackageReference Include="Semi.Avalonia" Version="0.1.0-preview5.3" />
+    <PackageReference Include="Semi.Avalonia.ColorPicker" Version="0.1.0-preview5.2" />
+    <PackageReference Include="Semi.Avalonia.DataGrid" Version="0.1.0-preview5.2" />
+    <PackageReference Include="Steema.TeeChart.NET.Avalonia" Version="5.2022.4.20" />
+    <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
+  </ItemGroup>
+</Project>

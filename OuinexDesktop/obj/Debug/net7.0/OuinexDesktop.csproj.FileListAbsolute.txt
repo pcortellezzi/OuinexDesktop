@@ -293,3 +293,7 @@ C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\Ouinex
 C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\OuinexDesktop.csproj.CopyComplete
 C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\OuinexDesktop.genruntimeconfig.cache
 C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\ref\OuinexDesktop.dll
+C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\LiveChartsCore.dll
+C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\LiveChartsCore.SkiaSharpView.dll
+C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\LiveChartsCore.SkiaSharpView.Avalonia.dll
+C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\SkiaSharp.HarfBuzz.dll

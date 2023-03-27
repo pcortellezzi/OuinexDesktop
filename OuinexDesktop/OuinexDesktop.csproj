@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
@@ -30,6 +30,7 @@
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-preview5" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-preview5" />
     <PackageReference Include="Binance.Net" Version="8.4.3" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.Avalonia" Version="2.0.0-beta.700-11.0.0-preview5" />
     <PackageReference Include="Semi.Avalonia" Version="0.1.0-preview5.3" />
     <PackageReference Include="Semi.Avalonia.ColorPicker" Version="0.1.0-preview5.2" />
     <PackageReference Include="Semi.Avalonia.DataGrid" Version="0.1.0-preview5.2" />

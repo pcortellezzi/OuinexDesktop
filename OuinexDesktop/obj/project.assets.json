@@ -375,11 +375,11 @@
           }
         }
       },
-      "HarfBuzzSharp/2.8.2.1-preview.108": {
+      "HarfBuzzSharp/2.8.2.3": {
         "type": "package",
         "dependencies": {
-          "HarfBuzzSharp.NativeAssets.Win32": "2.8.2.1-preview.108",
-          "HarfBuzzSharp.NativeAssets.macOS": "2.8.2.1-preview.108"
+          "HarfBuzzSharp.NativeAssets.Win32": "2.8.2.3",
+          "HarfBuzzSharp.NativeAssets.macOS": "2.8.2.3"
         },
         "compile": {
           "lib/net6.0/HarfBuzzSharp.dll": {
@@ -422,7 +422,7 @@
           }
         }
       },
-      "HarfBuzzSharp.NativeAssets.macOS/2.8.2.1-preview.108": {
+      "HarfBuzzSharp.NativeAssets.macOS/2.8.2.3": {
         "type": "package",
         "compile": {
           "lib/net5.0/_._": {}
@@ -450,7 +450,7 @@
           "buildTransitive/netstandard1.0/HarfBuzzSharp.NativeAssets.WebAssembly.targets": {}
         }
       },
-      "HarfBuzzSharp.NativeAssets.Win32/2.8.2.1-preview.108": {
+      "HarfBuzzSharp.NativeAssets.Win32/2.8.2.3": {
         "type": "package",
         "compile": {
           "lib/net5.0/_._": {}
@@ -470,6 +470,55 @@
           "runtimes/win-x86/native/libHarfBuzzSharp.dll": {
             "assetType": "native",
             "rid": "win-x86"
+          }
+        }
+      },
+      "LiveChartsCore/2.0.0-beta.700": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/LiveChartsCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/LiveChartsCore.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "LiveChartsCore.SkiaSharpView/2.0.0-beta.700": {
+        "type": "package",
+        "dependencies": {
+          "LiveChartsCore": "2.0.0-beta.700",
+          "SkiaSharp": "2.88.3",
+          "SkiaSharp.HarfBuzz": "2.88.3"
+        },
+        "compile": {
+          "lib/net6.0/LiveChartsCore.SkiaSharpView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/LiveChartsCore.SkiaSharpView.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "LiveChartsCore.SkiaSharpView.Avalonia/2.0.0-beta.700-11.0.0-preview5": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.0-preview5",
+          "Avalonia.Desktop": "11.0.0-preview5",
+          "LiveChartsCore.SkiaSharpView": "2.0.0-beta.700"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/LiveChartsCore.SkiaSharpView.Avalonia.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/LiveChartsCore.SkiaSharpView.Avalonia.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -888,11 +937,11 @@
           "lib/net6.0/Semi.Avalonia.DataGrid.dll": {}
         }
       },
-      "SkiaSharp/2.88.1": {
+      "SkiaSharp/2.88.3": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "2.88.1",
-          "SkiaSharp.NativeAssets.macOS": "2.88.1"
+          "SkiaSharp.NativeAssets.Win32": "2.88.3",
+          "SkiaSharp.NativeAssets.macOS": "2.88.3"
         },
         "compile": {
           "lib/net6.0/SkiaSharp.dll": {
@@ -901,6 +950,23 @@
         },
         "runtime": {
           "lib/net6.0/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.HarfBuzz/2.88.3": {
+        "type": "package",
+        "dependencies": {
+          "HarfBuzzSharp": "2.8.2.3",
+          "SkiaSharp": "2.88.3"
+        },
+        "compile": {
+          "lib/net6.0/SkiaSharp.HarfBuzz.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.HarfBuzz.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -935,7 +1001,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.macOS/2.88.1": {
+      "SkiaSharp.NativeAssets.macOS/2.88.3": {
         "type": "package",
         "compile": {
           "lib/net5.0/_._": {}
@@ -963,7 +1029,7 @@
           "buildTransitive/netstandard1.0/SkiaSharp.NativeAssets.WebAssembly.targets": {}
         }
       },
-      "SkiaSharp.NativeAssets.Win32/2.88.1": {
+      "SkiaSharp.NativeAssets.Win32/2.88.3": {
         "type": "package",
         "compile": {
           "lib/net5.0/_._": {}
@@ -1915,16 +1981,16 @@
         "logo.png"
       ]
     },
-    "HarfBuzzSharp/2.8.2.1-preview.108": {
-      "sha512": "vo2eE1jLvYWrfeghYAzkfHr7GNtWsay2ODfufavz8xReOZ648a2sBggSjTU02DQU5EPBSOhKxDnkqnUVWA8xkg==",
+    "HarfBuzzSharp/2.8.2.3": {
+      "sha512": "8MwXm9J4dXHuTdzPo29nHgDbt4+6P+RrPrH/qrxcERf29cpLlFbjvP3eFPwHmdUrl4KL2SHEZi2ZuQ5ndeIL1w==",
       "type": "package",
-      "path": "harfbuzzsharp/2.8.2.1-preview.108",
+      "path": "harfbuzzsharp/2.8.2.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
         "THIRD-PARTY-NOTICES.txt",
-        "harfbuzzsharp.2.8.2.1-preview.108.nupkg.sha512",
+        "harfbuzzsharp.2.8.2.3.nupkg.sha512",
         "harfbuzzsharp.nuspec",
         "lib/monoandroid1.0/HarfBuzzSharp.dll",
         "lib/monoandroid1.0/HarfBuzzSharp.pdb",
@@ -2011,10 +2077,10 @@
         "runtimes/linux-x64/native/libHarfBuzzSharp.so"
       ]
     },
-    "HarfBuzzSharp.NativeAssets.macOS/2.8.2.1-preview.108": {
-      "sha512": "pDw8R6ndu8usa9unSqEZrl3RbUNw2AzqAkcJTkocA15dxBpHvaaVKqgEozTLfye0/l5s0YgYAb4WpcY4qBg6Pw==",
+    "HarfBuzzSharp.NativeAssets.macOS/2.8.2.3": {
+      "sha512": "uwz9pB3hMuxzI/bSkjVrsOJH7Wo1L+0Md5ZmEMDM/j7xDHtR9d3mfg/CfxhMIcTiUC4JgX49FZK0y2ojgu1dww==",
       "type": "package",
-      "path": "harfbuzzsharp.nativeassets.macos/2.8.2.1-preview.108",
+      "path": "harfbuzzsharp.nativeassets.macos/2.8.2.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2026,7 +2092,7 @@
         "buildTransitive/net462/HarfBuzzSharp.NativeAssets.macOS.targets",
         "buildTransitive/net6.0-macos10.15/HarfBuzzSharp.NativeAssets.macOS.targets",
         "buildTransitive/xamarinmac2.0/HarfBuzzSharp.NativeAssets.macOS.targets",
-        "harfbuzzsharp.nativeassets.macos.2.8.2.1-preview.108.nupkg.sha512",
+        "harfbuzzsharp.nativeassets.macos.2.8.2.3.nupkg.sha512",
         "harfbuzzsharp.nativeassets.macos.nuspec",
         "lib/net462/_._",
         "lib/net5.0/_._",
@@ -2062,10 +2128,10 @@
         "lib/netstandard1.0/_._"
       ]
     },
-    "HarfBuzzSharp.NativeAssets.Win32/2.8.2.1-preview.108": {
-      "sha512": "0ws24k21iRH2GRiOLEcG6ESl+VROOwaeHnC0vqKQChGmreGTJ//JBQJqIu189oY30G0NVdypDe1UwFA/scjBAw==",
+    "HarfBuzzSharp.NativeAssets.Win32/2.8.2.3": {
+      "sha512": "Wo6QpE4+a+PFVdfIBoLkLr4wq2uC0m9TZC8FAfy4ZnLsUc10WL0Egk9EBHHhDCeokNOXDse5YtvuTYtS/rbHfg==",
       "type": "package",
-      "path": "harfbuzzsharp.nativeassets.win32/2.8.2.1-preview.108",
+      "path": "harfbuzzsharp.nativeassets.win32/2.8.2.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2073,7 +2139,7 @@
         "THIRD-PARTY-NOTICES.txt",
         "build/net462/HarfBuzzSharp.NativeAssets.Win32.targets",
         "buildTransitive/net462/HarfBuzzSharp.NativeAssets.Win32.targets",
-        "harfbuzzsharp.nativeassets.win32.2.8.2.1-preview.108.nupkg.sha512",
+        "harfbuzzsharp.nativeassets.win32.2.8.2.3.nupkg.sha512",
         "harfbuzzsharp.nativeassets.win32.nuspec",
         "lib/net462/_._",
         "lib/net5.0/_._",
@@ -2082,6 +2148,72 @@
         "runtimes/win-arm64/native/libHarfBuzzSharp.dll",
         "runtimes/win-x64/native/libHarfBuzzSharp.dll",
         "runtimes/win-x86/native/libHarfBuzzSharp.dll"
+      ]
+    },
+    "LiveChartsCore/2.0.0-beta.700": {
+      "sha512": "4Nr+6vjY+Fkc94vEwGkhZYmyxUDshIC1BAXd0dh7uMWP5Zjnv3BgDAYfjsNVH4+njXrNkyQ3ERIf8o1MC7y2DA==",
+      "type": "package",
+      "path": "livechartscore/2.0.0-beta.700",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0-android31.0/LiveChartsCore.dll",
+        "lib/net6.0-android31.0/LiveChartsCore.xml",
+        "lib/net6.0-ios16.0/LiveChartsCore.dll",
+        "lib/net6.0-ios16.0/LiveChartsCore.xml",
+        "lib/net6.0-maccatalyst15.4/LiveChartsCore.dll",
+        "lib/net6.0-maccatalyst15.4/LiveChartsCore.xml",
+        "lib/net6.0/LiveChartsCore.dll",
+        "lib/net6.0/LiveChartsCore.xml",
+        "lib/netcoreapp2.0/LiveChartsCore.dll",
+        "lib/netcoreapp2.0/LiveChartsCore.xml",
+        "lib/netstandard2.0/LiveChartsCore.dll",
+        "lib/netstandard2.0/LiveChartsCore.xml",
+        "livechartscore.2.0.0-beta.700.nupkg.sha512",
+        "livechartscore.nuspec"
+      ]
+    },
+    "LiveChartsCore.SkiaSharpView/2.0.0-beta.700": {
+      "sha512": "yY5j3J8vILng4a2U7skTb7/TnYy6z0J10CB9bS2ScEsXUNA0nvvNR6Jx+ph9iTbqZZbgliiwwZw6lKdmoT3cYg==",
+      "type": "package",
+      "path": "livechartscore.skiasharpview/2.0.0-beta.700",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.dll",
+        "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.xml",
+        "lib/net6.0-ios16.0/LiveChartsCore.SkiaSharpView.dll",
+        "lib/net6.0-ios16.0/LiveChartsCore.SkiaSharpView.xml",
+        "lib/net6.0-maccatalyst15.4/LiveChartsCore.SkiaSharpView.dll",
+        "lib/net6.0-maccatalyst15.4/LiveChartsCore.SkiaSharpView.xml",
+        "lib/net6.0/LiveChartsCore.SkiaSharpView.dll",
+        "lib/net6.0/LiveChartsCore.SkiaSharpView.xml",
+        "lib/netcoreapp2.0/LiveChartsCore.SkiaSharpView.dll",
+        "lib/netcoreapp2.0/LiveChartsCore.SkiaSharpView.xml",
+        "lib/netstandard2.0/LiveChartsCore.SkiaSharpView.dll",
+        "lib/netstandard2.0/LiveChartsCore.SkiaSharpView.xml",
+        "livechartscore.skiasharpview.2.0.0-beta.700.nupkg.sha512",
+        "livechartscore.skiasharpview.nuspec"
+      ]
+    },
+    "LiveChartsCore.SkiaSharpView.Avalonia/2.0.0-beta.700-11.0.0-preview5": {
+      "sha512": "29lPtFjnUTfSG7qZkkr5xt/N19IIJuoroSsim7u3KYgX/97N+ehq4NUWducCC+JTCWTSYkPRapkDklk+ehvXpA==",
+      "type": "package",
+      "path": "livechartscore.skiasharpview.avalonia/2.0.0-beta.700-11.0.0-preview5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net462/LiveChartsCore.SkiaSharpView.Avalonia.dll",
+        "lib/net462/LiveChartsCore.SkiaSharpView.Avalonia.xml",
+        "lib/netcoreapp2.0/LiveChartsCore.SkiaSharpView.Avalonia.dll",
+        "lib/netcoreapp2.0/LiveChartsCore.SkiaSharpView.Avalonia.xml",
+        "lib/netstandard2.0/LiveChartsCore.SkiaSharpView.Avalonia.dll",
+        "lib/netstandard2.0/LiveChartsCore.SkiaSharpView.Avalonia.xml",
+        "livechartscore.skiasharpview.avalonia.2.0.0-beta.700-11.0.0-preview5.nupkg.sha512",
+        "livechartscore.skiasharpview.avalonia.nuspec"
       ]
     },
     "MicroCom.Runtime/0.11.0": {
@@ -2640,10 +2772,10 @@
         "semi.avalonia.datagrid.nuspec"
       ]
     },
-    "SkiaSharp/2.88.1": {
-      "sha512": "bEgYq0n0kVb/t/3DgQTILBqlXcNjKmz0t8ur9w41UK+pbufBGcEF8QMJQIhdRYohHqhsBwrCF87WUBkeRAuquA==",
+    "SkiaSharp/2.88.3": {
+      "sha512": "GG8X3EdfwyBfwjl639UIiOVOKEdeoqDgYrz0P1MUCnefXt9cofN+AK8YB/v1+5cLMr03ieWCQdDmPqnFIzSxZw==",
       "type": "package",
-      "path": "skiasharp/2.88.1",
+      "path": "skiasharp/2.88.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2713,8 +2845,41 @@
         "lib/xamarinwatchos1.0/SkiaSharp.dll",
         "lib/xamarinwatchos1.0/SkiaSharp.pdb",
         "lib/xamarinwatchos1.0/SkiaSharp.xml",
-        "skiasharp.2.88.1.nupkg.sha512",
+        "skiasharp.2.88.3.nupkg.sha512",
         "skiasharp.nuspec"
+      ]
+    },
+    "SkiaSharp.HarfBuzz/2.88.3": {
+      "sha512": "hH6v4ltTb34eqn5tx1qLSAN7O+ppZCV5DnZw0FR7RwxXYqCeQYbBNgsaPyrZ1nkvtCDD1pH79taeO6SvqG+IAg==",
+      "type": "package",
+      "path": "skiasharp.harfbuzz/2.88.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net462/SkiaSharp.HarfBuzz.dll",
+        "lib/net462/SkiaSharp.HarfBuzz.pdb",
+        "lib/net462/SkiaSharp.HarfBuzz.xml",
+        "lib/net5.0/SkiaSharp.HarfBuzz.dll",
+        "lib/net5.0/SkiaSharp.HarfBuzz.pdb",
+        "lib/net5.0/SkiaSharp.HarfBuzz.xml",
+        "lib/net6.0/SkiaSharp.HarfBuzz.dll",
+        "lib/net6.0/SkiaSharp.HarfBuzz.pdb",
+        "lib/net6.0/SkiaSharp.HarfBuzz.xml",
+        "lib/netcoreapp3.1/SkiaSharp.HarfBuzz.dll",
+        "lib/netcoreapp3.1/SkiaSharp.HarfBuzz.pdb",
+        "lib/netcoreapp3.1/SkiaSharp.HarfBuzz.xml",
+        "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll",
+        "lib/netstandard1.3/SkiaSharp.HarfBuzz.pdb",
+        "lib/netstandard1.3/SkiaSharp.HarfBuzz.xml",
+        "lib/netstandard2.0/SkiaSharp.HarfBuzz.dll",
+        "lib/netstandard2.0/SkiaSharp.HarfBuzz.pdb",
+        "lib/netstandard2.0/SkiaSharp.HarfBuzz.xml",
+        "lib/netstandard2.1/SkiaSharp.HarfBuzz.dll",
+        "lib/netstandard2.1/SkiaSharp.HarfBuzz.pdb",
+        "lib/netstandard2.1/SkiaSharp.HarfBuzz.xml",
+        "skiasharp.harfbuzz.2.88.3.nupkg.sha512",
+        "skiasharp.harfbuzz.nuspec"
       ]
     },
     "SkiaSharp.NativeAssets.Linux/2.88.1": {
@@ -2740,10 +2905,10 @@
         "skiasharp.nativeassets.linux.nuspec"
       ]
     },
-    "SkiaSharp.NativeAssets.macOS/2.88.1": {
-      "sha512": "pJETwmhPe7L3w9x5eBHjmFucj5WiI4cYhG+v04IzZs0gcdC7aTeIh6D+vE3hjxaRBr6eDEr/U/JEPSm7YEfxPg==",
+    "SkiaSharp.NativeAssets.macOS/2.88.3": {
+      "sha512": "CEbWAXMGFkPV3S1snBKK7jEG3+xud/9kmSAhu0BEUKKtlMdxx+Qal0U9bntQREM9QpqP5xLWZooodi8IlV8MEg==",
       "type": "package",
-      "path": "skiasharp.nativeassets.macos/2.88.1",
+      "path": "skiasharp.nativeassets.macos/2.88.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2762,7 +2927,7 @@
         "lib/netstandard1.3/_._",
         "lib/xamarinmac2.0/_._",
         "runtimes/osx/native/libSkiaSharp.dylib",
-        "skiasharp.nativeassets.macos.2.88.1.nupkg.sha512",
+        "skiasharp.nativeassets.macos.2.88.3.nupkg.sha512",
         "skiasharp.nativeassets.macos.nuspec"
       ]
     },
@@ -2791,10 +2956,10 @@
         "skiasharp.nativeassets.webassembly.nuspec"
       ]
     },
-    "SkiaSharp.NativeAssets.Win32/2.88.1": {
-      "sha512": "rea9/AzPq3n5tQJ9ffQJqhrhl1EkO9XtnPjEDu+6ovsLJoSIj4khvPiqNvxo/j97bo1/qQP6VsWjk06U0TUtYg==",
+    "SkiaSharp.NativeAssets.Win32/2.88.3": {
+      "sha512": "MU4ASL8VAbTv5vSw1PoiWjjjpjtGhWtFYuJnrN4sNHFCePb2ohQij9JhSdqLLxk7RpRtWPdV93fbA53Pt+J0yw==",
       "type": "package",
-      "path": "skiasharp.nativeassets.win32/2.88.1",
+      "path": "skiasharp.nativeassets.win32/2.88.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2809,7 +2974,7 @@
         "runtimes/win-arm64/native/libSkiaSharp.dll",
         "runtimes/win-x64/native/libSkiaSharp.dll",
         "runtimes/win-x86/native/libSkiaSharp.dll",
-        "skiasharp.nativeassets.win32.2.88.1.nupkg.sha512",
+        "skiasharp.nativeassets.win32.2.88.3.nupkg.sha512",
         "skiasharp.nativeassets.win32.nuspec"
       ]
     },
@@ -4841,6 +5006,7 @@
       "Avalonia.ReactiveUI >= 11.0.0-preview5",
       "Avalonia.Themes.Fluent >= 11.0.0-preview5",
       "Binance.Net >= 8.4.3",
+      "LiveChartsCore.SkiaSharpView.Avalonia >= 2.0.0-beta.700-11.0.0-preview5",
       "Semi.Avalonia >= 0.1.0-preview5.3",
       "Semi.Avalonia.ColorPicker >= 0.1.0-preview5.2",
       "Semi.Avalonia.DataGrid >= 0.1.0-preview5.2",
@@ -4914,6 +5080,10 @@
           "Binance.Net": {
             "target": "Package",
             "version": "[8.4.3, )"
+          },
+          "LiveChartsCore.SkiaSharpView.Avalonia": {
+            "target": "Package",
+            "version": "[2.0.0-beta.700-11.0.0-preview5, )"
           },
           "Semi.Avalonia": {
             "target": "Package",

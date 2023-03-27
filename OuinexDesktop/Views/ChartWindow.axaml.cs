@@ -1,7 +1,4 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
-
 namespace OuinexDesktop.Views;
 
 public partial class ChartWindow : Window
@@ -9,5 +6,10 @@ public partial class ChartWindow : Window
     public ChartWindow()
     {
         InitializeComponent();
+        Loaded += ChartWindow_Loaded;
+    }
+
+    private void ChartWindow_Loaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
     }
 }

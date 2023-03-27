@@ -341,19 +341,6 @@
           }
         }
       },
-      "CHSPinYinConv/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/ChnCharInfo.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/ChnCharInfo.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "CryptoExchange.Net/5.4.1": {
         "type": "package",
         "dependencies": {
@@ -370,20 +357,6 @@
           "lib/netstandard2.1/CryptoExchange.Net.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Dove.Avalonia.Controls.Extensions.ChineseInputSupoort/1.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "0.10.18",
-          "Avalonia.Skia": "0.10.18",
-          "CHSPinYinConv": "1.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.1/Avalonia.Extensions.Chinese.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/Avalonia.Extensions.Chinese.dll": {}
         }
       },
       "DynamicData/7.9.5": {
@@ -860,50 +833,6 @@
           }
         }
       },
-      "OxyPlot.Avalonia/2.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "0.10.11",
-          "OxyPlot.Core": "2.1.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/OxyPlot.Avalonia.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/OxyPlot.Avalonia.dll": {}
-        }
-      },
-      "OxyPlot.Core/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/OxyPlot.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OxyPlot.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "PdfSharpCore/1.3.16": {
-        "type": "package",
-        "dependencies": {
-          "SixLabors.Fonts": "1.0.0-beta0013",
-          "SixLabors.ImageSharp": "1.0.4"
-        },
-        "compile": {
-          "lib/net6.0/PdfSharpCore.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/PdfSharpCore.dll": {}
-        },
-        "resource": {
-          "lib/net6.0/de/PdfSharpCore.resources.dll": {
-            "locale": "de"
-          }
-        }
-      },
       "ReactiveUI/18.3.1": {
         "type": "package",
         "dependencies": {
@@ -919,37 +848,6 @@
           "lib/net6.0/ReactiveUI.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "ScottPlot/4.1.61": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.7.2",
-          "System.Numerics.Vectors": "4.5.0"
-        },
-        "compile": {
-          "lib/net6.0/ScottPlot.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/ScottPlot.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "ScottPlot.Avalonia/4.1.61": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "0.10.18",
-          "Avalonia.Desktop": "0.10.18",
-          "ScottPlot": "4.1.61"
-        },
-        "compile": {
-          "lib/net5.0/ScottPlot.Avalonia.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/ScottPlot.Avalonia.dll": {}
         }
       },
       "Semi.Avalonia/0.1.0-preview5.3": {
@@ -988,36 +886,6 @@
         },
         "runtime": {
           "lib/net6.0/Semi.Avalonia.DataGrid.dll": {}
-        }
-      },
-      "SixLabors.Fonts/1.0.0-beta0013": {
-        "type": "package",
-        "dependencies": {
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.0"
-        },
-        "compile": {
-          "lib/netstandard2.1/SixLabors.Fonts.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.1/SixLabors.Fonts.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "SixLabors.ImageSharp/1.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
-            "related": ".xml"
-          }
         }
       },
       "SkiaSharp/2.88.1": {
@@ -1129,22 +997,6 @@
           "lib/net6.0/Splat.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Steema.TeeChart.NET.Avalonia/5.2022.4.20": {
-        "type": "package",
-        "dependencies": {
-          "PdfSharpCore": "1.3.16"
-        },
-        "compile": {
-          "lib/netstandard2.0/TeeChart.Avalonia.dll": {},
-          "lib/netstandard2.0/TeeChart.Xaml.Avalonia.dll": {},
-          "lib/netstandard2.0/TeeChart.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/TeeChart.Avalonia.dll": {},
-          "lib/netstandard2.0/TeeChart.Xaml.Avalonia.dll": {},
-          "lib/netstandard2.0/TeeChart.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -2026,19 +1878,6 @@
         "lib/netstandard2.1/Binance.Net.xml"
       ]
     },
-    "CHSPinYinConv/1.0.0": {
-      "sha512": "RloG7dhaXZnVkUNek3OWBIKKW5wOiQPY7a0YMLri0/QxMfoaFXJx+X3/8+BKMZI83+NWmQ+gfk74nuauHrtfuw==",
-      "type": "package",
-      "path": "chspinyinconv/1.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "chspinyinconv.1.0.0.nupkg.sha512",
-        "chspinyinconv.nuspec",
-        "lib/netstandard2.0/ChnCharInfo.dll",
-        "lib/netstandard2.0/ChnCharInfo.xml"
-      ]
-    },
     "CryptoExchange.Net/5.4.1": {
       "sha512": "SWH8ZueUjRCZbY1GtoiqUXciUzv7YXQBasF+lZOl/y6WUDRNZwawEhyAdpHRajG3xuAZd65wSdo21/S0hrJHqg==",
       "type": "package",
@@ -2052,18 +1891,6 @@
         "lib/netstandard2.0/CryptoExchange.Net.xml",
         "lib/netstandard2.1/CryptoExchange.Net.dll",
         "lib/netstandard2.1/CryptoExchange.Net.xml"
-      ]
-    },
-    "Dove.Avalonia.Controls.Extensions.ChineseInputSupoort/1.3.0": {
-      "sha512": "cu+/J/QSgaarVkrNU0GRmCkXR57QOAMxMjBbbfhhxwVZ5+b0AZhvTI+4s+wVamey255AR/7WACSfKsWDuFknrw==",
-      "type": "package",
-      "path": "dove.avalonia.controls.extensions.chineseinputsupoort/1.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "dove.avalonia.controls.extensions.chineseinputsupoort.1.3.0.nupkg.sha512",
-        "dove.avalonia.controls.extensions.chineseinputsupoort.nuspec",
-        "lib/netstandard2.1/Avalonia.Extensions.Chinese.dll"
       ]
     },
     "DynamicData/7.9.5": {
@@ -2726,60 +2553,6 @@
         "packageIcon.png"
       ]
     },
-    "OxyPlot.Avalonia/2.1.0": {
-      "sha512": "eYIRqGFeIKg2Iv4kdcfxbQvfqmApqBe556WZjlQ0MU3gH+KRVetigYSFFi74yyUEFLI9kbNwAvS41FeTHgZBrQ==",
-      "type": "package",
-      "path": "oxyplot.avalonia/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/OxyPlot.Avalonia.dll",
-        "oxyplot.avalonia.2.1.0.nupkg.sha512",
-        "oxyplot.avalonia.nuspec"
-      ]
-    },
-    "OxyPlot.Core/2.1.0": {
-      "sha512": "jG+Ct3T59fXDG2LE1hyUaXqH7i+h5Nfway1iB0+0NaY2mvDsz8Row/BKjiBWCt5NHp3+q9JSMiD2wpin2hh3kw==",
-      "type": "package",
-      "path": "oxyplot.core/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "OxyPlot_128.png",
-        "lib/net40/OxyPlot.dll",
-        "lib/net40/OxyPlot.xml",
-        "lib/net45/OxyPlot.dll",
-        "lib/net45/OxyPlot.xml",
-        "lib/netstandard1.0/OxyPlot.dll",
-        "lib/netstandard1.0/OxyPlot.xml",
-        "lib/netstandard2.0/OxyPlot.dll",
-        "lib/netstandard2.0/OxyPlot.xml",
-        "oxyplot.core.2.1.0.nupkg.sha512",
-        "oxyplot.core.nuspec"
-      ]
-    },
-    "PdfSharpCore/1.3.16": {
-      "sha512": "oZej6GFLJ0iv4ZLBdawGkxdfVa7xuHWQsvZDL5u/qK7VPUXdyFf5YN8JRze/42yZ3Sj5LodGg5u1Er2IUYHZ5A==",
-      "type": "package",
-      "path": "pdfsharpcore/1.3.16",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENCE.md",
-        "lib/net5.0/PdfSharpCore.dll",
-        "lib/net5.0/de/PdfSharpCore.resources.dll",
-        "lib/net6.0/PdfSharpCore.dll",
-        "lib/net6.0/de/PdfSharpCore.resources.dll",
-        "lib/netcoreapp3.1/PdfSharpCore.dll",
-        "lib/netcoreapp3.1/de/PdfSharpCore.resources.dll",
-        "lib/netstandard1.3/PdfSharpCore.dll",
-        "lib/netstandard1.3/de/PdfSharpCore.resources.dll",
-        "lib/netstandard2.0/PdfSharpCore.dll",
-        "lib/netstandard2.0/de/PdfSharpCore.resources.dll",
-        "pdfsharpcore.1.3.16.nupkg.sha512",
-        "pdfsharpcore.nuspec"
-      ]
-    },
     "ReactiveUI/18.3.1": {
       "sha512": "0tclGtjrRPfA2gbjiM7O3DeNmo6/TpDn7CMN6jgzDrbgrnysM7oEzjGEeXbtXaOxH6kEf6RiMKWobZoSgbBXhQ==",
       "type": "package",
@@ -2828,44 +2601,6 @@
         "reactiveui.nuspec"
       ]
     },
-    "ScottPlot/4.1.61": {
-      "sha512": "MdAL3fLlFMTlCGwc19w+IcPNQL77RQExZRsx5cfUdtjvJKk6X81PdQ/eKdYVIhYLhTOXJ7X60GeLU63iZg4hFA==",
-      "type": "package",
-      "path": "scottplot/4.1.61",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "icon.ico",
-        "icon.png",
-        "lib/net462/ScottPlot.dll",
-        "lib/net462/ScottPlot.xml",
-        "lib/net6.0/ScottPlot.dll",
-        "lib/net6.0/ScottPlot.xml",
-        "lib/netstandard2.0/ScottPlot.dll",
-        "lib/netstandard2.0/ScottPlot.xml",
-        "scottplot.4.1.61.nupkg.sha512",
-        "scottplot.nuspec"
-      ]
-    },
-    "ScottPlot.Avalonia/4.1.61": {
-      "sha512": "MFwEv3EpoUtZAQ4Ntxc0YiHPF5JsVGTIJHKCdqwwm6N/HrvwKrCj/nghd9EqcqYLJMkmMQhUan4YoxWbEt1duA==",
-      "type": "package",
-      "path": "scottplot.avalonia/4.1.61",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "icon.ico",
-        "icon.png",
-        "lib/net461/ScottPlot.Avalonia.dll",
-        "lib/net472/ScottPlot.Avalonia.dll",
-        "lib/net5.0/ScottPlot.Avalonia.dll",
-        "lib/netcoreapp3.1/ScottPlot.Avalonia.dll",
-        "scottplot.avalonia.4.1.61.nupkg.sha512",
-        "scottplot.avalonia.nuspec"
-      ]
-    },
     "Semi.Avalonia/0.1.0-preview5.3": {
       "sha512": "vvwOiclmzwyKPf04IA8sp1+js286KmI7avQk71XvPmT24UuUYPBZRxlI6S6vnwwqT0QSk4tL61i4m/A4vO1xNg==",
       "type": "package",
@@ -2903,48 +2638,6 @@
         "lib/netstandard2.0/Semi.Avalonia.DataGrid.dll",
         "semi.avalonia.datagrid.0.1.0-preview5.2.nupkg.sha512",
         "semi.avalonia.datagrid.nuspec"
-      ]
-    },
-    "SixLabors.Fonts/1.0.0-beta0013": {
-      "sha512": "NaD8R8GdHqnPP/3GUI6IbJNt3EHjU05CIJw/1gz11NoUBaePhtgDogG1XFguR2nSoXofGJ35W+TgW1ZTVp5W1Q==",
-      "type": "package",
-      "path": "sixlabors.fonts/1.0.0-beta0013",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard1.3/SixLabors.Fonts.dll",
-        "lib/netstandard1.3/SixLabors.Fonts.xml",
-        "lib/netstandard2.0/SixLabors.Fonts.dll",
-        "lib/netstandard2.0/SixLabors.Fonts.xml",
-        "lib/netstandard2.1/SixLabors.Fonts.dll",
-        "lib/netstandard2.1/SixLabors.Fonts.xml",
-        "sixlabors.fonts.1.0.0-beta0013.nupkg.sha512",
-        "sixlabors.fonts.128.png",
-        "sixlabors.fonts.nuspec"
-      ]
-    },
-    "SixLabors.ImageSharp/1.0.4": {
-      "sha512": "H2rPiEr2ddBOltOuqRYhpLBAsQXDAhbzMMhhuksnBG2oefup1MXMchALe7yYkKJksNbtxbZHKeM6dn/68I75qw==",
-      "type": "package",
-      "path": "sixlabors.imagesharp/1.0.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net472/SixLabors.ImageSharp.dll",
-        "lib/net472/SixLabors.ImageSharp.xml",
-        "lib/netcoreapp2.1/SixLabors.ImageSharp.dll",
-        "lib/netcoreapp2.1/SixLabors.ImageSharp.xml",
-        "lib/netcoreapp3.1/SixLabors.ImageSharp.dll",
-        "lib/netcoreapp3.1/SixLabors.ImageSharp.xml",
-        "lib/netstandard1.3/SixLabors.ImageSharp.dll",
-        "lib/netstandard1.3/SixLabors.ImageSharp.xml",
-        "lib/netstandard2.0/SixLabors.ImageSharp.dll",
-        "lib/netstandard2.0/SixLabors.ImageSharp.xml",
-        "lib/netstandard2.1/SixLabors.ImageSharp.dll",
-        "lib/netstandard2.1/SixLabors.ImageSharp.xml",
-        "sixlabors.imagesharp.1.0.4.nupkg.sha512",
-        "sixlabors.imagesharp.128.png",
-        "sixlabors.imagesharp.nuspec"
       ]
     },
     "SkiaSharp/2.88.1": {
@@ -3134,25 +2827,6 @@
         "lib/netstandard2.0/Splat.xml",
         "splat.14.4.1.nupkg.sha512",
         "splat.nuspec"
-      ]
-    },
-    "Steema.TeeChart.NET.Avalonia/5.2022.4.20": {
-      "sha512": "PQ+TJaPYIUoA7bjimBypAvsXUwyGBcGXJovBOZ3xeFzF9NrXD8w+vb154IBOytiVSISqfpvSUR/QBT+YMMSCXQ==",
-      "type": "package",
-      "path": "steema.teechart.net.avalonia/5.2022.4.20",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "License.txt",
-        "Steema.TeeChart.chm",
-        "Support.txt",
-        "TeeChart_Pro_Net_Tutorials.chm",
-        "lib/netstandard2.0/TeeChart.Avalonia.dll",
-        "lib/netstandard2.0/TeeChart.Xaml.Avalonia.dll",
-        "lib/netstandard2.0/TeeChart.dll",
-        "readme.txt",
-        "steema.teechart.net.avalonia.5.2022.4.20.nupkg.sha512",
-        "steema.teechart.net.avalonia.nuspec"
       ]
     },
     "System.Collections/4.3.0": {
@@ -5167,13 +4841,9 @@
       "Avalonia.ReactiveUI >= 11.0.0-preview5",
       "Avalonia.Themes.Fluent >= 11.0.0-preview5",
       "Binance.Net >= 8.4.3",
-      "Dove.Avalonia.Controls.Extensions.ChineseInputSupoort >= 1.3.0",
-      "OxyPlot.Avalonia >= 2.1.0",
-      "ScottPlot.Avalonia >= 4.1.61",
       "Semi.Avalonia >= 0.1.0-preview5.3",
       "Semi.Avalonia.ColorPicker >= 0.1.0-preview5.2",
       "Semi.Avalonia.DataGrid >= 0.1.0-preview5.2",
-      "Steema.TeeChart.NET.Avalonia >= 5.2022.4.20",
       "XamlNameReferenceGenerator >= 1.6.1"
     ]
   },
@@ -5184,11 +4854,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lenovo\\source\\repos\\OuinexDesktop\\OuinexDesktop\\OuinexDesktop.csproj",
+      "projectUniqueName": "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj",
       "projectName": "OuinexDesktop",
-      "projectPath": "C:\\Users\\lenovo\\source\\repos\\OuinexDesktop\\OuinexDesktop\\OuinexDesktop.csproj",
+      "projectPath": "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj",
       "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lenovo\\source\\repos\\OuinexDesktop\\OuinexDesktop\\obj\\",
+      "outputPath": "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5245,18 +4915,6 @@
             "target": "Package",
             "version": "[8.4.3, )"
           },
-          "Dove.Avalonia.Controls.Extensions.ChineseInputSupoort": {
-            "target": "Package",
-            "version": "[1.3.0, )"
-          },
-          "OxyPlot.Avalonia": {
-            "target": "Package",
-            "version": "[2.1.0, )"
-          },
-          "ScottPlot.Avalonia": {
-            "target": "Package",
-            "version": "[4.1.61, )"
-          },
           "Semi.Avalonia": {
             "target": "Package",
             "version": "[0.1.0-preview5.3, )"
@@ -5268,10 +4926,6 @@
           "Semi.Avalonia.DataGrid": {
             "target": "Package",
             "version": "[0.1.0-preview5.2, )"
-          },
-          "Steema.TeeChart.NET.Avalonia": {
-            "target": "Package",
-            "version": "[5.2022.4.20, )"
           },
           "XamlNameReferenceGenerator": {
             "target": "Package",

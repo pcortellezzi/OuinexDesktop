@@ -26,6 +26,7 @@
     <PackageReference Include="Binance.Net" Version="8.4.3" />
     <PackageReference Include="Material.Avalonia" Version="2.5.1" />
     <PackageReference Include="OxyPlot.Avalonia" Version="2.1.0" />
+    <PackageReference Include="SukiUI" Version="3.0.0" />
     <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
   </ItemGroup>
 </Project>

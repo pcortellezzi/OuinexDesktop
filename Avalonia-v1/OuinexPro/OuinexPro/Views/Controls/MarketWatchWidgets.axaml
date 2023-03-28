@@ -1,0 +1,224 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:OuinexPro.ViewModels"
+		     x:DataType="vm:MarketWatchViewModel"
+			 xmlns:converters="using:OuinexPro.Converters"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="OuinexPro.Views.Controls.MarketWatchWidgets">
+	<UserControl.Resources>
+		<converters:TickToBrushConverter x:Key="tickConverter"/>
+		<converters:PercentRangeUpConverter x:Key="upArrowConverter"/>
+		<converters:PercentRangeDownConverter x:Key="downArrowConverter"/>
+		<converters:TickToForegroundConverter x:Key="tickForegournConverter"/>
+	</UserControl.Resources>
+	<UserControl.Styles>
+		<Styles>
+			<Styles.Resources>
+				<Template x:Key="up">
+					<Path Fill="#34a560"
+						  Stretch="Uniform"
+						  Data="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"/>
+				</Template>
+			</Styles.Resources>
+			<Style Selector="Border.Up">
+				<Style.Animations>
+					<Animation Duration="0:0:1"
+							   Easing="QuadraticEaseInOut"
+							   IterationCount="Infinite">
+						<KeyFrame Cue="50%">
+							<Setter Property="ScaleTransform.ScaleX" Value="0.8"/>
+							<Setter Property="ScaleTransform.ScaleY" Value="0.8"/>
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+				<Setter Property="Child" Value="{StaticResource up}"/>
+			</Style>
+			<Styles.Resources>
+				<Template x:Key="down">
+					<Path Fill="#EC5656"
+						  Stretch="Uniform"
+						  Data="M16,18L18.29,15.71L13.41,10.83L9.41,14.83L2,7.41L3.41,6L9.41,12L13.41,8L19.71,14.29L22,12V18H16Z"/>
+				</Template>
+			</Styles.Resources>
+			<Style Selector="Border.Down">
+				<Style.Animations>
+					<Animation Duration="0:0:1"
+							   Easing="QuadraticEaseInOut"
+							   IterationCount="Infinite">
+						<KeyFrame Cue="50%">
+							<Setter Property="ScaleTransform.ScaleX" Value="0.8"/>
+							<Setter Property="ScaleTransform.ScaleY" Value="0.8"/>
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+				<Setter Property="Child" Value="{StaticResource down}"/>
+			</Style>
+		</Styles>
+	</UserControl.Styles>
+	               
+	<Design.DataContext>
+		<vm:MarketWatchViewModel/>
+	</Design.DataContext>
+	<Grid>
+		<TabControl>
+			<TabItem Header="Simple dealing rates">
+				<DataGrid AutoGenerateColumns="False"
+						  FontSize="10"
+						  SelectionMode="Single"
+						  SelectedItem="{Binding SelectedTicker, Mode=TwoWay}"
+						  Items="{Binding Tickers}">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="Ticker"
+											FontWeight="DemiBold"
+											Binding="{Binding TickerName }">
+						</DataGridTextColumn>
+						<DataGridTemplateColumn Header="Bid">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Border Background="{Binding BidColor, Converter={StaticResource
+											tickConverter}}"
+											Height="20"
+											CornerRadius="3"
+											Margin="1">
+										<TextBlock Text="{Binding Bid}"
+												   FontSize="10"
+												   Foreground="{Binding BidColor, Converter={StaticResource ResourceKey=tickForegournConverter}}"
+												   Margin="3,0"
+												   HorizontalAlignment="Right"
+												   VerticalAlignment="Center"/>
+									</Border>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+						<DataGridTemplateColumn Header="Ask">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Border Background="{Binding AskColor, Converter={StaticResource
+											 ResourceKey=tickConverter}}"
+											Height="20"
+											CornerRadius="3"
+											Margin="1">
+										<TextBlock Text="{Binding Ask}"
+												   Foreground="{Binding AskColor, Converter={StaticResource ResourceKey=tickForegournConverter}}"
+												   FontSize="10"
+												   Margin="3,0"
+												   HorizontalAlignment="Right"
+												   VerticalAlignment="Center"/>
+									</Border>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+						<DataGridTemplateColumn Header="Spread">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Border Margin="1">
+										<TextBlock Text="{Binding Spread}"
+												   FontSize="10"
+												   Margin="3,0"
+												   HorizontalAlignment="Right"
+												   VerticalAlignment="Center"/>
+									</Border>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+						<DataGridTemplateColumn Header="% Change">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Border	Margin="1">
+										<TextBlock Text="{Binding PercentChange}"
+												   FontSize="10"
+												   Foreground="{Binding ChangeColor, Converter={StaticResource
+											 ResourceKey=tickConverter}}"
+												   Margin="3,0"
+												   FontWeight="DemiBold"
+												   HorizontalAlignment="Right"
+												   VerticalAlignment="Center"/>
+									</Border>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+						<DataGridTemplateColumn Header="High">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Border Margin="1">
+										<Grid ColumnDefinitions="auto, *">
+											<Border Classes="Up"
+													IsVisible="{Binding PercentRange, Converter={StaticResource  ResourceKey=upArrowConverter}}"
+													Height="12"
+													Margin="3,0"/>
+											<TextBlock Text="{Binding High}"
+													   FontSize="10"
+													   Grid.Column="1"
+													   Margin="3,0"
+													   HorizontalAlignment="Right"
+													   VerticalAlignment="Center"/>
+										</Grid>
+									</Border>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+						<DataGridTemplateColumn Header="Low">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Border Margin="1">
+										<Grid ColumnDefinitions="auto, *">
+											<Border Classes="Down"
+													IsVisible="{Binding PercentRange, Converter={StaticResource  ResourceKey=downArrowConverter}}"
+													Height="12"
+													Margin="3,0"/>
+											<TextBlock Text="{Binding Low}"
+													   FontSize="10"
+													   Grid.Column="1"
+													   Margin="3,0"
+													   HorizontalAlignment="Right"
+													   VerticalAlignment="Center"/>
+										</Grid>
+									</Border>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+						<DataGridTemplateColumn Header="% Range">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Border	Margin="1">
+										<ProgressBar Value="{Binding PercentRange}"
+													 ToolTip.Tip="{Binding PercentRange}"/>
+									</Border>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+					</DataGrid.Columns>
+					<DataGrid.ContextMenu>
+						<ContextMenu>
+							<MenuItem Header="Open a chart">
+								<MenuItem Header="M1"
+										  Command="{Binding OpenChartCommand}"/>
+							</MenuItem>
+							<MenuItem Header="Setup an alert"/>
+						</ContextMenu>
+					</DataGrid.ContextMenu>
+				</DataGrid>
+			</TabItem>
+			<TabItem Header="Advanced dealing rates">
+
+			</TabItem>
+		</TabControl>
+
+		<Grid Grid.RowSpan="20"
+			  IsVisible="{Binding ShowLoading}"
+			  Background="#6D000000">
+			<Border Classes="Shadow"
+					VerticalAlignment="Center"
+					HorizontalAlignment="Center">
+				<StackPanel>
+					<TextBlock Text="Loading datas ..."
+							   HorizontalAlignment="Center"
+							   Margin="10"/>
+					<ProgressBar IsIndeterminate="True"/>
+				</StackPanel>
+			</Border>
+		</Grid>
+	</Grid>
+</UserControl>

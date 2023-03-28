@@ -10,5 +10,6 @@
 		<StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" />
 		<StyleInclude Source="avares://Semi.Avalonia.DataGrid/Index.axaml" />
 		<StyleInclude Source="avares://Semi.Avalonia.ColorPicker/Index.axaml" />
-	</Application.Styles>
+  <!-- Add the line below to get OxyPlot UI theme applied. -->
+</Application.Styles>
 </Application>

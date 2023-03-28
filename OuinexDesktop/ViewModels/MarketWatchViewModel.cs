@@ -4,7 +4,9 @@ using OuinexDesktop.Views;
 using OuinexDesktop.Views.Controls;
 using ReactiveUI;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -22,19 +24,16 @@ namespace OuinexDesktop.ViewModels
         {
             this.OpenChartCommand = ReactiveCommand.Create(async () =>
             {
-                /*var window = new ContainerWindow()
-                {
+                var context = new ChartViewModel();
 
-                    Title = "market watch"
+                var chart = new ChartWindow()
+                {
+                    DataContext = context,
                 };
 
-                var control = new ChartControl();
-                window.mainContainer.Children.Add(control);
-                window.Show();
+                chart.Show();
 
-                await control.CreateCandles(this.SelectedTicker.TickerName);*/
-                var chart = new ChartWindow();
-                chart.Show(); ;
+               await context.Populate(this.SelectedTicker.TickerName);
             });
         }
 

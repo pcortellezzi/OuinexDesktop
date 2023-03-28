@@ -297,3 +297,5 @@ C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\LiveCh
 C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\LiveChartsCore.SkiaSharpView.dll
 C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\LiveChartsCore.SkiaSharpView.Avalonia.dll
 C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\SkiaSharp.HarfBuzz.dll
+C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OxyPlot.Avalonia.dll
+C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OxyPlot.dll

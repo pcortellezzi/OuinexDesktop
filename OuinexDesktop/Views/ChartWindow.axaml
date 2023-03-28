@@ -5,11 +5,9 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="OuinexDesktop.Views.ChartWindow"
         Title="ChartWindow"
-		 xmlns:vm="using:OuinexDesktop.ViewModels"
-		     x:DataType="vm:ChartViewModel"
-    xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia">
-
-
+		xmlns:vm="using:OuinexDesktop.ViewModels"
+		x:DataType="vm:ChartViewModel"
+		xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia">
 	<Window.DataContext>
 		<vm:ChartViewModel/>
 	</Window.DataContext>

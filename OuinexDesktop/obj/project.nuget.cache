@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ILeQHK126axbllCv8YzB28ChXrOMgg0yc0Bkg5qLB57hiXEt/xV7HhpsAzkcA4BT8ctF/jwK21vV1UQ8AJEj8A==",
+  "dgSpecHash": "93/GRzATQpLX3KJLq2JESOv4KkDLo3Olr2RRkXK7Y8BUplYtOO9Cl7Yh8MqPrkV+dQkuU8xDSO6C0l+dXvvV/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,8 @@
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\oxyplot.avalonia\\2.1.0-preview1\\oxyplot.avalonia.2.1.0-preview1.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\oxyplot.core\\2.1.0\\oxyplot.core.2.1.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\reactiveui\\18.3.1\\reactiveui.18.3.1.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\semi.avalonia\\0.1.0-preview5.3\\semi.avalonia.0.1.0-preview5.3.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\semi.avalonia.colorpicker\\0.1.0-preview5.2\\semi.avalonia.colorpicker.0.1.0-preview5.2.nupkg.sha512",
@@ -91,5 +93,16 @@
     "C:\\Users\\lenovo\\.nuget\\packages\\tmds.dbus\\0.9.0\\tmds.dbus.0.9.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\xamlnamereferencegenerator\\1.6.1\\xamlnamereferencegenerator.1.6.1.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "OuinexDesktop dépend de OxyPlot.Avalonia (>= 2.1.0-av11-preview5), mais OxyPlot.Avalonia 2.1.0-av11-preview5 est introuvable. Une meilleure correspondance approximative de OxyPlot.Avalonia 2.1.0-Preview1 a été résolue.",
+      "libraryId": "OxyPlot.Avalonia",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

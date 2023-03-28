@@ -3,6 +3,8 @@ using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore;
 using System;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using Avalonia.Threading;
 
 namespace OuinexDesktop.ViewModels
 {
@@ -21,6 +23,31 @@ namespace OuinexDesktop.ViewModels
         }
     };
 
+        public async Task Populate(string symbol)
+        {
+           await  Dispatcher.UIThread.InvokeAsync(new Action(async () =>
+            {
+                var client = new Binance.Net.Clients.BinanceClient();
+
+                var request = await client.SpotApi.ExchangeData.GetUiKlinesAsync(symbol, Binance.Net.Enums.KlineInterval.OneHour);
+
+                if (request.Success)
+                {
+                    var datas = new ObservableCollection<FinancialPoint>();
+
+                    foreach (var data in request.Data)
+                    {
+                        datas.Add(new FinancialPoint(data.OpenTime, 
+                            (double)data.HighPrice, 
+                            (double)data.OpenPrice, 
+                            (double)data.ClosePrice,
+                            (double)data.LowPrice));
+                    }
+
+                    Series[0].Values = datas;
+                }
+            }));
+        }
         public ISeries[] Series { get; set; } =
         {
         new CandlesticksSeries<FinancialPoint>

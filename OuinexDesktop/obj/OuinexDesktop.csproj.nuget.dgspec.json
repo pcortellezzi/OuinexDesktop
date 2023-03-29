@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[2.0.0-beta.700-11.0.0-preview5, )"
             },
+            "SukiUI": {
+              "target": "Package",
+              "version": "[4.6.6, )"
+            },
             "XamlNameReferenceGenerator": {
               "target": "Package",
               "version": "[1.6.1, )"

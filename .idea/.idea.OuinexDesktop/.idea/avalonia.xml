@@ -5,7 +5,9 @@
       <map>
         <entry key="OuinexDesktop/App.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
         <entry key="OuinexDesktop/Views/ChartWindow.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
+        <entry key="OuinexDesktop/Views/Controls/DialogContent.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
         <entry key="OuinexDesktop/Views/Controls/MarketWatchWidgets.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
+        <entry key="OuinexDesktop/Views/FreshWindow.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
         <entry key="OuinexDesktop/Views/MainWindow.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
       </map>
     </option>

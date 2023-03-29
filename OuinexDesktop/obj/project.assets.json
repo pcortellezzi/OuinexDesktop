@@ -359,18 +359,30 @@
           }
         }
       },
-      "DynamicData/7.9.5": {
+      "DialogHost.Avalonia/0.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.0-preview1"
+        },
+        "compile": {
+          "lib/netstandard2.0/DialogHost.Avalonia.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DialogHost.Avalonia.dll": {}
+        }
+      },
+      "DynamicData/7.13.1": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "5.0.0"
         },
         "compile": {
-          "lib/net6.0/DynamicData.dll": {
+          "lib/net7.0/DynamicData.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/DynamicData.dll": {
+          "lib/net7.0/DynamicData.dll": {
             "related": ".xml"
           }
         }
@@ -520,6 +532,28 @@
           "lib/netcoreapp2.0/LiveChartsCore.SkiaSharpView.Avalonia.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Material.Icons/2.0.3-preview1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Material.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Material.Icons.dll": {}
+        }
+      },
+      "Material.Icons.Avalonia/2.0.0-preview2": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.0-preview5",
+          "Material.Icons": "2.0.3-preview1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Material.Icons.Avalonia.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Material.Icons.Avalonia.dll": {}
         }
       },
       "MicroCom.Runtime/0.11.0": {
@@ -882,19 +916,19 @@
           }
         }
       },
-      "ReactiveUI/18.3.1": {
+      "ReactiveUI/18.4.26": {
         "type": "package",
         "dependencies": {
-          "DynamicData": "7.9.5",
-          "Splat": "14.4.1"
+          "DynamicData": "7.13.1",
+          "Splat": "14.6.8"
         },
         "compile": {
-          "lib/net6.0/ReactiveUI.dll": {
+          "lib/net7.0/ReactiveUI.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/ReactiveUI.dll": {
+          "lib/net7.0/ReactiveUI.dll": {
             "related": ".xml"
           }
         }
@@ -1014,16 +1048,40 @@
           }
         }
       },
-      "Splat/14.4.1": {
+      "Splat/14.6.8": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Splat.dll": {
+          "lib/net7.0/Splat.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Splat.dll": {
+          "lib/net7.0/Splat.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "SukiUI/4.6.6": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.0-preview5",
+          "Avalonia.Controls.DataGrid": "11.0.0-preview5",
+          "Avalonia.Themes.Simple": "11.0.0-preview5",
+          "DialogHost.Avalonia": "0.6.0",
+          "Material.Icons.Avalonia": "2.0.0-preview2",
+          "ReactiveUI": "18.4.26"
+        },
+        "compile": {
+          "lib/netstandard2.0/SukiUI.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SukiUI.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/netstandard2.0/suki_photo.ico": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
           }
         }
       },
@@ -1921,25 +1979,36 @@
         "lib/netstandard2.1/CryptoExchange.Net.xml"
       ]
     },
-    "DynamicData/7.9.5": {
-      "sha512": "xFwVha7o3qUtVYxco5p+7Urcztc/m1gmaEUxOG0i7LNe+vfCfyb0ECAsT2FLm3zOPHb0g8s9qVu5LfPKfRNVng==",
+    "DialogHost.Avalonia/0.6.0": {
+      "sha512": "tbdpBitC1dmtfvc+OK2Lng6lUmFqoqUAs2aIiEBUmu8E/lpNMeVFswnu69zgoLSqnqyMRWOZTlZMJufM1K03pA==",
       "type": "package",
-      "path": "dynamicdata/7.9.5",
+      "path": "dialoghost.avalonia/0.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dialoghost.avalonia.0.6.0.nupkg.sha512",
+        "dialoghost.avalonia.nuspec",
+        "lib/netstandard2.0/DialogHost.Avalonia.dll"
+      ]
+    },
+    "DynamicData/7.13.1": {
+      "sha512": "IlJh7MMpE7CEpVH1sm+hxyOijWdtwt2Bm6gnncP4Zgjq7D9f/gB7Bko+bYoBX/O+gaTGHtdHqwBmu2AX5O4MVw==",
+      "type": "package",
+      "path": "dynamicdata/7.13.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE/LICENSE",
-        "dynamicdata.7.9.5.nupkg.sha512",
+        "dynamicdata.7.13.1.nupkg.sha512",
         "dynamicdata.nuspec",
         "lib/net462/DynamicData.dll",
         "lib/net462/DynamicData.xml",
         "lib/net6.0/DynamicData.dll",
         "lib/net6.0/DynamicData.xml",
+        "lib/net7.0/DynamicData.dll",
+        "lib/net7.0/DynamicData.xml",
         "lib/netstandard2.0/DynamicData.dll",
         "lib/netstandard2.0/DynamicData.xml",
-        "lib/uap10.0.16299/DynamicData.dll",
-        "lib/uap10.0.16299/DynamicData.pri",
-        "lib/uap10.0.16299/DynamicData.xml",
         "logo.png"
       ]
     },
@@ -2176,6 +2245,32 @@
         "lib/netstandard2.0/LiveChartsCore.SkiaSharpView.Avalonia.xml",
         "livechartscore.skiasharpview.avalonia.2.0.0-beta.700-11.0.0-preview5.nupkg.sha512",
         "livechartscore.skiasharpview.avalonia.nuspec"
+      ]
+    },
+    "Material.Icons/2.0.3-preview1": {
+      "sha512": "dkS/bCvjLa78J3o3jnpAUoNS2MtpWtJujh8RoVJ+SQo0Xc9s0olPF1uOrubUVCTc3Yr9OM2AWmueNiyIoCifcw==",
+      "type": "package",
+      "path": "material.icons/2.0.3-preview1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.0/Material.Icons.dll",
+        "material.icons.2.0.3-preview1.nupkg.sha512",
+        "material.icons.nuspec"
+      ]
+    },
+    "Material.Icons.Avalonia/2.0.0-preview2": {
+      "sha512": "h8o+V1koi/5oSpPPfwBwQZfEZ638TvsP/iFmdycG3NGSCd5dLChdgs+4irg/O4jUj00J+nHfcTfj81M1VMZG3g==",
+      "type": "package",
+      "path": "material.icons.avalonia/2.0.0-preview2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.0/Material.Icons.Avalonia.dll",
+        "material.icons.avalonia.2.0.0-preview2.nupkg.sha512",
+        "material.icons.avalonia.nuspec"
       ]
     },
     "MicroCom.Runtime/0.11.0": {
@@ -2647,43 +2742,55 @@
         "packageIcon.png"
       ]
     },
-    "ReactiveUI/18.3.1": {
-      "sha512": "0tclGtjrRPfA2gbjiM7O3DeNmo6/TpDn7CMN6jgzDrbgrnysM7oEzjGEeXbtXaOxH6kEf6RiMKWobZoSgbBXhQ==",
+    "ReactiveUI/18.4.26": {
+      "sha512": "39AplwnC5zu6yvLdE1vRI7YaLvVJyBSkMGCb3fb+3deGW5Q3EKybpqpNQzqx2nuBUAFYnULKWjbQqPdXssN3ow==",
       "type": "package",
-      "path": "reactiveui/18.3.1",
+      "path": "reactiveui/18.4.26",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE/LICENSE",
-        "lib/monoandroid11.0/ReactiveUI.dll",
-        "lib/monoandroid11.0/ReactiveUI.pdb",
-        "lib/monoandroid11.0/ReactiveUI.xml",
         "lib/monoandroid12.0/ReactiveUI.dll",
         "lib/monoandroid12.0/ReactiveUI.pdb",
         "lib/monoandroid12.0/ReactiveUI.xml",
+        "lib/monoandroid12.1/ReactiveUI.dll",
+        "lib/monoandroid12.1/ReactiveUI.pdb",
+        "lib/monoandroid12.1/ReactiveUI.xml",
+        "lib/monoandroid13.0/ReactiveUI.dll",
+        "lib/monoandroid13.0/ReactiveUI.pdb",
+        "lib/monoandroid13.0/ReactiveUI.xml",
         "lib/net462/ReactiveUI.dll",
         "lib/net462/ReactiveUI.xml",
         "lib/net472/ReactiveUI.dll",
         "lib/net472/ReactiveUI.xml",
         "lib/net6.0-android31.0/ReactiveUI.dll",
         "lib/net6.0-android31.0/ReactiveUI.xml",
-        "lib/net6.0-ios15.4/ReactiveUI.dll",
-        "lib/net6.0-ios15.4/ReactiveUI.xml",
-        "lib/net6.0-maccatalyst15.4/ReactiveUI.dll",
-        "lib/net6.0-maccatalyst15.4/ReactiveUI.xml",
-        "lib/net6.0-macos12.3/ReactiveUI.dll",
-        "lib/net6.0-macos12.3/ReactiveUI.xml",
-        "lib/net6.0-tvos15.4/ReactiveUI.dll",
-        "lib/net6.0-tvos15.4/ReactiveUI.xml",
+        "lib/net6.0-ios16.1/ReactiveUI.dll",
+        "lib/net6.0-ios16.1/ReactiveUI.xml",
+        "lib/net6.0-maccatalyst16.1/ReactiveUI.dll",
+        "lib/net6.0-maccatalyst16.1/ReactiveUI.xml",
+        "lib/net6.0-macos13.0/ReactiveUI.dll",
+        "lib/net6.0-macos13.0/ReactiveUI.xml",
+        "lib/net6.0-tvos16.1/ReactiveUI.dll",
+        "lib/net6.0-tvos16.1/ReactiveUI.xml",
         "lib/net6.0/ReactiveUI.dll",
         "lib/net6.0/ReactiveUI.xml",
+        "lib/net7.0-android33.0/ReactiveUI.dll",
+        "lib/net7.0-android33.0/ReactiveUI.xml",
+        "lib/net7.0-ios16.1/ReactiveUI.dll",
+        "lib/net7.0-ios16.1/ReactiveUI.xml",
+        "lib/net7.0-maccatalyst16.1/ReactiveUI.dll",
+        "lib/net7.0-maccatalyst16.1/ReactiveUI.xml",
+        "lib/net7.0-macos13.0/ReactiveUI.dll",
+        "lib/net7.0-macos13.0/ReactiveUI.xml",
+        "lib/net7.0-tvos16.1/ReactiveUI.dll",
+        "lib/net7.0-tvos16.1/ReactiveUI.xml",
+        "lib/net7.0/ReactiveUI.dll",
+        "lib/net7.0/ReactiveUI.xml",
         "lib/netstandard2.0/ReactiveUI.dll",
         "lib/netstandard2.0/ReactiveUI.xml",
         "lib/tizen40/ReactiveUI.dll",
         "lib/tizen40/ReactiveUI.xml",
-        "lib/uap10.0.16299/ReactiveUI.dll",
-        "lib/uap10.0.16299/ReactiveUI.pri",
-        "lib/uap10.0.16299/ReactiveUI.xml",
         "lib/xamarinios10/ReactiveUI.dll",
         "lib/xamarinios10/ReactiveUI.xml",
         "lib/xamarinmac20/ReactiveUI.dll",
@@ -2691,7 +2798,7 @@
         "lib/xamarintvos10/ReactiveUI.dll",
         "lib/xamarintvos10/ReactiveUI.xml",
         "logo.png",
-        "reactiveui.18.3.1.nupkg.sha512",
+        "reactiveui.18.4.26.nupkg.sha512",
         "reactiveui.nuspec"
       ]
     },
@@ -2901,20 +3008,36 @@
         "skiasharp.nativeassets.win32.nuspec"
       ]
     },
-    "Splat/14.4.1": {
-      "sha512": "Z1Mncnzm9pNIaIbZ/EWH6x5ESnKsmAvu8HP4StBRw+yhz0lzE7LCbt22TNTPaFrYLYbYCbGQIc/61yuSnpLidg==",
+    "Splat/14.6.8": {
+      "sha512": "WdhGXUvsWPNPzBLc/LC1Q5jLOczupHDc+4Skl0JaTEuyoDjxxe/Dme8UjGTkCPYbhnVWEsEJprWqyWDY5RNB9A==",
       "type": "package",
-      "path": "splat/14.4.1",
+      "path": "splat/14.6.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE/LICENSE",
         "lib/net6.0/Splat.dll",
         "lib/net6.0/Splat.xml",
+        "lib/net7.0/Splat.dll",
+        "lib/net7.0/Splat.xml",
         "lib/netstandard2.0/Splat.dll",
         "lib/netstandard2.0/Splat.xml",
-        "splat.14.4.1.nupkg.sha512",
+        "splat.14.6.8.nupkg.sha512",
         "splat.nuspec"
+      ]
+    },
+    "SukiUI/4.6.6": {
+      "sha512": "VGhXDJ3xZRZSMBUSxJLbpDkKSNGXDdAlRzHncyLNpYlB9AcCAn4k/5UUzroInA2X5UB2iRWLhNRB7X4Fv5w7lA==",
+      "type": "package",
+      "path": "sukiui/4.6.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/suki_photo.ico",
+        "contentFiles/any/netstandard2.0/suki_photo.ico",
+        "lib/netstandard2.0/SukiUI.dll",
+        "sukiui.4.6.6.nupkg.sha512",
+        "sukiui.nuspec"
       ]
     },
     "System.Collections/4.3.0": {
@@ -4930,6 +5053,7 @@
       "Avalonia.Themes.Fluent >= 11.0.0-preview5",
       "Binance.Net >= 8.4.3",
       "LiveChartsCore.SkiaSharpView.Avalonia >= 2.0.0-beta.700-11.0.0-preview5",
+      "SukiUI >= 4.6.6",
       "XamlNameReferenceGenerator >= 1.6.1"
     ]
   },
@@ -4997,6 +5121,10 @@
           "LiveChartsCore.SkiaSharpView.Avalonia": {
             "target": "Package",
             "version": "[2.0.0-beta.700-11.0.0-preview5, )"
+          },
+          "SukiUI": {
+            "target": "Package",
+            "version": "[4.6.6, )"
           },
           "XamlNameReferenceGenerator": {
             "target": "Package",

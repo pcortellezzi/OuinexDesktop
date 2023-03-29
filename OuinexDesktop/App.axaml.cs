@@ -13,34 +13,18 @@ namespace OuinexDesktop
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
-            RequestedThemeVariant = ThemeVariant.Dark;
-            Statics.Theme = ThemeVariant.Dark;
         }
 
         public override void OnFrameworkInitializationCompleted()
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow
+                desktop.MainWindow = new FreshWindow()
                 {
-                    DataContext = new MainWindowViewModel(),
+                    //DataContext = new MainWindowViewModel(),
                 };
             }
-
-            SetupDefaultFontSize();
-
             base.OnFrameworkInitializationCompleted();
-        }
-
-        private void SetupDefaultFontSize()
-        {
-            IResourceDictionary resources = Current.Resources;
-
-            resources["ButtonDefaultFontSize"] = 11;
-            resources["DefaultFontSize"] = 11;
-            resources["TextBlockFontSize"] = 11;
-            resources["CheckboxFontSize"] = 11;
-            resources["CheckboxFontSize"] = 11;
         }
     }
 }

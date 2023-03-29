@@ -441,3 +441,7 @@ C:/Users/lenovo/Documents/GitHub/ouinexpro/OuinexDesktop/bin/Debug/net7.0/OxyPlo
 /home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/obj/Debug/net7.0/OuinexDesktop.csproj.CopyComplete
 /home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/obj/Debug/net7.0/OuinexDesktop.genruntimeconfig.cache
 /home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/obj/Debug/net7.0/ref/OuinexDesktop.dll
+/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/bin/Debug/net7.0/DialogHost.Avalonia.dll
+/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/bin/Debug/net7.0/Material.Icons.dll
+/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/bin/Debug/net7.0/Material.Icons.Avalonia.dll
+/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/bin/Debug/net7.0/SukiUI.dll

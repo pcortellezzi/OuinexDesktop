@@ -209,9 +209,7 @@
 		<Grid Grid.RowSpan="20"
 			  IsVisible="{Binding ShowLoading}"
 			  Background="#6D000000">
-			<Border Classes="Shadow"
-					Theme="{StaticResource CardBorder}"
-					VerticalAlignment="Center"
+			<Border VerticalAlignment="Center"
 					HorizontalAlignment="Center">
 				<StackPanel>
 					<TextBlock Text="Loading datas ..."

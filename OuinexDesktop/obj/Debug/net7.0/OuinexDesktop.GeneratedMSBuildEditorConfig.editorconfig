@@ -12,34 +12,34 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OuinexDesktop
-build_property.ProjectDir = C:\Users\lenovo\Documents\GitHub\ouinexpro\OuinexDesktop\
+build_property.ProjectDir = /home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/
 
-[C:/Users/lenovo/Documents/GitHub/ouinexpro/OuinexDesktop/App.axaml]
+[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/lenovo/Documents/GitHub/ouinexpro/OuinexDesktop/Views/ChartWindow.axaml]
+[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/ChartWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/lenovo/Documents/GitHub/ouinexpro/OuinexDesktop/Views/ContainerWindow.axaml]
+[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/ContainerWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/lenovo/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/Charting/ChartControl.axaml]
+[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/Charting/ChartControl.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/lenovo/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/LoginControl.axaml]
+[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/LoginControl.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/lenovo/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/MarketsTreeView.axaml]
+[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/MarketsTreeView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/lenovo/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/MarketWatchWidgets.axaml]
+[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/MarketWatchWidgets.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/lenovo/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/OrderBookControl.axaml]
+[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/OrderBookControl.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/lenovo/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/WalletsGrid.axaml]
+[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/WalletsGrid.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/lenovo/Documents/GitHub/ouinexpro/OuinexDesktop/Views/MainWindow.axaml]
+[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

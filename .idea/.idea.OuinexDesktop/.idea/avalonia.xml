@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="OuinexDesktop/App.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
+        <entry key="OuinexDesktop/Views/ChartWindow.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
+        <entry key="OuinexDesktop/Views/Controls/MarketWatchWidgets.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
+        <entry key="OuinexDesktop/Views/MainWindow.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

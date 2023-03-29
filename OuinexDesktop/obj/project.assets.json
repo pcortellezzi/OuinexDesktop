@@ -882,32 +882,6 @@
           }
         }
       },
-      "OxyPlot.Avalonia/2.1.0-Preview1": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "0.10.11",
-          "OxyPlot.Core": "2.1.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/OxyPlot.Avalonia.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/OxyPlot.Avalonia.dll": {}
-        }
-      },
-      "OxyPlot.Core/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/OxyPlot.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OxyPlot.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "ReactiveUI/18.3.1": {
         "type": "package",
         "dependencies": {
@@ -923,44 +897,6 @@
           "lib/net6.0/ReactiveUI.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Semi.Avalonia/0.1.0-preview5.3": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.0.0-preview5"
-        },
-        "compile": {
-          "lib/net6.0/Semi.Avalonia.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/Semi.Avalonia.dll": {}
-        }
-      },
-      "Semi.Avalonia.ColorPicker/0.1.0-preview5.2": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.0.0-preview5",
-          "Avalonia.Controls.ColorPicker": "11.0.0-preview5"
-        },
-        "compile": {
-          "lib/net6.0/Semi.Avalonia.ColorPicker.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/Semi.Avalonia.ColorPicker.dll": {}
-        }
-      },
-      "Semi.Avalonia.DataGrid/0.1.0-preview5.2": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.0.0-preview5",
-          "Avalonia.Controls.DataGrid": "11.0.0-preview5"
-        },
-        "compile": {
-          "lib/net6.0/Semi.Avalonia.DataGrid.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/Semi.Avalonia.DataGrid.dll": {}
         }
       },
       "SkiaSharp/2.88.3": {
@@ -2711,38 +2647,6 @@
         "packageIcon.png"
       ]
     },
-    "OxyPlot.Avalonia/2.1.0-Preview1": {
-      "sha512": "yPsJfhlabY6AUIxoZsO8kwz0KCWqgDOQi/TW9mSXyzgI3/uBy16NuSVoHJ/HMbY1a09A3Cd1+3HKwlBT788cEg==",
-      "type": "package",
-      "path": "oxyplot.avalonia/2.1.0-preview1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/OxyPlot.Avalonia.dll",
-        "oxyplot.avalonia.2.1.0-preview1.nupkg.sha512",
-        "oxyplot.avalonia.nuspec"
-      ]
-    },
-    "OxyPlot.Core/2.1.0": {
-      "sha512": "jG+Ct3T59fXDG2LE1hyUaXqH7i+h5Nfway1iB0+0NaY2mvDsz8Row/BKjiBWCt5NHp3+q9JSMiD2wpin2hh3kw==",
-      "type": "package",
-      "path": "oxyplot.core/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "OxyPlot_128.png",
-        "lib/net40/OxyPlot.dll",
-        "lib/net40/OxyPlot.xml",
-        "lib/net45/OxyPlot.dll",
-        "lib/net45/OxyPlot.xml",
-        "lib/netstandard1.0/OxyPlot.dll",
-        "lib/netstandard1.0/OxyPlot.xml",
-        "lib/netstandard2.0/OxyPlot.dll",
-        "lib/netstandard2.0/OxyPlot.xml",
-        "oxyplot.core.2.1.0.nupkg.sha512",
-        "oxyplot.core.nuspec"
-      ]
-    },
     "ReactiveUI/18.3.1": {
       "sha512": "0tclGtjrRPfA2gbjiM7O3DeNmo6/TpDn7CMN6jgzDrbgrnysM7oEzjGEeXbtXaOxH6kEf6RiMKWobZoSgbBXhQ==",
       "type": "package",
@@ -2789,45 +2693,6 @@
         "logo.png",
         "reactiveui.18.3.1.nupkg.sha512",
         "reactiveui.nuspec"
-      ]
-    },
-    "Semi.Avalonia/0.1.0-preview5.3": {
-      "sha512": "vvwOiclmzwyKPf04IA8sp1+js286KmI7avQk71XvPmT24UuUYPBZRxlI6S6vnwwqT0QSk4tL61i4m/A4vO1xNg==",
-      "type": "package",
-      "path": "semi.avalonia/0.1.0-preview5.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net6.0/Semi.Avalonia.dll",
-        "lib/netstandard2.0/Semi.Avalonia.dll",
-        "semi.avalonia.0.1.0-preview5.3.nupkg.sha512",
-        "semi.avalonia.nuspec"
-      ]
-    },
-    "Semi.Avalonia.ColorPicker/0.1.0-preview5.2": {
-      "sha512": "6i7/R+l4ied05yLPm7YWyoREMdG5wkmoJnbswf+BEZvlOh3JRgQowrg/r6KxZCInObBxbcNAHUGTDZ7PvoqQ1w==",
-      "type": "package",
-      "path": "semi.avalonia.colorpicker/0.1.0-preview5.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net6.0/Semi.Avalonia.ColorPicker.dll",
-        "lib/netstandard2.0/Semi.Avalonia.ColorPicker.dll",
-        "semi.avalonia.colorpicker.0.1.0-preview5.2.nupkg.sha512",
-        "semi.avalonia.colorpicker.nuspec"
-      ]
-    },
-    "Semi.Avalonia.DataGrid/0.1.0-preview5.2": {
-      "sha512": "GpfuN7IWukX5rHJkjH7FAitGj56dmDr31ZQ1ii/StpluKSuf0k65tsuDVmlXrGmLaUqQKOj1xSYh4z0gHRt8eg==",
-      "type": "package",
-      "path": "semi.avalonia.datagrid/0.1.0-preview5.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net6.0/Semi.Avalonia.DataGrid.dll",
-        "lib/netstandard2.0/Semi.Avalonia.DataGrid.dll",
-        "semi.avalonia.datagrid.0.1.0-preview5.2.nupkg.sha512",
-        "semi.avalonia.datagrid.nuspec"
       ]
     },
     "SkiaSharp/2.88.3": {
@@ -5065,39 +4930,28 @@
       "Avalonia.Themes.Fluent >= 11.0.0-preview5",
       "Binance.Net >= 8.4.3",
       "LiveChartsCore.SkiaSharpView.Avalonia >= 2.0.0-beta.700-11.0.0-preview5",
-      "OxyPlot.Avalonia >= 2.1.0-av11-preview5",
-      "Semi.Avalonia >= 0.1.0-preview5.3",
-      "Semi.Avalonia.ColorPicker >= 0.1.0-preview5.2",
-      "Semi.Avalonia.DataGrid >= 0.1.0-preview5.2",
       "XamlNameReferenceGenerator >= 1.6.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lenovo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/damien/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj",
+      "projectUniqueName": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/OuinexDesktop.csproj",
       "projectName": "OuinexDesktop",
-      "projectPath": "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj",
-      "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\obj\\",
+      "projectPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/OuinexDesktop.csproj",
+      "packagesPath": "/home/damien/.nuget/packages/",
+      "outputPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/damien/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5144,22 +4998,6 @@
             "target": "Package",
             "version": "[2.0.0-beta.700-11.0.0-preview5, )"
           },
-          "OxyPlot.Avalonia": {
-            "target": "Package",
-            "version": "[2.1.0-av11-preview5, )"
-          },
-          "Semi.Avalonia": {
-            "target": "Package",
-            "version": "[0.1.0-preview5.3, )"
-          },
-          "Semi.Avalonia.ColorPicker": {
-            "target": "Package",
-            "version": "[0.1.0-preview5.2, )"
-          },
-          "Semi.Avalonia.DataGrid": {
-            "target": "Package",
-            "version": "[0.1.0-preview5.2, )"
-          },
           "XamlNameReferenceGenerator": {
             "target": "Package",
             "version": "[1.6.1, )"
@@ -5181,20 +5019,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "OuinexDesktop dépend de OxyPlot.Avalonia (>= 2.1.0-av11-preview5), mais OxyPlot.Avalonia 2.1.0-av11-preview5 est introuvable. Une meilleure correspondance approximative de OxyPlot.Avalonia 2.1.0-Preview1 a été résolue.",
-      "libraryId": "OxyPlot.Avalonia",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  }
 }

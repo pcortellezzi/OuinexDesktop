@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj": {}
+    "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/OuinexDesktop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj": {
+    "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/OuinexDesktop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj",
+        "projectUniqueName": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/OuinexDesktop.csproj",
         "projectName": "OuinexDesktop",
-        "projectPath": "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\obj\\",
+        "projectPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/OuinexDesktop.csproj",
+        "packagesPath": "/home/damien/.nuget/packages/",
+        "outputPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/damien/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -72,22 +66,6 @@
               "target": "Package",
               "version": "[2.0.0-beta.700-11.0.0-preview5, )"
             },
-            "OxyPlot.Avalonia": {
-              "target": "Package",
-              "version": "[2.1.0-av11-preview5, )"
-            },
-            "Semi.Avalonia": {
-              "target": "Package",
-              "version": "[0.1.0-preview5.3, )"
-            },
-            "Semi.Avalonia.ColorPicker": {
-              "target": "Package",
-              "version": "[0.1.0-preview5.2, )"
-            },
-            "Semi.Avalonia.DataGrid": {
-              "target": "Package",
-              "version": "[0.1.0-preview5.2, )"
-            },
             "XamlNameReferenceGenerator": {
               "target": "Package",
               "version": "[1.6.1, )"
@@ -109,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

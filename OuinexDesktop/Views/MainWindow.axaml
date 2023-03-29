@@ -86,44 +86,35 @@
 		</Border>
 		
 		<Border Grid.Row="1"
-				x:Name="secondMenu"
-				Theme="{StaticResource RadioButtonGroupBorder}">
+				x:Name="secondMenu">
 			<StackPanel Orientation="Horizontal">
-				<Button Theme="{DynamicResource BorderlessButton}" 
-						Command="{Binding OpenMarketWatchWindow}"
+				<Button Command="{Binding OpenMarketWatchWindow}"
 						Content="Sell"/>
 				<Separator Width="1.5"
 						   Height="12"/>
-				<Button Theme="{DynamicResource BorderlessButton}" 
-						Content="Buy"/>
+				<Button Content="Buy"/>
 				<Separator Width="1.5"
 						   Height="12"/>
-				<Button Theme="{DynamicResource BorderlessButton}"
-						Content="Close"/>
+				<Button Content="Close"/>
 				<Separator Width="1.5"
 						   Height="12"/>
-				<Button Theme="{DynamicResource BorderlessButton}" 
-						Content="Entry"/>
+				<Button Content="Entry"/>
 				<Separator Width="1.5"
 						   Height="12"/>
-				<Button Theme="{DynamicResource BorderlessButton}"
-						Content="Trading settings"/>
+				<Button Content="Trading settings"/>
 				<Separator Width="1.5"
 						   Height="12"/>               
-				<Button Theme="{DynamicResource BorderlessButton}"
-						IsEnabled="False"
+				<Button IsEnabled="False"
 						Content="Strategies"/>
 				<Separator Width="1.5"
 						   Height="12"/>
-				<Button Theme="{DynamicResource BorderlessButton}" 
-						Content="Symbols"/>
+				<Button Content="Symbols"/>
 			</StackPanel>
 		</Border>
 		<ToggleSwitch Grid.Row="1"
 					  Padding="4"
 					  HorizontalAlignment="Right"
-					  IsCheckedChanged="ToggleButton_OnIsCheckedChanged"
-					  Theme="{DynamicResource ButtonToggleSwitch}">
+					  IsCheckedChanged="ToggleButton_OnIsCheckedChanged">
 			<ToggleSwitch.OnContent>
 				<PathIcon
 					Width="16"
@@ -175,8 +166,7 @@
 								</DataTemplate>
 							</ItemsControl.ItemTemplate>
 						</ItemsControl>
-						<Border Grid.Row="1"
-								Theme="{StaticResource RadioButtonGroupBorder}"/>
+						<Border Grid.Row="1"/>
 						<TextBlock Grid.Row="1"
 								   Margin="5"
 								   Text="Spead"/>
@@ -248,7 +238,6 @@
 				<Border Classes="Shadow"
 						Grid.Row="1"
 						Background="#102545"
-						Theme="{StaticResource CardBorder}"
 						VerticalAlignment="Center"
 						HorizontalAlignment="Center">
 					<controls:LoginControl DataContext="{Binding LoginMVVM}"/>

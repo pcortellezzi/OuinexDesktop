@@ -12,20 +12,20 @@
 
 
         <material:MaterialIcon
-            Foreground="DarkGreen"
+            Foreground="{DynamicResource ThemeAccentColor}"
             Height="40"
-            Kind="Xaml"
+            Kind="Exchange"
             Margin="15"
             VerticalAlignment="Top"
             Width="40" />
 
         <TextBlock
-            Classes="h4"
+            Classes="h3"
             FontSize="15"
             HorizontalAlignment="Center"
             Margin="0,5,0,0"
             VerticalAlignment="Center">
-            This is a random message !
+            Create an order
         </TextBlock>
 
 
@@ -38,7 +38,7 @@
             Margin="10"
             Padding="2"
             VerticalAlignment="Bottom">
-            <TextBlock>Close</TextBlock>
+            <TextBlock>Cancel</TextBlock>
         </Button>
 
 

@@ -9,20 +9,16 @@
         x:Class="OuinexDesktop.Views.FreshWindow"
         Title="FreshWindow">
         <suki:InteractiveContainer>
-                <suki:DesktopPage  LogoColor="#2f54eb"
-                                   LogoKind="Xaml"
-                                   MenuVisibility="False"
-                                   Name="myPage"
-                                   Title="Suki UI Testing - New Project">
-                    <suki:SideMenu>
+               <Grid RowDefinitions="Auto, *">
+                        <suki:SideMenu Grid.Row="1">
                             <suki:SideMenu.DataContext>
-                                    <suki:SideMenuModel>
+                                    <suki:SideMenuModel MenuVisibility="False">
                                             <suki:SideMenuModel.HeaderContent>
                                                     <StackPanel Margin="0,5,0,0">
                                                             <DockPanel>
                                                                     <material:MaterialIcon
                                                                             DockPanel.Dock="Left"
-                                                                            Foreground="{DynamicResource SukiText}"
+                                                                            Foreground="{DynamicResource ThemeAccentColor}"
                                                                             Height="60"
                                                                             Kind="UserCircleOutline"
                                                                             Margin="10,0"
@@ -31,12 +27,12 @@
                                                                             <TextBlock
                                                                                     FontSize="18"
                                                                                     FontWeight="DemiBold"
-                                                                                    Text="Jean Valjean" />
+                                                                                    Text="Damien Soudant" />
                                                                             <TextBlock
                                                                                     FontSize="12"
                                                                                     FontWeight="Thin"
                                                                                     Margin="3,1,0,0"
-                                                                                    Text="jeanvaljean@mail.com" />
+                                                                                    Text="damien.soudant@gmail.com" />
                                                                     </StackPanel>
                                                             </DockPanel>
                                                             <Border
@@ -47,12 +43,17 @@
                                             </suki:SideMenuModel.HeaderContent>
                                             <suki:SideMenuModel.MenuItems>
                                                     <suki:SideMenuItem Header="Overview"
-                                                                       Icon="CircleOutline">
+                                                                       Icon="Home">
                                                             <suki:SideMenuItem.Content>
-                                                                <Button Classes="Danger"
-                                                                        Click="Button_OnClick">
-                                                                        test
-                                                                </Button>    
+                                                                <Grid>
+                                                                        <Button Classes="Danger"
+                                                                                VerticalAlignment="Center"
+                                                                                HorizontalAlignment="Center"
+                                                                                Padding="15,5"
+                                                                                Click="Button_OnClick">
+                                                                                test
+                                                                        </Button>   
+                                                                </Grid> 
                                                             </suki:SideMenuItem.Content>
                                                     </suki:SideMenuItem>
                                                     <suki:SideMenuItem Header="Detailed Wallets"
@@ -82,6 +83,6 @@
                                     </suki:SideMenuModel>
                             </suki:SideMenu.DataContext>
                     </suki:SideMenu>
-                </suki:DesktopPage>
+               </Grid>
         </suki:InteractiveContainer>
 </Window>

@@ -4,6 +4,7 @@ using OuinexDesktop.Views.Controls;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Avalonia.Controls;
+using SukiUI.Controls;
 
 namespace OuinexDesktop.ViewModels
 {
@@ -31,6 +32,9 @@ namespace OuinexDesktop.ViewModels
 
         private void LoginMVVM_OnLogged()
         {
+            //close the login popup
+            InteractiveContainer.CloseDialog();
+            
             Task.Run(async () => await this.MarketWatchMVVM.InitStream());
         }
 

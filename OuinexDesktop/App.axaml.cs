@@ -21,13 +21,25 @@ namespace OuinexDesktop
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
+                var vm = new MainWindowViewModel();
                 var window = new FreshWindow()
                 {
-
+                    DataContext = vm
                 };
+
+
                 desktop.MainWindow = window;
-                window.Loaded += ((sender, args) => InteractiveContainer.ShowDialog(new LoginControl()));
+                window.Loaded += ((sender, args) =>
+                {
+                   // window.MarketsPage.DataContext = vm.MarketWatchMVVM;
+                    InteractiveContainer.ShowDialog(new LoginControl()
+                    {
+                        DataContext = vm.LoginMVVM
+                    });
+
+                });
             }
+
             base.OnFrameworkInitializationCompleted();
         }
     }

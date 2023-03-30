@@ -4,15 +4,11 @@ using Avalonia.Markup.Xaml;
 
 namespace OuinexDesktop.Views.Pages;
 
-public partial class MarketsPage : UserControl
+public partial class SettingsPage : UserControl
 {
-    public MarketsPage()
+    public SettingsPage()
     {
         InitializeComponent();
-        DataContextChanged += ((senderse, args) =>
-        {
-
-        });
     }
 
     private void InitializeComponent()

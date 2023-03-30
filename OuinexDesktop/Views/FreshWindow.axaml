@@ -6,15 +6,22 @@
         xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
         WindowState="Maximized"
         xmlns:pages="clr-namespace:OuinexDesktop.Views.Pages"
+        xmlns:vm="clr-namespace:OuinexDesktop.ViewModels"
         xmlns:material="using:Material.Icons.Avalonia"
+        Name="mainWindow"
         xmlns:system="clr-namespace:System;assembly=System.Runtime"
+        x:DataType="vm:MainWindowViewModel"
         x:Class="OuinexDesktop.Views.FreshWindow"
         Title="FreshWindow">
+        <Design.DataContext>
+                <vm:MainWindowViewModel/>
+        </Design.DataContext>
         <suki:InteractiveContainer>
                <Grid RowDefinitions="Auto, *">
                         <suki:SideMenu Grid.Row="1">
                             <suki:SideMenu.DataContext>
-                                    <suki:SideMenuModel MenuVisibility="False">
+                                    <suki:SideMenuModel MenuVisibility="False"
+                                                        CurrentPage="Markets">
                                             <suki:SideMenuModel.HeaderContent>
                                                     <StackPanel Margin="0,5,0,0">
                                                             <DockPanel>
@@ -57,9 +64,10 @@
                                             </suki:SideMenuModel.HeaderContent>
                                             <suki:SideMenuModel.MenuItems>
                                                     <suki:SideMenuItem Header="Markets"
+                                                                       
                                                                        Icon="CurrencyBtc">
                                                             <suki:SideMenuItem.Content>
-                                                                <pages:MarketsPage/>
+                                                                <pages:MarketsPage Name="MarketsPage"/>
                                                             </suki:SideMenuItem.Content>
                                                     </suki:SideMenuItem>
                                                     <suki:SideMenuItem Header="Detailed Wallets"

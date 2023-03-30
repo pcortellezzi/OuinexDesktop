@@ -3,8 +3,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" 
+             xmlns:vm="clr-namespace:OuinexDesktop.ViewModels"
+             xmlns:controls="clr-namespace:OuinexDesktop.Views.Controls"
+             x:DataType="vm:MarketWatchViewModel"
              d:DesignHeight="450"
              x:Class="OuinexDesktop.Views.Pages.MarketsPage">
+    <Design.DataContext>
+        <vm:MarketWatchViewModel/>
+    </Design.DataContext>
     <Grid RowDefinitions="Auto, *">
         <Border Margin="0,0,0,0"
                 CornerRadius="0"
@@ -36,5 +42,6 @@
                            VerticalAlignment="Stretch"/>
             </StackPanel>
         </Border>
+        <controls:MarketWatchWidgets Grid.Row="1"/>
     </Grid>
 </UserControl>

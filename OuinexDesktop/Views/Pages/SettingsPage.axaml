@@ -4,5 +4,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="OuinexDesktop.Views.Pages.SettingsPage">
-    Welcome to Avalonia!
+    <TabControl>
+        <TabItem Header="Trading">
+            
+        </TabItem>
+        <TabItem Header="Visual">
+            <Grid ColumnDefinitions="Auto, Auto,*"
+                  RowDefinitions="Auto, Auto, Auto">
+                <TextBlock Text="Theme"
+                           Margin="5"
+                           VerticalAlignment="Center"/>
+                <ComboBox SelectedIndex="0"
+                          Grid.Column="1"
+                          SelectionChanged="SelectingItemsControl_OnSelectionChanged">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="Light"/>
+                        <ComboBoxItem Content="Dark"/>
+                    </ComboBox.Items>
+                </ComboBox>
+            </Grid>
+        </TabItem>
+    </TabControl>
 </UserControl>

@@ -64,7 +64,6 @@
                                             </suki:SideMenuModel.HeaderContent>
                                             <suki:SideMenuModel.MenuItems>
                                                     <suki:SideMenuItem Header="Markets"
-                                                                       
                                                                        Icon="CurrencyBtc">
                                                             <suki:SideMenuItem.Content>
                                                                 <pages:MarketsPage Name="MarketsPage"/>
@@ -108,10 +107,7 @@
                                                     <suki:SideMenuItem Header="Settings" 
                                                                        Icon="SettingsOutline">
                                                             <suki:SideMenuItem.Content>
-                                                                    <TextBlock
-                                                                            HorizontalAlignment="Center"
-                                                                            Text="Settings Page"
-                                                                            VerticalAlignment="Center" />
+                                                                    <pages:SettingsPage/>
                                                             </suki:SideMenuItem.Content>
                                                     </suki:SideMenuItem>
                                             </suki:SideMenuModel.FooterMenuItems>

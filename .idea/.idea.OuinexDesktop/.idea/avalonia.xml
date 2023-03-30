@@ -13,6 +13,7 @@
         <entry key="OuinexDesktop/Views/MainWindow.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
         <entry key="OuinexDesktop/Views/Pages/MarketsPage.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
         <entry key="OuinexDesktop/Views/Pages/SettingsPage.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
+        <entry key="OuinexDesktop/Views/Pages/TradingBotsPage.axaml" value="OuinexDesktop/OuinexDesktop.csproj" />
       </map>
     </option>
   </component>

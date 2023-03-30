@@ -15,6 +15,7 @@
 		<TextBlock Text="Sign in"
 				   Grid.ColumnSpan="2"				   
 				   HorizontalAlignment="Left"
+				   
 				   FontSize="40"/>
 		<TextBlock Text="with your Ouinex account"
 				   HorizontalAlignment="Left"
@@ -24,24 +25,35 @@
 				   FontSize="15"/>
 		<TextBox Margin="0,5"
 				 Grid.ColumnSpan="2"
+				 Classes="BottomBar" 
 				 Grid.Row="2"
-				 Foreground="White"
 				 Watermark="User name"/>
 		<TextBox Margin="0,5"
 				 Grid.ColumnSpan="2"
 				 Grid.Row="3"
-				 Foreground="White"
 				 Watermark="Password"
+				 Classes="BottomBar" 
 				 PasswordChar="*"/>
 		<CheckBox Content="Remind me ?"
 				  Grid.Row="4"
 				  Margin="0,5"/>
-		<Button Margin="0,5"
-				Grid.Row="5"
-				Grid.ColumnSpan="2"
-				Command="{Binding Login}"
-				Background="#2fbd6c"
-				Foreground="White"
-				Content="Connect"/>
+		<StackPanel Grid.Row="5"
+		            Orientation="Horizontal">
+			<Button Margin="0,5"
+			        Grid.Row="5"
+			        Grid.ColumnSpan="2"
+			        Command="{Binding Login}"
+			        Background="#2fbd6c"
+			        Foreground="White"
+			        
+			        Content="Connect"/>
+			<Button Margin="5"
+			        Grid.Row="5"
+			        Grid.ColumnSpan="2"
+			        Click="Button_OnClick"
+			        Classes="Danger"
+			        Content="Cancel"/>
+		</StackPanel>
+	
 	</Grid>
 </UserControl>

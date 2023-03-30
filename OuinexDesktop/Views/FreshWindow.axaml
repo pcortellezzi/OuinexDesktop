@@ -4,6 +4,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+        WindowState="Maximized"
+        xmlns:pages="clr-namespace:OuinexDesktop.Views.Pages"
         xmlns:material="using:Material.Icons.Avalonia"
         xmlns:system="clr-namespace:System;assembly=System.Runtime"
         x:Class="OuinexDesktop.Views.FreshWindow"
@@ -19,10 +21,10 @@
                                                                     <material:MaterialIcon
                                                                             DockPanel.Dock="Left"
                                                                             Foreground="{DynamicResource ThemeAccentColor}"
-                                                                            Height="60"
+                                                                            Height="45"
                                                                             Kind="UserCircleOutline"
                                                                             Margin="10,0"
-                                                                            Width="60" />
+                                                                            Width="45" />
                                                                     <StackPanel VerticalAlignment="Center">
                                                                             <TextBlock
                                                                                     FontSize="18"
@@ -33,6 +35,18 @@
                                                                                     FontWeight="Thin"
                                                                                     Margin="3,1,0,0"
                                                                                     Text="damien.soudant@gmail.com" />
+                                                                            <Border CornerRadius="4"
+                                                                                    Margin="3"
+                                                                                    BorderThickness="1"
+                                                                                    BorderBrush="Green"
+                                                                                    Background="Green"
+                                                                                    HorizontalAlignment="Left">
+                                                                                    <Label Content="Ouinex KYC verified"
+                                                                                            Foreground="White"
+                                                                                            FontSize="10"
+                                                                                            VerticalAlignment="Center"
+                                                                                            HorizontalAlignment="Center"/>
+                                                                            </Border>
                                                                     </StackPanel>
                                                             </DockPanel>
                                                             <Border
@@ -42,22 +56,20 @@
                                                     </StackPanel>
                                             </suki:SideMenuModel.HeaderContent>
                                             <suki:SideMenuModel.MenuItems>
-                                                    <suki:SideMenuItem Header="Overview"
-                                                                       Icon="Home">
+                                                    <suki:SideMenuItem Header="Markets"
+                                                                       Icon="CurrencyBtc">
                                                             <suki:SideMenuItem.Content>
-                                                                <Grid>
-                                                                        <Button Classes="Danger"
-                                                                                VerticalAlignment="Center"
-                                                                                HorizontalAlignment="Center"
-                                                                                Padding="15,5"
-                                                                                Click="Button_OnClick">
-                                                                                test
-                                                                        </Button>   
-                                                                </Grid> 
+                                                                <pages:MarketsPage/>
                                                             </suki:SideMenuItem.Content>
                                                     </suki:SideMenuItem>
                                                     <suki:SideMenuItem Header="Detailed Wallets"
                                                                        Icon="Wallet">
+                                                            <suki:SideMenuItem.Content>
+                                                                    
+                                                            </suki:SideMenuItem.Content>
+                                                    </suki:SideMenuItem>
+                                                    <suki:SideMenuItem Header="Trading reports"
+                                                                       Icon="ChartFinance">
                                                             <suki:SideMenuItem.Content>
                                                                     
                                                             </suki:SideMenuItem.Content>
@@ -68,8 +80,23 @@
                                                                     
                                                             </suki:SideMenuItem.Content>
                                                     </suki:SideMenuItem>
+                                                    <suki:SideMenuItem Header="Applications"
+                                                                       Icon="Plugin">
+                                                            <suki:SideMenuItem.Content>
+                                                                    
+                                                            </suki:SideMenuItem.Content>
+                                                    </suki:SideMenuItem>
                                             </suki:SideMenuModel.MenuItems>
                                             <suki:SideMenuModel.FooterMenuItems>
+                                                    <suki:SideMenuItem Header="Appstore" 
+                                                                       Icon="Store">
+                                                            <suki:SideMenuItem.Content>
+                                                                    <TextBlock
+                                                                            HorizontalAlignment="Center"
+                                                                            Text="Settings Page"
+                                                                            VerticalAlignment="Center" />
+                                                            </suki:SideMenuItem.Content>
+                                                    </suki:SideMenuItem>
                                                     <suki:SideMenuItem Header="Settings" 
                                                                        Icon="SettingsOutline">
                                                             <suki:SideMenuItem.Content>

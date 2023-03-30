@@ -24,6 +24,6 @@ public partial class FreshWindow : Window
     }
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
-        InteractiveContainer.ShowDialog(new DialogContent());
+        InteractiveContainer.ShowDialog(new LoginControl());
     }
 }

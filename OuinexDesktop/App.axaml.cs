@@ -5,6 +5,8 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 using OuinexDesktop.ViewModels;
 using OuinexDesktop.Views;
+using OuinexDesktop.Views.Controls;
+using SukiUI.Controls;
 
 namespace OuinexDesktop
 {
@@ -19,10 +21,12 @@ namespace OuinexDesktop
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new FreshWindow()
+                var window = new FreshWindow()
                 {
-                    //DataContext = new MainWindowViewModel(),
+
                 };
+                desktop.MainWindow = window;
+                window.Loaded += ((sender, args) => InteractiveContainer.ShowDialog(new LoginControl()));
             }
             base.OnFrameworkInitializationCompleted();
         }

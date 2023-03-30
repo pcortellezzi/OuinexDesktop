@@ -5,11 +5,11 @@
              mc:Ignorable="d" d:DesignWidth="800" 
              xmlns:vm="clr-namespace:OuinexDesktop.ViewModels"
              xmlns:controls="clr-namespace:OuinexDesktop.Views.Controls"
-             x:DataType="vm:MarketWatchViewModel"
+             x:DataType="vm:MainWindowViewModel"
              d:DesignHeight="450"
              x:Class="OuinexDesktop.Views.Pages.MarketsPage">
     <Design.DataContext>
-        <vm:MarketWatchViewModel/>
+        <vm:MainWindowViewModel/>
     </Design.DataContext>
     <Grid RowDefinitions="Auto, *">
         <Border Margin="0,0,0,0"
@@ -42,6 +42,7 @@
                            VerticalAlignment="Stretch"/>
             </StackPanel>
         </Border>
-        <controls:MarketWatchWidgets Grid.Row="1"/>
+        <controls:MarketWatchWidgets Grid.Row="1"
+                                     DataContext="{Binding MarketWatchMVVM}"/>
     </Grid>
 </UserControl>

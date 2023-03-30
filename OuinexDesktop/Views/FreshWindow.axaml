@@ -66,7 +66,8 @@
                                                     <suki:SideMenuItem Header="Markets"
                                                                        Icon="CurrencyBtc">
                                                             <suki:SideMenuItem.Content>
-                                                                <pages:MarketsPage Name="MarketsPage"/>
+                                                                <pages:MarketsPage Name="MarketsPage"
+                                                                        DataContext="{Binding ElementName=mainWindow, Path=DataContext}"/>
                                                             </suki:SideMenuItem.Content>
                                                     </suki:SideMenuItem>
                                                     <suki:SideMenuItem Header="Detailed Wallets"
@@ -84,7 +85,7 @@
                                                     <suki:SideMenuItem Header="Trading Bots"
                                                                        Icon="Robot">
                                                             <suki:SideMenuItem.Content>
-                                                                    
+                                                                    <pages:TradingBotsPage/>
                                                             </suki:SideMenuItem.Content>
                                                     </suki:SideMenuItem>
                                                     <suki:SideMenuItem Header="Applications"

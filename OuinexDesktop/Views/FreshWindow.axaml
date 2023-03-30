@@ -12,109 +12,110 @@
         xmlns:system="clr-namespace:System;assembly=System.Runtime"
         x:DataType="vm:MainWindowViewModel"
         x:Class="OuinexDesktop.Views.FreshWindow"
+		Icon="/Assets/window-ico.ico"
         Title="FreshWindow">
         <Design.DataContext>
                 <vm:MainWindowViewModel/>
         </Design.DataContext>
-        <suki:InteractiveContainer>
-               <Grid RowDefinitions="Auto, *">
-                        <suki:SideMenu Grid.Row="1">
-                            <suki:SideMenu.DataContext>
-                                    <suki:SideMenuModel MenuVisibility="False"
-                                                        CurrentPage="Markets">
-                                            <suki:SideMenuModel.HeaderContent>
-                                                    <StackPanel Margin="0,5,0,0">
-                                                            <DockPanel>
-                                                                    <material:MaterialIcon
-                                                                            DockPanel.Dock="Left"
-                                                                            Foreground="{DynamicResource ThemeAccentColor}"
-                                                                            Height="45"
-                                                                            Kind="UserCircleOutline"
-                                                                            Margin="10,0"
-                                                                            Width="45" />
-                                                                    <StackPanel VerticalAlignment="Center">
-                                                                            <TextBlock
-                                                                                    FontSize="18"
-                                                                                    FontWeight="DemiBold"
-                                                                                    Text="Damien Soudant" />
-                                                                            <TextBlock
-                                                                                    FontSize="12"
-                                                                                    FontWeight="Thin"
-                                                                                    Margin="3,1,0,0"
-                                                                                    Text="damien.soudant@gmail.com" />
-                                                                            <Border CornerRadius="4"
-                                                                                    Margin="3"
-                                                                                    BorderThickness="1"
-                                                                                    BorderBrush="Green"
-                                                                                    Background="Green"
-                                                                                    HorizontalAlignment="Left">
-                                                                                    <Label Content="Ouinex KYC verified"
-                                                                                            Foreground="White"
-                                                                                            FontSize="10"
-                                                                                            VerticalAlignment="Center"
-                                                                                            HorizontalAlignment="Center"/>
-                                                                            </Border>
-                                                                    </StackPanel>
-                                                            </DockPanel>
-                                                            <Border
-                                                                    Background="LightGray"
-                                                                    Height="0"
-                                                                    Margin="35,10,35,20" />
-                                                    </StackPanel>
-                                            </suki:SideMenuModel.HeaderContent>
-                                            <suki:SideMenuModel.MenuItems>
-                                                    <suki:SideMenuItem Header="Markets"
-                                                                       Icon="CurrencyBtc">
-                                                            <suki:SideMenuItem.Content>
-                                                                <pages:MarketsPage Name="MarketsPage"
-                                                                        DataContext="{Binding ElementName=mainWindow, Path=DataContext}"/>
-                                                            </suki:SideMenuItem.Content>
-                                                    </suki:SideMenuItem>
-                                                    <suki:SideMenuItem Header="Detailed Wallets"
-                                                                       Icon="Wallet">
-                                                            <suki:SideMenuItem.Content>
-                                                                    
-                                                            </suki:SideMenuItem.Content>
-                                                    </suki:SideMenuItem>
-                                                    <suki:SideMenuItem Header="Trading reports"
-                                                                       Icon="ChartFinance">
-                                                            <suki:SideMenuItem.Content>
-                                                                    
-                                                            </suki:SideMenuItem.Content>
-                                                    </suki:SideMenuItem>
-                                                    <suki:SideMenuItem Header="Trading Bots"
-                                                                       Icon="Robot">
-                                                            <suki:SideMenuItem.Content>
-                                                                    <pages:TradingBotsPage/>
-                                                            </suki:SideMenuItem.Content>
-                                                    </suki:SideMenuItem>
-                                                    <suki:SideMenuItem Header="Applications"
-                                                                       Icon="Plugin">
-                                                            <suki:SideMenuItem.Content>
-                                                                    
-                                                            </suki:SideMenuItem.Content>
-                                                    </suki:SideMenuItem>
-                                            </suki:SideMenuModel.MenuItems>
-                                            <suki:SideMenuModel.FooterMenuItems>
-                                                    <suki:SideMenuItem Header="Appstore" 
-                                                                       Icon="Store">
-                                                            <suki:SideMenuItem.Content>
-                                                                    <TextBlock
-                                                                            HorizontalAlignment="Center"
-                                                                            Text="Settings Page"
-                                                                            VerticalAlignment="Center" />
-                                                            </suki:SideMenuItem.Content>
-                                                    </suki:SideMenuItem>
-                                                    <suki:SideMenuItem Header="Settings" 
-                                                                       Icon="SettingsOutline">
-                                                            <suki:SideMenuItem.Content>
-                                                                    <pages:SettingsPage/>
-                                                            </suki:SideMenuItem.Content>
-                                                    </suki:SideMenuItem>
-                                            </suki:SideMenuModel.FooterMenuItems>
-                                    </suki:SideMenuModel>
-                            </suki:SideMenu.DataContext>
-                    </suki:SideMenu>
-               </Grid>
-        </suki:InteractiveContainer>
+	<suki:InteractiveContainer>
+		<Grid RowDefinitions="Auto, *">
+			<suki:SideMenu Grid.Row="1">
+				<suki:SideMenu.DataContext>
+					<suki:SideMenuModel MenuVisibility="False"
+										CurrentPage="Markets">
+						<suki:SideMenuModel.HeaderContent>
+							<StackPanel Margin="0,5,0,0">
+								<DockPanel>
+									<material:MaterialIcon
+											DockPanel.Dock="Left"
+											Foreground="{DynamicResource ThemeAccentColor}"
+											Height="45"
+											Kind="UserCircleOutline"
+											Margin="10,0"
+											Width="45" />
+									<StackPanel VerticalAlignment="Center">
+										<TextBlock
+												FontSize="18"
+												FontWeight="DemiBold"
+												Text="Damien Soudant" />
+										<TextBlock
+												FontSize="12"
+												FontWeight="Thin"
+												Margin="3,1,0,0"
+												Text="damien.soudant@gmail.com" />
+										<Border CornerRadius="4"
+												Margin="3"
+												BorderThickness="1"
+												BorderBrush="Green"
+												Background="Green"
+												HorizontalAlignment="Left">
+											<Label Content="Ouinex KYC verified"
+													Foreground="White"
+													FontSize="10"
+													VerticalAlignment="Center"
+													HorizontalAlignment="Center"/>
+										</Border>
+									</StackPanel>
+								</DockPanel>
+								<Border
+										Background="LightGray"
+										Height="0"
+										Margin="35,10,35,20" />
+							</StackPanel>
+						</suki:SideMenuModel.HeaderContent>
+						<suki:SideMenuModel.MenuItems>
+							<suki:SideMenuItem Header="Markets"
+											   Icon="CurrencyBtc">
+								<suki:SideMenuItem.Content>
+									<pages:MarketsPage Name="MarketsPage"
+											DataContext="{Binding ElementName=mainWindow, Path=DataContext}"/>
+								</suki:SideMenuItem.Content>
+							</suki:SideMenuItem>
+							<suki:SideMenuItem Header="Detailed Wallets"
+											   Icon="Wallet">
+								<suki:SideMenuItem.Content>
+
+								</suki:SideMenuItem.Content>
+							</suki:SideMenuItem>
+							<suki:SideMenuItem Header="Trading reports"
+											   Icon="ChartFinance">
+								<suki:SideMenuItem.Content>
+
+								</suki:SideMenuItem.Content>
+							</suki:SideMenuItem>
+							<suki:SideMenuItem Header="Trading Bots"
+											   Icon="Robot">
+								<suki:SideMenuItem.Content>
+									<pages:TradingBotsPage/>
+								</suki:SideMenuItem.Content>
+							</suki:SideMenuItem>
+							<suki:SideMenuItem Header="Applications"
+											   Icon="Plugin">
+								<suki:SideMenuItem.Content>
+
+								</suki:SideMenuItem.Content>
+							</suki:SideMenuItem>
+						</suki:SideMenuModel.MenuItems>
+						<suki:SideMenuModel.FooterMenuItems>
+							<suki:SideMenuItem Header="Appstore"
+											   Icon="Store">
+								<suki:SideMenuItem.Content>
+									<TextBlock
+											HorizontalAlignment="Center"
+											Text="Settings Page"
+											VerticalAlignment="Center" />
+								</suki:SideMenuItem.Content>
+							</suki:SideMenuItem>
+							<suki:SideMenuItem Header="Settings"
+											   Icon="SettingsOutline">
+								<suki:SideMenuItem.Content>
+									<pages:SettingsPage/>
+								</suki:SideMenuItem.Content>
+							</suki:SideMenuItem>
+						</suki:SideMenuModel.FooterMenuItems>
+					</suki:SideMenuModel>
+				</suki:SideMenu.DataContext>
+			</suki:SideMenu>
+		</Grid>
+	</suki:InteractiveContainer>
 </Window>

@@ -15,6 +15,7 @@
                            Margin="5"
                            VerticalAlignment="Center"/>
                 <ComboBox SelectedIndex="0"
+						  MinWidth="120"
                           Grid.Column="1"
                           SelectionChanged="SelectingItemsControl_OnSelectionChanged">
                     <ComboBox.Items>

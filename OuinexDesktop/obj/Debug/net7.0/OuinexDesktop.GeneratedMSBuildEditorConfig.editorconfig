@@ -12,49 +12,49 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OuinexDesktop
-build_property.ProjectDir = /home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/
+build_property.ProjectDir = C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/App.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/ChartWindow.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/ChartWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/ContainerWindow.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/ContainerWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/Charting/ChartControl.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/Charting/ChartControl.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/DialogContent.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/DialogContent.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/LoginControl.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/LoginControl.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/MarketsTreeView.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/MarketsTreeView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/MarketWatchWidgets.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/MarketWatchWidgets.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/OrderBookControl.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/OrderBookControl.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/WalletsGrid.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Controls/WalletsGrid.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/FreshWindow.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/FreshWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/MainWindow.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Pages/MarketsPage.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Pages/MarketsPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Pages/SettingsPage.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Pages/SettingsPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Pages/TradingBotsPage.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Pages/TradingBotsPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

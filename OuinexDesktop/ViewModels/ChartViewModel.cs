@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Avalonia.Threading;
 using ScottPlot;
 using ScottPlot.Avalonia;
-using ScottPlot.Plottable;
 
 namespace OuinexDesktop.ViewModels
 {
@@ -15,6 +14,11 @@ namespace OuinexDesktop.ViewModels
         public ChartViewModel() 
         {
             MainChart.Plot.XAxis.DateTimeFormat(true);
+            MainChart.DoubleTapped += (s, e) =>
+            {
+                MainChart.Plot.AxisAuto();
+                MainChart.Refresh();
+            };
         }
 
         public async Task Populate(string symbol)
@@ -28,7 +32,7 @@ namespace OuinexDesktop.ViewModels
 
                 if (request.Success)
                 {
-                    List<OHLC> prices = new List<OHLC>();               
+                    List<OHLC> prices = new List<OHLC>();              
                    
 
                     foreach (var data in request.Data)
@@ -38,6 +42,7 @@ namespace OuinexDesktop.ViewModels
                             (double)data.LowPrice, 
                             (double)data.ClosePrice, 
                             data.OpenTime,
+                            //TODO : coonvert time frime to timespan
                             new TimeSpan(1,0,0)));
                     }
                    
@@ -45,7 +50,6 @@ namespace OuinexDesktop.ViewModels
                     await Dispatcher.UIThread.InvokeAsync(() =>
                     {
                         var test = MainChart.Plot.AddOHLCs(prices.ToArray());
-
                        
                         var bol = test.GetBollingerBands(20);
                         

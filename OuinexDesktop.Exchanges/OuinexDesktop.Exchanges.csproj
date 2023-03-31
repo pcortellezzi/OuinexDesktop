@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OuinexDesktop.Models\OuinexDesktop.Models.csproj" />
+    <PackageReference Include="Binance.Net" Version="8.4.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\OuinexDesktop.Models\OuinexDesktop.Models.csproj" />
   </ItemGroup>
 
 </Project>

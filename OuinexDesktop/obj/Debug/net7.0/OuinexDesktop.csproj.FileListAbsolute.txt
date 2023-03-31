@@ -477,9 +477,6 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\CryptoEx
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\DialogHost.Avalonia.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\DynamicData.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\HarfBuzzSharp.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\LiveChartsCore.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\LiveChartsCore.SkiaSharpView.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\LiveChartsCore.SkiaSharpView.Avalonia.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Material.Icons.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Material.Icons.Avalonia.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\MicroCom.Runtime.dll
@@ -493,7 +490,6 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Microsof
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\ReactiveUI.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\SkiaSharp.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\SkiaSharp.HarfBuzz.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Splat.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\SukiUI.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\System.Drawing.Common.dll
@@ -591,3 +587,6 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\OuinexDe
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\OuinexDesktop.csproj.CopyComplete
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\OuinexDesktop.genruntimeconfig.cache
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\ref\OuinexDesktop.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OxyPlot.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OxyPlot.Avalonia.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OxyPlot.Avalonia.pdb

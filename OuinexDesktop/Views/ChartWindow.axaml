@@ -6,8 +6,8 @@
         x:Class="OuinexDesktop.Views.ChartWindow"
         Title="ChartWindow"
 		xmlns:vm="using:OuinexDesktop.ViewModels"
-		x:DataType="vm:ChartViewModel"
-		xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia">
+		xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
+		x:DataType="vm:ChartViewModel">
 	<Window.DataContext>
 		<vm:ChartViewModel/>
 	</Window.DataContext>
@@ -15,9 +15,6 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
-		<lvc:CartesianChart Series="{Binding Series}" 
-							ZoomMode="X"
-							XAxes="{Binding XAxes}">			
-		</lvc:CartesianChart>
+		<oxy:PlotView Model="{Binding Model}" />
 	</Grid>
 </Window>

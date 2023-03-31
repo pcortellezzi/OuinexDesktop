@@ -33,7 +33,7 @@ namespace OuinexDesktop.ViewModels
                 if (request.Success)
                 {
                     List<OHLC> prices = new List<OHLC>();              
-                   
+                //   var test = st
 
                     foreach (var data in request.Data)
                     {

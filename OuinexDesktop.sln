@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OuinexDesktop", "OuinexDesk
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScottPlot.Avalonia", "ScottPlot.Avalonia\ScottPlot.Avalonia.csproj", "{7668C33A-2479-4963-84A0-0FC252DAF659}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuinexDesktop.Exchanges", "OuinexDesktop.Exchanges\OuinexDesktop.Exchanges.csproj", "{DBE0C412-8D70-43E9-BBCA-6B664A7161D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuinexDesktop.Models", "OuinexDesktop.Models\OuinexDesktop.Models.csproj", "{42940120-A986-4318-9BFB-71963B2E94B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{7668C33A-2479-4963-84A0-0FC252DAF659}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7668C33A-2479-4963-84A0-0FC252DAF659}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7668C33A-2479-4963-84A0-0FC252DAF659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBE0C412-8D70-43E9-BBCA-6B664A7161D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE0C412-8D70-43E9-BBCA-6B664A7161D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE0C412-8D70-43E9-BBCA-6B664A7161D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE0C412-8D70-43E9-BBCA-6B664A7161D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42940120-A986-4318-9BFB-71963B2E94B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42940120-A986-4318-9BFB-71963B2E94B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42940120-A986-4318-9BFB-71963B2E94B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42940120-A986-4318-9BFB-71963B2E94B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

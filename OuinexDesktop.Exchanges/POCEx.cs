@@ -7,7 +7,7 @@ namespace OuinexDesktop.Exchanges
     } 
     public class POCEx : Exchange
     {
-        public override async Task Init()
+        public override async Task InitAsync()
         {
             var client = new Binance.Net.Clients.BinanceClient();
             var request = await client.SpotApi.ExchangeData.GetProductsAsync();
@@ -20,6 +20,8 @@ namespace OuinexDesktop.Exchanges
                     QuoteCurrency = x.QuoteAsset,
                     ExchangeDenomination = "POC-Binance"
                 });
+
+                Console.WriteLine(Symbols.ToString());
             }
             else
             {

@@ -44,6 +44,6 @@
             }
         }
 
-        public abstract Task Init();
+        public abstract Task InitAsync();
     }
 }

@@ -43,7 +43,6 @@
 							 Width="10"
 							 x:Name="closeButton"
 							 Fill="OrangeRed"/>
-
 				</StackPanel>
 			</Grid>
 		</Border>

@@ -21,13 +21,14 @@ namespace OuinexDesktop.ViewModels
             {
                 var client = new Binance.Net.Clients.BinanceClient();
 
-                var request = await client.SpotApi.ExchangeData.GetUiKlinesAsync(symbol, Binance.Net.Enums.KlineInterval.OneHour);
+                var request = await client.SpotApi.ExchangeData.GetUiKlinesAsync(symbol, Binance.Net.Enums.KlineInterval.OneHour, limit:200);
 
                 if (request.Success)
                 {
                     var test = new CandleStickSeries();
-
+                   
                     int i = 0;
+
                     foreach(var data in request.Data)
                     {
                         test.Items.Add(new HighLowItem()
@@ -44,11 +45,24 @@ namespace OuinexDesktop.ViewModels
 
                     this.Model.Series.Add(test);
 
-                   await Dispatcher.UIThread.InvokeAsync(() => Model.InvalidatePlot(true), DispatcherPriority.Background);
+                    await Dispatcher.UIThread.InvokeAsync(() =>
+                    {
+                        Model.InvalidatePlot(true);
+                        Test();
+                    }, DispatcherPriority.Background);
                 }
             }));
         }
 
+        public void Test()
+        {
+            Model.DefaultYAxis.AxislineStyle = LineStyle.Solid;
+            Model.DefaultYAxis.MajorGridlineStyle = LineStyle.Solid;
+            Model.DefaultXAxis.AxislineStyle = LineStyle.Solid;
+            Model.DefaultXAxis.MajorGridlineStyle = LineStyle.Solid;
+
+            Model.DefaultYAxis.Position = OxyPlot.Axes.AxisPosition.Right;
+        }
         public void InitTest()
         {
             // Create the plot model

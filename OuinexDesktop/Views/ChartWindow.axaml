@@ -11,10 +11,12 @@
 	<Window.DataContext>
 		<vm:ChartViewModel/>
 	</Window.DataContext>
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
-		<oxy:PlotView Model="{Binding Model}" />
+	<Grid RowDefinitions="auto,*">
+		<ComboBox></ComboBox>
+		<oxy:PlotView Model="{Binding Model}" 
+					  Background="Transparent" 
+					  ZoomRectangleCursor="Arrow"					  
+					  IsMouseWheelEnabled="True"
+					  Grid.Row="1"/>
 	</Grid>
 </Window>

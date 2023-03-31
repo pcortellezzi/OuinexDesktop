@@ -9,6 +9,5 @@
 	<Application.Styles>
 		<SimpleTheme/>
   <StyleInclude Source="avares://SukiUI/Theme/Index.xaml" />
-		<StyleInclude Source="avares://OxyPlot.Avalonia/Themes/Default.axaml"/>
 	</Application.Styles>
 </Application>

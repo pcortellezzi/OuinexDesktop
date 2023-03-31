@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Threading.Tasks;
 using Avalonia.Threading;
-using OxyPlot;
-using OxyPlot.Series;
+using ScottPlot;
+using ScottPlot.Avalonia;
 
 namespace OuinexDesktop.ViewModels
 {
@@ -10,89 +12,54 @@ namespace OuinexDesktop.ViewModels
     {
         public ChartViewModel() 
         {
-            InitTest();
+            MainChart.Plot.XAxis.DateTimeFormat(true);           
         }
 
         public async Task Populate(string symbol)
-        {
-            
+        {           
 
            await  Dispatcher.UIThread.InvokeAsync(new Action(async () =>
             {
                 var client = new Binance.Net.Clients.BinanceClient();
 
-                var request = await client.SpotApi.ExchangeData.GetUiKlinesAsync(symbol, Binance.Net.Enums.KlineInterval.OneHour, limit:200);
+                var request = await client.SpotApi.ExchangeData.GetUiKlinesAsync(symbol, Binance.Net.Enums.KlineInterval.OneHour);
 
                 if (request.Success)
                 {
-                    var test = new CandleStickSeries();
+                    List<OHLC> prices = new List<OHLC>();               
                    
-                    int i = 0;
 
-                    foreach(var data in request.Data)
+                    foreach (var data in request.Data)
                     {
-                        test.Items.Add(new HighLowItem()
-                        {
-                             Close=(double)data.ClosePrice,
-                             High=(double)data.HighPrice,
-                             Low=(double)data.LowPrice,
-                             Open=(double)data.OpenPrice,
-                             X=i
-                        });
-
-                        i++;
+                        prices.Add(new OHLC((double)data.OpenPrice,
+                            (double)data.HighPrice,
+                            (double)data.LowPrice, 
+                            (double)data.ClosePrice, 
+                            data.OpenTime,
+                            new TimeSpan(1,0,0)));
                     }
 
-                    this.Model.Series.Add(test);
+                   
 
                     await Dispatcher.UIThread.InvokeAsync(() =>
                     {
-                        Model.InvalidatePlot(true);
-                        Test();
+                        var test = MainChart.Plot.AddOHLCs(prices.ToArray());
+
+                        var bol = test.GetBollingerBands(20);
+                        
+                        MainChart.Plot.AddScatterLines(bol.xs, bol.sma, Color.Blue);
+                        MainChart.Plot.AddScatterLines(bol.xs, bol.lower, Color.Blue, lineStyle: LineStyle.Dash);
+                        MainChart.Plot.AddScatterLines(bol.xs, bol.upper, Color.Blue, lineStyle: LineStyle.Dash);
+
+                        MainChart.Plot.AddFill(bol.xs, bol.upper, bol.xs, bol.lower);
+                        //   candlePlot.YAxisIndex = 1;
+                        MainChart.Refresh();
+
                     }, DispatcherPriority.Background);
                 }
             }));
         }
-
-        public void Test()
-        {
-            Model.DefaultYAxis.AxislineStyle = LineStyle.Solid;
-            Model.DefaultYAxis.MajorGridlineStyle = LineStyle.Solid;
-            Model.DefaultXAxis.AxislineStyle = LineStyle.Solid;
-            Model.DefaultXAxis.MajorGridlineStyle = LineStyle.Solid;
-
-            Model.DefaultYAxis.Position = OxyPlot.Axes.AxisPosition.Right;
-        }
-        public void InitTest()
-        {
-            // Create the plot model
-            var tmp = new PlotModel {   };
-
-            // Create two line series (markers are hidden by default)
-           /* var series1 = new LineSeries { Title = "Series 1", MarkerType = MarkerType.Circle };
-            series1.Points.Add(new DataPoint(0, 0));
-            series1.Points.Add(new DataPoint(10, 18));
-            series1.Points.Add(new DataPoint(20, 12));
-            series1.Points.Add(new DataPoint(30, 8));
-            series1.Points.Add(new DataPoint(40, 15));
-
-            var series2 = new LineSeries { Title = "Series 2", MarkerType = MarkerType.Square };
-            series2.Points.Add(new DataPoint(0, 4));
-            series2.Points.Add(new DataPoint(10, 12));
-            series2.Points.Add(new DataPoint(20, 16));
-            series2.Points.Add(new DataPoint(30, 25));
-            series2.Points.Add(new DataPoint(40, 5));
-
-            // Add the series to the plot model
-            tmp.Series.Add(series1);
-            tmp.Series.Add(series2);*/
-
-            // Axes are created automatically if they are not defined
-
-            // Set the Model property, the INotifyPropertyChanged event will make the WPF Plot control update its content
-            this.Model = tmp;
-        }
-
-        public PlotModel Model { get; private set; }
+        
+        public AvaPlot MainChart { get; private set; } = new AvaPlot();
     }
 }

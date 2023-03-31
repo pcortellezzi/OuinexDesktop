@@ -6,17 +6,16 @@
         x:Class="OuinexDesktop.Views.ChartWindow"
         Title="ChartWindow"
 		xmlns:vm="using:OuinexDesktop.ViewModels"
-		xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
+		 xmlns:ScottPlot="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
+       
 		x:DataType="vm:ChartViewModel">
 	<Window.DataContext>
 		<vm:ChartViewModel/>
 	</Window.DataContext>
 	<Grid RowDefinitions="auto,*">
 		<ComboBox></ComboBox>
-		<oxy:PlotView Model="{Binding Model}" 
-					  Background="Transparent" 
-					  ZoomRectangleCursor="Arrow"					  
-					  IsMouseWheelEnabled="True"
-					  Grid.Row="1"/>
+		<DockPanel Grid.Row="1">
+			<ContentControl Content="{Binding MainChart}"		/>	
+		</DockPanel>
 	</Grid>
 </Window>

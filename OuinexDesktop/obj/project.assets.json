@@ -867,19 +867,6 @@
           }
         }
       },
-      "OxyPlot.Core/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/OxyPlot.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OxyPlot.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "ReactiveUI/18.4.26": {
         "type": "package",
         "dependencies": {
@@ -893,6 +880,23 @@
         },
         "runtime": {
           "lib/net7.0/ReactiveUI.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ScottPlot/4.1.61": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.7.2",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/net6.0/ScottPlot.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ScottPlot.dll": {
             "related": ".xml"
           }
         }
@@ -1571,18 +1575,19 @@
           "buildTransitive/XamlNameReferenceGenerator.props": {}
         }
       },
-      "OxyPlot.Avalonia/2.1.0": {
+      "ScottPlot.Avalonia/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Avalonia": "11.0.0-preview5",
-          "OxyPlot.Core": "2.1.0"
+          "Avalonia.Desktop": "0.10.0",
+          "ScottPlot": "4.1.61"
         },
         "compile": {
-          "bin/placeholder/OxyPlot.Avalonia.dll": {}
+          "bin/placeholder/ScottPlot.Avalonia.dll": {}
         },
         "runtime": {
-          "bin/placeholder/OxyPlot.Avalonia.dll": {}
+          "bin/placeholder/ScottPlot.Avalonia.dll": {}
         }
       }
     }
@@ -2637,26 +2642,6 @@
         "packageIcon.png"
       ]
     },
-    "OxyPlot.Core/2.1.0": {
-      "sha512": "jG+Ct3T59fXDG2LE1hyUaXqH7i+h5Nfway1iB0+0NaY2mvDsz8Row/BKjiBWCt5NHp3+q9JSMiD2wpin2hh3kw==",
-      "type": "package",
-      "path": "oxyplot.core/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "OxyPlot_128.png",
-        "lib/net40/OxyPlot.dll",
-        "lib/net40/OxyPlot.xml",
-        "lib/net45/OxyPlot.dll",
-        "lib/net45/OxyPlot.xml",
-        "lib/netstandard1.0/OxyPlot.dll",
-        "lib/netstandard1.0/OxyPlot.xml",
-        "lib/netstandard2.0/OxyPlot.dll",
-        "lib/netstandard2.0/OxyPlot.xml",
-        "oxyplot.core.2.1.0.nupkg.sha512",
-        "oxyplot.core.nuspec"
-      ]
-    },
     "ReactiveUI/18.4.26": {
       "sha512": "39AplwnC5zu6yvLdE1vRI7YaLvVJyBSkMGCb3fb+3deGW5Q3EKybpqpNQzqx2nuBUAFYnULKWjbQqPdXssN3ow==",
       "type": "package",
@@ -2715,6 +2700,26 @@
         "logo.png",
         "reactiveui.18.4.26.nupkg.sha512",
         "reactiveui.nuspec"
+      ]
+    },
+    "ScottPlot/4.1.61": {
+      "sha512": "MdAL3fLlFMTlCGwc19w+IcPNQL77RQExZRsx5cfUdtjvJKk6X81PdQ/eKdYVIhYLhTOXJ7X60GeLU63iZg4hFA==",
+      "type": "package",
+      "path": "scottplot/4.1.61",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.ico",
+        "icon.png",
+        "lib/net462/ScottPlot.dll",
+        "lib/net462/ScottPlot.xml",
+        "lib/net6.0/ScottPlot.dll",
+        "lib/net6.0/ScottPlot.xml",
+        "lib/netstandard2.0/ScottPlot.dll",
+        "lib/netstandard2.0/ScottPlot.xml",
+        "scottplot.4.1.61.nupkg.sha512",
+        "scottplot.nuspec"
       ]
     },
     "SkiaSharp/2.88.1": {
@@ -4925,10 +4930,10 @@
         "xamlnamereferencegenerator.nuspec"
       ]
     },
-    "OxyPlot.Avalonia/2.1.0": {
+    "ScottPlot.Avalonia/1.0.0": {
       "type": "project",
-      "path": "../OxyPlot.Avalonia/OxyPlot.Avalonia.csproj",
-      "msbuildProject": "../OxyPlot.Avalonia/OxyPlot.Avalonia.csproj"
+      "path": "../ScottPlot.Avalonia/ScottPlot.Avalonia.csproj",
+      "msbuildProject": "../ScottPlot.Avalonia/ScottPlot.Avalonia.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4939,7 +4944,7 @@
       "Avalonia.ReactiveUI >= 11.0.0-preview5",
       "Avalonia.Themes.Fluent >= 11.0.0-preview5",
       "Binance.Net >= 8.4.3",
-      "OxyPlot.Avalonia >= 2.1.0",
+      "ScottPlot.Avalonia >= 1.0.0",
       "SukiUI >= 4.6.6",
       "XamlNameReferenceGenerator >= 1.6.1"
     ]
@@ -4971,8 +4976,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OxyPlot.Avalonia\\OxyPlot.Avalonia.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OxyPlot.Avalonia\\OxyPlot.Avalonia.csproj"
+            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\ScottPlot.Avalonia\\ScottPlot.Avalonia.csproj": {
+              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\ScottPlot.Avalonia\\ScottPlot.Avalonia.csproj"
             }
           }
         }

@@ -5,14 +5,16 @@ using System.Threading.Tasks;
 using Avalonia.Threading;
 using ScottPlot;
 using ScottPlot.Avalonia;
+using ScottPlot.Plottable;
 
 namespace OuinexDesktop.ViewModels
 {
     public class ChartViewModel : ViewModelBase
     {
+        ScottPlot.Plottable.Crosshair Crosshair;
         public ChartViewModel() 
         {
-            MainChart.Plot.XAxis.DateTimeFormat(true);           
+            MainChart.Plot.XAxis.DateTimeFormat(true);
         }
 
         public async Task Populate(string symbol)
@@ -38,13 +40,13 @@ namespace OuinexDesktop.ViewModels
                             data.OpenTime,
                             new TimeSpan(1,0,0)));
                     }
-
                    
 
                     await Dispatcher.UIThread.InvokeAsync(() =>
                     {
                         var test = MainChart.Plot.AddOHLCs(prices.ToArray());
 
+                       
                         var bol = test.GetBollingerBands(20);
                         
                         MainChart.Plot.AddScatterLines(bol.xs, bol.sma, Color.Blue);

@@ -13,9 +13,11 @@
 		<vm:ChartViewModel/>
 	</Window.DataContext>
 	<Grid RowDefinitions="auto,*">
-		<ComboBox></ComboBox>
+		<Expander Header="Click To Expand">
+			<TextBlock>Expanded</TextBlock>
+		</Expander>
 		<DockPanel Grid.Row="1">
-			<ContentControl Content="{Binding MainChart}"		/>	
+			<ContentControl Content="{Binding MainChart}"/>
 		</DockPanel>
 	</Grid>
 </Window>

@@ -1,4 +1,6 @@
-﻿namespace OuinexDesktop.Models
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace OuinexDesktop.Models
 {
     public partial class Symbol
     {
@@ -11,7 +13,7 @@
         public string ExchangeDenomination { get;  set; } = string.Empty;
     }
 
-    public partial class Ticker
+    public partial class Ticker : BaseRequest
     {
         public Symbol Symbol { get; protected set; }
 
@@ -44,6 +46,13 @@
             }
         }
 
+        public abstract Task<Ticker> GetTickerAsync(Symbol symbol);
+
         public abstract Task InitAsync();
+    }
+
+    public class BaseRequest
+    {
+        public bool Success { get; protected set; }
     }
 }

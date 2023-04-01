@@ -34,7 +34,7 @@ namespace OuinexDesktop.Exchanges
 
             result.Update(t.Data.BestBidPrice, t.Data.BestAskPrice, t.Data.HighPrice, t.Data.LowPrice, t.Data.PriceChangePercent);
 
-            System.Threading.Thread.Sleep(100);
+            Thread.Sleep(100);
 
             var subscribeResult = await socketClient.SpotStreams.SubscribeToTickerUpdatesAsync(symbol.Name, (t) =>
             {

@@ -1,7 +1,6 @@
 ﻿using Binance.Net.Clients;
 using ReactiveUI;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace OuinexDesktop.ViewModels
 {

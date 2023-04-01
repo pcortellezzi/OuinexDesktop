@@ -26,4 +26,24 @@
             this.OnTick?.Invoke(this);
         }
     }
+
+    public partial class OHLC
+    {
+        public OHLC(decimal open, decimal high, decimal low, decimal close, decimal volumes, DateTime time)
+        {
+            Open = open;
+            High = high;
+            Low = low;
+            Close = close;
+            Volumes = volumes;
+            Time = time;
+        }
+
+        public decimal Open { get; }
+        public decimal High { get; }
+        public decimal Low { get; }
+        public decimal Close { get; }
+        public decimal Volumes { get; }
+        public DateTime Time { get; }
+    }
 }

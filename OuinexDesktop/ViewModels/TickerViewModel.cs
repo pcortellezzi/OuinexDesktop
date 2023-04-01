@@ -1,6 +1,7 @@
 ﻿using OuinexDesktop.Models;
 using OuinexDesktop.Views.Controls;
 using ReactiveUI;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -12,26 +13,34 @@ namespace OuinexDesktop.ViewModels
         private TickState _askColor, _bidColor, _changeColor = TickState.NEUTRAL;
         private decimal _percentRange;
         private Exchange _exchange;
+        private Symbol _symbol;
         public TickerViewModel(Symbol symbol, Exchange exchange)
         {
-            this.TickerName = symbol.FullName;
+            _symbol = symbol; 
             _exchange = exchange;
 
             var ticker = Task.Run(async () =>
             {
                 var ticker = await _exchange.GetTickerAsync(symbol);
 
+                Update(ticker);
+
                 ticker.OnTick += (t) =>
                 {
-                    Ask = t.AskPrice;
-                    Bid=t.BidPrice;
-                    High = t.High;
-                    Low = t.Low;
-                    PercentChange = t.Change;
-
-                    CalculateRange();
+                    Update(t);
                 };
             });
+        }
+
+        private void Update(Ticker t)
+        {
+            Ask = t.AskPrice;
+            Bid = t.BidPrice;
+            High = t.High;
+            Low = t.Low;
+            PercentChange = t.Change;
+
+            CalculateRange();
         }
         public decimal Bid
         {
@@ -79,7 +88,10 @@ namespace OuinexDesktop.ViewModels
             set => this.RaiseAndSetIfChanged(ref _spread, value, nameof(Spread));
         }
 
-        public string TickerName { get; }
+        public string TickerName
+        {
+            get => _symbol?.FullName ?? string.Empty;
+        }
 
         public TickState AskColor
         {
@@ -111,5 +123,10 @@ namespace OuinexDesktop.ViewModels
         }
 
         public ICommand OpenChartCommand { get; }
+
+        public Symbol Symbol
+        {
+            get => _symbol;
+        }
     }
 }

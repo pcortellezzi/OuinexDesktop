@@ -1,4 +1,5 @@
 ﻿using Avalonia.Threading;
+using CryptoExchange.Net.CommonObjects;
 using OuinexDesktop.Views;
 using ReactiveUI;
 using System.Collections.ObjectModel;
@@ -28,7 +29,7 @@ namespace OuinexDesktop.ViewModels
 
                 chart.Show();
 
-               await context.Populate(this.SelectedTicker.TickerName);
+               await context.Populate(this.SelectedTicker.Symbol.Name);
             });
         }
 

@@ -27,8 +27,6 @@ namespace OuinexDesktop.ViewModels
             });
         }
 
-        
-
         public string UserName
         {
             get => _userName;

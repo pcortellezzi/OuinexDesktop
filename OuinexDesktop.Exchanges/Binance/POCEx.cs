@@ -9,12 +9,12 @@ namespace OuinexDesktop.Exchanges
 
     public class POCTicker : Ticker
     {
-        internal void Update( decimal bid, decimal ask , decimal high, decimal low, decimal change)
+        internal void Update(decimal bid, decimal ask, decimal high, decimal low, decimal change)
         {
             BidPrice = bid;
             AskPrice = ask;
-            High=high;
-            Low=low;
+            High = high;
+            Low = low;
             Change = change;
 
             RaiseTick();
@@ -28,10 +28,18 @@ namespace OuinexDesktop.Exchanges
         {
             var result = new POCTicker();
 
-            var subscribeResult = await socketClient.SpotStreams.SubscribeToTickerUpdatesAsync(symbol.Name, (t) => 
+            var client = new BinanceClient();
+
+            var t = await client.SpotApi.ExchangeData.GetTickerAsync(symbol.Name);
+
+            result.Update(t.Data.BestBidPrice, t.Data.BestAskPrice, t.Data.HighPrice, t.Data.LowPrice, t.Data.PriceChangePercent);
+
+            System.Threading.Thread.Sleep(100);
+
+            var subscribeResult = await socketClient.SpotStreams.SubscribeToTickerUpdatesAsync(symbol.Name, (t) =>
             {
                 result.Update(t.Data.BestBidPrice, t.Data.BestAskPrice, t.Data.HighPrice, t.Data.LowPrice, t.Data.PriceChangePercent);
-            });
+            });            
 
             return result;
         }
@@ -43,7 +51,7 @@ namespace OuinexDesktop.Exchanges
 
             if (request.Success)
             {
-                this.Symbols = request.Data.Select(x => new POCSymbol()
+                Symbols = request.Data.Select(x => new POCSymbol()
                 {
                     BaseCurrency = x.BaseAsset,
                     QuoteCurrency = x.QuoteAsset,

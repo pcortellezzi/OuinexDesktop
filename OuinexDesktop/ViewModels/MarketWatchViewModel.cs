@@ -1,5 +1,4 @@
 ﻿using Avalonia.Threading;
-using CryptoExchange.Net.CommonObjects;
 using OuinexDesktop.Views;
 using ReactiveUI;
 using System.Collections.ObjectModel;
@@ -15,7 +14,7 @@ namespace OuinexDesktop.ViewModels
         private bool _showLoading = true;
         private TickerViewModel _ticker;
         private OrderBookViewModel _orderBook = new OrderBookViewModel();
-
+        private CoinGeckoAPI _cmcAPI = new CoinGeckoAPI();
         public MarketWatchViewModel()
         {
             this.OpenChartCommand = ReactiveCommand.Create(async () =>
@@ -60,7 +59,6 @@ namespace OuinexDesktop.ViewModels
             get => _ticker;
             set
             {
-                this.OrderBook.Init(value);
                 this.RaiseAndSetIfChanged(ref _ticker, value, nameof(SelectedTicker));
             }
         }

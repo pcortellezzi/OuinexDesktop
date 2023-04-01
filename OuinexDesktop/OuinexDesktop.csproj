@@ -36,6 +36,8 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\OuinexDesktop.Exchanges\OuinexDesktop.Exchanges.csproj" />
+    <ProjectReference Include="..\OuinexDesktop.Models\OuinexDesktop.Models.csproj" />
     <ProjectReference Include="..\ScottPlot.Avalonia\ScottPlot.Avalonia.csproj" />
   </ItemGroup>
 </Project>

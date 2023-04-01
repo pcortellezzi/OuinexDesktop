@@ -1,5 +1,4 @@
 ﻿using Binance.Net.Clients;
-using CryptoExchange.Net.Interfaces;
 using OuinexDesktop.Models;
 
 namespace OuinexDesktop.Exchanges
@@ -10,7 +9,16 @@ namespace OuinexDesktop.Exchanges
 
     public class POCTicker : Ticker
     {
+        internal void Update( decimal bid, decimal ask , decimal high, decimal low, decimal change)
+        {
+            BidPrice = bid;
+            AskPrice = ask;
+            High=high;
+            Low=low;
+            Change = change;
 
+            RaiseTick();
+        }
     }
 
     public class POCEx : Exchange
@@ -18,11 +26,11 @@ namespace OuinexDesktop.Exchanges
         private BinanceSocketClient socketClient = new BinanceSocketClient();
         public override async Task<Ticker> GetTickerAsync(Symbol symbol)
         {
-            var result = new Ticker();
+            var result = new POCTicker();
 
-            var subscribeResult = await socketClient.SpotStreams.SubscribeToTickerUpdatesAsync(symbol.ExchangeDenomination, (t) => 
+            var subscribeResult = await socketClient.SpotStreams.SubscribeToTickerUpdatesAsync(symbol.Name, (t) => 
             {
-                
+                result.Update(t.Data.BestBidPrice, t.Data.BestAskPrice, t.Data.HighPrice, t.Data.LowPrice, t.Data.PriceChangePercent);
             });
 
             return result;
@@ -30,7 +38,7 @@ namespace OuinexDesktop.Exchanges
 
         public override async Task InitAsync()
         {
-            var client = new Binance.Net.Clients.BinanceClient();
+            var client = new BinanceClient();
             var request = await client.SpotApi.ExchangeData.GetProductsAsync();
 
             if (request.Success)
@@ -39,10 +47,12 @@ namespace OuinexDesktop.Exchanges
                 {
                     BaseCurrency = x.BaseAsset,
                     QuoteCurrency = x.QuoteAsset,
-                    ExchangeDenomination = "POC-Binance"
+                    Name = x.Symbol
                 });
 
                 Console.WriteLine(Symbols.ToString());
+
+                IsInitialized = true;
             }
             else
             {

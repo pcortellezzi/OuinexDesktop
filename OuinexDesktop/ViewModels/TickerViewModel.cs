@@ -1,5 +1,7 @@
-﻿using OuinexDesktop.Views.Controls;
+﻿using OuinexDesktop.Models;
+using OuinexDesktop.Views.Controls;
 using ReactiveUI;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace OuinexDesktop.ViewModels
@@ -9,12 +11,27 @@ namespace OuinexDesktop.ViewModels
         private decimal _bid, _ask, _spread, _high, _low, _volume, _percentChange;
         private TickState _askColor, _bidColor, _changeColor = TickState.NEUTRAL;
         private decimal _percentRange;
-
-        public TickerViewModel(string tickerName)
+        private Exchange _exchange;
+        public TickerViewModel(Symbol symbol, Exchange exchange)
         {
-            this.TickerName = tickerName;
+            this.TickerName = symbol.FullName;
+            _exchange = exchange;
 
-            
+            var ticker = Task.Run(async () =>
+            {
+                var ticker = await _exchange.GetTickerAsync(symbol);
+
+                ticker.OnTick += (t) =>
+                {
+                    Ask = t.AskPrice;
+                    Bid=t.BidPrice;
+                    High = t.High;
+                    Low = t.Low;
+                    PercentChange = t.Change;
+
+                    CalculateRange();
+                };
+            });
         }
         public decimal Bid
         {

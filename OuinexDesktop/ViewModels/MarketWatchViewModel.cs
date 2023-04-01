@@ -1,12 +1,7 @@
 ﻿using Avalonia.Threading;
-using Binance.Net.Clients;
 using OuinexDesktop.Views;
-using OuinexDesktop.Views.Controls;
 using ReactiveUI;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -41,74 +36,16 @@ namespace OuinexDesktop.ViewModels
 
         public async Task InitStream()
         {
-            var socketClient = new BinanceSocketClient();
+            var symbols = ExchangesConnector.Instances.First().Value.Symbols.Take(20);
 
-            try
+            foreach (var symbol in symbols)
             {
-                //// Spot | Spot market and user subscription methods
-                var subscribeResult = await socketClient.SpotStreams.SubscribeToAllTickerUpdatesAsync(data =>
-                {
-                    // Handle data
-                    var list = data.Data;
+                var newTicker = new TickerViewModel(symbol, ExchangesConnector.Instances.First().Value);
 
-                    if (!_initialized)
-                    {
-                        int count = 0;
-                        _initialized = true;
-
-                        Dispatcher.UIThread.InvokeAsync(new Action(() =>
-                        {
-                            foreach (var ticker in list)
-                            {
-                                if (count >= 20)
-                                    return;
-
-                                var newTicker = new TickerViewModel(ticker.Symbol)
-                                {
-                                    Bid = ticker.BestBidPrice,
-                                    Ask = ticker.BestAskPrice,
-                                    PercentChange = ticker.PriceChangePercent,
-                                    High = ticker.HighPrice,
-                                    Low = ticker.LowPrice,
-                                    Spread = ticker.BestAskPrice - ticker.BestBidPrice
-                                };
-
-                                newTicker.CalculateRange();
-
-                                this.Tickers.Add(newTicker);
-
-                                count++;
-                            }
-                        }));
-
-                        ShowLoading = false;
-                    }
-                    else
-                    {
-                        foreach (var ticker in list)
-                        {
-                            var toUpdate = Tickers.FirstOrDefault((e) => e.TickerName == ticker.Symbol);
-
-                            if (toUpdate != null)
-                            {
-                                toUpdate.Bid = ticker.BestBidPrice;
-                                toUpdate.Ask = ticker.BestAskPrice;
-                                toUpdate.PercentChange = ticker.PriceChangePercent;
-                                toUpdate.High = ticker.HighPrice;
-                                toUpdate.Low = ticker.LowPrice;
-                                toUpdate.Spread = ticker.BestAskPrice - ticker.BestBidPrice;
-
-                                toUpdate.CalculateRange();
-                            }
-                        }
-                    }
-                });
-               
+                await Dispatcher.UIThread.InvokeAsync(() => { this.Tickers.Add(newTicker); });
             }
-            catch(Exception ex)
-            {
 
-            }
+            ShowLoading = false;
         }
 
         public bool ShowLoading

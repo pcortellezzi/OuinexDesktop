@@ -12,7 +12,7 @@ namespace OuinexDesktop.ViewModels
         private BinanceSocketClient socket = new BinanceSocketClient();
         public async void Init(TickerViewModel ticker)
         {
-            if (ticker == null)
+           /* if (ticker == null)
                 return;
 
             await socket.UnsubscribeAllAsync();
@@ -49,7 +49,7 @@ namespace OuinexDesktop.ViewModels
                     Bids[i].Volume = bids[i].Quantity;
                     Bids[i].Percent = (int)((100 / totalBids) * bids[i].Quantity);
                 }
-            });
+            });*/
         }
 
         public ObservableCollection<OrderBookItem> Asks { get; private set; } = new ObservableCollection<OrderBookItem>();

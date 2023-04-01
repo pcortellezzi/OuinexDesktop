@@ -15,12 +15,19 @@ namespace OuinexDesktop.ViewModels
 
         public LoginViewModel()
         {
-            this.Login = ReactiveCommand.Create(() =>
+            this.Login = ReactiveCommand.Create(async () =>
             {
-                SuccesfulLogin = false;
-                this.OnLogged.Invoke();
+                ExchangesConnector.Instances["POC-Binance"].OnInit += () =>
+                {
+                    SuccesfulLogin = false;
+                    this.OnLogged.Invoke();
+                };
+
+                await ExchangesConnector.Instances["POC-Binance"].InitAsync();              
             });
         }
+
+        
 
         public string UserName
         {

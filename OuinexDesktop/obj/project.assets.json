@@ -1575,6 +1575,30 @@
           "buildTransitive/XamlNameReferenceGenerator.props": {}
         }
       },
+      "OuinexDesktop.Exchanges/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Binance.Net": "8.4.3",
+          "OuinexDesktop.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OuinexDesktop.Exchanges.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OuinexDesktop.Exchanges.dll": {}
+        }
+      },
+      "OuinexDesktop.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/OuinexDesktop.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OuinexDesktop.Models.dll": {}
+        }
+      },
       "ScottPlot.Avalonia/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -4930,6 +4954,16 @@
         "xamlnamereferencegenerator.nuspec"
       ]
     },
+    "OuinexDesktop.Exchanges/1.0.0": {
+      "type": "project",
+      "path": "../OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj",
+      "msbuildProject": "../OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj"
+    },
+    "OuinexDesktop.Models/1.0.0": {
+      "type": "project",
+      "path": "../OuinexDesktop.Models/OuinexDesktop.Models.csproj",
+      "msbuildProject": "../OuinexDesktop.Models/OuinexDesktop.Models.csproj"
+    },
     "ScottPlot.Avalonia/1.0.0": {
       "type": "project",
       "path": "../ScottPlot.Avalonia/ScottPlot.Avalonia.csproj",
@@ -4944,6 +4978,8 @@
       "Avalonia.ReactiveUI >= 11.0.0-preview5",
       "Avalonia.Themes.Fluent >= 11.0.0-preview5",
       "Binance.Net >= 8.4.3",
+      "OuinexDesktop.Exchanges >= 1.0.0",
+      "OuinexDesktop.Models >= 1.0.0",
       "ScottPlot.Avalonia >= 1.0.0",
       "SukiUI >= 4.6.6",
       "XamlNameReferenceGenerator >= 1.6.1"
@@ -4976,6 +5012,12 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj": {
+              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj"
+            },
+            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj": {
+              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj"
+            },
             "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\ScottPlot.Avalonia\\ScottPlot.Avalonia.csproj": {
               "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\ScottPlot.Avalonia\\ScottPlot.Avalonia.csproj"
             }

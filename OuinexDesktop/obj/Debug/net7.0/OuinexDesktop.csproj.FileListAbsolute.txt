@@ -590,3 +590,7 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\ref\Ouin
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\ScottPlot.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\ScottPlot.Avalonia.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\ScottPlot.Avalonia.pdb
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Exchanges.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Models.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Exchanges.pdb
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Models.pdb

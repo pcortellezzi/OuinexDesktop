@@ -37,7 +37,7 @@
 
         <Setter Property="BorderThickness" Value="1.2" />
         <Setter Property="BorderBrush" Value="{DynamicResource SukiMediumBorderBrush}" />
-        <Setter Property="Padding" Value="11,10,11,8" />
+        <Setter Property="Padding" Value="18,8" />
         <Setter Property="CornerRadius" Value="{DynamicResource SmallCornerRadius}" />
         <Setter Property="Margin" Value="5 5" />
         <Setter Property="Background" Value="{DynamicResource SukiBackground}" />

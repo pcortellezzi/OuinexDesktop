@@ -12,6 +12,7 @@
 		<converters:PercentRangeUpConverter x:Key="upArrowConverter"/>
 		<converters:PercentRangeDownConverter x:Key="downArrowConverter"/>
 		<converters:TickToForegroundConverter x:Key="tickForegournConverter"/>
+		<converters:DecimalToStringConverter x:Key="DecimalToStringConverter"/>
 	</UserControl.Resources>
 	<UserControl.Styles>
 		<Styles>
@@ -81,7 +82,7 @@
 											Height="20"
 											CornerRadius="3"
 											Margin="1">
-										<TextBlock Text="{Binding Bid}"
+										<TextBlock Text="{Binding Bid, Converter={StaticResource DecimalToStringConverter}}"
 												   FontSize="10"
 												   Foreground="{Binding BidColor, Converter={StaticResource ResourceKey=tickForegournConverter}}"
 												   Margin="3,0"
@@ -99,7 +100,7 @@
 											Height="20"
 											CornerRadius="3"
 											Margin="1">
-										<TextBlock Text="{Binding Ask}"
+										<TextBlock Text="{Binding Ask, Converter={StaticResource DecimalToStringConverter}}"
 												   Foreground="{Binding AskColor, Converter={StaticResource ResourceKey=tickForegournConverter}}"
 												   FontSize="10"
 												   Margin="3,0"
@@ -113,7 +114,7 @@
 							<DataGridTemplateColumn.CellTemplate>
 								<DataTemplate>
 									<Border Margin="1">
-										<TextBlock Text="{Binding Spread}"
+										<TextBlock Text="{Binding Spread, Converter={StaticResource DecimalToStringConverter}}"
 												   FontSize="10"
 												   Margin="3,0"
 												   HorizontalAlignment="Right"
@@ -147,7 +148,7 @@
 													IsVisible="{Binding PercentRange, Converter={StaticResource  ResourceKey=upArrowConverter}}"
 													Height="12"
 													Margin="3,0"/>
-											<TextBlock Text="{Binding High}"
+											<TextBlock Text="{Binding High, Converter={StaticResource DecimalToStringConverter}}"
 													   FontSize="10"
 													   Grid.Column="1"
 													   Margin="3,0"
@@ -167,7 +168,7 @@
 													IsVisible="{Binding PercentRange, Converter={StaticResource  ResourceKey=downArrowConverter}}"
 													Height="12"
 													Margin="3,0"/>
-											<TextBlock Text="{Binding Low}"
+											<TextBlock Text="{Binding Low, Converter={StaticResource DecimalToStringConverter}}"
 													   FontSize="10"
 													   Grid.Column="1"
 													   Margin="3,0"

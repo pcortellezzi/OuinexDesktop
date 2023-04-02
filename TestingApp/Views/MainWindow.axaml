@@ -14,6 +14,69 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<StackPanel Orientation="Vertical" Grid.Column="0" Margin="10">
+			<Image Source="/Assets/avalonia-logo.ico" Width="100" Height="100" Margin="0,0,0,20"/>
+			<TextBlock Text="Bot Name:" FontWeight="Bold" FontSize="18"/>
+			<TextBlock Text="My Trading Bot" FontSize="20"/>
+			<TextBlock Text="Bot Status:" FontWeight="Bold" FontSize="18" Margin="0,15,0,0"/>
+			<Grid>
+				<Ellipse Width="10" Height="10" Fill="#22B14C" Margin="0,0,5,0"/>
+				<TextBlock Text="Running" FontSize="18"/>
+			</Grid>
+			<TextBlock Text="Trading Strategy:" FontWeight="Bold" FontSize="18" Margin="0,15,0,0"/>
+			<TextBlock Text="Momentum Trading" FontSize="20"/>
+			<TextBlock Text="Trading Pairs:" FontWeight="Bold" FontSize="18" Margin="0,15,0,0"/>
+			<TextBlock Text="BTC/USD, ETH/USD" FontSize="20"/>
+			<TextBlock Text="Trading Volume:" FontWeight="Bold" FontSize="18" Margin="0,15,0,0"/>
+			<TextBlock Text="$500,000" FontSize="20"/>
+			<TextBlock Text="Profit and Loss:" FontWeight="Bold" FontSize="18" Margin="0,15,0,0"/>
+			<Grid>
+				<Ellipse Width="10" Height="10" Fill="#22B14C" Margin="0,0,5,0"/>
+				<TextBlock Text="$5,000" FontSize="20"/>
+			</Grid>
+		</StackPanel>
+
+		<StackPanel Orientation="Vertical" Grid.Column="1" Margin="10">
+			<Grid>
+				<Image Source="/Assets/avalonia-logo.ico" Width="30" Height="30" Margin="0,0,10,0"/>
+				<TextBlock Text="Trade History:" FontWeight="Bold" FontSize="18" Margin="0,0,0,10"/>
+			</Grid>
+			<ListBox BorderThickness="0" Margin="0,-10">
+				<ListBoxItem>
+					<StackPanel Orientation="Horizontal" Margin="0,5">
+						<Image Source="/Assets/avalonia-logo.ico" Width="25" Height="25" Margin="0,0,10,0"/>
+						<TextBlock Text   ="Bought 0.5 BTC at $50,000" FontSize="18"/>
+					</StackPanel>
+				</ListBoxItem>
+				<ListBoxItem>
+					<StackPanel Orientation="Horizontal" Margin="0,5">
+						<Image Source="/Assets/avalonia-logo.ico" Width="25" Height="25" Margin="0,0,10,0"/>
+						<TextBlock Text="Sold 0.3 BTC at $55,000" FontSize="18"/>
+					</StackPanel>
+				</ListBoxItem>
+				<ListBoxItem>
+					<StackPanel Orientation="Horizontal" Margin="0,5">
+						<Image Source="/Assets/avalonia-logo.ico" Width="25" Height="25" Margin="0,0,10,0"/>
+						<TextBlock Text="Bought 0.7 BTC at $60,000" FontSize="18"/>
+					</StackPanel>
+				</ListBoxItem>
+			</ListBox>
+
+			<Grid Margin="0,20,0,0">
+				<Image Source="/Assets/avalonia-logo.ico" Width="30" Height="30" Margin="0,0,10,0"/>
+				<TextBlock Text="Profit and Loss Chart:" FontWeight="Bold" FontSize="18" Margin="0,0,0,10"/>
+			</Grid>
+			<Grid Background="#E5F0FF" Height="200">
+				<!-- Placeholder for chart -->
+			</Grid>
+		</StackPanel>
+	</Grid>
 
 </Window>

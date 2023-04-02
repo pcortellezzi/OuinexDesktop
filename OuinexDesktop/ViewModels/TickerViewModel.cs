@@ -39,6 +39,7 @@ namespace OuinexDesktop.ViewModels
             High = t.High;
             Low = t.Low;
             PercentChange = t.Change;
+            Spread = Ask - Bid;
 
             CalculateRange();
         }

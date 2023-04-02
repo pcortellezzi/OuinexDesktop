@@ -22,7 +22,7 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="FontSize" Value="25" />
+        <Setter Property="FontSize" Value="12" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid Background="{TemplateBinding Background}" ColumnDefinitions="*,Auto">
@@ -54,7 +54,7 @@
         <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="FontWeight" Value="DemiBold" />
-
+        <Setter Property="FontSize" Value="10"/>
 
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="SeparatorBrush" Value="{DynamicResource ThemeControlLowColor}" />
@@ -79,7 +79,6 @@
                                 Background=""
                                 Content="{TemplateBinding Content}"
                                 ContentTemplate="{TemplateBinding ContentTemplate}" />
-
                             <Path
                                 Data="F1 M -5.215,6.099L 5.215,6.099L 0,0L -5.215,6.099 Z "
                                 Fill="Transparent"
@@ -90,11 +89,7 @@
                                 Stretch="Uniform"
                                 VerticalAlignment="Center"
                                 Width="8" />
-
                         </Grid>
-
-
-
                     </Grid>
                 </Border>
             </ControlTemplate>

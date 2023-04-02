@@ -7,7 +7,7 @@ using Avalonia.Markup.Xaml;
 
 namespace ScottPlot.Avalonia
 {
-    public class HelpWindow : Window
+    public partial class HelpWindow : Window
     {
         public HelpWindow()
         {

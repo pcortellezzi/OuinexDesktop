@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
@@ -24,15 +24,14 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.0-preview5" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.0.0-preview5" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0-preview5" />
+    <PackageReference Include="Avalonia" Version="11.0.0-preview6" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.0-preview6" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0-preview6" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-preview5" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-preview5" />
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-preview6" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-preview6" />
     <PackageReference Include="Binance.Net" Version="8.4.3" />
-    <PackageReference Include="SukiUI" Version="4.6.6" />
-    <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
+
   </ItemGroup>
 
 
@@ -41,5 +40,6 @@
     <ProjectReference Include="..\OuinexDesktop.Models\OuinexDesktop.Models.csproj" />
     <ProjectReference Include="..\OuinexDesktop.Services\OuinexDesktop.Services.csproj" />
     <ProjectReference Include="..\ScottPlot.Avalonia\ScottPlot.Avalonia.csproj" />
+    <ProjectReference Include="..\SukiUI\SukiUI.csproj" />
   </ItemGroup>
 </Project>

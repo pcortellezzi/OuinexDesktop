@@ -474,7 +474,6 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Avalonia
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Avalonia.X11.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Binance.Net.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\CryptoExchange.Net.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\DialogHost.Avalonia.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\DynamicData.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\HarfBuzzSharp.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Material.Icons.dll
@@ -494,7 +493,6 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Splat.dl
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\SukiUI.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\System.Drawing.Common.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\System.Reactive.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Tmds.DBus.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -548,8 +546,6 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\tr\Micro
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\runtimes\win-arm64\native\av_libglesv2.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\runtimes\win7-x64\native\av_libglesv2.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\runtimes\win7-x86\native\av_libglesv2.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\runtimes\osx\native\libAvaloniaNative.dylib
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\runtimes\linux-arm\native\libHarfBuzzSharp.so
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\runtimes\linux-arm64\native\libHarfBuzzSharp.so
@@ -596,3 +592,8 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDe
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Models.pdb
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Services.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Services.pdb
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\System.IO.Pipelines.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Tmds.DBus.Protocol.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\runtimes\win-x64\native\av_libglesv2.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\runtimes\win-x86\native\av_libglesv2.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\SukiUI.pdb

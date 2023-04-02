@@ -268,7 +268,7 @@ namespace ScottPlot.Avalonia
                 HelpMenuItem,
                 OpenInNewWindowMenuItem
             };
-            cm.Items = cmItems;
+            cm.ItemsSource = cmItems;
             return cm;
         }
 

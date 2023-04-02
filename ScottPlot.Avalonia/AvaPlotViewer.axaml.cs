@@ -5,7 +5,7 @@ using Avalonia.Markup.Xaml;
 
 namespace ScottPlot.Avalonia
 {
-    public class AvaPlotViewer : Window
+    public partial class AvaPlotViewer : Window
     {
         [Obsolete("The zero parameter constructor is not to be called")]
         public AvaPlotViewer()

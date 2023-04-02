@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingConsole", "TestingCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingApp", "TestingApp\TestingApp.csproj", "{AE203C78-36CB-487A-85F7-6C3724B24D23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuinexDesktop.Services", "OuinexDesktop.Services\OuinexDesktop.Services.csproj", "{2C4D1780-495B-4A35-939A-11EA17E175EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OuinexDesktop.Services", "OuinexDesktop.Services\OuinexDesktop.Services.csproj", "{2C4D1780-495B-4A35-939A-11EA17E175EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SukiUI", "SukiUI\SukiUI.csproj", "{543E7FC7-B461-4F1B-9698-198C3E574C4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{2C4D1780-495B-4A35-939A-11EA17E175EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C4D1780-495B-4A35-939A-11EA17E175EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C4D1780-495B-4A35-939A-11EA17E175EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{543E7FC7-B461-4F1B-9698-198C3E574C4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{543E7FC7-B461-4F1B-9698-198C3E574C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{543E7FC7-B461-4F1B-9698-198C3E574C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{543E7FC7-B461-4F1B-9698-198C3E574C4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

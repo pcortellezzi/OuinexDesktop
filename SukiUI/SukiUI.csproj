@@ -1,0 +1,87 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <IsPackable>true</IsPackable>
+        <Authors></Authors>
+        <Copyright></Copyright>
+        <PackageProjectUrl></PackageProjectUrl>
+        <PackageDescription></PackageDescription>
+        <Owners></Owners>
+        <PackageTags>avalonia;avaloniaui;ui;theme</PackageTags>
+        <RepositoryUrl></RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IsPackable>true</IsPackable>
+        <RootNamespace>SukiUI</RootNamespace>
+        <Version>2.0.0</Version>
+        <FileVersion>2.0.0</FileVersion>
+        <AssemblyVersion>2.0.0</AssemblyVersion>
+        <LangVersion>10</LangVersion>
+        <UserSecretsId>712f85e4-12d3-41b0-a417-5714a113666f</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AvaloniaResource Include="**\*.xaml" />
+        <None Remove="Roboto-Medium.ttf" />
+        <AvaloniaResource Include="Roboto-Medium.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AvaloniaXaml Remove="Theme\CheckBox.axaml" />
+      <AvaloniaXaml Remove="Theme\DialogHostStyle.axaml" />
+      <AvaloniaXaml Remove="Theme\RichTextBoxStyles.axaml" />
+      <AvaloniaXaml Remove="Theme\WindowStyles.axaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="LICENSE" />
+      <None Remove="Roboto-Regular.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.0.0-preview6" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.0-preview6" />
+        <PackageReference Include="Avalonia.Themes.Simple" Version="11.0.0-preview6" />
+        <PackageReference Include="Material.Icons.Avalonia" Version="2.0.0-preview3" />
+        <PackageReference Include="ReactiveUI" Version="18.4.26" />
+    </ItemGroup>
+
+ 
+
+    <ItemGroup>
+      <AvaloniaResource Include="LICENSE" />
+      <AvaloniaResource Include="Roboto-Regular.ttf" />
+      <AvaloniaResource Include="Theme\CheckBox.axaml" />
+      <AvaloniaResource Include="Theme\RichTextBoxStyles.axaml" />
+      <AvaloniaResource Include="Theme\WindowStyles.axaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="suki_photo.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\.editorconfig" Link=".editorconfig" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AvaloniaXaml Update="Theme\ListBoxItemStyle.axaml">
+        <Generator>MSBuild:Compile</Generator>
+      </AvaloniaXaml>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Controls\MobileStack.axaml.cs">
+        <DependentUpon>MobileStack.axaml</DependentUpon>
+      </Compile>
+      <Compile Update="Controls\WaveProgress\WaveProgress.axaml.cs">
+        <DependentUpon>WaveProgress.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+    
+</Project>

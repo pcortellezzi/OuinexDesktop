@@ -36,7 +36,7 @@ namespace OuinexDesktop.ViewModels
 
         public async Task InitStream()
         {
-            var symbols = ExchangesConnector.Instances.First().Value.Symbols.Take(20);
+            var symbols = ExchangesConnector.Instances.First().Value.Symbols.Take(30);
 
             foreach (var symbol in symbols)
             {

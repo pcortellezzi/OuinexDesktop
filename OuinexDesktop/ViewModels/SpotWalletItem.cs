@@ -90,7 +90,7 @@ namespace OuinexDesktop.ViewModels
         {
             Add(new SpotWalletItem("Bitcoin")
             {
-                Amount = (decimal)1.877428,
+                Amount = (decimal)0.00877428,
                 AverageBuyingPrice=(decimal)18892.23
             });
         }

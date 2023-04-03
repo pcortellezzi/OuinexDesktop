@@ -64,13 +64,13 @@
 	<Grid>
 		<TabControl>
 			<TabItem Header="Simple dealing rates">
-				<StackPanel>
-					<Expander Header="Spot">
+				<Panel>
+					<ScrollViewer>
 						<DataGrid AutoGenerateColumns="False"
-						  FontSize="10"
-						  SelectionMode="Single"
-						  SelectedItem="{Binding SelectedTicker, Mode=TwoWay}"
-						  Items="{Binding Tickers}">
+				  FontSize="10"
+				  SelectionMode="Single"
+				  SelectedItem="{Binding SelectedTicker, Mode=TwoWay}"
+				  Items="{Binding Tickers}">
 							<DataGrid.Columns>
 								<DataGridTextColumn Header="Ticker"
 													FontWeight="DemiBold"
@@ -203,9 +203,8 @@
 							</DataGrid.ContextMenu>
 						</DataGrid>
 
-					</Expander>
-					<Expander Header="Futures"></Expander>
-				</StackPanel>
+					</ScrollViewer>
+				</Panel>
 			</TabItem>
 			<TabItem Header="Advanced dealing rates">
 

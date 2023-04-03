@@ -12,106 +12,58 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-    <Grid RowDefinitions="Auto, *, auto, *">
-        <Border Padding="3"
-				Margin="3"
+    <Grid RowDefinitions="Auto, auto, *">
+		<Border Theme="{StaticResource CardBorder}"
 				CornerRadius="4"
-                Theme="{StaticResource CardBorder}">
-            <StackPanel Orientation="Horizontal">
-				<Button Content="Buy"
-					    Click="Button_OnClick"
-						Background="#34a560"
-                        Margin="3">
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="Buy"
-								   Foreground="White"								  
-								   VerticalAlignment="Center"/>
-						<material:MaterialIcon Kind="ArrowUp"
-											   Foreground="White"
-											   Margin="5,0,0,0"
-											   VerticalAlignment="Center"/>
-					</StackPanel>
-				</Button>
-                <Separator Width="1"
-                           Height="35"
-                           Background="#EC5656"
-                           Margin="0"
-                           VerticalAlignment="Stretch"/>
-				<Button Background="#EC5656"
-						Margin="3">
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="Sell"
-								   Foreground="White"
-								   VerticalAlignment="Center"/>
-						<material:MaterialIcon Kind="ArrowDown"
-											   Foreground="White"
-											   Margin="5,0,0,0"
-											   VerticalAlignment="Center"/>
-					</StackPanel>
-				</Button>
-                <Separator Width="1"
-                           Height="35"
-                           Background="#f4f4f4"
-                           Margin="0"
-                           VerticalAlignment="Stretch"/>
-				<Button Background="#002B49"
-                        Margin="3">
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="Flat"
-								   Foreground="White"
-								   VerticalAlignment="Center"/>
-						<material:MaterialIcon Kind="ArrowCollapseAll"
-											   Margin="5,0,0,0"
-											   Foreground="White"
-											   VerticalAlignment="Center"/>
-					</StackPanel>
-				</Button>
-                <Separator Width="1.5"
-                           Background="#f4f4f4"
-                           VerticalAlignment="Stretch"/>
-            </StackPanel>
-        </Border>
-		<Grid Grid.Row="1"
+				Margin="3"
+				Padding="4">
+			<StackPanel>
+				<TextBlock Classes="H6"
+						   Theme="{StaticResource TitleTextBlock}"
+						   Margin="5,0,0,15">Wallets</TextBlock>
+				<controls:WalletsGrid DataContext="{Binding  SpotWalletsMVVM}"/>
+			</StackPanel>
+		</Border>
+       <Grid Grid.Row="2"
 			  ColumnDefinitions="auto, auto, *">
 			<Border Theme="{StaticResource CardBorder}"
 					Margin="3"
 					CornerRadius="4"
 					Padding="4">
-				<TabControl>
-					<TabControl.Items>
-						<TabItem Header="Spot">
-							<StackPanel><TextBox Watermark="Filter"
-										 x:Name="searchBox"
-										 TextChanged="SearchBox_TextChanging"
-										 Margin="3"/>
-								<TreeView x:Name="treeView">
-									<TreeView.Items>
-										<TreeViewItem Header="Spot">
-											<TreeViewItem Header="BTC/USDT" />
-											<TreeViewItem Header="ETH/USDT" />
-											<TreeViewItem Header="XRP/BTC" />
-											<TreeViewItem Header="XRP/jEUR" />
-											<TreeViewItem Header="Forex">
-												<TreeViewItem Header="jEUR/jUSD" />
-												<TreeViewItem Header="jCHF/jGBP" />
-											</TreeViewItem>
-										</TreeViewItem>
-										<TreeViewItem Header="Margin assets">
-											<TreeViewItem Header="jEUR/jUSD" />
-											<TreeViewItem Header="jCHF/jGBP" />
-										</TreeViewItem>
-										<TreeViewItem Header="Futures">
-											<TreeViewItem Header="jEUR/jUSD" />
-											<TreeViewItem Header="jCHF/jGBP" />
-										</TreeViewItem>
-									</TreeView.Items>
-								</TreeView>
-							</StackPanel>
-						</TabItem>
-						<TabItem Header="Futures"/>
-						<TabItem Header="Options"/>
-					</TabControl.Items>
-				</TabControl>
+				<StackPanel>
+					<TextBlock Classes="H6"
+						   Theme="{StaticResource TitleTextBlock}"
+						   Margin="5,0,0,15">Symbols and lists</TextBlock>
+					<StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<TextBox Watermark="Filter"
+									 x:Name="searchBox"
+									 TextChanged="SearchBox_TextChanging"
+									 VerticalAlignment="Center"
+									 Margin="3"/>
+						<Button Content="Manage list"/>
+						</StackPanel>
+						<TreeView x:Name="treeView">
+							<TreeView.Items>
+								<TreeViewItem Header="Favorites">
+									<TreeViewItem Header="BTC/USDT" />
+									<TreeViewItem Header="ETH/USDT" />
+									<TreeViewItem Header="XRP/BTC" />
+									<TreeViewItem Header="XRP/jEUR" /> 
+								</TreeViewItem>
+								<TreeViewItem Header="Owning">
+									<TreeViewItem Header="jEUR/jUSD" />
+									<TreeViewItem Header="jCHF/jGBP" />
+								</TreeViewItem>
+								<TreeViewItem Header="Day trading">
+									<TreeViewItem Header="jEUR/jUSD" />
+									<TreeViewItem Header="jCHF/jGBP" />
+								</TreeViewItem>
+							</TreeView.Items>
+						</TreeView>
+					</StackPanel>
+				</StackPanel>
+				
 			
 			</Border>
 			<GridSplitter Grid.Column="1"
@@ -122,25 +74,17 @@
 					CornerRadius="4"
 					Padding="4">
 				<StackPanel>
-					<TextBlock Classes="h4" Margin="5,0,0,15">Markets</TextBlock>
+					<TextBlock Classes="H6"
+						   Theme="{StaticResource TitleTextBlock}"
+						   Margin="5,0,0,15">Markets</TextBlock>
 					<controls:MarketWatchWidgets DataContext="{Binding MarketWatchMVVM}"
 												 Margin="3"/>
 				</StackPanel>					
 			</Border>
 			
 		</Grid>
-		<GridSplitter Grid.Row="2"
+		<GridSplitter Grid.Row="1"
 					  Height="3"/>
-		<Border Theme="{StaticResource CardBorder}"
-				Grid.Row="3"
-				CornerRadius="4"
-				Margin="3"
-				Padding="4">
-			<StackPanel>
-				<TextBlock Classes="h4"
-						   Margin="5,0,0,15">Trading</TextBlock>
-				<controls:WalletsGrid />
-			</StackPanel>
-		</Border>
+		
 	</Grid>
 </UserControl>

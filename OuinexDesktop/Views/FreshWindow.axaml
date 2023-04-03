@@ -82,8 +82,34 @@
 								<suki:SideMenuItem Header="Exchange"
 												   Icon="Exchange">
 									<suki:SideMenuItem.Content>
-										<pages:MarketsPage Name="MarketsPage"
-												DataContext="{Binding ElementName=mainWindow, Path=DataContext}"/>
+										<Grid RowDefinitions="auto, *">
+											<Border Theme="{StaticResource CardBorder}"
+													CornerRadius="4"
+													Margin="3"
+													Padding="4">
+												<Border HorizontalAlignment="Left" Theme="{StaticResource RadioButtonGroupBorder}">
+													<StackPanel Orientation="Horizontal">
+														<RadioButton Theme="{DynamicResource ButtonRadioButton}"
+																	 Name="spotChecker">
+															Spot
+														</RadioButton>																	 
+														<RadioButton Theme="{DynamicResource ButtonRadioButton}"
+															IsChecked="True">
+															Futures
+														</RadioButton>
+														<RadioButton Theme="{DynamicResource ButtonRadioButton}"
+															IsChecked="True">
+															Options
+														</RadioButton>
+													</StackPanel>
+												</Border>
+											</Border>
+											<pages:MarketsPage Name="MarketsPage"
+															   Grid.Row="1"
+															   IsVisible="{Binding
+															   ElementName=spotChecker, Path=IsChecked}"
+															   DataContext="{Binding ElementName=mainWindow, Path=DataContext}"/>
+										</Grid>
 									</suki:SideMenuItem.Content>
 								</suki:SideMenuItem>
 								<suki:SideMenuItem Header="Detailed Wallets"

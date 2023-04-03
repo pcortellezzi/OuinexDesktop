@@ -3,25 +3,91 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			  xmlns:vm="using:OuinexDesktop.ViewModels"
+		     x:DataType="vm:SpotWallets"
+			 xmlns:converters="using:OuinexDesktop.Converters"
              x:Class="OuinexDesktop.Views.Controls.WalletsGrid">
+	<Design.DataContext>
+		<vm:SpotWallets/>
+	</Design.DataContext>
+	<UserControl.Resources>
+		<converters:DecimalToStringConverter x:Key="DecimalToStringConverter"/>
+	</UserControl.Resources>
 	<Grid>
-		<DataGrid>
+		<DataGrid Items="{Binding}"
+				  AutoGenerateColumns="False">
 			<DataGrid.Columns>
-				<DataGridTextColumn Header="Token"/>
-				<DataGridTextColumn Header="Amount"/>
-				<DataGridTextColumn Header="USD Value"/>
-				<DataGridTextColumn Header="USD Price"/>
-				<DataGridTextColumn Header="Average buying price"/>
-				<DataGridTextColumn Header="Profit and Loss"/>
+				<DataGridTextColumn Header="Token"
+									
+									FontWeight="DemiBold"
+									Binding="{Binding Token}"/>
+
+				<DataGridTemplateColumn Header="Amount">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Border Margin="1">
+								<TextBlock Text="{Binding Amount, Converter={StaticResource DecimalToStringConverter}}"
+										   FontSize="10"
+										   Margin="3,0"
+										   HorizontalAlignment="Right"
+										   VerticalAlignment="Center"/>
+							</Border>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn Header="USD Value">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Border Margin="1">
+								<TextBlock Text="{Binding UsdValue, Converter={StaticResource DecimalToStringConverter}}"
+										   FontSize="10"
+										   Margin="3,0"
+										   HorizontalAlignment="Right"
+										   VerticalAlignment="Center"/>
+							</Border>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn Header="USD Price">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Border Margin="1">
+								<TextBlock Text="{Binding CurrentPrice, Converter={StaticResource DecimalToStringConverter}}"
+										   FontSize="10"
+										   Margin="3,0"
+										   HorizontalAlignment="Right"
+										   VerticalAlignment="Center"/>
+							</Border>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn> 
+				<DataGridTemplateColumn Header="Average buying price">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Border Margin="1">
+								<TextBlock Text="{Binding AverageBuyingPrice, Converter={StaticResource DecimalToStringConverter}}"
+										   FontSize="10"
+										   Margin="3,0"
+										   HorizontalAlignment="Right"
+										   VerticalAlignment="Center"/>
+							</Border>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn Header="Profit and loss">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Border Margin="1">
+								<TextBlock Text="{Binding Profit, Converter={StaticResource DecimalToStringConverter}}"
+										   FontSize="10"
+										   Margin="3,0"
+										   HorizontalAlignment="Right"
+										   VerticalAlignment="Center"/>
+							</Border>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
 			</DataGrid.Columns>
 		</DataGrid>
-		<StackPanel VerticalAlignment="Center"
-					HorizontalAlignment="Center">
-			<TextBlock Text="You must make a first deposit to see your assets"/>
-			<DropDownButton Margin="3" 
-							VerticalAlignment="Center"
-							HorizontalAlignment="Center"
-							Content="Make a deposit"/>
-		</StackPanel>
 	</Grid>
 </UserControl>

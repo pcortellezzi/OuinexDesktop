@@ -54,7 +54,7 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/FreshWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/MainWindow.axaml]
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Pages/MarketOverviewPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Pages/MarketsPage.axaml]

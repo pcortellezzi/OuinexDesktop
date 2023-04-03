@@ -35,7 +35,11 @@ namespace OuinexDesktop.ViewModels
             //close the login popup
             InteractiveContainer.CloseDialog();
             
-            Task.Run(async () => await this.MarketWatchMVVM.InitStream());
+            Task.Run(async () => 
+            {
+                await this.SpotWalletsMVVM.InitAsync();
+                await this.MarketWatchMVVM.InitStream();              
+            });
         }
 
         private void CreateAControl()
@@ -47,6 +51,8 @@ namespace OuinexDesktop.ViewModels
         public LoginViewModel LoginMVVM { get; } = new LoginViewModel();
 
         public MarketWatchViewModel MarketWatchMVVM { get; } = new MarketWatchViewModel();
+
+        public SpotWallets SpotWalletsMVVM { get; } = new SpotWallets();
 
         public ICommand OpenMarketWatchWindow { get; }
     }

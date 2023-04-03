@@ -1,5 +1,8 @@
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using OuinexDesktop.Views.Controls;
+using SukiUI.Controls;
 using System.Collections;
 
 namespace OuinexDesktop.Views.Pages;
@@ -59,5 +62,10 @@ public partial class MarketsPage : UserControl
             parent.IsVisible = true;
             ExpandParentNodes(parent);
         }
+    }
+
+    private void Button_OnClick(object? sender, RoutedEventArgs e)
+    {
+        InteractiveContainer.ShowDialog(new OpenOrder());
     }
 }

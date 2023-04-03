@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="OuinexDesktop.Views.Controls.OpenOrder">
+	<StackPanel>
+		<TextBlock Text="Create an order"
+				   Classes="h2"/>
+		<StackPanel Orientation="Horizontal"
+					Margin="3">
+			<TextBlock Text="Order type"
+					   VerticalAlignment="Center"/>
+			<ComboBox SelectedIndex="0"
+					  Width="120">
+				<ComboBoxItem Content="Market"/>
+			</ComboBox>
+		</StackPanel>
+		<suki:GroupBox Header="Advanced order options"
+					   Margin="3">
+			<StackPanel>
+				<Expander Header="Take Profit">
+					<NumericUpDown FontSize="10"
+								   Margin="3"/>
+				</Expander>
+				<Expander Header="Stop Loss">
+					ddd
+				</Expander>
+				<Expander Header="Trailing Stop">
+					ddd
+				</Expander>
+			</StackPanel>
+		</suki:GroupBox>
+		<Button Margin="3" 
+				Click="Button_OnClick"
+				Content="Cancel"
+				Classes="Danger"				 
+				HorizontalAlignment="Right"/>
+	</StackPanel>
+</UserControl>

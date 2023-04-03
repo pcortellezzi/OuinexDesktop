@@ -19,11 +19,12 @@
                 Classes="Card">
             <StackPanel Orientation="Horizontal">
 				<Button Content="Buy"
+					    Click="Button_OnClick"
 						Background="#34a560"
                         Margin="3">
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Text="Buy"
-								   Foreground="White"
+								   Foreground="White"								  
 								   VerticalAlignment="Center"/>
 						<material:MaterialIcon Kind="ArrowUp"
 											   Foreground="White"
@@ -76,35 +77,41 @@
 					Margin="3"
 					CornerRadius="4"
 					Padding="4">
-				<StackPanel>
-					<TextBlock Classes="h4" Margin="5,0,0,15">Lists</TextBlock>
-					<TextBox Watermark="Filter"
-							 x:Name="searchBox"
-							 TextChanged="SearchBox_TextChanging"
-							 Margin="3"/>
-					<TreeView x:Name="treeView">
-						<TreeView.Items>
-							<TreeViewItem Header="Spot">
-								<TreeViewItem Header="BTC/USDT" />
-								<TreeViewItem Header="ETH/USDT" />
-								<TreeViewItem Header="XRP/BTC" />
-								<TreeViewItem Header="XRP/jEUR" />
-								<TreeViewItem Header="Forex">
-									<TreeViewItem Header="jEUR/jUSD" />
-									<TreeViewItem Header="jCHF/jGBP" />
-								</TreeViewItem>
-							</TreeViewItem>
-							<TreeViewItem Header="Margin assets">
-								<TreeViewItem Header="jEUR/jUSD" />
-								<TreeViewItem Header="jCHF/jGBP" />
-							</TreeViewItem>
-							<TreeViewItem Header="Futures">
-								<TreeViewItem Header="jEUR/jUSD" />
-								<TreeViewItem Header="jCHF/jGBP" />
-							</TreeViewItem>
-						</TreeView.Items>
-					</TreeView>
-				</StackPanel>
+				<TabControl>
+					<TabControl.Items>
+						<TabItem Header="Spot">
+							<StackPanel><TextBox Watermark="Filter"
+										 x:Name="searchBox"
+										 TextChanged="SearchBox_TextChanging"
+										 Margin="3"/>
+								<TreeView x:Name="treeView">
+									<TreeView.Items>
+										<TreeViewItem Header="Spot">
+											<TreeViewItem Header="BTC/USDT" />
+											<TreeViewItem Header="ETH/USDT" />
+											<TreeViewItem Header="XRP/BTC" />
+											<TreeViewItem Header="XRP/jEUR" />
+											<TreeViewItem Header="Forex">
+												<TreeViewItem Header="jEUR/jUSD" />
+												<TreeViewItem Header="jCHF/jGBP" />
+											</TreeViewItem>
+										</TreeViewItem>
+										<TreeViewItem Header="Margin assets">
+											<TreeViewItem Header="jEUR/jUSD" />
+											<TreeViewItem Header="jCHF/jGBP" />
+										</TreeViewItem>
+										<TreeViewItem Header="Futures">
+											<TreeViewItem Header="jEUR/jUSD" />
+											<TreeViewItem Header="jCHF/jGBP" />
+										</TreeViewItem>
+									</TreeView.Items>
+								</TreeView>
+							</StackPanel>
+						</TabItem>
+						<TabItem Header="Futures"/>
+						<TabItem Header="Options"/>
+					</TabControl.Items>
+				</TabControl>
 			
 			</Border>
 			<GridSplitter Grid.Column="1"

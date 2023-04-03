@@ -1,0 +1,194 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:CompileBindings="True">
+    <!--  Add Resources Here  -->
+    <ControlTheme x:Key="CalendarDatePickerButton" TargetType="Button">
+        <Setter Property="Button.Foreground" Value="{DynamicResource CalendarDatePickerIconForeground}" />
+        <Setter Property="Button.Template">
+            <ControlTemplate TargetType="Button">
+                <Grid Margin="{TemplateBinding Padding}" Background="Transparent">
+                    <PathIcon
+                        Width="16"
+                        Height="16"
+                        Data="{DynamicResource CalendarDatePickerIconGlyph}"
+                        Foreground="{TemplateBinding Foreground}" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:pointerover /template/ PathIcon">
+            <Setter Property="Foreground" Value="{DynamicResource CalendarDatePickerIconPointeroverForeground}" />
+        </Style>
+        <Style Selector="^:pressed /template/ PathIcon">
+            <Setter Property="Foreground" Value="{DynamicResource CalendarDatePickerIconPointeroverForeground}" />
+        </Style>
+    </ControlTheme>
+    <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
+        <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource CalendarDatePickerForeground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource CalendarDatePickerBorderThickness}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource CalendarDatePickerCornerRadius}" />
+        <Setter Property="CalendarDatePicker.IsTodayHighlighted" Value="True" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="CalendarDatePicker.MinHeight" Value="{DynamicResource CalendarDatePickerDefaultHeight}" />
+        <Setter Property="Padding" Value="8 0" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="CalendarDatePicker">
+                <Panel
+                    x:Name="LayoutRoot"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
+                    <Border
+                        x:Name="Background"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+                        <Grid
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            ColumnDefinitions="*,Auto">
+                            <TextBox
+                                Name="PART_TextBox"
+                                Grid.Column="0"
+                                MinHeight="{DynamicResource CalendarDatePickerInnerDefaultHeight}"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                BorderThickness="0"
+                                CornerRadius="{TemplateBinding CornerRadius}"
+                                Foreground="{TemplateBinding Foreground}"
+                                UseFloatingWatermark="{TemplateBinding UseFloatingWatermark}"
+                                Watermark="{TemplateBinding Watermark}">
+                                <TextBox.Styles>
+                                    <Style Selector="TextBox#PART_TextBox:pointerover /template/ Border#PART_ContentPresenterBorder">
+                                        <!--  By default the TextBox has its own focused state, override this to disable it here  -->
+                                        <Setter Property="Background" Value="Transparent" />
+                                        <Setter Property="BorderBrush" Value="Transparent" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                    </Style>
+                                    <Style Selector="TextBox#PART_TextBox:focus /template/ Border#PART_ContentPresenterBorder">
+                                        <!--  By default the TextBox has its own focused state, override this to disable it here  -->
+                                        <Setter Property="Background" Value="Transparent" />
+                                        <Setter Property="BorderBrush" Value="Transparent" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                    </Style>
+                                    <Style Selector="TextBox#PART_TextBox:disabled">
+                                        <Style Selector="^ /template/ Border#PART_ContentPresenterBorder">
+                                            <!--  By default the TextBox has its own disabled state, override this to make the border background show through  -->
+                                            <Setter Property="Background" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                        </Style>
+                                    </Style>
+                                </TextBox.Styles>
+                            </TextBox>
+                            <Button
+                                Name="PART_Button"
+                                Grid.Column="1"
+                                Padding="0,0,8,0"
+                                Cursor="Hand"
+                                Focusable="False"
+                                Theme="{DynamicResource CalendarDatePickerButton}" />
+                            <Popup
+                                Name="PART_Popup"
+                                HorizontalOffset="-8"
+                                IsLightDismissEnabled="True"
+                                PlacementTarget="{TemplateBinding}"
+                                VerticalOffset="-4">
+                                <Border
+                                    Margin="8"
+                                    Background="Transparent"
+                                    BoxShadow="{DynamicResource CalendarDatePickerPopupBoxShadows}"
+                                    CornerRadius="{DynamicResource CalendarCornerRadius}">
+                                    <Calendar
+                                        Name="PART_Calendar"
+                                        BorderThickness="0"
+                                        CornerRadius="{Binding $parent[Border].CornerRadius}"
+                                        DisplayDate="{TemplateBinding DisplayDate}"
+                                        DisplayDateEnd="{TemplateBinding DisplayDateEnd}"
+                                        DisplayDateStart="{TemplateBinding DisplayDateStart}"
+                                        FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
+                                        IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
+                                        SelectedDate="{TemplateBinding SelectedDate,
+                                                                       Mode=TwoWay}" />
+                                </Border>
+                            </Popup>
+                        </Grid>
+                    </Border>
+
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^.Large">
+            <Setter Property="CalendarDatePicker.MinHeight" Value="{DynamicResource CalendarDatePickerLargeHeight}" />
+            <Style Selector="^ /template/ TextBox#PART_TextBox">
+                <Setter Property="TextBox.MinHeight" Value="{DynamicResource CalendarDatePickerInnerLargeHeight}" />
+            </Style>
+        </Style>
+        <Style Selector="^.Small">
+            <Setter Property="CalendarDatePicker.MinHeight" Value="{DynamicResource CalendarDatePickerSmallHeight}" />
+            <Style Selector="^ /template/ TextBox#PART_TextBox">
+                <Setter Property="TextBox.MinHeight" Value="{DynamicResource CalendarDatePickerInnerSmallHeight}" />
+            </Style>
+        </Style>
+
+        <Style Selector="^:pointerover">
+            <Style Selector="^ /template/ Border#Background">
+                <Setter Property="Background" Value="{DynamicResource CalendarDatePickerPointeroverBackground}" />
+            </Style>
+        </Style>
+
+        <!--  Disabled State  -->
+        <Style Selector="^:disabled">
+            <Style Selector="^ /template/ Border#Background">
+                <Setter Property="Background" Value="{DynamicResource CalendarDatePickerDisabledBackground}" />
+            </Style>
+
+            <Style Selector="^ /template/ Button#PART_Button">
+                <Setter Property="Foreground" Value="{DynamicResource CalendarDatePickerDisabledIconForeground}" />
+            </Style>
+            <Style Selector="^ /template/ TextBox#PART_TextBox">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+            </Style>
+        </Style>
+
+        <!--  Focused State  -->
+        <Style Selector="^:focus-within /template/ Border#Background">
+            <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerFocusBorderBrush}" />
+        </Style>
+
+        <Style Selector="^.Bordered">
+            <Style Selector="^ Border#Background">
+                <Setter Property="Border.Background" Value="{DynamicResource CalendarDatePickerBorderedDefaultBackground}" />
+                <Setter Property="Border.BorderBrush" Value="{DynamicResource CalendarDatePickerBorderedDefaultBorderBrush}" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#Background">
+                <Setter Property="Border.Background" Value="{DynamicResource CalendarDatePickerBorderedPointeroverBackground}" />
+                <Setter Property="Border.BorderBrush" Value="{DynamicResource CalendarDatePickerBorderedPointeroverBorderBrush}" />
+            </Style>
+            <Style Selector="^:focus-within /template/ Border#Background">
+                <Setter Property="Border.Background" Value="{DynamicResource CalendarDatePickerBorderedPointeroverBackground}" />
+                <Setter Property="Border.BorderBrush" Value="{DynamicResource CalendarDatePickerBorderedPointeroverBorderBrush}" />
+            </Style>
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Border#Background">
+                    <Setter Property="Background" Value="{DynamicResource CalendarDatePickerDisabledBackground}" />
+                    <Setter Property="Border.BorderBrush" Value="Transparent" />
+                </Style>
+
+                <Style Selector="^ /template/ Button#PART_Button">
+                    <Setter Property="Foreground" Value="{DynamicResource CalendarDatePickerDisabledIconForeground}" />
+                </Style>
+            </Style>
+        </Style>
+    </ControlTheme>
+</ResourceDictionary>

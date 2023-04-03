@@ -9,5 +9,8 @@
 	<Application.Styles>
  		<SimpleTheme/>
         <StyleInclude Source="avares://SukiUI/Theme/Index.xaml" />
+		<StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" />
+		<StyleInclude Source="avares://Semi.Avalonia.DataGrid/Index.axaml" />
+		<StyleInclude Source="avares://Semi.Avalonia.ColorPicker/Index.axaml" />
 	</Application.Styles>
 </Application>

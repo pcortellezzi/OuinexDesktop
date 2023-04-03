@@ -16,7 +16,7 @@
         <Border Padding="3"
 				Margin="3"
 				CornerRadius="4"
-                Classes="Card">
+                Theme="{StaticResource CardBorder}">
             <StackPanel Orientation="Horizontal">
 				<Button Content="Buy"
 					    Click="Button_OnClick"
@@ -73,7 +73,7 @@
         </Border>
 		<Grid Grid.Row="1"
 			  ColumnDefinitions="auto, auto, *">
-			<Border Classes="Card"
+			<Border Theme="{StaticResource CardBorder}"
 					Margin="3"
 					CornerRadius="4"
 					Padding="4">
@@ -116,8 +116,8 @@
 			</Border>
 			<GridSplitter Grid.Column="1"
 						  Width="3"/>
-			<Border Grid.Column="2"		
-					Classes="Card"
+			<Border Grid.Column="2"
+					Theme="{StaticResource CardBorder}"
 					Margin="3"
 					CornerRadius="4"
 					Padding="4">
@@ -131,7 +131,7 @@
 		</Grid>
 		<GridSplitter Grid.Row="2"
 					  Height="3"/>
-		<Border Classes="Card"
+		<Border Theme="{StaticResource CardBorder}"
 				Grid.Row="3"
 				CornerRadius="4"
 				Margin="3"

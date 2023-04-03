@@ -597,3 +597,9 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Tmds.DBu
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\runtimes\win-x64\native\av_libglesv2.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\runtimes\win-x86\native\av_libglesv2.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\SukiUI.pdb
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Semi.Avalonia.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Semi.Avalonia.ColorPicker.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Semi.Avalonia.DataGrid.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Semi.Avalonia.ColorPicker.pdb
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Semi.Avalonia.DataGrid.pdb
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Semi.Avalonia.pdb

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="../Package.props" />
+
+    <PropertyGroup>
+        <Title>Semi.Avalonia.ColorPicker</Title>
+        <PackageReleaseNotes>Upgrade to Avalonia 11.0.0-preview6.</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+      <PackageReference Include="Avalonia.Controls.ColorPicker" Version="$(AvaloniaVersion)" />
+    </ItemGroup>
+
+</Project>

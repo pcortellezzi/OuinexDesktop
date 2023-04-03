@@ -15,8 +15,96 @@
             <Setter Property="Foreground" Value="#444444" />
 
         </Style>
+		<Style Selector="RadioButton.MenuItem">
+			<Setter Property="Height" Value="50" />
+			<Setter Property="Margin" Value="-30,0,5,0" />
+			<Setter Property="Background" Value="Transparent" />
+			<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}" />
+			<Setter Property="BorderThickness" Value="0" />
+			<Setter Property="Transitions">
+				<Transitions>
+					<ThicknessTransition Duration="0:0:0.4" Property="Margin" />
+				</Transitions>
+			</Setter>
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Grid>
+						<Border
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{DynamicResource MediumCornerRadius}">
+							<ContentPresenter
+								Content="{TemplateBinding Content}"
+								ContentTemplate="{TemplateBinding ContentTemplate}"
+								Grid.Column="1"
+								Margin="0,2,0,0"
+								Name="PART_ContentPresenter"
+								RecognizesAccessKey="True"
+								VerticalAlignment="Center" />
+						</Border>
+					</Grid>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+<Style Selector="RadioButton.MenuItem">
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Margin" Value="-30,0,5,0" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <ThicknessTransition Duration="0:0:0.4" Property="Margin" />
+            </Transitions>
+        </Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{DynamicResource MediumCornerRadius}">
+                        <ContentPresenter
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Grid.Column="1"
+                            Margin="0,2,0,0"
+                            Name="PART_ContentPresenter"
+                            RecognizesAccessKey="True"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
 
+		<Style Selector="RadioButton:pointerover /template/ Ellipse#border">
+			<Setter Property="Stroke" Value="{DynamicResource SukiBorderBrush}" />
+		</Style>
+		<Style Selector="RadioButton /template/ Ellipse#checkMark">
+			<Setter Property="Fill" Value="Transparent" />
 
+		</Style>
+
+		<Style Selector="RadioButton:checked /template/ Ellipse#border">
+			<Setter Property="Fill" Value="{DynamicResource SukiPrimaryColor}" />
+		</Style>
+		<Style Selector="RadioButton:checked /template/ Ellipse#checkMark">
+			<Setter Property="Fill" Value="{DynamicResource SukiBackground}" />
+		</Style>
+
+		<Style Selector="RadioButton /template/ Ellipse#indeterminateMark">
+			<Setter Property="IsVisible" Value="False" />
+		</Style>
+
+		<Style Selector="RadioButton:indeterminate /template/ Ellipse#indeterminateMark">
+			<Setter Property="IsVisible" Value="True" />
+		</Style>
+		<Style Selector="RadioButton:disabled /template/ Ellipse#border">
+			<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}" />
+		</Style>
     </UserControl.Styles>
     <Design.DataContext />
 
@@ -28,12 +116,11 @@
         PaneClosing="PaneIsClosing">
 
         <SplitView.Pane>
-            <Border BorderBrush="{DynamicResource SukiBorderBrush}" BorderThickness="0,0,1.5,0">
+            <Border BorderBrush="{DynamicResource SukiBorderBrush}" 
+					BorderThickness="0,0,1.5,0">
                 <Grid Background="{DynamicResource SukiBackground}">
                     <!--  This sidebar toggle button is used when header content can overlap it  -->
-                    <Button
-                        Classes="Accent"
-                        Command="{Binding ChangeMenuVisibility}"
+                    <Button Command="{Binding ChangeMenuVisibility}"
                         HorizontalAlignment="Right"
                         IsVisible="{Binding HeaderContentOverlapsToggleSidebarButton}"
                         VerticalAlignment="Top">

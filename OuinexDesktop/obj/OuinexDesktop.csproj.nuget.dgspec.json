@@ -221,6 +221,15 @@
               "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\ScottPlot.Avalonia\\ScottPlot.Avalonia.csproj": {
                 "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\ScottPlot.Avalonia\\ScottPlot.Avalonia.csproj"
               },
+              "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj": {
+                "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj"
+              },
+              "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj": {
+                "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj"
+              },
+              "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia\\Semi.Avalonia.csproj": {
+                "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia\\Semi.Avalonia.csproj"
+              },
               "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\SukiUI\\SukiUI.csproj": {
                 "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\SukiUI\\SukiUI.csproj"
               }
@@ -355,6 +364,304 @@
               "privateAssets": "all"
             }
           },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj": {
+      "version": "0.1.0-preview6.1",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj",
+        "projectName": "Semi.Avalonia.ColorPicker",
+        "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj",
+        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.0-preview6, )"
+            },
+            "Avalonia.Controls.ColorPicker": {
+              "target": "Package",
+              "version": "[11.0.0-preview6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.0-preview6, )"
+            },
+            "Avalonia.Controls.ColorPicker": {
+              "target": "Package",
+              "version": "[11.0.0-preview6, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj": {
+      "version": "0.1.0-preview6.1",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj",
+        "projectName": "Semi.Avalonia.DataGrid",
+        "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj",
+        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.DataGrid\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.0-preview6, )"
+            },
+            "Avalonia.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[11.0.0-preview6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.0-preview6, )"
+            },
+            "Avalonia.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[11.0.0-preview6, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia\\Semi.Avalonia.csproj": {
+      "version": "0.1.0-preview6.1",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia\\Semi.Avalonia.csproj",
+        "projectName": "Semi.Avalonia",
+        "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia\\Semi.Avalonia.csproj",
+        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.0-preview6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.0-preview6, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }

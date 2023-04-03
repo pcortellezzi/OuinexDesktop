@@ -1588,6 +1588,47 @@
           "bin/placeholder/ScottPlot.Avalonia.dll": {}
         }
       },
+      "Semi.Avalonia/0.1.0-preview6.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Avalonia": "11.0.0-preview6"
+        },
+        "compile": {
+          "bin/placeholder/Semi.Avalonia.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Semi.Avalonia.dll": {}
+        }
+      },
+      "Semi.Avalonia.ColorPicker/0.1.0-preview6.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Avalonia": "11.0.0-preview6",
+          "Avalonia.Controls.ColorPicker": "11.0.0-preview6"
+        },
+        "compile": {
+          "bin/placeholder/Semi.Avalonia.ColorPicker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Semi.Avalonia.ColorPicker.dll": {}
+        }
+      },
+      "Semi.Avalonia.DataGrid/0.1.0-preview6.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Avalonia": "11.0.0-preview6",
+          "Avalonia.Controls.DataGrid": "11.0.0-preview6"
+        },
+        "compile": {
+          "bin/placeholder/Semi.Avalonia.DataGrid.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Semi.Avalonia.DataGrid.dll": {}
+        }
+      },
       "SukiUI/2.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -4897,6 +4938,21 @@
       "path": "../ScottPlot.Avalonia/ScottPlot.Avalonia.csproj",
       "msbuildProject": "../ScottPlot.Avalonia/ScottPlot.Avalonia.csproj"
     },
+    "Semi.Avalonia/0.1.0-preview6.1": {
+      "type": "project",
+      "path": "../Semi.Avalonia/Semi.Avalonia.csproj",
+      "msbuildProject": "../Semi.Avalonia/Semi.Avalonia.csproj"
+    },
+    "Semi.Avalonia.ColorPicker/0.1.0-preview6.1": {
+      "type": "project",
+      "path": "../Semi.Avalonia.ColorPicker/Semi.Avalonia.ColorPicker.csproj",
+      "msbuildProject": "../Semi.Avalonia.ColorPicker/Semi.Avalonia.ColorPicker.csproj"
+    },
+    "Semi.Avalonia.DataGrid/0.1.0-preview6.1": {
+      "type": "project",
+      "path": "../Semi.Avalonia.DataGrid/Semi.Avalonia.DataGrid.csproj",
+      "msbuildProject": "../Semi.Avalonia.DataGrid/Semi.Avalonia.DataGrid.csproj"
+    },
     "SukiUI/2.0.0": {
       "type": "project",
       "path": "../SukiUI/SukiUI.csproj",
@@ -4915,6 +4971,9 @@
       "OuinexDesktop.Models >= 1.0.0",
       "OuinexDesktop.Services >= 1.0.0",
       "ScottPlot.Avalonia >= 1.0.0",
+      "Semi.Avalonia >= 0.1.0-preview6.1",
+      "Semi.Avalonia.ColorPicker >= 0.1.0-preview6.1",
+      "Semi.Avalonia.DataGrid >= 0.1.0-preview6.1",
       "SukiUI >= 2.0.0"
     ]
   },
@@ -4956,6 +5015,15 @@
             },
             "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\ScottPlot.Avalonia\\ScottPlot.Avalonia.csproj": {
               "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\ScottPlot.Avalonia\\ScottPlot.Avalonia.csproj"
+            },
+            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj": {
+              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj"
+            },
+            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj": {
+              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj"
+            },
+            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia\\Semi.Avalonia.csproj": {
+              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia\\Semi.Avalonia.csproj"
             },
             "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\SukiUI\\SukiUI.csproj": {
               "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\SukiUI\\SukiUI.csproj"

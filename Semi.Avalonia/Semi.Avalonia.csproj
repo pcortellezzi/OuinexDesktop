@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <Import Project="../Package.props" />
+  
+  <PropertyGroup>
+    <Title>Semi.Avalonia</Title>
+    <PackageReleaseNotes>Upgrade to Avalonia 11.0.0-preview6. </PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Themes\Styles" />
+  </ItemGroup>
+
+</Project>

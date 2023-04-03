@@ -39,6 +39,9 @@
     <ProjectReference Include="..\OuinexDesktop.Models\OuinexDesktop.Models.csproj" />
     <ProjectReference Include="..\OuinexDesktop.Services\OuinexDesktop.Services.csproj" />
     <ProjectReference Include="..\ScottPlot.Avalonia\ScottPlot.Avalonia.csproj" />
+    <ProjectReference Include="..\Semi.Avalonia.ColorPicker\Semi.Avalonia.ColorPicker.csproj" />
+    <ProjectReference Include="..\Semi.Avalonia.DataGrid\Semi.Avalonia.DataGrid.csproj" />
+    <ProjectReference Include="..\Semi.Avalonia\Semi.Avalonia.csproj" />
     <ProjectReference Include="..\SukiUI\SukiUI.csproj" />
   </ItemGroup>
 </Project>

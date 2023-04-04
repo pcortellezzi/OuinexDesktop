@@ -15,12 +15,23 @@
 	</UserControl.Resources>
 	<Grid>
 		<DataGrid Items="{Binding}"
+				  SelectionMode="Single"
 				  AutoGenerateColumns="False">
 			<DataGrid.Columns>
-				<DataGridTextColumn Header="Token"
-									
-									FontWeight="DemiBold"
-									Binding="{Binding Token}"/>
+				<DataGridTemplateColumn Header="Token">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Border Margin="1">
+								<TextBlock Text="{Binding Token}"
+										   FontSize="10"
+										   Margin="3,0"
+										   FontWeight="DemiBold"
+										   HorizontalAlignment="Left"
+										   VerticalAlignment="Center"/>
+							</Border>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
 
 				<DataGridTemplateColumn Header="Amount">
 					<DataGridTemplateColumn.CellTemplate>

@@ -81,7 +81,7 @@
     </Style>
 
 		<Style Selector="RadioButton:pointerover /template/ Ellipse#border">
-			<Setter Property="Stroke" Value="{DynamicResource SukiBorderBrush}" />
+			<Setter Property="Stroke" Value="#FFCBE7FE" />
 		</Style>
 		<Style Selector="RadioButton /template/ Ellipse#checkMark">
 			<Setter Property="Fill" Value="Transparent" />
@@ -89,10 +89,10 @@
 		</Style>
 
 		<Style Selector="RadioButton:checked /template/ Ellipse#border">
-			<Setter Property="Fill" Value="{DynamicResource SukiPrimaryColor}" />
+			<Setter Property="Fill" Value="#FFCBE7FE" />
 		</Style>
 		<Style Selector="RadioButton:checked /template/ Ellipse#checkMark">
-			<Setter Property="Fill" Value="{DynamicResource SukiBackground}" />
+			<Setter Property="Fill" Value="#FFCBE7FE" />
 		</Style>
 
 		<Style Selector="RadioButton /template/ Ellipse#indeterminateMark">

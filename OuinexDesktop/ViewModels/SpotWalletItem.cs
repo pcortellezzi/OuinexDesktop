@@ -93,15 +93,33 @@ namespace OuinexDesktop.ViewModels
                 Amount = (decimal)0.00877428,
                 AverageBuyingPrice=(decimal)18892.23
             });
+
+            Add(new SpotWalletItem("Ouinex Token")
+            {
+                Amount = (decimal)2000652,
+                AverageBuyingPrice = (decimal)0.025,
+                CurrentPrice = (decimal)0.54,
+                UsdValue = (decimal)(2000652 * 0.54),
+                Profit = (decimal)((0.54 - 0.025) * 2000652)
+            });
+
+            Add(new SpotWalletItem("Ethereum")
+            {
+                Amount = (decimal)160.762,
+                AverageBuyingPrice = (decimal)1834.65,
+            });
         }
 
         public async Task InitAsync()
         {
             var btc = ExchangesConnector.Instances.First().Value.Symbols.FirstOrDefault(x => x.BaseCurrency == "BTC" && x.QuoteCurrency == "USDT");
+            var eth = ExchangesConnector.Instances.First().Value.Symbols.FirstOrDefault(x => x.BaseCurrency == "ETH" && x.QuoteCurrency == "USDT");
 
-            var ticker = await ExchangesConnector.Instances.First().Value.GetTickerAsync(btc);
+            var tikcerBTC = await ExchangesConnector.Instances.First().Value.GetTickerAsync(btc);
+            var tikcerETH = await ExchangesConnector.Instances.First().Value.GetTickerAsync(eth);
 
-            this.First().Ticker = ticker;
+            this.First().Ticker = tikcerBTC;
+            this.First(x => x.Token == "Ethereum").Ticker = tikcerETH;
         }
     }
 }

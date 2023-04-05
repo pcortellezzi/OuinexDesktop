@@ -31,6 +31,7 @@ namespace OuinexDesktop.Views.Controls
             this.ratesGrid.DoubleTapped += RatesGrid_DoubleTapped;
             this.ratesGrid.LoadingRow += RatesGrid_LoadingRow;
         }
+         
 
         private void RatesGrid_LoadingRow(object? sender, DataGridRowEventArgs e)
         {

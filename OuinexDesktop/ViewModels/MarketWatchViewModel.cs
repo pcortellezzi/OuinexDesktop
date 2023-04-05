@@ -39,8 +39,6 @@ namespace OuinexDesktop.ViewModels
         public async Task InitStream()
         {
             Symbols = new ObservableCollection<Symbol>(ExchangesConnector.Instances.First().Value.Symbols);
-
-            ShowLoading = false;
         }
 
         public bool ShowLoading
@@ -77,9 +75,6 @@ namespace OuinexDesktop.ViewModels
 
                 if(value != null)
                 {
-
-
-
                     Task.Run(async () =>
                     {
                         await Dispatcher.UIThread.InvokeAsync(() =>

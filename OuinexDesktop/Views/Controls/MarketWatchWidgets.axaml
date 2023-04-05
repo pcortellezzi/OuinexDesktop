@@ -66,9 +66,10 @@
 				Margin="3"
 				HorizontalAlignment="Left">
 			<Button.Flyout>
-				<Flyout Placement="BottomEdgeAlignedLeft">
+				<Flyout Placement="BottomEdgeAlignedLeft"
+						>
 					<Grid RowDefinitions="auto,auto, *"
-						  MaxHeight="300">
+						  Height="200">
 						<StackPanel Orientation="Horizontal">
 							<Border HorizontalAlignment="Left"
 							Theme="{StaticResource RadioButtonGroupBorder}">
@@ -105,167 +106,188 @@
 													   VerticalAlignment="Center"/>
 										</StackPanel>
 									</RadioButton>
-
 								</StackPanel>
 							</Border>
 							<Button ToolTip.Tip="Create a new list"
-											Margin="3,0">
+									Margin="3,0">
 								<material:MaterialIcon Kind="Plus"/>
+							</Button>
+							<Button ToolTip.Tip="Delete selection">
+								<material:MaterialIcon Kind="Trash"
+													   Foreground="OrangeRed"/>
 							</Button>
 						</StackPanel>
 						<TextBox Watermark="Search ..."
+								 Name="searchSymbol"
 								 Margin="3"
 								 Grid.Row="1"/>
-						<DataGrid Items="{Binding Symbols}"
-								  Grid.Row="2"
-								  AutoGenerateColumns="True"/>
+						<Panel Grid.Row="2">
+							<DataGrid Name="allSymbolsGrid"
+									  SelectionMode="Single"
+									  IsReadOnly="True"
+									  SelectedItem="{Binding SelectedSymbol, Mode=TwoWay}"
+									  AutoGenerateColumns="True">
+								<DataGrid.Columns>
+									<DataGridTemplateColumn DisplayIndex="2">
+										<DataGridTemplateColumn.CellTemplate>
+											<DataTemplate>
+												<Button ToolTip.Tip="Add to the current list"
+														Margin="2">
+													<material:MaterialIcon Kind="PlusCircle"/>
+												</Button>
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+									</DataGridTemplateColumn>
+								</DataGrid.Columns>
+							</DataGrid>
+						</Panel>
 					</Grid>
 				</Flyout>
 			</Button.Flyout>
 		</Button>
 		<TabControl Grid.Row="1">
-			<TabItem Header="Simple dealing rates">
-				<Panel>
-					<ScrollViewer>
-						<DataGrid AutoGenerateColumns="False"
-				  FontSize="10"
-				  SelectionMode="Single"
-				  SelectedItem="{Binding SelectedTicker, Mode=TwoWay}"
-				  Items="{Binding Tickers}">
-							<DataGrid.Columns>
-								<DataGridTextColumn Header="Ticker"
-													FontWeight="DemiBold"
-													Binding="{Binding TickerName }">
-								</DataGridTextColumn>
-								<DataGridTemplateColumn Header="Bid">
-									<DataGridTemplateColumn.CellTemplate>
-										<DataTemplate>
-											<Border Background="{Binding BidColor, Converter={StaticResource
+			<TabItem Header="Simple dealing rates"					 
+					 Name="test">
+				<Grid RowDefinitions="*">
+					<DataGrid AutoGenerateColumns="False"
+							  Height="1200"
+							  Name="ratesGrid"
+							  FontSize="10"
+							  SelectionMode="Single"
+							  SelectedItem="{Binding SelectedTicker, Mode=TwoWay}"
+							  Items="{Binding Tickers}">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="Ticker"
+												FontWeight="DemiBold"
+												Binding="{Binding TickerName }">
+							</DataGridTextColumn>
+							<DataGridTemplateColumn Header="Bid">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<Border Background="{Binding BidColor, Converter={StaticResource
 											tickConverter}}"
-													Height="20"
-													CornerRadius="3"
-													Margin="1">
-												<TextBlock Text="{Binding Bid, Converter={StaticResource DecimalToStringConverter}}"
-														   FontSize="10"
-														   Foreground="{Binding BidColor, Converter={StaticResource ResourceKey=tickForegournConverter}}"
-														   Margin="3,0"
-														   HorizontalAlignment="Right"
-														   VerticalAlignment="Center"/>
-											</Border>
-										</DataTemplate>
-									</DataGridTemplateColumn.CellTemplate>
-								</DataGridTemplateColumn>
-								<DataGridTemplateColumn Header="Ask">
-									<DataGridTemplateColumn.CellTemplate>
-										<DataTemplate>
-											<Border Background="{Binding AskColor, Converter={StaticResource ResourceKey=tickConverter}}"
-													Height="20"
-													CornerRadius="3"
-													Margin="1">
-												<TextBlock Text="{Binding Ask, Converter={StaticResource DecimalToStringConverter}}"
-														   Foreground="{Binding AskColor, Converter={StaticResource ResourceKey=tickForegournConverter}}"
-														   FontSize="10"
-														   Margin="3,0"
-														   HorizontalAlignment="Right"
-														   VerticalAlignment="Center"/>
-											</Border>
-										</DataTemplate>
-									</DataGridTemplateColumn.CellTemplate>
-								</DataGridTemplateColumn>
-								<DataGridTemplateColumn Header="Spread">
-									<DataGridTemplateColumn.CellTemplate>
-										<DataTemplate>
-											<Border Margin="1">
-												<TextBlock Text="{Binding Spread, Converter={StaticResource DecimalToStringConverter}}"
-														   FontSize="10"
-														   Margin="3,0"
-														   HorizontalAlignment="Right"
-														   VerticalAlignment="Center"/>
-											</Border>
-										</DataTemplate>
-									</DataGridTemplateColumn.CellTemplate>
-								</DataGridTemplateColumn>
-								<DataGridTemplateColumn Header="% Change">
-									<DataGridTemplateColumn.CellTemplate>
-										<DataTemplate>
-											<Border	Margin="1">
-												<TextBlock Text="{Binding PercentChange}"
-														   FontSize="10"
-														   Foreground="{Binding ChangeColor, Converter={StaticResource
+												Height="20"
+												CornerRadius="3"
+												Margin="1">
+											<TextBlock Text="{Binding Bid, Converter={StaticResource DecimalToStringConverter}}"
+													   FontSize="10"
+													   Foreground="{Binding BidColor, Converter={StaticResource ResourceKey=tickForegournConverter}}"
+													   Margin="3,0"
+													   HorizontalAlignment="Right"
+													   VerticalAlignment="Center"/>
+										</Border>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+							<DataGridTemplateColumn Header="Ask">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<Border Background="{Binding AskColor, Converter={StaticResource ResourceKey=tickConverter}}"
+												Height="20"
+												CornerRadius="3"
+												Margin="1">
+											<TextBlock Text="{Binding Ask, Converter={StaticResource DecimalToStringConverter}}"
+													   Foreground="{Binding AskColor, Converter={StaticResource ResourceKey=tickForegournConverter}}"
+													   FontSize="10"
+													   Margin="3,0"
+													   HorizontalAlignment="Right"
+													   VerticalAlignment="Center"/>
+										</Border>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+							<DataGridTemplateColumn Header="Spread">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<Border Margin="1">
+											<TextBlock Text="{Binding Spread, Converter={StaticResource DecimalToStringConverter}}"
+													   FontSize="10"
+													   Margin="3,0"
+													   HorizontalAlignment="Right"
+													   VerticalAlignment="Center"/>
+										</Border>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+							<DataGridTemplateColumn Header="% Change">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<Border	Margin="1">
+											<TextBlock Text="{Binding PercentChange}"
+													   FontSize="10"
+													   Foreground="{Binding ChangeColor, Converter={StaticResource
 											 ResourceKey=tickConverter}}"
+													   Margin="3,0"
+													   FontWeight="DemiBold"
+													   HorizontalAlignment="Right"
+													   VerticalAlignment="Center"/>
+										</Border>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+							<DataGridTemplateColumn Header="High">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<Border Margin="1">
+											<Grid ColumnDefinitions="auto, *">
+												<Border Classes="Up"
+														IsVisible="{Binding PercentRange, Converter={StaticResource  ResourceKey=upArrowConverter}}"
+														Height="12"
+														Margin="3,0"/>
+												<TextBlock Text="{Binding High, Converter={StaticResource DecimalToStringConverter}}"
+														   FontSize="10"
+														   Grid.Column="1"
 														   Margin="3,0"
-														   FontWeight="DemiBold"
 														   HorizontalAlignment="Right"
 														   VerticalAlignment="Center"/>
-											</Border>
-										</DataTemplate>
-									</DataGridTemplateColumn.CellTemplate>
-								</DataGridTemplateColumn>
-								<DataGridTemplateColumn Header="High">
-									<DataGridTemplateColumn.CellTemplate>
-										<DataTemplate>
-											<Border Margin="1">
-												<Grid ColumnDefinitions="auto, *">
-													<Border Classes="Up"
-															IsVisible="{Binding PercentRange, Converter={StaticResource  ResourceKey=upArrowConverter}}"
-															Height="12"
-															Margin="3,0"/>
-													<TextBlock Text="{Binding High, Converter={StaticResource DecimalToStringConverter}}"
-															   FontSize="10"
-															   Grid.Column="1"
-															   Margin="3,0"
-															   HorizontalAlignment="Right"
-															   VerticalAlignment="Center"/>
-												</Grid>
-											</Border>
-										</DataTemplate>
-									</DataGridTemplateColumn.CellTemplate>
-								</DataGridTemplateColumn>
-								<DataGridTemplateColumn Header="Low">
-									<DataGridTemplateColumn.CellTemplate>
-										<DataTemplate>
-											<Border Margin="1">
-												<Grid ColumnDefinitions="auto, *">
-													<Border Classes="Down"
-															IsVisible="{Binding PercentRange, Converter={StaticResource  ResourceKey=downArrowConverter}}"
-															Height="12"
-															Margin="3,0"/>
-													<TextBlock Text="{Binding Low, Converter={StaticResource DecimalToStringConverter}}"
-															   FontSize="10"
-															   Grid.Column="1"
-															   Margin="3,0"
-															   HorizontalAlignment="Right"
-															   VerticalAlignment="Center"/>
-												</Grid>
-											</Border>
-										</DataTemplate>
-									</DataGridTemplateColumn.CellTemplate>
-								</DataGridTemplateColumn>
-								<DataGridTemplateColumn Header="% Range">
-									<DataGridTemplateColumn.CellTemplate>
-										<DataTemplate>
-											<Border	Margin="1">
-												<ProgressBar Value="{Binding PercentRange}"
-															 ToolTip.Tip="{Binding PercentRange}"/>
-											</Border>
-										</DataTemplate>
-									</DataGridTemplateColumn.CellTemplate>
-								</DataGridTemplateColumn>
-							</DataGrid.Columns>
-							<DataGrid.ContextMenu>
-								<ContextMenu>
-									<MenuItem Header="Open a chart">
-										<MenuItem Header="M1"
-												  Command="{Binding OpenChartCommand}"/>
-									</MenuItem>
-									<MenuItem Header="Setup an alert"/>
-								</ContextMenu>
-							</DataGrid.ContextMenu>
-						</DataGrid>
+											</Grid>
+										</Border>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+							<DataGridTemplateColumn Header="Low">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<Border Margin="1">
+											<Grid ColumnDefinitions="auto, *">
+												<Border Classes="Down"
+														IsVisible="{Binding PercentRange, Converter={StaticResource  ResourceKey=downArrowConverter}}"
+														Height="12"
+														Margin="3,0"/>
+												<TextBlock Text="{Binding Low, Converter={StaticResource DecimalToStringConverter}}"
+														   FontSize="10"
+														   Grid.Column="1"
+														   Margin="3,0"
+														   HorizontalAlignment="Right"
+														   VerticalAlignment="Center"/>
+											</Grid>
+										</Border>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+						
+						</DataGrid.Columns>
+						<DataGrid.ContextMenu>
+							<ContextMenu>
+								<MenuItem Header="Open a chart">
+									<MenuItem Header="1 minute"
+											  Command="{Binding OpenChartCommand}"/>
+									<MenuItem Header="5 minutes"
+											  Command="{Binding OpenChartCommand}"/>
+									<MenuItem Header="15 minutes"
+											  Command="{Binding OpenChartCommand}"/>
+									<MenuItem Header="30 minutes"
+											  Command="{Binding OpenChartCommand}"/>
+								</MenuItem>
+								<MenuItem Header="Setup an alert"/>
+							</ContextMenu>
+						</DataGrid.ContextMenu>
+					</DataGrid>
 
-					</ScrollViewer>
-				</Panel>
-			</TabItem>
+
+
+				</Grid>
+				</TabItem>
 			<TabItem Header="Advanced dealing rates">
 
 			</TabItem>

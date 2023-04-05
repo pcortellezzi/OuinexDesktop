@@ -16,6 +16,7 @@ namespace OuinexDesktop.ViewModels
         private TickerViewModel _ticker;
         private OrderBookViewModel _orderBook = new OrderBookViewModel();
         private CoinGeckoAPI _cmcAPI = new CoinGeckoAPI();
+        private Symbol _selectedSymbol;
         public MarketWatchViewModel()
         {
             this.OpenChartCommand = ReactiveCommand.Create(async () =>
@@ -37,16 +38,7 @@ namespace OuinexDesktop.ViewModels
 
         public async Task InitStream()
         {
-            var symbols = ExchangesConnector.Instances.First().Value.Symbols.Take(30);
-
-            foreach (var symbol in symbols)
-            {
-                var newTicker = new TickerViewModel(symbol, ExchangesConnector.Instances.First().Value);
-
-                await Dispatcher.UIThread.InvokeAsync(() => { this.Tickers.Add(newTicker); });
-            }
-
-            await Dispatcher.UIThread.InvokeAsync(() => Symbols = new ObservableCollection<Symbol>(ExchangesConnector.Instances.First().Value.Symbols));
+            Symbols = new ObservableCollection<Symbol>(ExchangesConnector.Instances.First().Value.Symbols);
 
             ShowLoading = false;
         }
@@ -75,5 +67,21 @@ namespace OuinexDesktop.ViewModels
         public ObservableCollection<Symbol> Symbols { get; set; } = new ObservableCollection<Symbol>();
 
         public ICommand OpenChartCommand { get; }
+
+        public Symbol SelectedSymbol
+        {
+            get => _selectedSymbol;
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _selectedSymbol, value, nameof(SelectedSymbol));
+
+                if(value != null)
+                {
+                    var newTicker = new TickerViewModel(_selectedSymbol, ExchangesConnector.Instances.First().Value);
+
+                    Task.Run(async () => { await Dispatcher.UIThread.InvokeAsync(() => { this.Tickers.Add(newTicker); }); });
+                }
+            }
+        }
     }
 }

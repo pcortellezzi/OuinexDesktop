@@ -24,65 +24,20 @@
 				<controls:WalletsGrid DataContext="{Binding  SpotWalletsMVVM}"/>
 			</StackPanel>
 		</Border>
-       <Grid Grid.Row="2"
-			  ColumnDefinitions="auto, auto, *">
-			<Border Theme="{StaticResource CardBorder}"
-					Margin="3"
-					CornerRadius="4"
-					Padding="4">
-				<StackPanel>
-					<TextBlock Classes="H6"
-						   Theme="{StaticResource TitleTextBlock}"
-						   Margin="5,0,0,15">Symbols and lists</TextBlock>
-					<StackPanel>
-						<StackPanel Orientation="Horizontal">
-							<TextBox Watermark="Filter"
-									 x:Name="searchBox"
-									 TextChanged="SearchBox_TextChanging"
-									 VerticalAlignment="Center"
-									 Margin="3"/>
-						<Button Content="Manage list"/>
-						</StackPanel>
-						<TreeView x:Name="treeView">
-							<TreeView.Items>
-								<TreeViewItem Header="Favorites">
-									<TreeViewItem Header="BTC/USDT" />
-									<TreeViewItem Header="ETH/USDT" />
-									<TreeViewItem Header="XRP/BTC" />
-									<TreeViewItem Header="XRP/jEUR" /> 
-								</TreeViewItem>
-								<TreeViewItem Header="Owning">
-									<TreeViewItem Header="jEUR/jUSD" />
-									<TreeViewItem Header="jCHF/jGBP" />
-								</TreeViewItem>
-								<TreeViewItem Header="Day trading">
-									<TreeViewItem Header="jEUR/jUSD" />
-									<TreeViewItem Header="jCHF/jGBP" />
-								</TreeViewItem>
-							</TreeView.Items>
-						</TreeView>
-					</StackPanel>
-				</StackPanel>
-				
-			
-			</Border>
-			<GridSplitter Grid.Column="1"
-						  Width="3"/>
-			<Border Grid.Column="2"
-					Theme="{StaticResource CardBorder}"
-					Margin="3"
-					CornerRadius="4"
-					Padding="4">
-				<StackPanel>
-					<TextBlock Classes="H6"
+		<Border Grid.Row="2"
+				Theme="{StaticResource CardBorder}"
+				Margin="3"
+				CornerRadius="4"
+				Padding="4">
+			<StackPanel>
+				<TextBlock Classes="H6"
 						   Theme="{StaticResource TitleTextBlock}"
 						   Margin="5,0,0,15">Markets</TextBlock>
-					<controls:MarketWatchWidgets DataContext="{Binding MarketWatchMVVM}"
-												 Margin="3"/>
-				</StackPanel>					
-			</Border>
-			
-		</Grid>
+				<controls:MarketWatchWidgets DataContext="{Binding MarketWatchMVVM}"
+											 Margin="3"/>
+			</StackPanel>
+		</Border>
+
 		<GridSplitter Grid.Row="1"
 					  Height="3"/>
 		

@@ -23,7 +23,6 @@
 						<DataTemplate>
 							<Border Margin="1">
 								<TextBlock Text="{Binding Token}"
-										   FontSize="10"
 										   Margin="3,0"
 										   FontWeight="DemiBold"
 										   HorizontalAlignment="Left"

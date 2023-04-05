@@ -1,7 +1,5 @@
 ﻿using OuinexDesktop.Models;
-using OuinexDesktop.Views.Controls;
 using ReactiveUI;
-using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 

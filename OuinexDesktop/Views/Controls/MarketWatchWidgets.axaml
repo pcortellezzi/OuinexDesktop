@@ -65,14 +65,13 @@
 		<Button Content="Trading List"
 				Margin="3"
 				HorizontalAlignment="Left">
-			<Button.Flyout>
-				<Flyout Placement="BottomEdgeAlignedLeft"
-						>
+			<Button.Flyout >
+				<Flyout Placement="BottomEdgeAlignedLeft">
 					<Grid RowDefinitions="auto,auto, *"
-						  Height="200">
+						  Height="250">
 						<StackPanel Orientation="Horizontal">
 							<Border HorizontalAlignment="Left"
-							Theme="{StaticResource RadioButtonGroupBorder}">
+									Theme="{StaticResource RadioButtonGroupBorder}">
 								<StackPanel Orientation="Horizontal">
 									<RadioButton Theme="{DynamicResource ButtonRadioButton}"
 												 IsChecked="true"
@@ -148,20 +147,21 @@
 		<TabControl Grid.Row="1">
 			<TabItem Header="Simple dealing rates"					 
 					 Name="test">
-				<Grid RowDefinitions="*">
+				<Border>
 					<DataGrid AutoGenerateColumns="False"
-							  Height="1200"
-							  Name="ratesGrid"
-							  FontSize="10"
-							  SelectionMode="Single"
-							  SelectedItem="{Binding SelectedTicker, Mode=TwoWay}"
-							  Items="{Binding Tickers}">
+								  Name="ratesGrid"
+								  FontSize="10"
+						    	  Height="NaN"
+								  ScrollViewer.VerticalScrollBarVisibility="Visible"
+								  SelectionMode="Single"
+								  SelectedItem="{Binding SelectedTicker, Mode=TwoWay}"
+								  Items="{Binding Tickers}">
 						<DataGrid.Columns>
 							<DataGridTextColumn Header="Ticker"
 												FontWeight="DemiBold"
 												Binding="{Binding TickerName }">
 							</DataGridTextColumn>
-							<DataGridTemplateColumn Header="Bid">
+							<DataGridTemplateColumn Header="Bid" >
 								<DataGridTemplateColumn.CellTemplate>
 									<DataTemplate>
 										<Border Background="{Binding BidColor, Converter={StaticResource
@@ -265,7 +265,7 @@
 									</DataTemplate>
 								</DataGridTemplateColumn.CellTemplate>
 							</DataGridTemplateColumn>
-						
+
 						</DataGrid.Columns>
 						<DataGrid.ContextMenu>
 							<ContextMenu>
@@ -284,9 +284,7 @@
 						</DataGrid.ContextMenu>
 					</DataGrid>
 
-
-
-				</Grid>
+				</Border>
 				</TabItem>
 			<TabItem Header="Advanced dealing rates">
 

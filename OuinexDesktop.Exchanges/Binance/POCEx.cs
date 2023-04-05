@@ -51,13 +51,15 @@ namespace OuinexDesktop.Exchanges
 
             if (request.Success)
             {
-                Symbols = request.Data.Select(x => new POCSymbol()
+                var datas = request.Data.ToList();
+                
+                Symbols = datas.OrderBy(x => x.BaseAsset).Select(x => new POCSymbol()
                 {
                     BaseCurrency = x.BaseAsset,
                     QuoteCurrency = x.QuoteAsset,
                     Name = x.Symbol
                 });
-
+                 
                 Console.WriteLine(Symbols.ToString());
 
                 IsInitialized = true;

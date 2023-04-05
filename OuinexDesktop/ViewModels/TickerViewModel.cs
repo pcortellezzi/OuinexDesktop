@@ -1,4 +1,6 @@
-﻿using OuinexDesktop.Models;
+﻿using Avalonia.Controls;
+using OuinexDesktop.Models;
+using OuinexDesktop.Views.Controls;
 using ReactiveUI;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -28,6 +30,8 @@ namespace OuinexDesktop.ViewModels
                     Update(t);
                 };
             });
+
+            OpenATicketCommand =  ReactiveCommand.Create(() => OpenATicketWindowExecute());
         }
 
         private void Update(Ticker t)
@@ -121,11 +125,33 @@ namespace OuinexDesktop.ViewModels
             PercentRange =  ((Ask - High) / (Low-High)) * 100;
         }
 
-        public ICommand OpenChartCommand { get; }
+        public ICommand OpenATicketCommand { get; }
 
         public Symbol Symbol
         {
             get => _symbol;
+        }
+
+        private void OpenATicketWindowExecute()
+        {
+            var window = new Window()
+            {
+                Content = new OpenOrder(),
+                SizeToContent = SizeToContent.WidthAndHeight,
+                Title = "Ticket",
+                WindowStartupLocation= WindowStartupLocation.CenterScreen,
+                CanResize=false
+            };
+
+            window.ContextFlyout = new Flyout()
+            {
+                Content = "test"
+            };
+
+           
+
+            window.Show();
+            window.ContextFlyout.ShowAt(window);
         }
     }
 }

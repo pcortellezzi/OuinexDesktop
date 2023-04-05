@@ -5,6 +5,7 @@
              xmlns:vm="using:OuinexDesktop.ViewModels"
 		     x:DataType="vm:MarketWatchViewModel"
 			 xmlns:converters="using:OuinexDesktop.Converters"
+			 xmlns:material="using:Material.Icons.Avalonia"
 			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="OuinexDesktop.Views.Controls.MarketWatchWidgets">
 	<UserControl.Resources>
@@ -56,13 +57,70 @@
 				<Setter Property="Child" Value="{StaticResource down}"/>
 			</Style>
 		</Styles>
-	</UserControl.Styles>
-	               
+	</UserControl.Styles>	               
 	<Design.DataContext>
 		<vm:MarketWatchViewModel/>
 	</Design.DataContext>
-	<Grid>
-		<TabControl>
+	<Grid RowDefinitions="auto,*">
+		<Button Content="Trading List"
+				Margin="3"
+				HorizontalAlignment="Left">
+			<Button.Flyout>
+				<Flyout Placement="BottomEdgeAlignedLeft">
+					<Grid RowDefinitions="auto,*"
+						  MaxHeight="300">
+						<StackPanel Orientation="Horizontal">
+							<Border HorizontalAlignment="Left"
+							Theme="{StaticResource RadioButtonGroupBorder}">
+								<StackPanel Orientation="Horizontal">
+									<RadioButton Theme="{DynamicResource ButtonRadioButton}"
+												 IsChecked="true"
+												 Name="spotChecker">
+										All
+									</RadioButton>
+									<RadioButton Theme="{DynamicResource ButtonRadioButton}">
+										<StackPanel Orientation="Horizontal">
+											<material:MaterialIcon Kind="Star"
+																   Foreground="Orange"
+																   Margin="3"/>
+											<TextBlock Text="Favorites"
+													   VerticalAlignment="Center"/>
+										</StackPanel>
+									</RadioButton>
+									<RadioButton Theme="{DynamicResource ButtonRadioButton}">
+										<StackPanel Orientation="Horizontal">
+											<material:MaterialIcon Kind="Bitcoin"
+																   Foreground="Orange"
+																   Margin="3"/>
+											<TextBlock Text="BTC"
+													   VerticalAlignment="Center"/>
+										</StackPanel>
+									</RadioButton>
+									<RadioButton Theme="{DynamicResource ButtonRadioButton}">
+										<StackPanel Orientation="Horizontal">
+											<material:MaterialIcon Kind="Ethereum"
+																   Foreground="Orange"
+																   Margin="3"/>
+											<TextBlock Text="Ethereum"
+													   VerticalAlignment="Center"/>
+										</StackPanel>
+									</RadioButton>
+
+								</StackPanel>
+							</Border>
+							<Button ToolTip.Tip="Create a new list"
+											Margin="3,0">
+								<material:MaterialIcon Kind="Plus"/>
+							</Button>
+						</StackPanel>
+						<DataGrid Items="{Binding Symbols}"
+								  Grid.Row="1"
+								  AutoGenerateColumns="True"/>
+					</Grid>
+				</Flyout>
+			</Button.Flyout>
+		</Button>
+		<TabControl Grid.Row="1">
 			<TabItem Header="Simple dealing rates">
 				<Panel>
 					<ScrollViewer>
@@ -97,8 +155,7 @@
 								<DataGridTemplateColumn Header="Ask">
 									<DataGridTemplateColumn.CellTemplate>
 										<DataTemplate>
-											<Border Background="{Binding AskColor, Converter={StaticResource
-											 ResourceKey=tickConverter}}"
+											<Border Background="{Binding AskColor, Converter={StaticResource ResourceKey=tickConverter}}"
 													Height="20"
 													CornerRadius="3"
 													Margin="1">

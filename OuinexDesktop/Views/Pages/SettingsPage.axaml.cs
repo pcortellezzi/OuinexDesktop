@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Styling;
 using DynamicData.Kernel;
 
 namespace OuinexDesktop.Views.Pages;
@@ -19,13 +20,18 @@ public partial class SettingsPage : UserControl
 
     private void SelectingItemsControl_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
-        if((sender as ComboBox).SelectedIndex == 0)
+        var app = Application.Current;
+
+        if ((sender as ComboBox).SelectedIndex == 0)
         {
             SukiUI.ColorTheme.LoadLightTheme(Application.Current);
+            app.RequestedThemeVariant = ThemeVariant.Light;
         }
         else
         {
             SukiUI.ColorTheme.LoadDarkTheme(Application.Current);
+            app.RequestedThemeVariant = ThemeVariant.Dark;
         }
+
     }
 }

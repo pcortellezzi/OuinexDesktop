@@ -65,10 +65,10 @@
 													Background="Green"
 													HorizontalAlignment="Left">
 												<Label Content="Ouinex KYC verified"
-														Foreground="White"
-														FontSize="10"
-														VerticalAlignment="Center"
-														HorizontalAlignment="Center"/>
+													   Foreground="White"
+													   FontSize="10"
+												       VerticalAlignment="Center"
+												       HorizontalAlignment="Center"/>
 											</Border>
 										</StackPanel>
 									</DockPanel>
@@ -133,7 +133,6 @@
 								<suki:SideMenuItem Header="Applications"
 												   Icon="Plugin">
 									<suki:SideMenuItem.Content>
-
 									</suki:SideMenuItem.Content>
 								</suki:SideMenuItem>
 							</suki:SideMenuModel.MenuItems>

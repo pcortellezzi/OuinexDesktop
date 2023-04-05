@@ -1,4 +1,5 @@
 ﻿using Avalonia.Threading;
+using OuinexDesktop.Models;
 using OuinexDesktop.Views;
 using ReactiveUI;
 using System.Collections.ObjectModel;
@@ -45,6 +46,8 @@ namespace OuinexDesktop.ViewModels
                 await Dispatcher.UIThread.InvokeAsync(() => { this.Tickers.Add(newTicker); });
             }
 
+            Dispatcher.UIThread.InvokeAsync(() => Symbols = new ObservableCollection<Symbol>(ExchangesConnector.Instances.First().Value.Symbols));
+
             ShowLoading = false;
         }
 
@@ -69,7 +72,7 @@ namespace OuinexDesktop.ViewModels
             set => this.RaiseAndSetIfChanged(ref _orderBook, value, nameof(OrderBook));
         }
 
-
+        public ObservableCollection<Symbol> Symbols { get; set; } = new ObservableCollection<Symbol>();
 
         public ICommand OpenChartCommand { get; }
     }

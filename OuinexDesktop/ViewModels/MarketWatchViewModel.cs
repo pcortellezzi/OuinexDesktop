@@ -1,4 +1,8 @@
-﻿using Avalonia.Threading;
+﻿using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Controls.Notifications;
+using Avalonia.Threading;
+using Microsoft.VisualBasic;
 using OuinexDesktop.Models;
 using OuinexDesktop.Views;
 using ReactiveUI;
@@ -17,6 +21,8 @@ namespace OuinexDesktop.ViewModels
         private OrderBookViewModel _orderBook = new OrderBookViewModel();
         private CoinGeckoAPI _cmcAPI = new CoinGeckoAPI();
         private Symbol _selectedSymbol;
+
+        public WindowNotificationManager? _manager;
         public MarketWatchViewModel()
         {
             this.OpenChartCommand = ReactiveCommand.Create(async () =>
@@ -81,6 +87,8 @@ namespace OuinexDesktop.ViewModels
                         {
                             var newTicker = new TickerViewModel(_selectedSymbol, ExchangesConnector.Instances.First().Value);
                             this.Tickers.Add(newTicker);
+
+                            _manager?.Show(new Notification("Information", string.Format("{0} added to the list", _selectedSymbol.FullName), NotificationType.Information));
                         });
                     });
                 }

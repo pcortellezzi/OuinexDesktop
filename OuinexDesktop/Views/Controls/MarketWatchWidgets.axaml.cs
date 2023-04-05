@@ -1,4 +1,6 @@
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Notifications;
 using OuinexDesktop.Models;
 using OuinexDesktop.ViewModels;
 using System.Collections;
@@ -60,6 +62,15 @@ namespace OuinexDesktop.Views.Controls
             {
                 this.allSymbolsGrid.Items = _symbolList;
             }
-        }        
+        }
+
+        protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+        {
+            base.OnAttachedToVisualTree(e);
+            var topLevel = TopLevel.GetTopLevel(this);
+            var _manager = new WindowNotificationManager(topLevel) { MaxItems = 3 };
+
+            (DataContext as MarketWatchViewModel)._manager = _manager;
+        }
     }
 }

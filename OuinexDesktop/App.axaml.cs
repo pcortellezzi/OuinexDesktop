@@ -38,7 +38,8 @@ namespace OuinexDesktop
 
                      await ExchangesConnector.Instances["POC-Binance"].InitAsync();
                  });
-                
+
+                Statics.MainWinw = window;
             }
 
             base.OnFrameworkInitializationCompleted();

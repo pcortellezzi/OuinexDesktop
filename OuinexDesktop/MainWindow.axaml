@@ -2,8 +2,240 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	    xmlns:material="using:Material.Icons.Avalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="OuinexDesktop.MainWindow"
+		WindowState="Maximized"
+		xmlns:pages="clr-namespace:OuinexDesktop.Views.Pages"
+		xmlns:vm="clr-namespace:OuinexDesktop.ViewModels"
+		x:DataType="vm:MainWindowViewModel"
+		Name="mainWindow"
         Title="MainWindow">
-  Welcome to Avalonia!
+	<Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+	<Grid ColumnDefinitions="*">
+		<pages:SettingsPage Margin="62,0,0,0"
+							IsVisible="{Binding ElementName=Settings, Path=IsChecked}"/>
+		<pages:MarketsPage Margin="62,0,0,0"
+						   IsVisible="{Binding ElementName=Exchange, Path=IsChecked}"
+						   DataContext="{Binding ElementName=mainWindow, Path=DataContext}"/>
+
+		<Grid>
+			<SplitView CompactPaneLength="60"
+					   DisplayMode="CompactOverlay"
+				       OpenPaneLength="250"
+					   PanePlacement="Left"
+					   PaneBackground="#002B49"					   
+					   IsPaneOpen="{Binding ElementName=menuGrid, Path=IsPointerOver}">
+				<SplitView.Pane>
+					<Border Name="menuGrid"
+							Background="#002B49">
+						<Grid RowDefinitions="auto,*">
+							<StackPanel HorizontalAlignment="Center">
+								<ToggleSwitch Theme="{DynamicResource ButtonToggleSwitch}"
+											  Name="menuButton"
+											  Margin="6,2"
+											  HorizontalAlignment="Center"
+											  Padding="0"
+											  IsChecked="{Binding ElementName=menuGrid, Path=IsPointerOver}">
+									<ToggleSwitch.OnContent>
+										<StackPanel>
+											<Image Source="/Assets/ouinex-footer2.png"
+											   VerticalAlignment="Center"
+											   HorizontalAlignment="Center"
+											   Height="30"/>
+											<TextBlock Text="Alpba Version 0.01"
+													   Margin="5"
+													   Foreground="White"
+													   HorizontalAlignment="Center"
+													   FontWeight="Light"
+													   FontSize="10"/>
+										</StackPanel>
+									</ToggleSwitch.OnContent>
+									<ToggleSwitch.OffContent>
+										<Image Source="/Assets/favicon.png"
+												VerticalAlignment="Center"
+											   HorizontalAlignment="Center"
+											   Height="30"/>
+									</ToggleSwitch.OffContent>
+								</ToggleSwitch>
+								<StackPanel Margin="0,5,0,0"
+											IsVisible="{Binding ElementName=menuGrid, Path=IsPointerOver}">
+									<DockPanel>
+										<StackPanel VerticalAlignment="Center"
+													Margin="10,10">
+											<TextBlock
+													FontSize="18"
+													Foreground="White"
+													HorizontalAlignment="Center"
+													FontWeight="DemiBold"
+													Text="Damien Soudant" />
+											<TextBlock Foreground="White"
+													   FontSize="12"
+													   HorizontalAlignment="Center"
+													   FontWeight="Thin"
+													   Margin="3,1,0,0"
+													   Text="damien.soudant@gmail.com" />
+											<Border CornerRadius="4"
+													Margin="3"
+													BorderThickness="1"
+													BorderBrush="#07bf7d"
+													Padding="5"
+													Background="#07bf7d"
+													HorizontalAlignment="Center">
+												<Label Content="Ouinex KYC verified"
+													   Foreground="White"
+													   FontSize="10"
+													   VerticalAlignment="Center"
+													   HorizontalAlignment="Center"/>
+											</Border>
+										</StackPanel>
+									</DockPanel>
+									<Border Background="LightGray"
+											Height="0"
+											Margin="10,15" />
+								</StackPanel>
+							</StackPanel>
+							<DockPanel Grid.Row="1"
+									   LastChildFill="False">
+
+								<RadioButton Theme="{DynamicResource SideMenuRadio}"
+											 Margin="3"
+											 DockPanel.Dock="Top"
+											 BorderThickness="0"
+											 ToolTip.Tip="Exchange"
+											 Foreground="White"
+											 Name="Exchange"
+											 IsChecked="true"
+											 Padding="0,3">
+									<StackPanel Orientation="Horizontal">
+										<material:MaterialIcon Kind="Exchange"
+															   Margin="12,0"
+															   Width="25"
+															   Height="25"/>
+										<TextBlock Text="Exchange"
+												   VerticalAlignment="Center"
+												   Margin="10,0"
+												   IsVisible="{Binding ElementName=menuGrid, Path=IsPointerOver}"
+												   FontSize="15"/>
+									</StackPanel>
+								</RadioButton>
+
+								<RadioButton Theme="{DynamicResource SideMenuRadio}"
+											 Margin="3"
+										     DockPanel.Dock="Top"
+											 ToolTip.Tip="Wallets"
+											 Padding="0,3">
+									<StackPanel Orientation="Horizontal">
+										<material:MaterialIcon Kind="WalletBifoldOutline"
+															   Margin="12,0"
+															   Width="25"
+															   Height="25"/>
+										<TextBlock Text="Wallets"
+												   VerticalAlignment="Center"
+												   Margin="10,0"
+												   HorizontalAlignment="Right"
+												   IsVisible="{Binding ElementName=menuGrid, Path=IsPointerOver}"
+												   FontSize="15"/>
+									</StackPanel>
+								</RadioButton>
+
+								<RadioButton Theme="{DynamicResource SideMenuRadio}"
+											 Margin="3"
+											  DockPanel.Dock="Top"
+											 ToolTip.Tip="Trading Reports"
+											 Padding="0,3">
+									<StackPanel Orientation="Horizontal">
+										<material:MaterialIcon Kind="ChartFinance"
+															   Margin="12,0"
+															   Width="25"
+															   Height="25"/>
+										<TextBlock Text="Trading Reports"
+												   VerticalAlignment="Center"
+												   Margin="10,0"
+												   IsVisible="{Binding ElementName=menuGrid, Path=IsPointerOver}"
+												   FontSize="15"/>
+									</StackPanel>
+								</RadioButton>
+
+								<RadioButton Theme="{DynamicResource SideMenuRadio}"
+											 Margin="3"
+											 DockPanel.Dock="Top"
+											 ToolTip.Tip="Trading Bots"
+											 Padding="0,3">
+									<StackPanel Orientation="Horizontal">
+										<material:MaterialIcon Kind="CodeTags"
+															   Margin="12,0"
+															   Width="25"
+															   Height="25"/>
+										<TextBlock Text="Trading Bots"
+												   VerticalAlignment="Center"
+												   Margin="10,0"
+												   IsVisible="{Binding ElementName=menuGrid, Path=IsPointerOver}"
+												   FontSize="15"/>
+									</StackPanel>
+								</RadioButton>
+
+								<RadioButton Theme="{DynamicResource SideMenuRadio}"
+											 Margin="3"
+											  DockPanel.Dock="Top"
+											 ToolTip.Tip="Applications"
+											 Padding="0,3">
+									<StackPanel Orientation="Horizontal">
+										<material:MaterialIcon Kind="Plugin"
+															   Margin="12,0"
+															   Width="25"
+															   Height="25"/>
+										<TextBlock Text="Applications"
+												   VerticalAlignment="Center"
+												   Margin="10,0"
+												   IsVisible="{Binding ElementName=menuGrid, Path=IsPointerOver}"
+												   FontSize="15"/>
+									</StackPanel>
+								</RadioButton>
+
+								<RadioButton Theme="{DynamicResource SideMenuRadio}"
+											 Margin="3"
+											DockPanel.Dock="Bottom"
+											 Name="Settings"
+											 ToolTip.Tip="Settings"
+											 Padding="0,3">
+									<StackPanel Orientation="Horizontal">
+										<material:MaterialIcon Kind="Settings"
+															   Margin="12,0"
+															   Width="25"
+															   Height="25"/>
+										<TextBlock Text="Settings"
+												   VerticalAlignment="Center"
+												   Margin="10,0"
+												   IsVisible="{Binding ElementName=menuGrid, Path=IsPointerOver}"
+												   FontSize="15"/>
+									</StackPanel>
+								</RadioButton>
+
+								<RadioButton Theme="{DynamicResource SideMenuRadio}"
+											 Margin="3"
+											 ToolTip.Tip="AppStore"
+											 DockPanel.Dock="Bottom"
+											 Padding="0,3">
+									<StackPanel Orientation="Horizontal">
+										<material:MaterialIcon Kind="CloudDiscount"
+															   Margin="12,0"
+															   Width="25"
+															   Height="25"/>
+										<TextBlock Text="AppStore"
+												   VerticalAlignment="Center"
+												   Margin="10,0"
+												   IsVisible="{Binding ElementName=menuGrid, Path=IsPointerOver}"
+												   FontSize="15"/>
+									</StackPanel>
+								</RadioButton>
+							</DockPanel>
+						</Grid>
+					</Border>
+				</SplitView.Pane>
+			</SplitView>
+		</Grid>		
+	</Grid>	
 </Window>

@@ -77,9 +77,17 @@ namespace OuinexDesktop.ViewModels
 
                 if(value != null)
                 {
-                    var newTicker = new TickerViewModel(_selectedSymbol, ExchangesConnector.Instances.First().Value);
 
-                    Task.Run(async () => { await Dispatcher.UIThread.InvokeAsync(() => { this.Tickers.Add(newTicker); }); });
+
+
+                    Task.Run(async () =>
+                    {
+                        await Dispatcher.UIThread.InvokeAsync(() =>
+                        {
+                            var newTicker = new TickerViewModel(_selectedSymbol, ExchangesConnector.Instances.First().Value);
+                            this.Tickers.Add(newTicker);
+                        });
+                    });
                 }
             }
         }

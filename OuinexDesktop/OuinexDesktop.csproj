@@ -18,6 +18,7 @@
     <None Remove="Assets\abstract.gif" />
     <None Remove="Assets\favicon.png" />
     <None Remove="Assets\logo-white.png" />
+    <None Remove="Assets\ouinex-footer2.png" />
     <None Remove="Assets\window-ico.ico" />
   </ItemGroup>
 

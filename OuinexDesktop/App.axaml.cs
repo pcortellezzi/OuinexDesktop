@@ -21,23 +21,24 @@ namespace OuinexDesktop
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                var vm = new MainWindowViewModel();
-                var window = new FreshWindow()
-                {
-                    DataContext = vm
-                };
+                 var vm = new MainWindowViewModel();
+                 var window = new MainWindow()
+                 {
+                     DataContext = vm
+                 };
 
 
-                desktop.MainWindow = window;
-                window.Loaded += ((sender, args) =>
-                {
-                   // window.MarketsPage.DataContext = vm.MarketWatchMVVM;
-                    InteractiveContainer.ShowDialog(new LoginControl()
-                    {
-                        DataContext = vm.LoginMVVM
-                    });
+                 desktop.MainWindow = window;
 
-                });
+                 window.Loaded +=  (async(sender, args) => 
+                 {
+                     ExchangesConnector.Instances["POC-Binance"].OnInit += () =>
+                     {
+                     };
+
+                     await ExchangesConnector.Instances["POC-Binance"].InitAsync();
+                 });
+                
             }
 
             base.OnFrameworkInitializationCompleted();

@@ -12,7 +12,7 @@ namespace OuinexDesktop.ViewModels
     {
         public MainWindowViewModel()
         {
-            this.LoginMVVM.OnLogged += LoginMVVM_OnLogged;
+            ExchangesConnector.Instances["POC-Binance"].OnInit += LoginMVVM_OnLogged;
 
             this.OpenMarketWatchWindow = ReactiveCommand.Create(() =>
             {
@@ -33,7 +33,7 @@ namespace OuinexDesktop.ViewModels
         private void LoginMVVM_OnLogged()
         {
             //close the login popup
-            InteractiveContainer.CloseDialog();
+            //InteractiveContainer.CloseDialog();
             
             Task.Run(async () => 
             {

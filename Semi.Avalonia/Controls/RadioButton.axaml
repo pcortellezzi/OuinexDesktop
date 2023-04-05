@@ -449,4 +449,65 @@
         </Style>
 
     </ControlTheme>
+
+	<ControlTheme x:Key="SideMenuRadio" TargetType="RadioButton">
+		<Setter Property="RadioButton.CornerRadius" Value="{DynamicResource RadioButtonCardCornerRadius}" />
+		<Setter Property="RadioButton.Cursor" Value="Hand" />
+		<Setter Property="RadioButton.VerticalContentAlignment" Value="Center" />
+		<Setter Property="RadioButton.BorderThickness" Value="0" />
+		<Setter Property="RadioButton.FontSize" Value="{DynamicResource RadioButtonFontSize}" />
+		<Setter Property="RadioButton.Padding" Value="{DynamicResource RadioButtonCardPadding}" />
+		<Setter Property="RadioButton.Background" Value="Transparent" />
+		<Setter Property="RadioButton.Foreground" Value="White" />
+		<Setter Property="RadioButton.Template">
+			<ControlTemplate TargetType="RadioButton">
+				<ContentPresenter
+                    x:Name="PART_ContentPresenter"
+                    Margin="{TemplateBinding Margin}"
+                    Padding="{TemplateBinding Padding}"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    RecognizesAccessKey="True"
+                    UseLayoutRounding="False" />
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:unchecked">
+			<Setter Property="RadioButton.BorderBrush" Value="{DynamicResource RadioButtonCardDefaultBorderBrush}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="RadioButton.Background" Value="#07bf7d" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="RadioButton.Background" Value="#07bf7d" />
+			</Style>
+			<Style Selector="^:disabled">
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{DynamicResource RadioButtonDisabledForeground}" />
+				</Style>
+			</Style>
+		</Style>
+		<Style Selector="^:checked">
+			<Setter Property="RadioButton.Background" Value="#07bf7d" />
+			<Setter Property="RadioButton.BorderBrush" Value="{DynamicResource RadioButtonCardCheckDefaultBorderBrush}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="RadioButton.BorderBrush" Value="{DynamicResource RadioButtonCardCheckPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="RadioButton.BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:disabled">
+				<Setter Property="BorderBrush" Value="{DynamicResource RadioButtonCheckIconDisabledBackground}" />
+				<Setter Property="Background" Value="{DynamicResource RadioButtonCardCheckedBackground}" />
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{DynamicResource RadioButtonDisabledForeground}" />
+				</Style>
+			</Style>
+		</Style>
+
+	</ControlTheme>
 </ResourceDictionary>

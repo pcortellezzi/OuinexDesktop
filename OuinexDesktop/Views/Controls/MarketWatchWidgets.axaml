@@ -67,7 +67,7 @@
 				HorizontalAlignment="Left">
 			<Button.Flyout>
 				<Flyout Placement="BottomEdgeAlignedLeft">
-					<Grid RowDefinitions="auto,*"
+					<Grid RowDefinitions="auto,auto, *"
 						  MaxHeight="300">
 						<StackPanel Orientation="Horizontal">
 							<Border HorizontalAlignment="Left"
@@ -113,8 +113,11 @@
 								<material:MaterialIcon Kind="Plus"/>
 							</Button>
 						</StackPanel>
+						<TextBox Watermark="Search ..."
+								 Margin="3"
+								 Grid.Row="1"/>
 						<DataGrid Items="{Binding Symbols}"
-								  Grid.Row="1"
+								  Grid.Row="2"
 								  AutoGenerateColumns="True"/>
 					</Grid>
 				</Flyout>

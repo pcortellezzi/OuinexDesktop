@@ -46,7 +46,7 @@ namespace OuinexDesktop.ViewModels
                 await Dispatcher.UIThread.InvokeAsync(() => { this.Tickers.Add(newTicker); });
             }
 
-            Dispatcher.UIThread.InvokeAsync(() => Symbols = new ObservableCollection<Symbol>(ExchangesConnector.Instances.First().Value.Symbols));
+            await Dispatcher.UIThread.InvokeAsync(() => Symbols = new ObservableCollection<Symbol>(ExchangesConnector.Instances.First().Value.Symbols));
 
             ShowLoading = false;
         }

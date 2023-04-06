@@ -10,43 +10,50 @@
 		ExtendClientAreaChromeHints="Default"
 		TransparencyLevelHint="Mica"
 		ExtendClientAreaTitleBarHeightHint="0">
-	<Grid RowDefinitions="auto, *">
-		<Border x:Name="titleBar"
-				Height="30"
-				Background="#07131e">
-			<Grid ColumnDefinitions="auto,*,auto">
-				<StackPanel Orientation="Horizontal"
-							HorizontalAlignment="Center"
-							Grid.ColumnSpan="3">
-					<Image Source="/Assets/favicon.png"
-						   HorizontalAlignment="Center"
-						   VerticalAlignment="Center"
-						   Height="15"/>
-					<TextBlock Text="Ouinex Pro : Bêta 0.01"
-							   Margin="3,0"
-							   Foreground="White"
-							   VerticalAlignment="Center"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal"
-							Grid.Column="2"
-							Margin="8,0">
-					<Ellipse Height="10"
-							 Width="10"
-							 x:Name="minimizeButton"
-							 Fill="LimeGreen"/>
-					<Ellipse Height="10"
-							 Width="10"
-							 Margin="5,0"
-							 x:Name="maximizeButton"
-							 Fill="Orange"/>
-					<Ellipse Height="10"
-							 Width="10"
-							 x:Name="closeButton"
-							 Fill="OrangeRed"/>
-				</StackPanel>
-			</Grid>
-		</Border>
-	<Grid Grid.Row="1"
-		  x:Name="mainContainer"/>
-	</Grid>
+	<Border Classes="Shadow"
+			Theme="{StaticResource CardBorder}"
+			Padding="0"
+			CornerRadius="0">
+		<Grid RowDefinitions="auto, *">
+			<Border x:Name="titleBar"
+				
+					Height="30"
+					Background="#07131e">
+				<Grid ColumnDefinitions="auto,*,auto">
+					<StackPanel Orientation="Horizontal"
+								HorizontalAlignment="Center"
+								Grid.ColumnSpan="3">
+						<Image Source="/Assets/favicon.png"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Height="20"/>
+						<TextBlock Text="Ouinex Pro : Bêta 0.01"
+								   Margin="10,0"
+								   Name="CustomTitle"
+								   Foreground="White"
+								   VerticalAlignment="Center"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal"
+								Grid.Column="2"
+								Margin="8,0">
+						<Ellipse Height="12"
+								 Width="12"
+								 x:Name="minimizeButton"
+								 Fill="LimeGreen"/>
+						<Ellipse Height="12"
+								 Width="12"
+								 Margin="5,0"
+								 x:Name="maximizeButton"
+								 Fill="Orange"/>
+						<Ellipse Height="12"
+								 Width="12"
+								 x:Name="closeButton"
+								 Fill="OrangeRed"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+			<Grid Grid.Row="1"
+				  x:Name="mainContainer"/>
+		</Grid>
+	</Border>
 </Window>

@@ -1,6 +1,7 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Controls.Chrome;
 using OuinexDesktop.Models;
+using OuinexDesktop.Views;
 using OuinexDesktop.Views.Controls;
 using ReactiveUI;
 using System.Threading.Tasks;
@@ -135,18 +136,22 @@ namespace OuinexDesktop.ViewModels
 
         private void OpenATicketWindowExecute()
         {
-            var window = new Window()
-            {
-                Content = new OpenOrder(),
+            var window = new ContainerWindow()
+            {               
                 SizeToContent = SizeToContent.WidthAndHeight,
                 Title = "Create an Order",
                 WindowStartupLocation= WindowStartupLocation.CenterScreen,
-                CanResize=false,                
+                CanResize=false
             };
 
-            window.ShowDialog(Statics.MainWindow);
+            var content = new OpenOrder();
+            content.chartBorder.Height = window.Height;
 
-            (window.Content as OpenOrder).chartBorder.Height = window.Height;
+            window.mainContainer.Children.Add(content);
+            window.CustomTitle.Text = string.Format("Create order : {0}", Symbol.FullName);
+            window.ShowDialog(Statics.MainWindow);
+            window.FontSize = 10;
+            
         }
     }
 }

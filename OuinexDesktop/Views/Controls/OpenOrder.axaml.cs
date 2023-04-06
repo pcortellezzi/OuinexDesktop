@@ -16,7 +16,7 @@ namespace OuinexDesktop.Views.Controls
             SetupeTPLogic();
             SetupeTSLogic();
 
-            plot.Plot.AddOHLCs(DataGen.RandomStockPrices(new System.Random(), 100, startingPrice:27000));
+            var candles = plot.Plot.AddCandlesticks(DataGen.RandomStockPrices(new System.Random(), 50, startingPrice:27000));
           
             plot.Refresh();
         }
@@ -28,7 +28,7 @@ namespace OuinexDesktop.Views.Controls
 
         private void Button_OnClick(object? sender, RoutedEventArgs e)
         {
-            (this.Parent as Window).Close();
+            (this.Parent as ContainerWindow).Close();
         }
 
         private void SetupeTPLogic()

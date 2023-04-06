@@ -6,15 +6,10 @@
 			 Name="main"
 			 xmlns:material="using:Material.Icons.Avalonia"
 			 Width="320"
-			  xmlns:sp="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
+			 xmlns:sp="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
              x:Class="OuinexDesktop.Views.Controls.OpenOrder">
-	<Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto">
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="Auto"/>
-			<ColumnDefinition Width="*"/>
-			<ColumnDefinition Width="auto"/>
-		</Grid.ColumnDefinitions>
-
+	<Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto"
+		  ColumnDefinitions="auto,*,auto,auto">
 		<TextBlock Text="Create an order"
                    FontSize="18"
                    FontWeight="Bold"
@@ -33,7 +28,7 @@
 		<TextBox Grid.Row="1"
 				  Margin="3"
 				  Classes="Bordered" 
-				 Grid.ColumnSpan="2"
+				 Grid.ColumnSpan="3"
 				   VerticalAlignment="Center"
                  Grid.Column="1"/>
 
@@ -44,7 +39,7 @@
                    Grid.Column="0"/>
 
 		<ComboBox Grid.Row="2"
-				  Grid.ColumnSpan="2"
+				  Grid.ColumnSpan="3"
 				  SelectedIndex="0"
 				   Margin="3"
 				  HorizontalAlignment="Right"
@@ -56,18 +51,18 @@
 						  Name="isPending"/>
 		</ComboBox>
 
-		<TextBlock Text="Buy/Sell:"
+		<TextBlock Text="Order Side:"
 				   Margin="3"
 				   VerticalAlignment="Center"
                    Grid.Row="3"
                    Grid.Column="0"/>
 
 		<ComboBox Grid.Row="3"
-				  Grid.ColumnSpan="2"
-				   Margin="3"
+				  Grid.ColumnSpan="3"
+				  Margin="3"
 				  SelectedIndex="0"
 				  HorizontalAlignment="Right"
-				   VerticalAlignment="Center"
+				  VerticalAlignment="Center"
                   Grid.Column="1">
 			<ComboBoxItem Content="Buy"/>
 			<ComboBoxItem Content="Sell"/>
@@ -75,19 +70,22 @@
 
 		<TextBlock Text="Volume:"
                    Grid.Row="4"
-				   
-				    Margin="3"
+				   Margin="3"
 				   VerticalAlignment="Center"
                    Grid.Column="0"/>
 
 		<TextBox Grid.Row="4"
 				  Margin="3"
-				 Classes="Bordered" 
+				 Classes="Bordered"
                 InnerRightContent="ETH"
 				 Grid.ColumnSpan="2"
 				   VerticalAlignment="Center"
                  Grid.Column="1"/>
-
+		<material:MaterialIcon Kind="InfoCircle"
+							   Grid.Row="4"
+							   ToolTip.Tip="Volume (or amount) is the size of your position exprimed in the quote currency of the ticker"
+							   Grid.Column="3"
+							   Margin="3"/>
 		<TextBlock Text="Stop Loss:"
 				    Margin="3"
 				   VerticalAlignment="Center"
@@ -101,6 +99,11 @@
 				  Margin="3"
 				   VerticalAlignment="Center"
                  Grid.Column="1"/>
+		<material:MaterialIcon Kind="InfoCircle"
+						   Grid.Row="5"
+						   ToolTip.Tip="Volume (or amount) is the size of your position exprimed in the quote currency of the ticker"
+						   Grid.Column="2"
+						   Margin="3"/>
 
 		<TextBlock Text="Take Profit:"
 				    Margin="3"
@@ -115,29 +118,39 @@
 				  Classes="Bordered" 
 				   VerticalAlignment="Center"
                  Grid.Column="1"/>
+		<material:MaterialIcon Kind="InfoCircle"
+						   Grid.Row="6"
+						   ToolTip.Tip="Volume (or amount) is the size of your position exprimed in the quote currency of the ticker"
+						   Grid.Column="2"
+						   Margin="3"/>
 
 		<TextBlock Text="Price:"
                    Grid.Row="7"
 				   Margin="3"
-				   IsVisible="{Binding ElementName=isPending, Path=IsSelected}"
+				   IsEnabled="{Binding ElementName=isPending, Path=IsSelected}"
 				   VerticalAlignment="Center"
+				   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
                    Grid.Column="0"/>
 
 		<TextBox Grid.Row="7"
-				 IsVisible="{Binding ElementName=isPending, Path=IsSelected}"
+				 IsEnabled="{Binding ElementName=isPending, Path=IsSelected}"
 				 Margin="3"
 				  InnerRightContent="USDT"
 				  Classes="Bordered" 
 				   VerticalAlignment="Center"
                  Grid.Column="1"/>
-
+		<material:MaterialIcon Kind="InfoCircle"
+							   Grid.Row="7"
+							   Grid.Column="2"
+							   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
+								   Margin="3"/>
 		<Button Content="Create Order"
 				 Margin="3"
 			     VerticalAlignment="Center"
 				IsEnabled="False"
                 Grid.Row="8"
                 Grid.Column="0"
-                Grid.ColumnSpan="3"/>
+                Grid.ColumnSpan="4"/>
 		<Button Content="Cancel"
 				Margin="3"
 				Click="Button_OnClick"
@@ -145,14 +158,14 @@
                 Grid.Row="9"
 				Classes="Danger"
                 Grid.Column="0"
-                Grid.ColumnSpan="3"/>
+                Grid.ColumnSpan="4"/>
 
 		<ToggleButton Name="chartToggle"
-					  Grid.Column="2"
+					  Grid.Column="3"
 					  Width="30"
 					  Grid.Row="5"
-					  Margin="0,3"
-					  ToolTip.Tip="Setup using chart"
+					  Margin="3,3"
+					  ToolTip.Tip="Setup the prices using a chart"
 				 	  Grid.RowSpan="3">
 			<material:MaterialIcon Kind="ShowChart"/>
 		</ToggleButton>
@@ -161,17 +174,24 @@
 		<Popup x:Name="popup"
                IsOpen="{Binding ElementName=chartToggle, Path=IsChecked}"
 			   x:DataType="UserControl"
+			   Width="450"
                PlacementTarget="{Binding ElementName=main}"
-			   PlacementMode="RightEdgeAlignedBottom"
-               Width="400">
-			<Border Theme="{StaticResource CardBorder}"
+			   PlacementMode="RightEdgeAlignedBottom">
+			<Grid ColumnDefinitions="auto,*">
+				<material:MaterialIcon Kind="ArrowSplitVertical"
+									   Height="25"
+									   Width="25"/>
+				<Border Theme="{StaticResource CardBorder}"
+						Grid.Column="1"
+					Classes="Shadow"
 					MinHeight="400"
 					CornerRadius="1"
 					Padding="0"
 					Name="chartBorder">
-				<sp:AvaPlot Name="avaPlot1"
-							Margin="0"/>
-			</Border>
+					<sp:AvaPlot Name="avaPlot1"
+								Margin="0"/>
+				</Border>
+			</Grid>
 		</Popup>
 	</Grid>
 </UserControl>

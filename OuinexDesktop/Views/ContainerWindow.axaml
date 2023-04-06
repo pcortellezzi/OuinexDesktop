@@ -8,6 +8,7 @@
 		Title="ContainerWindow"		
 		ExtendClientAreaToDecorationsHint="True"
 		ExtendClientAreaChromeHints="Default"
+		DragDrop.AllowDrop="True"
 		TransparencyLevelHint="Mica"
 		ExtendClientAreaTitleBarHeightHint="0">
 	<Border Classes="Shadow"

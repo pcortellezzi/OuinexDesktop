@@ -1,6 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--  Add Resources Here  -->
-    <Color x:Key="SemiRed0Color">#FEF2ED</Color>
+	<Color x:Key="AccentA">#07bf7d</Color>
+	<Color x:Key="SemiRed0Color">#FEF2ED</Color>
     <Color x:Key="SemiRed1Color">#FEDDD2</Color>
     <Color x:Key="SemiRed2Color">#FDB7A5</Color>
     <Color x:Key="SemiRed3Color">#FB9078</Color>
@@ -323,13 +324,13 @@
     <SolidColorBrush x:Key="SemiGrey9" Color="{StaticResource SemiGrey9Color}" />
 
     <!--  Primary  -->
-    <SolidColorBrush x:Key="SemiColorPrimary" Color="{StaticResource SemiBlue5Color}" />
-    <SolidColorBrush x:Key="SemiColorPrimaryPointerover" Color="{StaticResource SemiBlue6Color}" />
-    <SolidColorBrush x:Key="SemiColorPrimaryPressed" Color="{StaticResource SemiBlue7Color}" />
-    <SolidColorBrush x:Key="SemiColorPrimaryDisabled" Color="{StaticResource SemiBlue2Color}" />
-    <SolidColorBrush x:Key="SemiColorPrimaryLight" Color="{StaticResource SemiBlue0Color}" />
-    <SolidColorBrush x:Key="SemiColorPrimaryLightPointerover" Color="{StaticResource SemiBlue1Color}" />
-    <SolidColorBrush x:Key="SemiColorPrimaryLightActive" Color="{StaticResource SemiBlue2Color}" />
+    <SolidColorBrush x:Key="SemiColorPrimary" Color="#3BCBA9" />
+    <SolidColorBrush x:Key="SemiColorPrimaryPointerover" Color="#21C59E" />
+    <SolidColorBrush x:Key="SemiColorPrimaryPressed" Color="#07BF93" />
+    <SolidColorBrush x:Key="SemiColorPrimaryDisabled" Color="#A4E2D4" />
+    <SolidColorBrush x:Key="SemiColorPrimaryLight" Color="#A4E2D4" />
+    <SolidColorBrush x:Key="SemiColorPrimaryLightPointerover" Color="#56D1B4" />
+    <SolidColorBrush x:Key="SemiColorPrimaryLightActive" Color="#70D6BE" />
     <!--  Secondary  -->
     <SolidColorBrush x:Key="SemiColorSecondary" Color="{StaticResource SemiLightBlue5Color}" />
     <SolidColorBrush x:Key="SemiColorSecondaryPointerover" Color="{StaticResource SemiLightBlue6Color}" />

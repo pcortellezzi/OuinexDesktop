@@ -16,6 +16,7 @@
                     <TextBox
                         Name="PART_TextBox"
                         VerticalAlignment="Center"
+						Classes="ClearButton"
                         DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
                         Watermark="{TemplateBinding Watermark}" />
                     <Popup
@@ -51,7 +52,7 @@
                         <TextBox
                             Name="PART_TextBox"
                             VerticalAlignment="Center"
-                            Classes="Bordered"
+                            Classes="Bordered ClearButton"
                             DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
                             Watermark="{TemplateBinding Watermark}" />
                         <Popup

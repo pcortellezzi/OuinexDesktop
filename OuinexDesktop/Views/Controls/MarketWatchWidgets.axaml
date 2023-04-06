@@ -66,8 +66,9 @@
 		<Grid RowDefinitions="auto,*">
 			<StackPanel Orientation="Horizontal">
 				<Button Content="Trading List"
-					Margin="3"
-					HorizontalAlignment="Left">
+						Margin="3"
+						Classes="Small"
+						HorizontalAlignment="Left">
 					<Button.Flyout >
 						<Flyout Placement="BottomEdgeAlignedLeft">
 							<Grid RowDefinitions="auto,auto, *"
@@ -78,10 +79,12 @@
 										<StackPanel Orientation="Horizontal">
 											<RadioButton Theme="{DynamicResource ButtonRadioButton}"
 														 IsChecked="true"
+														 Classes="Small"
 														 Name="spotChecker">
 												All
 											</RadioButton>
-											<RadioButton Theme="{DynamicResource ButtonRadioButton}">
+											<RadioButton Classes="Small"
+												Theme="{DynamicResource ButtonRadioButton}">
 												<StackPanel Orientation="Horizontal">
 													<material:MaterialIcon Kind="Star"
 																		   Foreground="Orange"
@@ -90,7 +93,8 @@
 															   VerticalAlignment="Center"/>
 												</StackPanel>
 											</RadioButton>
-											<RadioButton Theme="{DynamicResource ButtonRadioButton}">
+											<RadioButton Classes="Small"
+												Theme="{DynamicResource ButtonRadioButton}">
 												<StackPanel Orientation="Horizontal">
 													<material:MaterialIcon Kind="Bitcoin"
 																		   Foreground="Orange"
@@ -99,7 +103,8 @@
 															   VerticalAlignment="Center"/>
 												</StackPanel>
 											</RadioButton>
-											<RadioButton Theme="{DynamicResource ButtonRadioButton}">
+											<RadioButton Classes="Small"
+												Theme="{DynamicResource ButtonRadioButton}">
 												<StackPanel Orientation="Horizontal">
 													<material:MaterialIcon Kind="Ethereum"
 																		   Foreground="Orange"
@@ -111,6 +116,7 @@
 										</StackPanel>
 									</Border>
 									<Button ToolTip.Tip="Create a new list"
+											Classes="Small"
 											Margin="3,0">
 										<material:MaterialIcon Kind="Plus"/>
 									</Button>
@@ -121,6 +127,7 @@
 								</StackPanel>
 								<TextBox Watermark="Search ..."
 										 Name="searchSymbol"
+										 Classes="Small Bordered"
 										 Margin="3"
 										 Grid.Row="1"/>
 								<Panel Grid.Row="2">
@@ -147,8 +154,9 @@
 						</Flyout>
 					</Button.Flyout>
 				</Button>
-				<AutoCompleteBox MinWidth="130"
-								 
+				<AutoCompleteBox MinWidth="140"
+								 Watermark="Search a symbol ..."
+								 Classes="Small Bordered ClearButton" 
 								 ValueMemberBinding="{ReflectionBinding FullName}"
 								 Name="searchBox">
 					<AutoCompleteBox.ItemTemplate>
@@ -173,6 +181,7 @@
 							<DataGrid.Columns>
 								<DataGridTextColumn Header="Ticker"
 													FontWeight="DemiBold"
+													FontSize="12"
 													Binding="{Binding TickerName }">
 								</DataGridTextColumn>
 								<DataGridTemplateColumn Header="Bid" >
@@ -184,7 +193,7 @@
 													CornerRadius="3"
 													Margin="1">
 												<TextBlock Text="{Binding Bid, Converter={StaticResource DecimalToStringConverter}}"
-														   FontSize="10"
+														   FontSize="12"
 														   Foreground="{Binding BidColor, Converter={StaticResource ResourceKey=tickForegournConverter}}"
 														   Margin="3,0"
 														   HorizontalAlignment="Right"
@@ -202,7 +211,7 @@
 													Margin="1">
 												<TextBlock Text="{Binding Ask, Converter={StaticResource DecimalToStringConverter}}"
 														   Foreground="{Binding AskColor, Converter={StaticResource ResourceKey=tickForegournConverter}}"
-														   FontSize="10"
+														   FontSize="12"
 														   Margin="3,0"
 														   HorizontalAlignment="Right"
 														   VerticalAlignment="Center"/>
@@ -215,7 +224,7 @@
 										<DataTemplate>
 											<Border Margin="1">
 												<TextBlock Text="{Binding Spread, Converter={StaticResource DecimalToStringConverter}}"
-														   FontSize="10"
+														   FontSize="12"
 														   Margin="3,0"
 														   HorizontalAlignment="Right"
 														   VerticalAlignment="Center"/>
@@ -228,7 +237,7 @@
 										<DataTemplate>
 											<Border	Margin="1">
 												<TextBlock Text="{Binding PercentChange}"
-														   FontSize="10"
+														   FontSize="12"
 														   Foreground="{Binding ChangeColor, Converter={StaticResource
 											 ResourceKey=tickConverter}}"
 														   Margin="3,0"

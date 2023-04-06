@@ -23,6 +23,7 @@
 						<DataTemplate>
 							<Border Margin="1">
 								<TextBlock Text="{Binding Token}"
+										   FontSize="12"
 										   Margin="3,0"
 										   FontWeight="DemiBold"
 										   HorizontalAlignment="Left"
@@ -37,7 +38,7 @@
 						<DataTemplate>
 							<Border Margin="1">
 								<TextBlock Text="{Binding Amount, Converter={StaticResource DecimalToStringConverter}}"
-										   FontSize="10"
+										   FontSize="12"
 										   Margin="3,0"
 										   HorizontalAlignment="Right"
 										   VerticalAlignment="Center"/>
@@ -50,7 +51,7 @@
 						<DataTemplate>
 							<Border Margin="1">
 								<TextBlock Text="{Binding UsdValue, Converter={StaticResource DecimalToStringConverter}}"
-										   FontSize="10"
+										   FontSize="12"
 										   Margin="3,0"
 										   HorizontalAlignment="Right"
 										   VerticalAlignment="Center"/>
@@ -63,7 +64,7 @@
 						<DataTemplate>
 							<Border Margin="1">
 								<TextBlock Text="{Binding CurrentPrice, Converter={StaticResource DecimalToStringConverter}}"
-										   FontSize="10"
+										   FontSize="12"
 										   Margin="3,0"
 										   HorizontalAlignment="Right"
 										   VerticalAlignment="Center"/>
@@ -76,7 +77,7 @@
 						<DataTemplate>
 							<Border Margin="1">
 								<TextBlock Text="{Binding AverageBuyingPrice, Converter={StaticResource DecimalToStringConverter}}"
-										   FontSize="10"
+										   FontSize="12"
 										   Margin="3,0"
 										   HorizontalAlignment="Right"
 										   VerticalAlignment="Center"/>
@@ -89,7 +90,7 @@
 						<DataTemplate>
 							<Border Margin="1">
 								<TextBlock Text="{Binding Profit, Converter={StaticResource DecimalToStringConverter}}"
-										   FontSize="10"
+										   FontSize="12"
 										   Margin="3,0"
 										   HorizontalAlignment="Right"
 										   VerticalAlignment="Center"/>

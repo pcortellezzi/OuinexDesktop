@@ -1,7 +1,10 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.VisualTree;
 using ScottPlot;
 using ScottPlot.Avalonia;
+using Avalonia.Xaml.Interactions.DragAndDrop;
+using Avalonia.Controls.Documents;
 
 namespace OuinexDesktop.Views.Controls
 {
@@ -19,6 +22,14 @@ namespace OuinexDesktop.Views.Controls
             var candles = plot.Plot.AddCandlesticks(DataGen.RandomStockPrices(new System.Random(), 50, startingPrice:27000));
           
             plot.Refresh();
+
+            this.popup.Opened += (s, e) => this.popup.Height = this.FindAncestorOfType<ContainerWindow>().Height;
+
+            plot.PlottableDropped += (s, e) =>
+            {
+
+            };
+            
         }
 
         private void Tp_Dragged(object? sender, System.EventArgs e)
@@ -28,7 +39,7 @@ namespace OuinexDesktop.Views.Controls
 
         private void Button_OnClick(object? sender, RoutedEventArgs e)
         {
-            (this.Parent as ContainerWindow).Close();
+            this.FindAncestorOfType<ContainerWindow>()?.Close();
         }
 
         private void SetupeTPLogic()
@@ -59,13 +70,24 @@ namespace OuinexDesktop.Views.Controls
                 plot.Refresh();
             };
 
-            tpTextBox.TextChanging += (s, e) =>
+            tpTextBox.TextChanged += (s, e) =>
             {
+                if (string.IsNullOrEmpty(slTextBox.Text))
+                {
+                    //could.IsVisible = false;
+                    tp.IsVisible = false;
+                }
+
                 if (decimal.TryParse(tpTextBox.Text, out var price))
                 {
-                    tp.Y = (double)price;
-                    plot.Refresh();
+                    tp.Y = (double)price;                    
                 }
+                if (string.IsNullOrEmpty(slTextBox.Text))
+                {                   
+                    tp.IsVisible = false;
+                }
+
+                plot.Refresh();
             };
         }
 
@@ -107,17 +129,30 @@ namespace OuinexDesktop.Views.Controls
                 plot.Refresh();
             };
 
-            slTextBox.TextChanging += (s, e) =>
+            slTextBox.TextChanged += (s, e) =>
             {
+                if(string.IsNullOrEmpty(slTextBox.Text))
+                {
+                    could.IsVisible = false;
+                    sl.IsVisible = false;
+                }
+
                 if (decimal.TryParse(slTextBox.Text, out var price))
                 {
                     sl.Y = (double)price;
                     could.Y2 = (double)price;
-                    could.Y1 = (double)27000;
-
-                    plot.Refresh();
+                    could.Y1 = (double)27000;                    
                 }
+                else
+                {
+                    could.IsVisible = false;
+                    sl.IsVisible = false;
+                }
+
+                plot.Refresh();
             };
+
+           
         }
     }
 }

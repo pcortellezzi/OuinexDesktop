@@ -266,6 +266,10 @@
               "target": "Package",
               "version": "[11.0.0-preview6, )"
             },
+            "Avalonia.Xaml.Interactions.DragAndDrop": {
+              "target": "Package",
+              "version": "[11.0.0-preview6, )"
+            },
             "Binance.Net": {
               "target": "Package",
               "version": "[8.4.3, )"

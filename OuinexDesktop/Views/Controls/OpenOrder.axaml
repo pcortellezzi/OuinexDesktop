@@ -7,9 +7,11 @@
 			 xmlns:material="using:Material.Icons.Avalonia"
 			 Width="320"
 			 xmlns:sp="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
+			 xmlns:dd="using:Avalonia.Xaml.Interactions.DragAndDrop"
              x:Class="OuinexDesktop.Views.Controls.OpenOrder">
 	<Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto"
-		  ColumnDefinitions="auto,*,auto,auto">
+		  ColumnDefinitions="auto,*,auto,auto"
+		  >
 		<TextBlock Text="Create an order"
                    FontSize="18"
                    FontWeight="Bold"
@@ -21,13 +23,13 @@
 		<TextBlock Text="Symbol:"
                    Grid.Row="1"
 				   Margin="3"
-				   
+				   Classes="Small"
 				   VerticalAlignment="Center"
                    Grid.Column="0"/>
 
 		<TextBox Grid.Row="1"
 				  Margin="3"
-				  Classes="Bordered" 
+				  Classes="Small Bordered" 
 				 Grid.ColumnSpan="3"
 				   VerticalAlignment="Center"
                  Grid.Column="1"/>
@@ -42,6 +44,7 @@
 				  Grid.ColumnSpan="3"
 				  SelectedIndex="0"
 				   Margin="3"
+				  Classes="Small Bordered"
 				  HorizontalAlignment="Right"
 				   VerticalAlignment="Center"
                   Grid.Column="1">
@@ -60,6 +63,7 @@
 		<ComboBox Grid.Row="3"
 				  Grid.ColumnSpan="3"
 				  Margin="3"
+				  Classes="Small Bordered"
 				  SelectedIndex="0"
 				  HorizontalAlignment="Right"
 				  VerticalAlignment="Center"
@@ -76,7 +80,7 @@
 
 		<TextBox Grid.Row="4"
 				  Margin="3"
-				 Classes="Bordered"
+				 Classes="Small Bordered"
                 InnerRightContent="ETH"
 				 Grid.ColumnSpan="2"
 				   VerticalAlignment="Center"
@@ -87,36 +91,37 @@
 							   Grid.Column="3"
 							   Margin="3"/>
 		<TextBlock Text="Stop Loss:"
-				    Margin="3"
+				   Margin="3"
 				   VerticalAlignment="Center"
                    Grid.Row="5"
                    Grid.Column="0"/>
 
 		<TextBox Grid.Row="5"
 				 Name="slTextBox"
-				 Classes="Bordered"
+				 Classes="Small Bordered ClearButton"
 				 InnerRightContent="USDT"
-				  Margin="3"
-				   VerticalAlignment="Center"
+				 Margin="3"
+				 
+				 VerticalAlignment="Center"
                  Grid.Column="1"/>
 		<material:MaterialIcon Kind="InfoCircle"
-						   Grid.Row="5"
-						   ToolTip.Tip="Volume (or amount) is the size of your position exprimed in the quote currency of the ticker"
-						   Grid.Column="2"
-						   Margin="3"/>
+							   Grid.Row="5"
+							   ToolTip.Tip="Volume (or amount) is the size of your position exprimed in the quote currency of the ticker"
+							   Grid.Column="2"
+							   Margin="3"/>
 
 		<TextBlock Text="Take Profit:"
-				    Margin="3"
+				   Margin="3"
 				   VerticalAlignment="Center"
                    Grid.Row="6"
                    Grid.Column="0"/>
 
 		<TextBox Grid.Row="6"
-				  Margin="3"
+				 Margin="3"
 				 InnerRightContent="USDT"
 				 Name="tpTextBox"
-				  Classes="Bordered" 
-				   VerticalAlignment="Center"
+				 Classes="Small Bordered ClearButton" 
+				 VerticalAlignment="Center"
                  Grid.Column="1"/>
 		<material:MaterialIcon Kind="InfoCircle"
 						   Grid.Row="6"
@@ -135,9 +140,9 @@
 		<TextBox Grid.Row="7"
 				 IsEnabled="{Binding ElementName=isPending, Path=IsSelected}"
 				 Margin="3"
-				  InnerRightContent="USDT"
-				  Classes="Bordered" 
-				   VerticalAlignment="Center"
+				 InnerRightContent="USDT"
+				  Classes="Small Bordered" 
+				 VerticalAlignment="Center"
                  Grid.Column="1"/>
 		<material:MaterialIcon Kind="InfoCircle"
 							   Grid.Row="7"
@@ -145,6 +150,7 @@
 							   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
 								   Margin="3"/>
 		<Button Content="Create Order"
+				Classes="Small"
 				 Margin="3"
 			     VerticalAlignment="Center"
 				IsEnabled="False"
@@ -156,7 +162,8 @@
 				Click="Button_OnClick"
 				VerticalAlignment="Center"
                 Grid.Row="9"
-				Classes="Danger"
+				Foreground="Red"
+				Classes="Small"
                 Grid.Column="0"
                 Grid.ColumnSpan="4"/>
 
@@ -164,6 +171,7 @@
 					  Grid.Column="3"
 					  Width="30"
 					  Grid.Row="5"
+					  Classes="Small"
 					  Margin="3,3"
 					  ToolTip.Tip="Setup the prices using a chart"
 				 	  Grid.RowSpan="3">
@@ -177,18 +185,23 @@
 			   Width="450"
                PlacementTarget="{Binding ElementName=main}"
 			   PlacementMode="RightEdgeAlignedBottom">
-			<Grid ColumnDefinitions="auto,*">
+			<Grid ColumnDefinitions="auto,*"
+				  RowDefinitions="auto,*">
 				<material:MaterialIcon Kind="ArrowSplitVertical"
+									   Grid.RowSpan="2"
 									   Height="25"
 									   Width="25"/>
+				<Label DragDrop.AllowDrop="True">Stop</Label>
 				<Border Theme="{StaticResource CardBorder}"
+						Grid.Row="1"
 						Grid.Column="1"
-					Classes="Shadow"
-					MinHeight="400"
-					CornerRadius="1"
-					Padding="0"
-					Name="chartBorder">
+						Classes="Shadow"
+						CornerRadius="1"
+						Margin="0"
+						Padding="0"
+						Name="chartBorder">
 					<sp:AvaPlot Name="avaPlot1"
+								DragDrop.AllowDrop="True"
 								Margin="0"/>
 				</Border>
 			</Grid>

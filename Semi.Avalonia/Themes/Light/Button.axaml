@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sys="clr-namespace:System;assembly=System.Runtime">
 
-    <sys:Double x:Key="ButtonDefaultFontSize">14</sys:Double>
+    <sys:Double x:Key="ButtonDefaultFontSize">12</sys:Double>
     <FontWeight x:Key="ButtonDefaultFontWeight">600</FontWeight>
 
     <Thickness x:Key="ButtonDefaultPadding">12 6</Thickness>

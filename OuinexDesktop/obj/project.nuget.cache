@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2hQEM7Bd4NVjbrUgZgTkvA0f5FXYA6N+9EmWABnHYfHhfKVLAKVgqjG9AQSSUvOO6+tAStGhHd7nDrv81hqmkA==",
+  "dgSpecHash": "9QtBw5wKZfsWAsKh/VSI3+OlhVQ8E84m+DNMVBsNP/UC0u0xfqGH+OzEXYK2QoCc1eGhuJUi390XbV2SWxhjmA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,8 @@
     "C:\\Users\\Alex\\.nuget\\packages\\avalonia.themes.simple\\11.0.0-preview6\\avalonia.themes.simple.11.0.0-preview6.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\avalonia.win32\\11.0.0-preview6\\avalonia.win32.11.0.0-preview6.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\avalonia.x11\\11.0.0-preview6\\avalonia.x11.11.0.0-preview6.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\avalonia.xaml.interactions.draganddrop\\11.0.0-preview6\\avalonia.xaml.interactions.draganddrop.11.0.0-preview6.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\avalonia.xaml.interactivity\\11.0.0-preview6\\avalonia.xaml.interactivity.11.0.0-preview6.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\binance.net\\8.4.3\\binance.net.8.4.3.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\cryptoexchange.net\\5.4.1\\cryptoexchange.net.5.4.1.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\dynamicdata\\7.13.1\\dynamicdata.7.13.1.nupkg.sha512",

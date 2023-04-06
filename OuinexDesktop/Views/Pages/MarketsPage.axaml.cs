@@ -66,6 +66,6 @@ public partial class MarketsPage : UserControl
 
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
-        InteractiveContainer.ShowDialog(new OpenOrder());
+       
     }
 }

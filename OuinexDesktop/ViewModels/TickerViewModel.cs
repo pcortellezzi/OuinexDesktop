@@ -144,14 +144,18 @@ namespace OuinexDesktop.ViewModels
                 CanResize=false
             };
 
-            var content = new OpenOrder();
+            var content = new OpenOrder(this);
             content.chartBorder.Height = window.Height;
 
             window.mainContainer.Children.Add(content);
             window.CustomTitle.Text = string.Format("Create order : {0}", Symbol.FullName);
             window.ShowDialog(Statics.MainWindow);
             window.FontSize = 10;
-            
+
+            Task.Run(async () =>
+            {
+                await content.Populate();
+            });
         }
     }
 }

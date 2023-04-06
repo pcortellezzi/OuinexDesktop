@@ -98,10 +98,10 @@
 
 		<TextBox Grid.Row="5"
 				 Name="slTextBox"
+				 Foreground="OrangeRed"
 				 Classes="Small Bordered ClearButton"
 				 InnerRightContent="USDT"
-				 Margin="3"
-				 
+				 Margin="3"	 
 				 VerticalAlignment="Center"
                  Grid.Column="1"/>
 		<material:MaterialIcon Kind="InfoCircle"
@@ -113,31 +113,32 @@
 		<TextBlock Text="Take Profit:"
 				   Margin="3"
 				   VerticalAlignment="Center"
-                   Grid.Row="6"
+                   Grid.Row="7"
                    Grid.Column="0"/>
 
-		<TextBox Grid.Row="6"
+		<TextBox Grid.Row="7"
 				 Margin="3"
 				 InnerRightContent="USDT"
 				 Name="tpTextBox"
+				 Foreground="LimeGreen"
 				 Classes="Small Bordered ClearButton" 
 				 VerticalAlignment="Center"
                  Grid.Column="1"/>
 		<material:MaterialIcon Kind="InfoCircle"
-						   Grid.Row="6"
+						   Grid.Row="7"
 						   ToolTip.Tip="Volume (or amount) is the size of your position exprimed in the quote currency of the ticker"
 						   Grid.Column="2"
 						   Margin="3"/>
 
 		<TextBlock Text="Price:"
-                   Grid.Row="7"
+                   Grid.Row="8"				   
 				   Margin="3"
 				   IsEnabled="{Binding ElementName=isPending, Path=IsSelected}"
 				   VerticalAlignment="Center"
 				   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
                    Grid.Column="0"/>
 
-		<TextBox Grid.Row="7"
+		<TextBox Grid.Row="8"
 				 IsEnabled="{Binding ElementName=isPending, Path=IsSelected}"
 				 Margin="3"
 				 InnerRightContent="USDT"
@@ -145,7 +146,7 @@
 				 VerticalAlignment="Center"
                  Grid.Column="1"/>
 		<material:MaterialIcon Kind="InfoCircle"
-							   Grid.Row="7"
+							   Grid.Row="8"
 							   Grid.Column="2"
 							   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
 								   Margin="3"/>
@@ -154,14 +155,14 @@
 				 Margin="3"
 			     VerticalAlignment="Center"
 				IsEnabled="False"
-                Grid.Row="8"
+                Grid.Row="9"
                 Grid.Column="0"
                 Grid.ColumnSpan="4"/>
 		<Button Content="Cancel"
 				Margin="3"
 				Click="Button_OnClick"
 				VerticalAlignment="Center"
-                Grid.Row="9"
+                Grid.Row="10"
 				Foreground="Red"
 				Classes="Small"
                 Grid.Column="0"
@@ -174,7 +175,7 @@
 					  Classes="Small"
 					  Margin="3,3"
 					  ToolTip.Tip="Setup the prices using a chart"
-				 	  Grid.RowSpan="3">
+				 	  Grid.RowSpan="4">
 			<material:MaterialIcon Kind="ShowChart"/>
 		</ToggleButton>
 
@@ -187,11 +188,10 @@
 			   PlacementMode="RightEdgeAlignedBottom">
 			<Grid ColumnDefinitions="auto,*"
 				  RowDefinitions="auto,*">
-				<material:MaterialIcon Kind="ArrowSplitVertical"
+				<material:MaterialIcon Kind="Exchange"
 									   Grid.RowSpan="2"
 									   Height="25"
 									   Width="25"/>
-				<Label DragDrop.AllowDrop="True">Stop</Label>
 				<Border Theme="{StaticResource CardBorder}"
 						Grid.Row="1"
 						Grid.Column="1"

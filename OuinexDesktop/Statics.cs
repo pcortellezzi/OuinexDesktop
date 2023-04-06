@@ -10,7 +10,7 @@ namespace OuinexDesktop
     {
         public static ThemeVariant Theme { get; set; }
 
-        public static Window MainWinw { get; set; }
+        public static Window MainWindow { get; set; }
     }
 
     public static class ExchangesConnector

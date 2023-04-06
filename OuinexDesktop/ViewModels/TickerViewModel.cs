@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Controls.Chrome;
 using OuinexDesktop.Models;
 using OuinexDesktop.Views.Controls;
 using ReactiveUI;
@@ -138,20 +139,14 @@ namespace OuinexDesktop.ViewModels
             {
                 Content = new OpenOrder(),
                 SizeToContent = SizeToContent.WidthAndHeight,
-                Title = "Ticket",
+                Title = "Create an Order",
                 WindowStartupLocation= WindowStartupLocation.CenterScreen,
-                CanResize=false
+                CanResize=false,                
             };
 
-            window.ContextFlyout = new Flyout()
-            {
-                Content = "test"
-            };
+            window.ShowDialog(Statics.MainWindow);
 
-           
-
-            window.Show();
-            window.ContextFlyout.ShowAt(window);
+            (window.Content as OpenOrder).chartBorder.Height = window.Height;
         }
     }
 }

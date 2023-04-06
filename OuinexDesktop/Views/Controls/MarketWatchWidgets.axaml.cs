@@ -24,8 +24,20 @@ namespace OuinexDesktop.Views.Controls
         {
             _symbolList = ExchangesConnector.Instances.First().Value.Symbols.ToList();
             this.allSymbolsGrid.Items = _symbolList;
+            this.searchBox.Items = _symbolList;
+           
+            this.searchBox.Watermark = string.Format("Search from {0} symbols", _symbolList.Count);
+            this.searchBox.SelectionChanged += SearchBox_SelectionChanged;
         }
 
+        private void SearchBox_SelectionChanged(object? sender, SelectionChangedEventArgs e)
+        { 
+            if(this.searchBox.SelectedItem != null)
+            {
+                (DataContext as MarketWatchViewModel).SelectedSymbol = this.searchBox.SelectedItem as Symbol;
+
+            }
+        }
 
         private void MarketWatchWidgets_Initialized(object? sender, System.EventArgs e)
         {

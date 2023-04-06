@@ -6,6 +6,7 @@
 		     x:DataType="vm:MarketWatchViewModel"
 			 xmlns:converters="using:OuinexDesktop.Converters"
 			 xmlns:material="using:Material.Icons.Avalonia"
+			 xmlns:models="using:OuinexDesktop.Models"
 			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="OuinexDesktop.Views.Controls.MarketWatchWidgets">
 	<UserControl.Resources>
@@ -63,88 +64,102 @@
 	</Design.DataContext>
 	<Border>
 		<Grid RowDefinitions="auto,*">
-			<Button Content="Trading List"
+			<StackPanel Orientation="Horizontal">
+				<Button Content="Trading List"
 					Margin="3"
 					HorizontalAlignment="Left">
-				<Button.Flyout >
-					<Flyout Placement="BottomEdgeAlignedLeft">
-						<Grid RowDefinitions="auto,auto, *"
-							  Height="250">
-							<StackPanel Orientation="Horizontal">
-								<Border HorizontalAlignment="Left"
-										Theme="{StaticResource RadioButtonGroupBorder}">
-									<StackPanel Orientation="Horizontal">
-										<RadioButton Theme="{DynamicResource ButtonRadioButton}"
-													 IsChecked="true"
-													 Name="spotChecker">
-											All
-										</RadioButton>
-										<RadioButton Theme="{DynamicResource ButtonRadioButton}">
-											<StackPanel Orientation="Horizontal">
-												<material:MaterialIcon Kind="Star"
-																	   Foreground="Orange"
-																	   Margin="3"/>
-												<TextBlock Text="Favorites"
-														   VerticalAlignment="Center"/>
-											</StackPanel>
-										</RadioButton>
-										<RadioButton Theme="{DynamicResource ButtonRadioButton}">
-											<StackPanel Orientation="Horizontal">
-												<material:MaterialIcon Kind="Bitcoin"
-																	   Foreground="Orange"
-																	   Margin="3"/>
-												<TextBlock Text="BTC"
-														   VerticalAlignment="Center"/>
-											</StackPanel>
-										</RadioButton>
-										<RadioButton Theme="{DynamicResource ButtonRadioButton}">
-											<StackPanel Orientation="Horizontal">
-												<material:MaterialIcon Kind="Ethereum"
-																	   Foreground="Orange"
-																	   Margin="3"/>
-												<TextBlock Text="Ethereum"
-														   VerticalAlignment="Center"/>
-											</StackPanel>
-										</RadioButton>
-									</StackPanel>
-								</Border>
-								<Button ToolTip.Tip="Create a new list"
-										Margin="3,0">
-									<material:MaterialIcon Kind="Plus"/>
-								</Button>
-								<Button ToolTip.Tip="Delete selection">
-									<material:MaterialIcon Kind="Trash"
-														   Foreground="OrangeRed"/>
-								</Button>
-							</StackPanel>
-							<TextBox Watermark="Search ..."
-									 Name="searchSymbol"
-									 Margin="3"
-									 Grid.Row="1"/>
-							<Panel Grid.Row="2">
-								<DataGrid Name="allSymbolsGrid"
-										  SelectionMode="Single"
-										  IsReadOnly="True"
-										  SelectedItem="{Binding SelectedSymbol, Mode=TwoWay}"
-										  AutoGenerateColumns="True">
-									<DataGrid.Columns>
-										<DataGridTemplateColumn DisplayIndex="2">
-											<DataGridTemplateColumn.CellTemplate>
-												<DataTemplate>
-													<Button ToolTip.Tip="Add to the current list"
-															Margin="2">
-														<material:MaterialIcon Kind="PlusCircle"/>
-													</Button>
-												</DataTemplate>
-											</DataGridTemplateColumn.CellTemplate>
-										</DataGridTemplateColumn>
-									</DataGrid.Columns>
-								</DataGrid>
-							</Panel>
-						</Grid>
-					</Flyout>
-				</Button.Flyout>
-			</Button>
+					<Button.Flyout >
+						<Flyout Placement="BottomEdgeAlignedLeft">
+							<Grid RowDefinitions="auto,auto, *"
+								  Height="250">
+								<StackPanel Orientation="Horizontal">
+									<Border HorizontalAlignment="Left"
+											Theme="{StaticResource RadioButtonGroupBorder}">
+										<StackPanel Orientation="Horizontal">
+											<RadioButton Theme="{DynamicResource ButtonRadioButton}"
+														 IsChecked="true"
+														 Name="spotChecker">
+												All
+											</RadioButton>
+											<RadioButton Theme="{DynamicResource ButtonRadioButton}">
+												<StackPanel Orientation="Horizontal">
+													<material:MaterialIcon Kind="Star"
+																		   Foreground="Orange"
+																		   Margin="3"/>
+													<TextBlock Text="Favorites"
+															   VerticalAlignment="Center"/>
+												</StackPanel>
+											</RadioButton>
+											<RadioButton Theme="{DynamicResource ButtonRadioButton}">
+												<StackPanel Orientation="Horizontal">
+													<material:MaterialIcon Kind="Bitcoin"
+																		   Foreground="Orange"
+																		   Margin="3"/>
+													<TextBlock Text="BTC"
+															   VerticalAlignment="Center"/>
+												</StackPanel>
+											</RadioButton>
+											<RadioButton Theme="{DynamicResource ButtonRadioButton}">
+												<StackPanel Orientation="Horizontal">
+													<material:MaterialIcon Kind="Ethereum"
+																		   Foreground="Orange"
+																		   Margin="3"/>
+													<TextBlock Text="Ethereum"
+															   VerticalAlignment="Center"/>
+												</StackPanel>
+											</RadioButton>
+										</StackPanel>
+									</Border>
+									<Button ToolTip.Tip="Create a new list"
+											Margin="3,0">
+										<material:MaterialIcon Kind="Plus"/>
+									</Button>
+									<Button ToolTip.Tip="Delete selection">
+										<material:MaterialIcon Kind="Trash"
+															   Foreground="OrangeRed"/>
+									</Button>
+								</StackPanel>
+								<TextBox Watermark="Search ..."
+										 Name="searchSymbol"
+										 Margin="3"
+										 Grid.Row="1"/>
+								<Panel Grid.Row="2">
+									<DataGrid Name="allSymbolsGrid"
+											  SelectionMode="Single"
+											  IsReadOnly="True"
+											  SelectedItem="{Binding SelectedSymbol, Mode=TwoWay}"
+											  AutoGenerateColumns="True">
+										<DataGrid.Columns>
+											<DataGridTemplateColumn DisplayIndex="2">
+												<DataGridTemplateColumn.CellTemplate>
+													<DataTemplate>
+														<Button ToolTip.Tip="Add to the current list"
+																Margin="2">
+															<material:MaterialIcon Kind="PlusCircle"/>
+														</Button>
+													</DataTemplate>
+												</DataGridTemplateColumn.CellTemplate>
+											</DataGridTemplateColumn>
+										</DataGrid.Columns>
+									</DataGrid>
+								</Panel>
+							</Grid>
+						</Flyout>
+					</Button.Flyout>
+				</Button>
+				<AutoCompleteBox MinWidth="130"
+								 
+								 ValueMemberBinding="{ReflectionBinding FullName}"
+								 Name="searchBox">
+					<AutoCompleteBox.ItemTemplate>
+						<DataTemplate DataType="models:Symbol">
+							<TextBlock Text="{Binding FullName}"/>
+						</DataTemplate>
+					</AutoCompleteBox.ItemTemplate>
+				</AutoCompleteBox>
+			</StackPanel>
+			
+			
 			<TabControl Grid.Row="1">
 				<TabItem Header="Simple dealing rates"
 						 Name="test">

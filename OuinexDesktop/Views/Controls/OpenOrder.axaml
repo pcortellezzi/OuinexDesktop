@@ -2,40 +2,176 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 Name="main"
+			 xmlns:material="using:Material.Icons.Avalonia"
+			 Width="320"
+			  xmlns:sp="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
              x:Class="OuinexDesktop.Views.Controls.OpenOrder">
-	<StackPanel>
+	<Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="auto"/>
+		</Grid.ColumnDefinitions>
+
 		<TextBlock Text="Create an order"
-				   Classes="h2"/>
-		<StackPanel Orientation="Horizontal"
-					Margin="3">
-			<TextBlock Text="Order type"
-					   VerticalAlignment="Center"/>
-			<ComboBox SelectedIndex="0"
-					  Width="120">
-				<ComboBoxItem Content="Market"/>
-			</ComboBox>
-		</StackPanel>
-		<suki:GroupBox Header="Advanced order options"
-					   Margin="3">
-			<StackPanel>
-				<Expander Header="Take Profit">
-					<NumericUpDown FontSize="10"
-								   Margin="3"/>
-				</Expander>
-				<Expander Header="Stop Loss">
-					ddd
-				</Expander>
-				<Expander Header="Trailing Stop">
-					ddd
-				</Expander>
-			</StackPanel>
-		</suki:GroupBox>
-		<Button Margin="3" 
+                   FontSize="18"
+                   FontWeight="Bold"
+				   Margin="5"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"/>
+
+		<TextBlock Text="Symbol:"
+                   Grid.Row="1"
+				   Margin="3"
+				   
+				   VerticalAlignment="Center"
+                   Grid.Column="0"/>
+
+		<TextBox Grid.Row="1"
+				  Margin="3"
+				  Classes="Bordered" 
+				 Grid.ColumnSpan="2"
+				   VerticalAlignment="Center"
+                 Grid.Column="1"/>
+
+		<TextBlock Text="Order Type:"
+				    Margin="3"
+				   VerticalAlignment="Center"
+                   Grid.Row="2"
+                   Grid.Column="0"/>
+
+		<ComboBox Grid.Row="2"
+				  Grid.ColumnSpan="2"
+				  SelectedIndex="0"
+				   Margin="3"
+				  HorizontalAlignment="Right"
+				   VerticalAlignment="Center"
+                  Grid.Column="1">
+			<ComboBoxItem Content="Market"
+						  IsSelected="True"/>
+			<ComboBoxItem Content="Pending"
+						  Name="isPending"/>
+		</ComboBox>
+
+		<TextBlock Text="Buy/Sell:"
+				   Margin="3"
+				   VerticalAlignment="Center"
+                   Grid.Row="3"
+                   Grid.Column="0"/>
+
+		<ComboBox Grid.Row="3"
+				  Grid.ColumnSpan="2"
+				   Margin="3"
+				  SelectedIndex="0"
+				  HorizontalAlignment="Right"
+				   VerticalAlignment="Center"
+                  Grid.Column="1">
+			<ComboBoxItem Content="Buy"/>
+			<ComboBoxItem Content="Sell"/>
+		</ComboBox>
+
+		<TextBlock Text="Volume:"
+                   Grid.Row="4"
+				   
+				    Margin="3"
+				   VerticalAlignment="Center"
+                   Grid.Column="0"/>
+
+		<TextBox Grid.Row="4"
+				  Margin="3"
+				 Classes="Bordered" 
+                InnerRightContent="ETH"
+				 Grid.ColumnSpan="2"
+				   VerticalAlignment="Center"
+                 Grid.Column="1"/>
+
+		<TextBlock Text="Stop Loss:"
+				    Margin="3"
+				   VerticalAlignment="Center"
+                   Grid.Row="5"
+                   Grid.Column="0"/>
+
+		<TextBox Grid.Row="5"
+				 Name="slTextBox"
+				 Classes="Bordered"
+				 InnerRightContent="USDT"
+				  Margin="3"
+				   VerticalAlignment="Center"
+                 Grid.Column="1"/>
+
+		<TextBlock Text="Take Profit:"
+				    Margin="3"
+				   VerticalAlignment="Center"
+                   Grid.Row="6"
+                   Grid.Column="0"/>
+
+		<TextBox Grid.Row="6"
+				  Margin="3"
+				 InnerRightContent="USDT"
+				 Name="tpTextBox"
+				  Classes="Bordered" 
+				   VerticalAlignment="Center"
+                 Grid.Column="1"/>
+
+		<TextBlock Text="Price:"
+                   Grid.Row="7"
+				   Margin="3"
+				   IsVisible="{Binding ElementName=isPending, Path=IsSelected}"
+				   VerticalAlignment="Center"
+                   Grid.Column="0"/>
+
+		<TextBox Grid.Row="7"
+				 IsVisible="{Binding ElementName=isPending, Path=IsSelected}"
+				 Margin="3"
+				  InnerRightContent="USDT"
+				  Classes="Bordered" 
+				   VerticalAlignment="Center"
+                 Grid.Column="1"/>
+
+		<Button Content="Create Order"
+				 Margin="3"
+			     VerticalAlignment="Center"
+				IsEnabled="False"
+                Grid.Row="8"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"/>
+		<Button Content="Cancel"
+				Margin="3"
 				Click="Button_OnClick"
-				Content="Cancel"
-				Classes="Danger"				 
-				HorizontalAlignment="Right"/>
-	</StackPanel>
+				VerticalAlignment="Center"
+                Grid.Row="9"
+				Classes="Danger"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"/>
+
+		<ToggleButton Name="chartToggle"
+					  Grid.Column="2"
+					  Width="30"
+					  Grid.Row="5"
+					  Margin="0,3"
+					  ToolTip.Tip="Setup using chart"
+				 	  Grid.RowSpan="3">
+			<material:MaterialIcon Kind="ShowChart"/>
+		</ToggleButton>
+
+
+		<Popup x:Name="popup"
+               IsOpen="{Binding ElementName=chartToggle, Path=IsChecked}"
+			   x:DataType="UserControl"
+               PlacementTarget="{Binding ElementName=main}"
+			   PlacementMode="RightEdgeAlignedBottom"
+               Width="400">
+			<Border Theme="{StaticResource CardBorder}"
+					MinHeight="400"
+					CornerRadius="1"
+					Padding="0"
+					Name="chartBorder">
+				<sp:AvaPlot Name="avaPlot1"
+							Margin="0"/>
+			</Border>
+		</Popup>
+	</Grid>
 </UserControl>

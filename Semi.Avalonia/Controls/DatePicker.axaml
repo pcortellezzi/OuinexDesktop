@@ -36,7 +36,7 @@
                                         Name="PART_MonthSelector"
                                         ItemHeight="{DynamicResource DateTimePickerListBoxItemHeight}"
                                         PanelType="Month"
-                                        ShouldLoop="True" />
+                                        ShouldLoop="True"/>
                                 </ScrollViewer>
                                 <RepeatButton Name="PART_MonthUpButton" Theme="{StaticResource DateTimePickerUpButton}" />
                                 <RepeatButton Name="PART_MonthDownButton" Theme="{StaticResource DateTimePickerDownButton}" />

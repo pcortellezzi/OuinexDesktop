@@ -21,7 +21,7 @@
         <Setter Property="RadioButton.HorizontalAlignment" Value="Left" />
         <Setter Property="RadioButton.VerticalAlignment" Value="Top" />
         <Setter Property="RadioButton.Cursor" Value="Hand" />
-        <Setter Property="RadioButton.HorizontalContentAlignment" Value="Left" />
+        <Setter Property="RadioButton.HorizontalContentAlignment" Value="Center" />
         <Setter Property="RadioButton.VerticalContentAlignment" Value="Center" />
         <Setter Property="RadioButton.FontSize" Value="{DynamicResource RadioButtonFontSize}" />
         <Setter Property="Template">

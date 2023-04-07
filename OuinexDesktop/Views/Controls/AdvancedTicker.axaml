@@ -1,0 +1,64 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			  x:DataType="vm:MarketWatchViewModel"
+			   xmlns:vm="using:OuinexDesktop.ViewModels"
+             x:Class="OuinexDesktop.Views.Controls.AdvancedTicker">
+	<Border Classes="Hover"
+			x:DataType="vm:TickerViewModel"
+			Padding="4"
+		Theme="{StaticResource RadioButtonGroupBorder}"
+			Width="250"
+			VerticalAlignment="Center">
+		<Grid ColumnDefinitions="*,3,*"
+			  VerticalAlignment="Center"
+			  RowDefinitions="auto,auto,auto,auto">
+			<Path  Grid.Row="3"
+				   StrokeThickness="1"
+				   Stroke="White"
+				   Data="M 3 0 H 57 C 60 0 60 0 60 3 V 27 C 60 30 60 30 57 30 H 16 C 13 30 13 30 13 27 V 23 C 13 20 13 20 10 20 H 3 C 0 20 0 20 0 17 V 3 C 0 0 0 0 3 0"
+				   Fill="#2196f3"
+				  Stretch="Uniform">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform ScaleX="-1"/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			<Path  Grid.Row="3"
+				   Grid.Column="3"
+				   Data="M 3 0 H 57 C 60 0 60 0 60 3 V 27 C 60 30 60 30 57 30 H 16 C 13 30 13 30 13 27 V 23 C 13 20 13 20 10 20 H 3 C 0 20 0 20 0 17 V 3 C 0 0 0 0 3 0"
+				   Stroke="Orange"
+				   StrokeThickness="1"
+				   Fill="OrangeRed"
+				  Stretch="Uniform">
+			</Path>
+			<TextBlock Text="Sell"
+					   VerticalAlignment="Bottom"
+					   HorizontalAlignment="Center"
+					   Foreground="White"
+					   FontSize="12"
+					   FontWeight="Light"
+					   Margin="0,0,25,1"
+					   Grid.Row="3"/>
+			<TextBlock Text="28,5612"
+					   VerticalAlignment="Top"
+					   FontSize="20"
+					   HorizontalAlignment="Center"
+					   Foreground="White"
+					   Margin="0,5,0,0"
+					   Grid.Row="3"/>
+			<Rectangle Height="1"
+					   Fill="White"
+					   Width="70"
+					   Opacity="0.5"
+					   Grid.Row="3"
+					   Margin="0,20,28,0"/>
+		</Grid>
+	</Border>
+</UserControl>

@@ -238,8 +238,7 @@
 											<Border	Margin="1">
 												<TextBlock Text="{Binding PercentChange}"
 														   FontSize="12"
-														   Foreground="{Binding ChangeColor, Converter={StaticResource
-											 ResourceKey=tickConverter}}"
+														   Foreground="{Binding ChangeColor, Converter={StaticResource  ResourceKey=tickConverter}}"
 														   Margin="3,0"
 														   FontWeight="DemiBold"
 														   HorizontalAlignment="Right"
@@ -310,7 +309,53 @@
 					</Border>
 				</TabItem>
 				<TabItem Header="Advanced dealing rates">
-
+					<ItemsControl Items="{Binding Tickers}">
+						<ItemsControl.ItemTemplate>
+							<DataTemplate>
+								<Border Classes="Hover"
+										x:DataType="vm:TickerViewModel"
+										Padding="2"
+										Width="300"
+										Theme="{StaticResource CardBorder}">
+									<Grid ColumnDefinitions="*,*"
+										  VerticalAlignment="Center"
+										  RowDefinitions="auto,auto,auto,*">
+										<Path Data="M0.5,0.5 L168.5,0.5 168.5,44.5 118.5,44.5 118.5,75.5 0.5,75.5 0.5,44.5 z"
+											  Stroke="#1C1F23"
+											  Grid.Row="1"
+											  Margin="0,0,1.5,0"
+											  Fill="{Binding BidColor, Converter={StaticResource tickConverter}}"
+											  Stretch="Uniform"
+											  Height="100"/>
+										<Path Data="M0.5,0.5 L168.5,0.5 168.5,44.5 118.5,44.5 118.5,75.5 0.5,75.5 0.5,44.5 z"
+											  Stroke="#1C1F23"
+											  Grid.Row="1"
+											  Margin="1.5,0,0,0"
+											  Grid.Column="1"
+											  Fill="{Binding AskColor, Converter={StaticResource tickConverter}}"
+											  Height="100"
+											  Stretch="Uniform">
+											<Path.RenderTransform>
+												<TransformGroup>
+													<ScaleTransform ScaleX="-1"/>
+													<SkewTransform/>
+													<RotateTransform/>
+													<TranslateTransform/>
+												</TransformGroup>
+											</Path.RenderTransform>
+										</Path>
+										<Label Content="{Binding Symbol.FullName}"
+											   FontWeight="Bold"
+											   Foreground="White"
+											   Padding="5"
+											   Margin="0,0,1.5,0"
+											   FontSize="15"
+											   Background="Black"/>
+									</Grid>
+								</Border>
+							</DataTemplate>
+						</ItemsControl.ItemTemplate>
+					</ItemsControl>
 				</TabItem>
 			</TabControl>
 		</Grid>

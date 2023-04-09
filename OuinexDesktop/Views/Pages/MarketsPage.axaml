@@ -12,9 +12,10 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-    <Grid RowDefinitions="Auto, auto, *">
+    <Grid RowDefinitions="Auto, auto, *"
+		  ColumnDefinitions="*,auto,*, auto, *">
 		<Border Theme="{StaticResource CardBorder}"
-				CornerRadius="4"
+				Margin="3,0,0,0"
 				Padding="4">
 			<Grid RowDefinitions="auto,*">
 				<TextBlock Theme="{StaticResource TitleTextBlock}"
@@ -24,8 +25,9 @@
 			</Grid>
 		</Border>
 		<Border Grid.Row="2"
+				Margin="3,0"
+				Grid.ColumnSpan="10"
 				Theme="{StaticResource CardBorder}"
-				CornerRadius="4"
 				Padding="4">
 			<Grid RowDefinitions="auto,*">
 				<TextBlock Theme="{StaticResource TitleTextBlock}"
@@ -34,7 +36,21 @@
 											DataContext="{Binding MarketWatchMVVM}"/>
 			</Grid>
 		</Border>
+		<Border Margin="0"
+				Grid.Column="2"
+				Theme="{StaticResource CardBorder}"
+				Padding="4">
+			<Grid RowDefinitions="auto,*">
+				<TextBlock Theme="{StaticResource TitleTextBlock}"
+						   Margin="5,0,0,15"
+						   Text="Orders"/>
+			</Grid>
+		</Border>
 		<GridSplitter Grid.Row="1"
-					  Height="3"/>		
+					  Grid.ColumnSpan="10"
+					  Background="Transparent"
+					  Height="3"/>
+		<GridSplitter Grid.Column="1"
+					  Background="Transparent"/>
 	</Grid>
 </UserControl>

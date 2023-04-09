@@ -7,6 +7,7 @@
 			 xmlns:converters="using:OuinexDesktop.Converters"
 			 xmlns:material="using:Material.Icons.Avalonia"
 			 xmlns:models="using:OuinexDesktop.Models"
+			 xmlns:local="using:OuinexDesktop.Views.Controls"
 			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="OuinexDesktop.Views.Controls.MarketWatchWidgets">
 	<UserControl.Resources>
@@ -310,49 +311,15 @@
 				</TabItem>
 				<TabItem Header="Advanced dealing rates">
 					<ItemsControl Items="{Binding Tickers}">
+						<ItemsControl.ItemsPanel>
+							<ItemsPanelTemplate>
+								<WrapPanel />
+							</ItemsPanelTemplate>
+						</ItemsControl.ItemsPanel>
 						<ItemsControl.ItemTemplate>
 							<DataTemplate>
-								<Border Classes="Hover"
-										x:DataType="vm:TickerViewModel"
-										Padding="2"
-										Width="300"
-										Theme="{StaticResource CardBorder}">
-									<Grid ColumnDefinitions="*,*"
-										  VerticalAlignment="Center"
-										  RowDefinitions="auto,auto,auto,*">
-										<Path Data="M0.5,0.5 L168.5,0.5 168.5,44.5 118.5,44.5 118.5,75.5 0.5,75.5 0.5,44.5 z"
-											  Stroke="#1C1F23"
-											  Grid.Row="1"
-											  Margin="0,0,1.5,0"
-											  Fill="{Binding BidColor, Converter={StaticResource tickConverter}}"
-											  Stretch="Uniform"
-											  Height="100"/>
-										<Path Data="M0.5,0.5 L168.5,0.5 168.5,44.5 118.5,44.5 118.5,75.5 0.5,75.5 0.5,44.5 z"
-											  Stroke="#1C1F23"
-											  Grid.Row="1"
-											  Margin="1.5,0,0,0"
-											  Grid.Column="1"
-											  Fill="{Binding AskColor, Converter={StaticResource tickConverter}}"
-											  Height="100"
-											  Stretch="Uniform">
-											<Path.RenderTransform>
-												<TransformGroup>
-													<ScaleTransform ScaleX="-1"/>
-													<SkewTransform/>
-													<RotateTransform/>
-													<TranslateTransform/>
-												</TransformGroup>
-											</Path.RenderTransform>
-										</Path>
-										<Label Content="{Binding Symbol.FullName}"
-											   FontWeight="Bold"
-											   Foreground="White"
-											   Padding="5"
-											   Margin="0,0,1.5,0"
-											   FontSize="15"
-											   Background="Black"/>
-									</Grid>
-								</Border>
+							 <local:AdvancedTicker DataContext="{Binding}"
+												   Margin="3"/>
 							</DataTemplate>
 						</ItemsControl.ItemTemplate>
 					</ItemsControl>

@@ -48,6 +48,7 @@ namespace OuinexDesktop.Views.Controls
         private void SetupChart()
         {
             plot = this.Find<AvaPlot>("avaPlot1");
+            plot.Plot.YAxis.Layout(padding: 0);
 
             crosshair = avaPlot1.Plot.AddCrosshair(0, 0);
             crosshair.IgnoreAxisAuto = true;

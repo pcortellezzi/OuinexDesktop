@@ -47,6 +47,7 @@ namespace OuinexDesktop.Exchanges
         public override async Task InitAsync()
         {
             var client = new BinanceClient();
+
             var request = await client.SpotApi.ExchangeData.GetProductsAsync();
 
             if (request.Success)

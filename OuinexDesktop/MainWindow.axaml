@@ -58,9 +58,9 @@
 		<Grid Grid.Row="1"
 			  x:Name="mainContainer">
 			<Grid ColumnDefinitions="*">
-				<pages:SettingsPage Margin="62,0,0,0"
+				<pages:SettingsPage Margin="62,0,-62,0"
 									IsVisible="{Binding ElementName=Settings, Path=IsChecked}"/>
-				<pages:MarketsPage Margin="62,0,0,0"
+				<pages:MarketsPage Margin="62,0,3,0"
 								   IsVisible="{Binding ElementName=Exchange, Path=IsChecked}"
 								   DataContext="{Binding ElementName=mainWindow, Path=DataContext}"/>
 

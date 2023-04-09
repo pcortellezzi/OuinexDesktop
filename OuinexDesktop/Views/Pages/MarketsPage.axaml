@@ -15,11 +15,9 @@
     <Grid RowDefinitions="Auto, auto, *">
 		<Border Theme="{StaticResource CardBorder}"
 				CornerRadius="4"
-				Margin="3"
 				Padding="4">
 			<Grid RowDefinitions="auto,*">
-				<TextBlock Classes="H6"
-						   Theme="{StaticResource TitleTextBlock}"
+				<TextBlock Theme="{StaticResource TitleTextBlock}"
 						   Margin="5,0,0,15">Wallets</TextBlock>
 				<controls:WalletsGrid DataContext="{Binding  SpotWalletsMVVM}"
 									  Grid.Row="1"/>
@@ -27,12 +25,10 @@
 		</Border>
 		<Border Grid.Row="2"
 				Theme="{StaticResource CardBorder}"
-				Margin="3"
 				CornerRadius="4"
 				Padding="4">
 			<Grid RowDefinitions="auto,*">
-				<TextBlock Classes="H6"
-						   Theme="{StaticResource TitleTextBlock}"
+				<TextBlock Theme="{StaticResource TitleTextBlock}"
 						   Margin="5,0,0,15">Markets</TextBlock>
                <controls:MarketWatchWidgets Grid.Row="1"
 											DataContext="{Binding MarketWatchMVVM}"/>

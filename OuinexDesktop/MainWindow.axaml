@@ -60,10 +60,42 @@
 			<Grid ColumnDefinitions="*">
 				<pages:SettingsPage Margin="62,0,-62,0"
 									IsVisible="{Binding ElementName=Settings, Path=IsChecked}"/>
-				<pages:MarketsPage Margin="62,0,3,0"
-								   IsVisible="{Binding ElementName=Exchange, Path=IsChecked}"
-								   DataContext="{Binding ElementName=mainWindow, Path=DataContext}"/>
-
+				<Grid RowDefinitions="auto, *"
+					  Margin="62,0,3,0"
+					  IsVisible="{Binding ElementName=Exchange, Path=IsChecked}">
+					<Border Theme="{StaticResource CardBorder}"
+							Padding="10">
+						<StackPanel VerticalAlignment="Center"
+									Orientation="Horizontal">
+							<TextBlock Text="Selected profile : "
+									   VerticalAlignment="Center"
+									   Theme="{StaticResource TitleTextBlock}"/>
+							<Border HorizontalAlignment="Left"
+									Theme="{StaticResource RadioButtonGroupBorder}">
+								<StackPanel Orientation="Horizontal"
+											VerticalAlignment="Center">
+									<RadioButton Classes="Small"
+												 IsChecked="true"
+												 Name="spotSelector"
+												 Theme="{DynamicResource ButtonRadioButton}"
+												 Content="Spot"/>
+									<RadioButton Classes="Small"
+												 IsEnabled="True"
+												 Theme="{DynamicResource ButtonRadioButton}"
+												 Content="Futures"/>
+									<RadioButton Classes="Small"
+												 IsEnabled="False"
+												 Theme="{DynamicResource ButtonRadioButton}"
+												 Content="Options"/>
+								</StackPanel>
+							</Border>
+						</StackPanel>
+					</Border>
+					<pages:MarketsPage Grid.Row="1"
+									   IsVisible="{Binding ElementName=spotSelector, Path=IsChecked} "
+									   DataContext="{Binding ElementName=mainWindow, Path=DataContext}"/>
+				</Grid>
+				
 				<Grid>
 					<SplitView CompactPaneLength="60"
 							   DisplayMode="CompactOverlay"

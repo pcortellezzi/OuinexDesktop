@@ -1,0 +1,56 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="OuinexDesktop.Views.Controls.BusyControl">
+	<UserControl.Styles>
+		<Styles>
+			<Styles.Resources>
+				<Template x:Key="down">
+					<Path Fill="#EC5656"
+					      Stretch="Uniform"
+					      Data="M16,18L18.29,15.71L13.41,10.83L9.41,14.83L2,7.41L3.41,6L9.41,12L13.41,8L19.71,14.29L22,12V18H16Z"/>
+				</Template>
+				<Template x:Key="up">
+					<Path Fill="#34a560"
+						  Stretch="Uniform"
+						  Data="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"/>
+				</Template>
+			</Styles.Resources>
+			<Style Selector="Border.Up">
+				<Style.Animations>
+					<Animation Duration="0:0:1"
+							   Easing="QuadraticEaseInOut"
+							   IterationCount="Infinite">
+						<KeyFrame Cue="50%">
+							<Setter Property="ScaleTransform.ScaleX" Value="0.8"/>
+							<Setter Property="ScaleTransform.ScaleY" Value="0.8"/>
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+				<Setter Property="Child" Value="{StaticResource up}"/>
+			</Style>
+
+			<Style Selector="Border.Down">
+				<Style.Animations>
+					<Animation Duration="0:0:1"
+							   Easing="QuadraticEaseInOut"
+							   IterationCount="Infinite">
+						<KeyFrame Cue="50%">
+							<Setter Property="ScaleTransform.ScaleX" Value="0.8"/>
+							<Setter Property="ScaleTransform.ScaleY" Value="0.8"/>
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+				<Setter Property="Child" Value="{StaticResource down}"/>
+			</Style>
+		</Styles>
+	</UserControl.Styles>
+	<Grid>
+		<Border Classes="Up"
+				Height="300">
+		
+		</Border>
+	</Grid>
+</UserControl>

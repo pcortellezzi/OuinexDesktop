@@ -9,6 +9,7 @@
 		xmlns:pages="clr-namespace:OuinexDesktop.Views.Pages"
 		xmlns:vm="clr-namespace:OuinexDesktop.ViewModels"
 		x:DataType="vm:MainWindowViewModel"
+		xmlns:controls="using:OuinexDesktop.Views.Controls"
 		Name="mainWindow"
 		Icon="/Assets/window-ico.ico"
 		Title="ContainerWindow"		
@@ -95,7 +96,6 @@
 									   IsVisible="{Binding ElementName=spotSelector, Path=IsChecked} "
 									   DataContext="{Binding ElementName=mainWindow, Path=DataContext}"/>
 				</Grid>
-				
 				<Grid>
 					<SplitView CompactPaneLength="60"
 							   DisplayMode="CompactOverlay"

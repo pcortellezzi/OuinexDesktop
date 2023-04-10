@@ -15,23 +15,17 @@
     </Design.DataContext>
     <Grid RowDefinitions="Auto, auto, *"
 		  ColumnDefinitions="*,auto,*, auto, *">
-		<Border Theme="{StaticResource CardBorder}"
-				Margin="3,0,0,0"
-				Padding="4">
-			<Grid RowDefinitions="auto,auto,*">
-				<TextBlock Theme="{StaticResource TitleTextBlock}"
-						   Margin="5"
-						   Text="Wallets"
-						   VerticalAlignment="Center"/>
-				<Separator Grid.Row="1"
-						   Height="1"/>
-				<controls:WalletsGrid DataContext="{Binding  SpotWalletsMVVM}"
-									  Margin="3"
-									  Grid.Row="2"/>
-			</Grid>
-		</Border>
-		<custom:TitledControl Grid.Row="2">
-			<controls:MarketWatchWidgets DataContext="{Binding MarketWatchMVVM}"/>
+		<custom:TitledControl Title="Wallets"
+							  Margin="3,0,0,0">
+			 <controls:WalletsGrid Margin="3"
+								   DataContext="{Binding SpotWalletsMVVM}"/>
+		</custom:TitledControl>
+		<custom:TitledControl Grid.Row="2"
+							  Title="Markets"
+							  Margin="3,0,3,0"
+							  Grid.ColumnSpan="5">
+			<controls:MarketWatchWidgets DataContext="{Binding MarketWatchMVVM}"
+										 Margin="3"/>
 		</custom:TitledControl>
 		
 		<custom:TitledControl Margin="0"
@@ -40,8 +34,9 @@
 			
 		</custom:TitledControl>
 		<custom:TitledControl Grid.Column="4"
+							  Margin="0,0,3,0"
 							  Title="News">
-			mhimu
+			
 		</custom:TitledControl>
 		<GridSplitter Grid.Row="1"
 					  Grid.ColumnSpan="10"

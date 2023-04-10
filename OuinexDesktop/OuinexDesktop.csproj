@@ -11,7 +11,8 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
-    <Folder Include="Views\Controls\Charting\NewFolder\" />
+    <Folder Include="ViewModels\MainMVVM\" />
+    <Folder Include="Views\Shared\Charting\NewFolder\" />
   </ItemGroup>
 
   <ItemGroup>

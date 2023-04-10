@@ -4,7 +4,6 @@ using OuinexDesktop.Views.Controls;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Avalonia.Controls;
-using SukiUI.Controls;
 
 namespace OuinexDesktop.ViewModels
 {
@@ -14,17 +13,17 @@ namespace OuinexDesktop.ViewModels
         {
             ExchangesConnector.Instances["POC-Binance"].OnInit += LoginMVVM_OnLogged;
 
-            this.OpenMarketWatchWindow = ReactiveCommand.Create(() =>
+            OpenMarketWatchWindow = ReactiveCommand.Create(() =>
             {
                 var window = new ContainerWindow()
                 {
-                    
+
                     Title = "market watch"
                 };
 
                 window.mainContainer.Children.Add(new MarketWatchWidgets()
                 {
-                    DataContext = this.MarketWatchMVVM
+                    DataContext = MarketWatchMVVM
                 });
                 window.Show();
             });
@@ -34,18 +33,18 @@ namespace OuinexDesktop.ViewModels
         {
             //close the login popup
             //InteractiveContainer.CloseDialog();
-            
-            Task.Run(async () => 
+
+            Task.Run(async () =>
             {
-                await this.SpotWalletsMVVM.InitAsync();
-                await this.MarketWatchMVVM.InitStream();              
+                await SpotWalletsMVVM.InitAsync();
+                await MarketWatchMVVM.InitStream();
             });
         }
 
         private void CreateAControl()
         {
             var control = new Control();
-            
+
         }
 
         public LoginViewModel LoginMVVM { get; } = new LoginViewModel();

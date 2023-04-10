@@ -82,7 +82,7 @@ namespace OuinexDesktop.Views.Controls
             var topLevel = TopLevel.GetTopLevel(this);
             var _manager = new WindowNotificationManager(topLevel) { MaxItems = 3 };
 
-            (DataContext as MarketWatchViewModel)._manager = _manager;
+           // (DataContext as MarketWatchViewModel)._manager = _manager;
         }
     }
 }

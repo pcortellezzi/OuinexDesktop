@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:local="using:OuinexDesktop.Views.CustomControls"
+             mc:Ignorable="d"
+			 d:DesignWidth="800"
+			 d:DesignHeight="450"
+             x:Class="OuinexDesktop.Views.CustomControls.TitledControl">
+	<UserControl.Styles>
+		<Style Selector="local|TitledControl">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Border Theme="{StaticResource CardBorder}"
+							Margin="{TemplateBinding Property=Margin}"
+							Padding="{TemplateBinding Property=Padding}">
+						<Grid RowDefinitions="auto,auto,*">
+							<WrapPanel Orientation="Horizontal">
+								<TextBlock Theme="{StaticResource TitleTextBlock}"
+										   Margin="5"
+										   Text="{TemplateBinding Property=Title}"
+										   VerticalAlignment="Center"/>
+								<ContentPresenter Content="{TemplateBinding Property=CustomBarContent}"/>
+							</WrapPanel>
+							<Separator Grid.Row="1"
+									   Height="1"/>
+							<ContentPresenter Content="{TemplateBinding Content}"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  Grid.Row="2"
+											  Name="PART_ContentPresenter"
+											  RecognizesAccessKey="True"/>
+						</Grid>
+					</Border>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+	</UserControl.Styles>
+</UserControl>

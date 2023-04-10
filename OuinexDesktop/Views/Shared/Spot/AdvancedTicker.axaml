@@ -18,47 +18,24 @@
 	<Border Classes="Hover"
 			Padding="4"
 			Theme="{StaticResource RadioButtonGroupBorder}"
-			Width="250"
+			Width="270"
 			VerticalAlignment="Center">
 		<Grid ColumnDefinitions="*,3,*"
 			  VerticalAlignment="Center"
 			  RowDefinitions="auto,auto,auto,auto">
+			<TextBlock Text="{Binding Symbol.FullName}"/>
 			<controls:AdvancedPriceBid Grid.Row="3"
-									   Content="{Binding Bid, Converter={StaticResource DecimalToStringConverter}}"/>
-			<Path  Grid.Row="3"
-				   Grid.Column="3"
-				   Data=" M 3 0 H 57 C 60 0 60 0 60 3 V 27 C 60 30 60 30 57 30 H 16 C 13 30 13 30 13 27 V 23 C 13 20 13 20 10 20 H 3 C 0 20 0 20 0 17 V 3 C 0 0 0 0 3 0"
-				   Fill="{Binding BidColor, Converter={StaticResource tickConverter}}"
-				   Stretch="Uniform">
-			</Path>
-			
-			
-			<TextBlock Text="BUY"
-					   VerticalAlignment="Bottom"
-					   HorizontalAlignment="Center"
-					   Foreground="White"
-					   Grid.Column="2"
-					   FontSize="12"
-					   FontWeight="Light"
-					   Margin="25,1,0,0"
-					   Grid.Row="3"/>
-			<Viewbox Grid.Column="2"
-					 Margin="0,5,0,0"
-					 VerticalAlignment="Top"
-					 HorizontalAlignment="Center"					 
-				     Grid.Row="3">
-				<TextBlock Text="{Binding Ask, Converter={StaticResource DecimalToStringConverter}}"
-						   Margin="4,0"
-						   Foreground="White"/>
-			</Viewbox>
-		
-			<Rectangle Height="1"
-					   Grid.Column="2"
-					   Fill="White"
-					   Width="70"
-					   Opacity="0.5"
-					   Grid.Row="3"
-					   Margin="28,20,0,0"/>
+									   Content="{Binding Bid, Converter={StaticResource DecimalToStringConverter}}"
+								       Background="{Binding BidColor, Converter={StaticResource tickConverter}}"/>
+			<controls:AdvancedPriceAsk Grid.Row="3"
+									   Grid.Column="2"
+									   Content="{Binding Ask, Converter={StaticResource DecimalToStringConverter}}"
+									   Background="{Binding AskColor, Converter={StaticResource tickConverter}}"/>
+		<TextBlock Grid.Row="10"
+				   VerticalAlignment="Bottom"
+				   HorizontalAlignment="Center"
+				   Grid.ColumnSpan="10"
+				   Text="{Binding Spread}"/>
 		</Grid>
 	</Border>
 </UserControl>

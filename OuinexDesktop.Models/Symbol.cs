@@ -10,5 +10,7 @@
 
         public string Name { get;  set; } = string.Empty;
 
+        public decimal TickSize { get; set;} = decimal.Zero;
+
     }
 }

@@ -48,18 +48,19 @@ namespace OuinexDesktop.Exchanges
         {
             var client = new BinanceClient();
 
-            var request = await client.SpotApi.ExchangeData.GetProductsAsync();
+            var request = await client.SpotApi.ExchangeData.GetExchangeInfoAsync();
 
             if (request.Success)
             {
-                var datas = request.Data.ToList();
-                
+                var datas = request.Data.Symbols.Where(x => x.Status == Binance.Net.Enums.SymbolStatus.Trading);
+
                 Symbols = datas.OrderBy(x => x.BaseAsset).Select(x => new POCSymbol()
                 {
                     BaseCurrency = x.BaseAsset,
                     QuoteCurrency = x.QuoteAsset,
-                    Name = x.Symbol
-                });
+                    Name = x.Name,
+                    TickSize = x.PriceFilter.TickSize
+                }) ;
                  
                 Console.WriteLine(Symbols.ToString());
 

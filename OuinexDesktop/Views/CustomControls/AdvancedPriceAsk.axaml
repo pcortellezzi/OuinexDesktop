@@ -5,7 +5,6 @@
              mc:Ignorable="d" 
 			 Background="Orange"
 			 Foreground="White"
-			 FontSize="10"
 			 xmlns:local="using:OuinexDesktop.Views.CustomControls"
              x:Class="OuinexDesktop.Views.CustomControls.AdvancedPriceAsk">
 	<UserControl.Styles>

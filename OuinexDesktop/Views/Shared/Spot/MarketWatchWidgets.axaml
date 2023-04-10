@@ -205,6 +205,7 @@
 					  SelectionMode="Single"
 					  SelectedItem="{Binding SelectedTicker, Mode=TwoWay}"
 					  IsVisible="{Binding ElementName=listSelector, Path=IsChecked}"
+					  RowDetailsVisibilityMode="VisibleWhenSelected"
 					  Items="{Binding Tickers}">
 				<DataGrid.Columns>
 					<DataGridTextColumn Header="Ticker"
@@ -317,6 +318,11 @@
 					</DataGridTemplateColumn>
 
 				</DataGrid.Columns>
+				<DataGrid.RowDetailsTemplate>
+					<DataTemplate>
+						<TextBlock Text="kmjk"/>
+					</DataTemplate>
+				</DataGrid.RowDetailsTemplate>
 				<DataGrid.ContextMenu>
 					<ContextMenu>
 						<MenuItem Header="Open a chart">
@@ -333,21 +339,24 @@
 					</ContextMenu>
 				</DataGrid.ContextMenu>
 			</DataGrid>
-			<ItemsControl Items="{Binding Tickers}"
-						  IsVisible="{Binding ElementName=advancedSelector, Path=IsChecked}"
-						  Grid.Row="1">
-				<ItemsControl.ItemsPanel>
-					<ItemsPanelTemplate>
-						<WrapPanel />
-					</ItemsPanelTemplate>
-				</ItemsControl.ItemsPanel>
-				<ItemsControl.ItemTemplate>
-					<DataTemplate>
-						<local:AdvancedTicker DataContext="{Binding}"
-											  Margin="3"/>
-					</DataTemplate>
-				</ItemsControl.ItemTemplate>
-			</ItemsControl>	 
+			<Panel Grid.Row="1"
+				   IsVisible="{Binding ElementName=advancedSelector, Path=IsChecked}">
+				<ListBox Items="{Binding Tickers}"
+						 SelectionMode="Single"
+						 SelectedItem="{Binding SelectedTicker, Mode=TwoWay}">
+					<ListBox.ItemsPanel>
+						<ItemsPanelTemplate>
+							<WrapPanel />
+						</ItemsPanelTemplate>
+					</ListBox.ItemsPanel>
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<local:AdvancedTicker DataContext="{Binding}"
+												  Margin="3"/>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</Panel>
 		</Grid>
 	</Border>
 </UserControl>

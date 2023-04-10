@@ -23,7 +23,9 @@
 		<Grid ColumnDefinitions="*,3,*"
 			  VerticalAlignment="Center"
 			  RowDefinitions="auto,auto,auto,auto">
-			<TextBlock Text="{Binding Symbol.FullName}"/>
+			<TextBlock Text="{Binding Symbol.FullName}"
+					   FontWeight="DemiBold"
+					   Margin="3"/>
 			<controls:AdvancedPriceBid Grid.Row="3"
 									   Content="{Binding Bid, Converter={StaticResource DecimalToStringConverter}}"
 								       Background="{Binding BidColor, Converter={StaticResource tickConverter}}"/>

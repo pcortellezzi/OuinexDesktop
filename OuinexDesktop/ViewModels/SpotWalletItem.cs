@@ -1,5 +1,9 @@
-﻿using OuinexDesktop.Models;
+﻿using DynamicData;
+using DynamicData.Aggregation;
+using DynamicData.Binding;
+using OuinexDesktop.Models;
 using ReactiveUI;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -122,7 +126,7 @@ namespace OuinexDesktop.ViewModels
             this.Wallets.First().Ticker = tikcerBTC;
             this.Wallets.First(x => x.Token == "Ethereum").Ticker = tikcerETH;
 
-            TotalValue = string.Format("$ {0}", this.Wallets.Sum(x => x.UsdValue));
+            TotalValue = string.Format(" ≃ $ {0}", this.Wallets.Sum(x => x.UsdValue));
         }
 
         public string TotalValue

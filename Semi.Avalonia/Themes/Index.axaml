@@ -3,12 +3,14 @@
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceInclude x:Key="Default" Source="avares://Semi.Avalonia/Themes/Light/Light.axaml" />
-                <ResourceInclude x:Key="Dark" Source="avares://Semi.Avalonia/Themes/Dark/Dark.axaml" />
+                <ResourceInclude x:Key="Dark" Source="avares://Semi.Avalonia/Themes/Dark/Dark.axaml" />				
             </ResourceDictionary.ThemeDictionaries>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://Semi.Avalonia/Controls/Controls.axaml" />
                 <ResourceInclude Source="avares://Semi.Avalonia/Themes/Base.axaml" />
             </ResourceDictionary.MergedDictionaries>
+			<SolidColorBrush x:Key="UpBrush" Color="#34a560" />
+			<SolidColorBrush x:Key="DownBrush" Color="#EC5656" />
         </ResourceDictionary>
     </Styles.Resources>
     <Style Selector=":is(UserControl)">

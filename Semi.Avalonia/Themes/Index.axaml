@@ -11,6 +11,7 @@
             </ResourceDictionary.MergedDictionaries>
 			<SolidColorBrush x:Key="UpBrush" Color="#34a560" />
 			<SolidColorBrush x:Key="DownBrush" Color="#EC5656" />
+			<SolidColorBrush x:Key="DarkAccent" Color="#07131e"/>
         </ResourceDictionary>
     </Styles.Resources>
     <Style Selector=":is(UserControl)">

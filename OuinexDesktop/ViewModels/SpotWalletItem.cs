@@ -1,5 +1,4 @@
-﻿using Binance.Net.Objects.Models.Spot.Staking;
-using OuinexDesktop.Models;
+﻿using OuinexDesktop.Models;
 using ReactiveUI;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -84,17 +83,19 @@ namespace OuinexDesktop.ViewModels
         }
     }
 
-    public class SpotWallets : ObservableCollection<SpotWalletItem>
+    public class SpotWallets : ViewModelBase
     {
+        private string _totalValue, _totalPnL = string.Empty;
+
         public SpotWallets()
         {
-            Add(new SpotWalletItem("Bitcoin")
+            Wallets.Add(new SpotWalletItem("Bitcoin")
             {
                 Amount = (decimal)0.00877428,
                 AverageBuyingPrice=(decimal)18892.23
             });
 
-            Add(new SpotWalletItem("Ouinex Token")
+            Wallets.Add(new SpotWalletItem("Ouinex Token")
             {
                 Amount = (decimal)2000652,
                 AverageBuyingPrice = (decimal)0.025,
@@ -103,7 +104,7 @@ namespace OuinexDesktop.ViewModels
                 Profit = (decimal)((0.54 - 0.025) * 2000652)
             });
 
-            Add(new SpotWalletItem("Ethereum")
+            Wallets.Add(new SpotWalletItem("Ethereum")
             {
                 Amount = (decimal)160.762,
                 AverageBuyingPrice = (decimal)1834.65,
@@ -118,8 +119,18 @@ namespace OuinexDesktop.ViewModels
             var tikcerBTC = await ExchangesConnector.Instances.First().Value.GetTickerAsync(btc);
             var tikcerETH = await ExchangesConnector.Instances.First().Value.GetTickerAsync(eth);
 
-            this.First().Ticker = tikcerBTC;
-            this.First(x => x.Token == "Ethereum").Ticker = tikcerETH;
+            this.Wallets.First().Ticker = tikcerBTC;
+            this.Wallets.First(x => x.Token == "Ethereum").Ticker = tikcerETH;
+
+            TotalValue = string.Format("$ {0}", this.Wallets.Sum(x => x.UsdValue));
         }
+
+        public string TotalValue
+        {
+            get => _totalValue;
+            set => this.RaiseAndSetIfChanged(ref _totalValue, value, nameof(TotalValue));
+        }
+
+        public ObservableCollection<SpotWalletItem> Wallets { get; set; } = new ObservableCollection<SpotWalletItem>();
     }
 }

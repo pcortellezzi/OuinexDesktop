@@ -13,8 +13,8 @@
 	<UserControl.Resources>
 		<converters:DecimalToStringConverter x:Key="DecimalToStringConverter"/>
 	</UserControl.Resources>
-	<Grid>
-		<DataGrid Items="{Binding}"
+	<Grid RowDefinitions="*,auto">
+		<DataGrid Items="{Binding Wallets}"
 				  SelectionMode="Single"
 				  AutoGenerateColumns="False">
 			<DataGrid.Columns>
@@ -100,5 +100,13 @@
 				</DataGridTemplateColumn>
 			</DataGrid.Columns>
 		</DataGrid>
+
+		<Border Grid.Row="1"
+				CornerRadius="3"
+				Background="{DynamicResource ResourceKey=DarkAccent}">
+			<TextBlock Text="{Binding TotalValue}"
+					   Margin="3"
+					   Foreground="White"/>
+		</Border>
 	</Grid>
 </UserControl>

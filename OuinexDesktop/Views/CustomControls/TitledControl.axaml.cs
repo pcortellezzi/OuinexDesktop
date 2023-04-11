@@ -19,8 +19,8 @@ namespace OuinexDesktop.Views.CustomControls
         public static readonly StyledProperty<string> TitleProperty =
    AvaloniaProperty.Register<TitledControl, string>(nameof(Title));
 
-        public static readonly StyledProperty<UserControl> CustomBarContentProperty =
-            AvaloniaProperty.Register<TitledControl, UserControl>(nameof(CustomBarContent));
+        public static readonly StyledProperty<object> CustomBarContentProperty =
+            AvaloniaProperty.Register<TitledControl, object>(nameof(CustomBarContent));
 
         public string Title
         {
@@ -28,7 +28,7 @@ namespace OuinexDesktop.Views.CustomControls
             set { SetValue(TitleProperty, value); }
         }
 
-        public UserControl CustomBarContent
+        public object CustomBarContent
         {
             get { return GetValue(CustomBarContentProperty); }
             set { SetValue(CustomBarContentProperty, value); }

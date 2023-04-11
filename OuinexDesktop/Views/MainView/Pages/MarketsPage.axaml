@@ -19,6 +19,16 @@
 							  Margin="3,0,0,0">
 			 <controls:WalletsGrid Margin="3"
 								   DataContext="{Binding SpotWalletsMVVM}"/>
+			<custom:TitledControl.CustomBarContent>
+				<WrapPanel Orientation="Horizontal"
+						   VerticalAlignment="Center">
+					<TextBlock VerticalAlignment="Center"
+							   Text="Total value :"/>
+					<TextBlock VerticalAlignment="Center"
+							   Foreground="{DynamicResource ResourceKey=UpBrush}"
+							   Text="  $ 6,2552"/>
+				</WrapPanel>
+			</custom:TitledControl.CustomBarContent>
 		</custom:TitledControl>
 		<custom:TitledControl Grid.Row="2"
 							  Title="Markets"

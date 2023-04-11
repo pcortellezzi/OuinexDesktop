@@ -13,48 +13,108 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-    <Grid RowDefinitions="Auto, auto, *"
-		  ColumnDefinitions="*,auto,*, auto, *">
-		<custom:TitledControl Title="Wallets"
-							  Margin="3,0,0,0">
-			 <controls:WalletsGrid Margin="3"
-								   DataContext="{Binding SpotWalletsMVVM}"/>
-			<custom:TitledControl.CustomBarContent>
-				<WrapPanel Orientation="Horizontal"
-						   VerticalAlignment="Center">
-					<TextBlock VerticalAlignment="Center"
-							   Text="Total value :"/>
-					<TextBlock VerticalAlignment="Center"
-							   Foreground="{DynamicResource ResourceKey=UpBrush}"
-							   Text="  $ 6,2552"/>
-				</WrapPanel>
-			</custom:TitledControl.CustomBarContent>
-		</custom:TitledControl>
-		<custom:TitledControl Grid.Row="2"
-							  Title="Markets"
-							  Margin="3,0,3,0"
-							  Grid.ColumnSpan="5">
-			<controls:MarketWatchWidgets DataContext="{Binding MarketWatchMVVM}"
-										 Margin="3"/>
-		</custom:TitledControl>
+    <Grid RowDefinitions="*,auto,*">
+		<Grid ColumnDefinitions="*,auto,*,auto,*,auto,*">
+			<custom:TitledControl Title="Markets">
+				<controls:MarketWatchWidgets DataContext="{Binding MarketWatchMVVM}"
+											 Margin="3"/>
+			</custom:TitledControl>
+			
+			<GridSplitter Grid.Column="1"
+						  Background="Transparent"
+					      Width="3"/>
+			<custom:TitledControl Title="Chart"
+								  Grid.Column="2">
+				<StackPanel VerticalAlignment="Center"
+							HorizontalAlignment="Center">
+					<Path Stroke="Black"
+						  Data="M122.499996185303,134.5L125.5,134.5 125.5,149.499998807907 138.5,149.499998807907 138.5,207.5 125.5,207.5 125.5,231.5 122.499996185303,231.5 122.499996185303,207.5 109.5,207.5 109.5,149.499998807907 122.499996185303,149.499998807907z M13.5,129.500003814697L16.5,129.500003814697 16.5,163.499995231628 29.5,163.499995231628 29.5,292.5 16.5,292.5 16.5,326.5 13.5,326.5 13.5,292.5 0.5,292.5 0.5,163.499995231628 13.5,163.499995231628z M85.5,87.5L88.5,87.5 88.5,104.5 102.5,104.5 102.5,207.5 89.5,207.5 89.5,257.5 86.5,257.5 86.5,207.5 73.5,207.5 73.5,104.5 85.5,104.5z M50.5,79.5L53.5,79.5 53.5,104.5 66.5,104.5 66.5,163.5 53.5,163.5 53.5,197.5 50.5,197.5 50.5,163.5 37.5,163.5 37.5,104.5 50.5,104.5z M159.500001490116,0.5L162.500000476837,0.5 162.500000476837,22.5 175.500003814697,22.5 175.500003814697,151.499999672174 162.500005245209,151.499999672174 162.500005245209,166.499999046326 159.500001490116,166.499999046326 159.500001490116,151.499999672174 146.499998092651,151.499999672174 146.499998092651,22.5 159.500001490116,22.5z"
+						  StrokeThickness="0.2"
+						  Fill="{DynamicResource WindowDefaultBackground}"
+						  Stretch="Uniform"
+						  VerticalAlignment="Center"
+						  HorizontalAlignment="Center"
+						  Height="70"/>
+					<TextBlock Margin="10"
+							   Foreground="{DynamicResource WindowDefaultBackground}"
+							   Text="Nothing to show, select a ticker."/>
+				</StackPanel>
+
+
+			</custom:TitledControl>
+			<GridSplitter Grid.Column="3"
+						  Background="Transparent"
+					      Width="3"/>
+			<custom:TitledControl Grid.Column="4"
+								  Title="Order Book">
+				<StackPanel VerticalAlignment="Center"
+							HorizontalAlignment="Center">
+					<Path Stroke="Black"
+						  Data="M0.5,91.5L61.5,91.5 61.5,98.5 0.5,98.5z M0.5,80.5L61.5,80.5 61.5,87.5 0.5,87.5z M0.5,69.5L61.5,69.5 61.5,76.5 0.5,76.5z M0.5,58.5000009536743L61.5,58.5000009536743 61.5,65.5 0.5,65.5z M0.5,46.499999165535L124.5,46.499999165535 124.5,53.5 0.5,53.5z M63.5,33.5L124.5,33.5 124.5,40.4999995231628 63.5,40.4999995231628z M63.5,22.5L124.5,22.5 124.5,29.5 63.5,29.5z M63.5,11.5L124.5,11.5 124.5,18.5 63.5,18.5z M63.5,0.5L124.5,0.5 124.5,7.5 63.5,7.5z"
+						  StrokeThickness="0.2"
+						  Fill="{DynamicResource WindowDefaultBackground}"
+						  Stretch="Uniform"
+						  VerticalAlignment="Center"
+						  HorizontalAlignment="Center"
+						  Height="70"/>
+					<TextBlock Margin="10"
+							   Foreground="{DynamicResource WindowDefaultBackground}"
+							   Text="Nothing to show, select a ticker."/>
+				</StackPanel>
+			</custom:TitledControl>
+			<GridSplitter Grid.Column="5"
+						  Background="Transparent"
+					      Width="3"/>
+			<custom:TitledControl Grid.Column="6"
+								  Title="Market Depth">
+				<StackPanel VerticalAlignment="Center"
+							HorizontalAlignment="Center">
+					<Path Stroke="Black" 
+						  Data="M0.5,104.499999046326L116.5,104.499999046326 116.5,111.5 0.5,111.5z M8.50000083446503,91.5000008940697L116.5,91.5000008940697 116.5,98.5000009536743 8.50000083446503,98.5000009536743z M18.4999990463257,78.5000009536743L116.5,78.5000009536743 116.5,85.5000009536743 18.4999990463257,85.5000009536743z M53.5,65.5L116.5,65.5 116.5,72.5 53.5,72.5z M82.5,52.5L116.5,52.5 116.5,59.5 82.5,59.5z M49.5,39.5L116.5,39.5 116.5,46.5 49.5,46.5z M32.5,26.5L116.5,26.5 116.5,33.5 32.5,33.5z M18.4999990463257,13.5L116.5,13.5 116.5,20.5 18.4999990463257,20.5z M0.5,0.5L116.5,0.5 116.5,7.5 0.5,7.5z"
+						  StrokeThickness="0.2"
+						  Fill="{DynamicResource WindowDefaultBackground}"
+						  Stretch="Uniform"
+						  VerticalAlignment="Center"
+						  HorizontalAlignment="Center"
+						  Height="70"/>
+					<TextBlock Margin="10"
+							   Foreground="{DynamicResource WindowDefaultBackground}"
+							   Text="Nothing to show, select a ticker."/>
+				</StackPanel>
+			</custom:TitledControl>
+		</Grid>
+		<Grid Grid.Row="2"
+			  ColumnDefinitions="*,auto,*">
+			<custom:TitledControl Title="Wallets">
+				<controls:WalletsGrid Margin="3"
+									  DataContext="{Binding SpotWalletsMVVM}"/>
+				<custom:TitledControl.CustomBarContent>
+					<WrapPanel Orientation="Horizontal"
+							   VerticalAlignment="Center">
+						<TextBlock VerticalAlignment="Center"
+								   FontSize="12"
+								   Text="Total value :"/>
+						<TextBlock VerticalAlignment="Center"
+								   FontSize="12"
+								   Foreground="{DynamicResource ResourceKey=UpBrush}"
+								   Text="  $ 6,2552"/>
+					</WrapPanel>
+				</custom:TitledControl.CustomBarContent>
+			</custom:TitledControl>
+
+			<custom:TitledControl Margin="0"
+								  Grid.Column="2"
+								  Title="Orders">
+
+			</custom:TitledControl>
+			<GridSplitter Grid.Column="1"
+						  Background="Transparent"
+					      Width="3"/>
+		</Grid>
 		
-		<custom:TitledControl Margin="0"
-							  Grid.Column="2"
-							  Title="Orders">
-			
-		</custom:TitledControl>
-		<custom:TitledControl Grid.Column="4"
-							  Margin="0,0,3,0"
-							  Title="News">
-			
-		</custom:TitledControl>
 		<GridSplitter Grid.Row="1"
 					  Grid.ColumnSpan="10"
 					  Background="Transparent"
 					  Height="3"/>
-		<GridSplitter Grid.Column="1"
-					  Background="Transparent"/>
-		<GridSplitter Grid.Column="3"
-					  Background="Transparent"/>
 	</Grid>
 </UserControl>

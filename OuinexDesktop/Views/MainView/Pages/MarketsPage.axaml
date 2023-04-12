@@ -15,7 +15,7 @@
     </Design.DataContext>
     <Grid RowDefinitions="2*,auto,*"
 		  Margin="3,0">
-		<Grid ColumnDefinitions="2*,auto,3*,auto,1*,auto,1*">
+		<Grid ColumnDefinitions="2*,auto,4*,auto,1*,auto,1*">
 			<custom:TitledControl Title="Markets">
 				<controls:MarketWatchWidgets DataContext="{Binding MarketWatchMVVM}"
 											 Margin="3"/>

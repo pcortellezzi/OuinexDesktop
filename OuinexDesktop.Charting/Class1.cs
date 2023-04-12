@@ -1,7 +1,1 @@
-﻿namespace OuinexDesktop.Charting
-{
-    public class Class1
-    {
-
-    }
-}
+﻿namespace OuinexDesktop.Charting{	public class Class1	{	}}

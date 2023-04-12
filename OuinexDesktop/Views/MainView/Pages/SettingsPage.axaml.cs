@@ -30,8 +30,9 @@ public partial class SettingsPage : UserControl
         else
         {
             SukiUI.ColorTheme.LoadDarkTheme(Application.Current);
-            app.RequestedThemeVariant = ThemeVariant.Dark;
+            app.RequestedThemeVariant = ThemeVariant.Dark;            
         }
 
+        Statics.Theme = app.RequestedThemeVariant;
     }
 }

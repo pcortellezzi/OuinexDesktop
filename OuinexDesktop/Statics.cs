@@ -8,7 +8,7 @@ namespace OuinexDesktop
 {
     public static class Statics
     {
-        public static ThemeVariant Theme { get; set; }
+        public static ThemeVariant Theme { get; set; } 
 
         public static Window MainWindow { get; set; }
     }

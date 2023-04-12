@@ -13,8 +13,9 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-    <Grid RowDefinitions="*,auto,*">
-		<Grid ColumnDefinitions="*,auto,*,auto,*,auto,*">
+    <Grid RowDefinitions="2*,auto,*"
+		  Margin="3,0">
+		<Grid ColumnDefinitions="2*,auto,3*,auto,1*,auto,1*">
 			<custom:TitledControl Title="Markets">
 				<controls:MarketWatchWidgets DataContext="{Binding MarketWatchMVVM}"
 											 Margin="3"/>
@@ -37,7 +38,7 @@
 						  Height="70"/>
 					<TextBlock Margin="10"
 							   Foreground="{DynamicResource WindowDefaultBackground}"
-							   Text="Nothing to show, select a ticker."/>
+							   Text="Select a ticker."/>
 				</StackPanel>
 
 
@@ -59,7 +60,7 @@
 						  Height="70"/>
 					<TextBlock Margin="10"
 							   Foreground="{DynamicResource WindowDefaultBackground}"
-							   Text="Nothing to show, select a ticker."/>
+							   Text="Select a ticker."/>
 				</StackPanel>
 			</custom:TitledControl>
 			<GridSplitter Grid.Column="5"
@@ -79,7 +80,7 @@
 						  Height="70"/>
 					<TextBlock Margin="10"
 							   Foreground="{DynamicResource WindowDefaultBackground}"
-							   Text="Nothing to show, select a ticker."/>
+							   Text="Select a ticker."/>
 				</StackPanel>
 			</custom:TitledControl>
 		</Grid>
@@ -105,7 +106,20 @@
 			<custom:TitledControl Margin="0"
 								  Grid.Column="2"
 								  Title="Orders">
-
+				<StackPanel VerticalAlignment="Center"
+						HorizontalAlignment="Center">
+					<Path Stroke="Black"
+						  Data="M22.11 21.46L2.39 1.73L1.11 3L3 4.9V19C3 20.11 3.9 21 5 21H19.1L20.84 22.73L22.11 21.46M5 19V6.89L17.11 19H5M8.2 5L6.2 3H19C20.1 3 21 3.89 21 5V17.8L19 15.8V5H8.2Z"
+						  StrokeThickness="0.2"
+						  Fill="{DynamicResource WindowDefaultBackground}"
+						  Stretch="Uniform"
+						  VerticalAlignment="Center"
+						  HorizontalAlignment="Center"
+						  Height="70"/>
+					<TextBlock Margin="10"
+							   Foreground="{DynamicResource WindowDefaultBackground}"
+							   Text="No working orders."/>
+				</StackPanel> 
 			</custom:TitledControl>
 			<GridSplitter Grid.Column="1"
 						  Background="Transparent"

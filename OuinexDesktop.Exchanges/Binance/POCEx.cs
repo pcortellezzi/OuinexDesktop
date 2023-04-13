@@ -1,5 +1,10 @@
 ﻿using Binance.Net.Clients;
+using Newtonsoft.Json;
 using OuinexDesktop.Models;
+using System;
+using System.Data;
+using System.Globalization;
+using System.Text.Json;
 
 namespace OuinexDesktop.Exchanges
 {
@@ -39,14 +44,16 @@ namespace OuinexDesktop.Exchanges
             var subscribeResult = await socketClient.SpotStreams.SubscribeToTickerUpdatesAsync(symbol.Name, (t) =>
             {
                 result.Update(t.Data.BestBidPrice, t.Data.BestAskPrice, t.Data.HighPrice, t.Data.LowPrice, t.Data.PriceChangePercent);
-            });            
+            });
 
             return result;
         }
 
         public override async Task InitAsync()
         {
-            var client = new BinanceClient();
+            var list = await exceute();
+
+           /* var client = new BinanceClient();
 
             var request = await client.SpotApi.ExchangeData.GetExchangeInfoAsync();
 
@@ -60,15 +67,77 @@ namespace OuinexDesktop.Exchanges
                     QuoteCurrency = x.QuoteAsset,
                     Name = x.Name,
                     TickSize = x.PriceFilter.TickSize
-                }) ;
-                 
-                Console.WriteLine(Symbols.ToString());
+                });
+
+                Console.WriteLine(Symbols.ToString());*/
+           if(list != null)
+            {
+                Symbols = list.OrderBy(x => x.BaseCurrency);
 
                 IsInitialized = true;
             }
             else
             {
                 //todo : handle error
+            }
+        }
+
+        async Task<List<Symbol>> exceute()
+        {
+            string url = "https://api.binance.com/api/v3/exchangeInfo";
+
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetAsync(url);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string responseString = response.Content.ReadAsStringAsync().Result;
+
+                        var symbolList = new List<Symbol>();
+
+                        using (JsonDocument doc = JsonDocument.Parse(responseString))
+                        {
+                            JsonElement root = doc.RootElement;
+                            JsonElement symbols = root.GetProperty("symbols");
+
+                            foreach (JsonElement element in symbols.EnumerateArray())
+                            {
+                                Symbol symbol = new Symbol();
+
+                                symbol.Name = element.GetProperty("symbol").GetString();
+                                symbol.BaseCurrency = element.GetProperty("baseAsset").GetString();
+                                symbol.QuoteCurrency = element.GetProperty("quoteAsset").GetString();
+                                //  symbol.Status = element.GetProperty("status").GetString();
+                                //symbol.MinPrice = decimal.Parse( element.GetProperty("filters")[0].GetProperty("minPrice")!.GetString(), CultureInfo.InvariantCulture);
+                                //symbol.MaxPrice = decimal.Parse(element.GetProperty("filters")[0].GetProperty("maxPrice")!.GetString(), CultureInfo.InvariantCulture);
+                                symbol.TickSize = decimal.Parse(element.GetProperty("filters")[0].GetProperty("tickSize")!.GetString(), CultureInfo.InvariantCulture);
+                                //symbol.MinQty = decimal.Parse(element.GetProperty("filters")[1].GetProperty("minQty")!.GetString(), CultureInfo.InvariantCulture);
+                               // symbol.MaxQty = decimal.Parse(element.GetProperty("filters")[1].GetProperty("maxQty")!.GetString(), CultureInfo.InvariantCulture);
+                               // symbol.StepSize = decimal.Parse(element.GetProperty("filters")[1].GetProperty("stepSize")!.GetString(), CultureInfo.InvariantCulture);
+                               // symbol.MinNotional = decimal.Parse(element.GetProperty("filters")[2].GetProperty("minNotional")!.GetString(), CultureInfo.InvariantCulture);
+                               // symbol.IsSpotTradingAllowed = element.GetProperty("isSpotTradingAllowed").GetBoolean();
+                               // symbol.IsMarginTradingAllowed = element.GetProperty("isMarginTradingAllowed").GetBoolean();
+
+                                symbolList.Add(symbol);
+                            }
+                        }
+
+                        return symbolList;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error getting response from API.");
+                        return null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex}");
+                    return null;
+                }
             }
         }
     }

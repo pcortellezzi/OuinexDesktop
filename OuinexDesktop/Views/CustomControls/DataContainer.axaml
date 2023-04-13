@@ -14,7 +14,11 @@
 										  ContentTemplate="{TemplateBinding ContentTemplate}"
 										  Name="PART_ContentPresenter"
 										  RecognizesAccessKey="True"/>
-						<Grid IsVisible="{TemplateBinding IsPathVisible}">
+						<Border Theme="{StaticResource CardBorder}"
+								BorderThickness="0"
+								CornerRadius="0"
+								Margin="0"
+								IsVisible="{TemplateBinding IsPathVisible}">
 							<StackPanel VerticalAlignment="Center"
 										HorizontalAlignment="Center">
 								<Path Stroke="Black"
@@ -29,7 +33,7 @@
 										   Foreground="{DynamicResource WindowDefaultBackground}"
 										   Text="Select a ticker."/>
 							</StackPanel>
-						</Grid>
+						</Border>
 					</Grid>
 				</ControlTemplate>
 			</Setter>

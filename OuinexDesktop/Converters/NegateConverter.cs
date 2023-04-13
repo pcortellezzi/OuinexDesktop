@@ -37,5 +37,4 @@ namespace OuinexDesktop.Converters
             throw new NotImplementedException();
         }
     }
-
 }

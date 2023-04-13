@@ -1,54 +1,69 @@
-﻿using Binance.Net.Clients;
+﻿using Avalonia.Threading;
+using Binance.Net.Clients;
 using ReactiveUI;
+using System;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace OuinexDesktop.ViewModels
 {
     public class OrderBookViewModel : ViewModelBase
     {
+        int levels = 10;
         private string _ticker = string.Empty;
 
         private BinanceSocketClient socket = new BinanceSocketClient();
-        public async void Init(TickerViewModel ticker)
+
+        public async Task Init(TickerViewModel ticker)
         {
-           /* if (ticker == null)
-                return;
-
-            await socket.UnsubscribeAllAsync();
-            Asks.Clear();
-            Bids.Clear();
-
-            for(int i =0; i < 10; i++)
+            await Dispatcher.UIThread.InvokeAsync(new Action(async () =>
             {
-                Asks.Add(new OrderBookItem());
-                Bids.Add(new OrderBookItem());
-            }
+                await socket.UnsubscribeAllAsync();
+                Asks.Clear();
+                Bids.Clear();
 
-            await socket.SpotStreams.SubscribeToPartialOrderBookUpdatesAsync(ticker.TickerName, 20, 100, (data)=>
-            {
-                // creation des listes bid & ask 
-                var asks = data.Data.Asks.ToList();
-                asks.Reverse();
-
-                var bids = data.Data.Bids.ToList();
-
-                // total des volumes à trader pour les deux listes
-
-                var totalAsks = asks.Sum(x => x.Quantity);
-                var totalBids = bids.Sum(x => x.Quantity);
-
-                // population des liste visible sur l'ui
-                for (int i = 0; i < 10; i++)
+                if (ticker == null)
                 {
-                    Asks[i].Price = asks[i].Price;
-                    Asks[i].Volume = asks[i].Quantity;
-                    Asks[i].Percent = (int)((100/totalAsks) * asks[i].Quantity);
-
-                    Bids[i].Price = bids[i].Price;
-                    Bids[i].Volume = bids[i].Quantity;
-                    Bids[i].Percent = (int)((100 / totalBids) * bids[i].Quantity);
+                    this.IsEmptyOfData = true;
+                    return;
                 }
-            });*/
+
+                for (int i = 0; i < levels - 1; i++)
+                {
+                    Asks.Add(new OrderBookItem());
+                    Bids.Add(new OrderBookItem());
+                }
+
+                await socket.SpotStreams.SubscribeToPartialOrderBookUpdatesAsync(ticker.Symbol.Name, levels, 100, (data) =>
+                {
+                    // creation des listes bid & ask 
+                    var asks = data.Data.Asks.ToList();
+                    asks.Reverse();
+
+                    var bids = data.Data.Bids.ToList();
+
+                    // total des volumes à trader pour les deux listes
+
+                    var totalAsks = asks.Sum(x => x.Quantity);
+                    var totalBids = bids.Sum(x => x.Quantity);
+                    var total = totalAsks+ totalBids; ;
+
+                    // population des liste visible sur l'ui
+                    for (int i = 0; i < levels - 1; i++)
+                    {
+                        Asks[i].Price = asks[i].Price;
+                        Asks[i].Volume = asks[i].Quantity;
+                        Asks[i].Percent = (int)((100 / total) * asks[i].Quantity);
+
+                        Bids[i].Price = bids[i].Price;
+                        Bids[i].Volume = bids[i].Quantity;
+                        Bids[i].Percent = (int)((100 / total) * bids[i].Quantity);
+                    }
+                });
+
+                IsEmptyOfData = false;
+            }));           
         }
 
         public ObservableCollection<OrderBookItem> Asks { get; private set; } = new ObservableCollection<OrderBookItem>();

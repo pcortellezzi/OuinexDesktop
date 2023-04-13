@@ -4,7 +4,7 @@ namespace OuinexDesktop.ViewModels
 {
     public class ViewModelBase : ReactiveObject
     {
-        private bool _isEmptyOfData = false;
+        private bool _isEmptyOfData = true;
         private bool _isBusy = false;
 
         public bool IsEmptyOfData

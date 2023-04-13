@@ -25,6 +25,7 @@ namespace OuinexDesktop.ViewModels
                 {
                     DataContext = MarketWatchMVVM
                 });
+
                 window.Show();
             });
         }

@@ -1,8 +1,5 @@
-﻿using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Controls.Notifications;
+﻿using Avalonia.Controls.Notifications;
 using Avalonia.Threading;
-using Microsoft.VisualBasic;
 using OuinexDesktop.Models;
 using OuinexDesktop.Views;
 using ReactiveUI;
@@ -59,6 +56,11 @@ namespace OuinexDesktop.ViewModels
             set
             {
                 this.RaiseAndSetIfChanged(ref _ticker, value, nameof(SelectedTicker));
+
+                if(value != null)
+                {
+                    Task.Run(async () => await OrderBook.Init(value));
+                }
             }
         }
 

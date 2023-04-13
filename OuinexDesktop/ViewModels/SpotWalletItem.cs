@@ -117,11 +117,11 @@ namespace OuinexDesktop.ViewModels
 
         public async Task InitAsync()
         {
-            var btc = ExchangesConnector.Instances.First().Value.Symbols.FirstOrDefault(x => x.BaseCurrency == "BTC" && x.QuoteCurrency == "USDT");
-            var eth = ExchangesConnector.Instances.First().Value.Symbols.FirstOrDefault(x => x.BaseCurrency == "ETH" && x.QuoteCurrency == "USDT");
+            var btc = ExchangesConnector.Instances.First().Value.Spot.Symbols.FirstOrDefault(x => x.BaseCurrency == "BTC" && x.QuoteCurrency == "USDT");
+            var eth = ExchangesConnector.Instances.First().Value.Spot.Symbols.FirstOrDefault(x => x.BaseCurrency == "ETH" && x.QuoteCurrency == "USDT");
 
-            var tikcerBTC = await ExchangesConnector.Instances.First().Value.GetTickerAsync(btc);
-            var tikcerETH = await ExchangesConnector.Instances.First().Value.GetTickerAsync(eth);
+            var tikcerBTC = await ExchangesConnector.Instances.First().Value.Spot.GetTickerAsync(btc);
+            var tikcerETH = await ExchangesConnector.Instances.First().Value.Spot.GetTickerAsync(eth);
 
             this.Wallets.First().Ticker = tikcerBTC;
             this.Wallets.First(x => x.Token == "Ethereum").Ticker = tikcerETH;

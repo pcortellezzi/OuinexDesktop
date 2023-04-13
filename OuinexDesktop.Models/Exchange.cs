@@ -5,12 +5,12 @@
         public event ExchangeInitializedHandler OnInit;
 
         private bool _initialized = false;
-        public IEnumerable<Symbol> Symbols { get; protected set; } = new List<Symbol>();
+       
 
         public bool IsInitialized
         {
             get => _initialized;
-            protected set 
+            protected set
             {
                 if (_initialized == value)
                     return;
@@ -20,10 +20,17 @@
                 if (_initialized)
                     OnInit?.Invoke();
             }
-        }
-
-        public abstract Task<Ticker> GetTickerAsync(Symbol symbol);
+        }       
 
         public abstract Task InitAsync();
+
+        public abstract Spot Spot { get; }
+    }
+
+    public abstract class Spot
+    {
+        public IEnumerable<Symbol> Symbols { get; set; } = new List<Symbol>();
+
+        public abstract Task<Ticker> GetTickerAsync(Symbol symbol);
     }
 }

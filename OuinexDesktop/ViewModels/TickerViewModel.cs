@@ -23,7 +23,7 @@ namespace OuinexDesktop.ViewModels
 
             var ticker = Task.Run(async () =>
             {
-                var ticker = await _exchange.GetTickerAsync(symbol);
+                var ticker = await _exchange.Spot.GetTickerAsync(symbol);
 
                 Update(ticker);
 

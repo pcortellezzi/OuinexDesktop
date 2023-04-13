@@ -1,7 +1,5 @@
 ﻿using Binance.Net.Clients;
-using Newtonsoft.Json;
 using OuinexDesktop.Models;
-using System;
 using System.Data;
 using System.Globalization;
 using System.Text.Json;
@@ -26,9 +24,10 @@ namespace OuinexDesktop.Exchanges
         }
     }
 
-    public class POCEx : Exchange
+    public class BPOCSpot : Spot
     {
         private BinanceSocketClient socketClient = new BinanceSocketClient();
+
         public override async Task<Ticker> GetTickerAsync(Symbol symbol)
         {
             var result = new POCTicker();
@@ -38,7 +37,6 @@ namespace OuinexDesktop.Exchanges
             var t = await client.SpotApi.ExchangeData.GetTickerAsync(symbol.Name);
 
             result.Update(t.Data.BestBidPrice, t.Data.BestAskPrice, t.Data.HighPrice, t.Data.LowPrice, t.Data.PriceChangePercent);
-
             Thread.Sleep(100);
 
             var subscribeResult = await socketClient.SpotStreams.SubscribeToTickerUpdatesAsync(symbol.Name, (t) =>
@@ -48,6 +46,11 @@ namespace OuinexDesktop.Exchanges
 
             return result;
         }
+    }
+
+    public class POCEx : Exchange
+    {
+        public override Spot Spot { get; } = new BPOCSpot();
 
         public override async Task InitAsync()
         {
@@ -72,7 +75,7 @@ namespace OuinexDesktop.Exchanges
                 Console.WriteLine(Symbols.ToString());*/
            if(list != null)
             {
-                Symbols = list.OrderBy(x => x.BaseCurrency);
+                this.Spot.Symbols = list.OrderBy(x => x.BaseCurrency);
 
                 IsInitialized = true;
             }

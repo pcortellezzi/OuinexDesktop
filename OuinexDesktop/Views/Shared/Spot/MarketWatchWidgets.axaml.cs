@@ -22,7 +22,7 @@ namespace OuinexDesktop.Views.Controls
 
         private void Value_OnInit()
         {
-            _symbolList = ExchangesConnector.Instances.First().Value.Symbols.ToList();
+            _symbolList = ExchangesConnector.Instances.First().Value.Spot.Symbols.ToList();
             this.allSymbolsGrid.Items = _symbolList;
             this.searchBox.Items = _symbolList;
            

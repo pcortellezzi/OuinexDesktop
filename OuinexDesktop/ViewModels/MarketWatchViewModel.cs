@@ -44,7 +44,7 @@ namespace OuinexDesktop.ViewModels
 
         public async Task InitStream()
         {
-            Symbols = new ObservableCollection<Symbol>(ExchangesConnector.Instances.First().Value.Symbols);
+            Symbols = new ObservableCollection<Symbol>(ExchangesConnector.Instances.First().Value.Spot.Symbols);
         }
 
         public bool ShowLoading

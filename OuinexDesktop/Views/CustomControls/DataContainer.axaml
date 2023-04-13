@@ -34,6 +34,24 @@
 										   Text="Select a ticker."/>
 							</StackPanel>
 						</Border>
+						<Border Theme="{StaticResource CardBorder}"
+										BorderThickness="0"
+										CornerRadius="0"
+										Margin="0"
+										IsVisible="{TemplateBinding IsBusy}">
+							<StackPanel VerticalAlignment="Center"
+										HorizontalAlignment="Center">
+								<ProgressBar
+									IsIndeterminate="True"
+									Maximum="100"
+									Minimum="0"
+									Value="20" />
+								<TextBlock Margin="10"
+										   Foreground="{DynamicResource WindowDefaultBackground}"
+										   Text="Loading ..."/>
+							</StackPanel>
+						</Border>
+
 					</Grid>
 				</ControlTemplate>
 			</Setter>

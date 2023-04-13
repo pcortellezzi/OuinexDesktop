@@ -26,5 +26,13 @@ namespace OuinexDesktop.Views.CustomControls
             get { return GetValue(IsPathVisibleProperty); }
             set { SetValue(IsPathVisibleProperty, value); }
         }
+
+        public static readonly StyledProperty<bool> IsBusyProperty = AvaloniaProperty.Register<DataContainer, bool>(nameof(IsBusy));
+
+        public bool IsBusy
+        {
+            get { return GetValue(IsBusyProperty); }
+            set { SetValue(IsBusyProperty, value); }
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace OuinexDesktop.ViewModels
         public bool IsBusy
         {
             get => _isBusy;
-            set => this.RaiseAndSetIfChanged(ref _isEmptyOfData, value, nameof(IsBusy));
+            set => this.RaiseAndSetIfChanged(ref _isBusy, value, nameof(IsBusy));
         }
     }
 }

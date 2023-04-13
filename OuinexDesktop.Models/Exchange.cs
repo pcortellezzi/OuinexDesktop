@@ -26,11 +26,4 @@
 
         public abstract Spot Spot { get; }
     }
-
-    public abstract class Spot
-    {
-        public IEnumerable<Symbol> Symbols { get; set; } = new List<Symbol>();
-
-        public abstract Task<Ticker> GetTickerAsync(Symbol symbol);
-    }
 }

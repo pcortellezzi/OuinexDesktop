@@ -28,6 +28,20 @@ namespace OuinexDesktop.Exchanges
     {
         private BinanceSocketClient socketClient = new BinanceSocketClient();
 
+        public BPOCSpot()
+        {
+            var orders = new List<SpotOrder>();
+            orders.Add(new SpotOrder
+            {
+                Amount = (decimal)1.5,
+                FilledAmount = (decimal)0.034,
+                OrderSymbol = "BTC/USDT",
+                OrderType = OrderType.Pending,
+                Price = (decimal)31245.89,
+                Status = OrderStatus.PartiallyFilled
+            });
+        }
+
         public override async Task<Ticker> GetTickerAsync(Symbol symbol)
         {
             var result = new POCTicker();

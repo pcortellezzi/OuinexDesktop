@@ -34,5 +34,20 @@
         Market,
         StopLoss,
         TakeProfit,
+        Pending
+    }
+
+    public enum OrderSide
+    {
+        BUY,
+        SELL
+    }
+
+    public enum OrderStatus
+    {
+        Filled,
+        Canceled,
+        PartiallyFilled,
+        Error
     }
 }

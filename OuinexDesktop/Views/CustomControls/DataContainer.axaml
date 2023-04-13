@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:local="using:OuinexDesktop.Views.CustomControls"
+             x:Class="OuinexDesktop.Views.CustomControls.DataContainer">
+	<UserControl.Styles>
+		<Style Selector="local|DataContainer">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Grid>
+						<ContentPresenter Content="{TemplateBinding Content}"
+										  ContentTemplate="{TemplateBinding ContentTemplate}"
+										  Name="PART_ContentPresenter"
+										  RecognizesAccessKey="True"/>
+						<Grid IsVisible="{TemplateBinding IsPathVisible}">
+							<StackPanel VerticalAlignment="Center"
+										HorizontalAlignment="Center">
+								<Path Stroke="Black"
+									  Data="{TemplateBinding Path}"
+									  StrokeThickness="0.2"
+									  Fill="{DynamicResource WindowDefaultBackground}"
+									  Stretch="Uniform"
+									  VerticalAlignment="Center"
+									  HorizontalAlignment="Center"
+									  Height="70"/>
+								<TextBlock Margin="10"
+										   Foreground="{DynamicResource WindowDefaultBackground}"
+										   Text="Select a ticker."/>
+							</StackPanel>
+						</Grid>
+					</Grid>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+	</UserControl.Styles>
+</UserControl>

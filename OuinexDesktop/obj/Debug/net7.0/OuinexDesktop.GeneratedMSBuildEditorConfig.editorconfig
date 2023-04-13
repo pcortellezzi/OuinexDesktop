@@ -24,6 +24,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/CustomControls/AdvancedPriceBid.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/CustomControls/DataContainer.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/CustomControls/TitledControl.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

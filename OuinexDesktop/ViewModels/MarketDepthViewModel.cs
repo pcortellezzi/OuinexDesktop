@@ -23,8 +23,7 @@ namespace OuinexDesktop.ViewModels
                 IsBusy = true;                
 
                 await socket.UnsubscribeAllAsync();
-                Asks.Clear();
-                Bids.Clear();
+                Levels.Clear();
                 TotalBids = 0;
                 _bids = 0;
                 _total = 0;
@@ -38,10 +37,9 @@ namespace OuinexDesktop.ViewModels
                     return;
                 }
 
-                for (int i = 0; i < levels; i++)
+                for (int i = 0; i < levels*2; i++)
                 {
-                    Asks.Add(new MarketDepthItem());
-                    Bids.Add(new MarketDepthItem());
+                    Levels.Add(new MarketDepthItem());
                 }
 
                 await socket.SpotStreams.SubscribeToPartialOrderBookUpdatesAsync(ticker.Symbol.Name, levels, 100, (data) =>
@@ -62,13 +60,13 @@ namespace OuinexDesktop.ViewModels
                     // population des liste visible sur l'ui
                     for (int i = 0; i < levels; i++)
                     {
-                        Asks[i].Price = asks[i].Price;
-                        Asks[i].Volume = asks[i].Quantity;
-                        Asks[i].Percent = (int)((100 / total) * asks[i].Quantity);
+                        Levels[i].Price = asks[i].Price.ToString();
+                        Levels[i].Ask = asks[i].Quantity.ToString();
+                        Levels[i].PercentAsk = (int)((100 / total) * asks[i].Quantity);
 
-                        Bids[i].Price = bids[i].Price;
-                        Bids[i].Volume = bids[i].Quantity;
-                        Bids[i].Percent = (int)((100 / total) * bids[i].Quantity);
+                        Levels[i+levels].Price = bids[i].Price.ToString();
+                        Levels[i + levels].Bid = bids[i].Quantity.ToString();
+                        Levels[i + levels].PercentBid = (int)((100 / total) * bids[i].Quantity);
                     }
 
                     // ici c'est la barre horizontale des volumes aux ticks
@@ -86,9 +84,7 @@ namespace OuinexDesktop.ViewModels
             }));           
         }
 
-        public ObservableCollection<MarketDepthItem> Asks { get; private set; } = new ObservableCollection<MarketDepthItem>();
-
-        public ObservableCollection<MarketDepthItem> Bids { get; private set; } = new ObservableCollection<MarketDepthItem>();
+        public ObservableCollection<MarketDepthItem> Levels { get; private set; } = new ObservableCollection<MarketDepthItem>();
 
         public string TickerName
         {

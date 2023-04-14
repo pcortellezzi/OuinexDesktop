@@ -205,7 +205,7 @@
 					  SelectionMode="Single"
 					  SelectedItem="{Binding SelectedTicker, Mode=TwoWay}"
 					  IsVisible="{Binding ElementName=listSelector, Path=IsChecked}"
-					  RowDetailsVisibilityMode="VisibleWhenSelected"
+					  RowDetailsVisibilityMode="Collapsed"
 					  Items="{Binding Tickers}">
 				<DataGrid.Columns>
 					<DataGridTextColumn Header="Ticker"

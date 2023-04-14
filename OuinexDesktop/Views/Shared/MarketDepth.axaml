@@ -6,104 +6,84 @@
 		     xmlns:vm="clr-namespace:OuinexDesktop.ViewModels"
 			 x:DataType="vm:MarketDepthViewModel"
              xmlns:controls="clr-namespace:OuinexDesktop.Views.Controls"
+			 xmlns:converters="using:OuinexDesktop.Converters"
              x:Class="OuinexDesktop.Views.Shared.MarketDepth">
+	<UserControl.Resources>
+		<converters:WidthPercentageConverter x:Key="test"/>
+	</UserControl.Resources>
 	<Design.DataContext>
 		<vm:MarketDepthViewModel/>
 	</Design.DataContext>
-	<Panel>
-		<StackPanel VerticalAlignment="Center">
-			<ItemsControl Items="{Binding Asks}"
-						  VerticalAlignment="Bottom">
-				<ItemsControl.ItemTemplate>
-					<DataTemplate>
-						<Grid ColumnDefinitions="*,*"
-							  Margin="0">
-							<ProgressBar Maximum="100"
-										 Grid.ColumnSpan="2"
-										 Minimum="0"
-										 CornerRadius="0"
-										 VerticalAlignment="Stretch"
-										 Background="Transparent"
-										 ShowProgressText="False"
-										 Foreground="{DynamicResource WindowDefaultBackground}"
-										 Value="{Binding Percent}"/>
-							<TextBlock Text="{Binding Price}"
-									   VerticalAlignment="Center"
-									   Margin="3"
-									   FontSize="12">
-							</TextBlock>
-							<TextBlock Text="{Binding Volume}"
-									   Grid.Column="1"
-									   HorizontalAlignment="Right"
-									   VerticalAlignment="Center"
-									   FontSize="12"
-									   Margin="2"/>
-						</Grid>
-					</DataTemplate>
-				</ItemsControl.ItemTemplate>
-			</ItemsControl>
-			<Border Grid.Row="1"/>
-			<TextBlock Grid.Row="1"
-					   IsVisible="true"
-					   Margin="5"
-					   FontWeight="DemiBold"
-					   Text="Spead :"/>
-			<TextBlock Grid.Row="1"
-					   IsVisible="False"
-					   HorizontalAlignment="Center"
-					   Text="1"/>
-			<ItemsControl Items="{Binding Bids}"
-						  VerticalAlignment="Top"
-						  Grid.Row="2">
-				<ItemsControl.ItemTemplate>
-					<DataTemplate>
-						<Grid ColumnDefinitions="*,*"
-							  Margin="0">
-							<ProgressBar Maximum="100"
-										 Grid.ColumnSpan="2"
-										 Minimum="0"
-										 Foreground="{DynamicResource WindowDefaultBackground}"
-										 CornerRadius="0"
-										 VerticalAlignment="Stretch"
-										 Background="Transparent"
-										 ShowProgressText="False"
-										 Value="{Binding Percent}"/>
-							<TextBlock Text="{Binding Price}"
-									   VerticalAlignment="Center"
-									   Margin="3"
-									   FontSize="12"/>
-							<TextBlock Text="{Binding Volume}"
-									   Grid.Column="1"
-									   HorizontalAlignment="Right"
-									   VerticalAlignment="Center"
-									   FontSize="12"
-									   Margin="2"/>
-						</Grid>
-					</DataTemplate>
-				</ItemsControl.ItemTemplate>
-			</ItemsControl>
-			<ProgressBar Classes="Success"
-						 Maximum="100"
-						 Grid.ColumnSpan="2"
-						 Minimum="0"
-						 CornerRadius="0"
-						 Margin="5"
-						 VerticalAlignment="Stretch"
-						 Background="Red"
-						 ShowProgressText="False"
-						 Height="20"
-						 Value="{Binding TotalBids}"/>
-			<ProgressBar Classes="Success"
-						 Maximum="100"
-						 Grid.ColumnSpan="2"
-						 Minimum="0"
-						 CornerRadius="0"
-						 Margin="5"
-						 VerticalAlignment="Stretch"
-						 Background="Red"
-						 ShowProgressText="False"
-						 Height="20"
-						 Value="{Binding CumuledTotal}"/>
-		</StackPanel>
-	</Panel>
+	<Grid RowDefinitions="*,auto,auto">
+		<ItemsControl Items="{Binding Levels}"
+				 Padding="0"
+				 Margin="0"
+				 FontSize="12">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<Grid ColumnDefinitions="*,*,*">
+						<ProgressBar Maximum="100"
+									 Minimum="0"
+									 CornerRadius="0"
+									 VerticalAlignment="Stretch"
+									 Background="Transparent"
+									 ShowProgressText="False"
+									 Grid.Column="2"
+									 Foreground="{DynamicResource WindowDefaultBackground}"
+									 Value="{Binding PercentAsk}"/>
+						<ProgressBar Maximum="100"
+									 Minimum="0"
+									 CornerRadius="0"
+									 VerticalAlignment="Stretch"
+									 Background="Transparent"
+									 ShowProgressText="False"
+									 FlowDirection="RightToLeft"
+									 Foreground="{DynamicResource WindowDefaultBackground}"
+									 Value="{Binding PercentBid}"/>
+						<TextBlock Grid.Column="0"
+								   HorizontalAlignment="Right"
+								   Margin="0,0,5,0"
+								   VerticalAlignment="Center"
+								   FontSize="12"
+								   Text="{Binding Bid}"/>
+						<Border Grid.Column="1"
+								Background="{DynamicResource WindowDefaultBackground}"
+								Padding="5">
+							<TextBlock FontSize="12"
+									   Text="{Binding Price}" />
+						</Border>
+						<TextBlock Grid.Column="2"
+								   FontSize="12"
+								   VerticalAlignment="Center"
+								   HorizontalAlignment="Left"
+								   Margin="5,0,0,0"
+								   Text="{Binding Ask}" />
+
+					</Grid>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+		<ProgressBar Classes="Success"
+					 Maximum="100"
+					 Grid.Row="1"
+					 Minimum="0"
+					 CornerRadius="0"
+					 Margin="5"
+					 VerticalAlignment="Stretch"
+					 Background="Red"
+					 ShowProgressText="False"
+					 Height="20"
+					 Value="{Binding TotalBids}"/>
+		<ProgressBar Classes="Success"
+					 Maximum="100"
+					 Grid.Row="2"
+					 Minimum="0"
+					 CornerRadius="0"
+					 Margin="5"
+					 VerticalAlignment="Stretch"
+					 Background="Red"
+					 ShowProgressText="False"
+					 Height="20"
+					 Value="{Binding CumuledTotal}"/>
+	</Grid>
 </UserControl>

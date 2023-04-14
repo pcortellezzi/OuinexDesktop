@@ -11,9 +11,9 @@
 				<ControlTemplate>
 					<Grid>
 						<ContentPresenter Content="{TemplateBinding Content}"
-										  ContentTemplate="{TemplateBinding ContentTemplate}"
-										  Name="PART_ContentPresenter"
-										  RecognizesAccessKey="True"/>
+								  ContentTemplate="{TemplateBinding ContentTemplate}"
+								  Name="PART_ContentPresenter"
+								  RecognizesAccessKey="True"/>
 						<Border Theme="{StaticResource CardBorder}"
 								BorderThickness="0"
 								CornerRadius="0"
@@ -51,7 +51,6 @@
 										   Text="Loading ..."/>
 							</StackPanel>
 						</Border>
-
 					</Grid>
 				</ControlTemplate>
 			</Setter>

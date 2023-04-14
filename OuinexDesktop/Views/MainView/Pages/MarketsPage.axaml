@@ -8,6 +8,7 @@
              x:DataType="vm:MainWindowViewModel"
 			 xmlns:material="using:Material.Icons.Avalonia"
 			 xmlns:custom="using:OuinexDesktop.Views.CustomControls"
+			 xmlns:shared="using:OuinexDesktop.Views.Shared"
              d:DesignHeight="450"
              x:Class="OuinexDesktop.Views.Pages.MarketsPage">
     <Design.DataContext>
@@ -68,97 +69,7 @@
 				<custom:DataContainer IsPathVisible="{Binding MarketWatchMVVM.OrderBook.IsEmptyOfData }"
 									  IsBusy="{Binding MarketWatchMVVM.OrderBook.IsBusy }"
 									  Path="M0.5,104.499999046326L116.5,104.499999046326 116.5,111.5 0.5,111.5z M8.50000083446503,91.5000008940697L116.5,91.5000008940697 116.5,98.5000009536743 8.50000083446503,98.5000009536743z M18.4999990463257,78.5000009536743L116.5,78.5000009536743 116.5,85.5000009536743 18.4999990463257,85.5000009536743z M53.5,65.5L116.5,65.5 116.5,72.5 53.5,72.5z M82.5,52.5L116.5,52.5 116.5,59.5 82.5,59.5z M49.5,39.5L116.5,39.5 116.5,46.5 49.5,46.5z M32.5,26.5L116.5,26.5 116.5,33.5 32.5,33.5z M18.4999990463257,13.5L116.5,13.5 116.5,20.5 18.4999990463257,20.5z M0.5,0.5L116.5,0.5 116.5,7.5 0.5,7.5z">
-					<Panel>
-						<StackPanel VerticalAlignment="Center">
-							<ItemsControl Items="{Binding MarketWatchMVVM.OrderBook.Asks}"
-										  VerticalAlignment="Bottom">
-								<ItemsControl.ItemTemplate>
-									<DataTemplate>
-										<Grid ColumnDefinitions="*,*"
-											  Margin="0">
-											<ProgressBar Maximum="100"
-														 Grid.ColumnSpan="2"
-														 Minimum="0"
-														 CornerRadius="0"
-														 VerticalAlignment="Stretch"
-														 Background="Transparent"
-														 ShowProgressText="False"
-														 Foreground="{DynamicResource WindowDefaultBackground}"
-														 Value="{Binding Percent}"/>
-											<TextBlock Text="{Binding Price}"
-													   VerticalAlignment="Center"
-													   Margin="3"
-													   FontSize="12">
-											</TextBlock>
-											<TextBlock Text="{Binding Volume}"
-													   Grid.Column="1"
-													   HorizontalAlignment="Right"
-													   VerticalAlignment="Center"
-													   FontSize="12"
-													   Margin="2"/>
-										</Grid>
-									</DataTemplate>
-								</ItemsControl.ItemTemplate>
-							</ItemsControl>
-							<Border Grid.Row="1"/>
-							<TextBlock Grid.Row="1"
-									   IsVisible="true"
-									   Margin="5"
-									   Text="Spead"/>
-							<ItemsControl Items="{Binding MarketWatchMVVM.OrderBook.Bids}"
-										  VerticalAlignment="Top"
-										  Grid.Row="2">
-								<ItemsControl.ItemTemplate>
-									<DataTemplate>
-										<Grid ColumnDefinitions="*,*"
-											  Margin="0">
-											<ProgressBar Maximum="100"
-														 Grid.ColumnSpan="2"
-														 Minimum="0"
-														 Foreground="{DynamicResource WindowDefaultBackground}"
-														 CornerRadius="0"
-														 VerticalAlignment="Stretch"
-														 Background="Transparent"
-														 ShowProgressText="False"
-														 Value="{Binding Percent}"/>
-											<TextBlock Text="{Binding Price}"
-													   VerticalAlignment="Center"
-													   Margin="3"
-													   FontSize="12"/>
-											<TextBlock Text="{Binding Volume}"
-													   Grid.Column="1"
-													   HorizontalAlignment="Right"
-													   VerticalAlignment="Center"
-													   FontSize="12"
-													   Margin="2"/>
-										</Grid>
-									</DataTemplate>
-								</ItemsControl.ItemTemplate>
-							</ItemsControl>
-							<ProgressBar Classes="Success"
-										 Maximum="100"
-										 Grid.ColumnSpan="2"
-										 Minimum="0"
-										 CornerRadius="0"
-										 Margin="5"
-										 VerticalAlignment="Stretch"
-										 Background="Red"
-										 ShowProgressText="False"
-										 Height="20"
-										 Value="{Binding MarketWatchMVVM.OrderBook.TotalBids}"/>
-							<ProgressBar Classes="Success"
-										 Maximum="100"
-										 Grid.ColumnSpan="2"
-										 Minimum="0"
-										 CornerRadius="0"
-										 Margin="5"
-										 VerticalAlignment="Stretch"
-										 Background="Red"
-										 ShowProgressText="False"
-										 Height="20"
-										 Value="{Binding MarketWatchMVVM.OrderBook.CumuledTotal}"/>
-						</StackPanel>
-					</Panel>
+					<shared:MarketDepth DataContext="{Binding MarketWatchMVVM.OrderBook}"/>
 				</custom:DataContainer>
 			</custom:TitledControl>
 		</Grid>

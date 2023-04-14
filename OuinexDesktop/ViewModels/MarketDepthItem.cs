@@ -1,40 +1,62 @@
-﻿using ReactiveUI;
+﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using ReactiveUI;
 
 namespace OuinexDesktop.ViewModels
 {
     public class MarketDepthItem : ViewModelBase
     {
-        private string _price, _bid, _ask;
-        private int _percentAsks, _percentBid;
+        private double _price, _bid = double.NaN, _ask = double.NaN;
+        private decimal _percentAsks, _percentBid;
+        private bool _displayAsk = false, _displayBid = false;
 
-        public string Price
+        public double Price
         {
             get => _price;
             set => this.RaiseAndSetIfChanged(ref _price, value, nameof(Price));
         }
 
-        public string Bid
+        public double Bid
         {
             get => _bid;
-            set => this.RaiseAndSetIfChanged(ref _bid, value, nameof(Bid));
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _bid, value, nameof(Bid));
+                DisplayBid = !double.IsNaN(value);
+            }
         }
 
-        public string Ask
+        public double Ask
         {
             get => _ask;
-            set => this.RaiseAndSetIfChanged(ref _ask, value, nameof(Ask));
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _ask, value, nameof(Ask));
+                DisplayAsk = !double.IsNaN(value);
+            }
         }
 
-        public int PercentAsk
+        public decimal PercentAsk
         {
-            get => _percentAsks * 2;
+            get => _percentAsks;
             set => this.RaiseAndSetIfChanged(ref _percentAsks, value, nameof(PercentAsk));
         }
 
-        public int PercentBid
+        public decimal PercentBid
         {
-            get => _percentBid * 2;
+            get => _percentBid;
             set => this.RaiseAndSetIfChanged(ref _percentBid, value, nameof(PercentBid));
+        }
+
+        public bool DisplayAsk
+        {
+            get => _displayAsk;
+            set => this.RaiseAndSetIfChanged(ref _displayAsk, value, nameof(DisplayAsk));
+        }
+
+        public bool DisplayBid
+        {
+            get => _displayBid;
+            set => this.RaiseAndSetIfChanged(ref _displayBid, value, nameof(DisplayBid));
         }
     }
 }

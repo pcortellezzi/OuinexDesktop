@@ -15,54 +15,71 @@
 		<vm:MarketDepthViewModel/>
 	</Design.DataContext>
 	<Grid RowDefinitions="*,auto,auto">
-		<ItemsControl Items="{Binding Levels}"
-				 Padding="0"
-				 Margin="0"
-				 FontSize="12">
-			<ItemsControl.ItemTemplate>
-				<DataTemplate>
-					<Grid ColumnDefinitions="*,*,*">
-						<ProgressBar Maximum="100"
-									 Minimum="0"
-									 CornerRadius="0"
-									 VerticalAlignment="Stretch"
-									 Background="Transparent"
-									 ShowProgressText="False"
-									 Grid.Column="2"
-									 Foreground="{DynamicResource WindowDefaultBackground}"
-									 Value="{Binding PercentAsk}"/>
-						<ProgressBar Maximum="100"
-									 Minimum="0"
-									 CornerRadius="0"
-									 VerticalAlignment="Stretch"
-									 Background="Transparent"
-									 ShowProgressText="False"
-									 FlowDirection="RightToLeft"
-									 Foreground="{DynamicResource WindowDefaultBackground}"
-									 Value="{Binding PercentBid}"/>
-						<TextBlock Grid.Column="0"
-								   HorizontalAlignment="Right"
-								   Margin="0,0,5,0"
-								   VerticalAlignment="Center"
-								   FontSize="12"
-								   Text="{Binding Bid}"/>
-						<Border Grid.Column="1"
-								Background="{DynamicResource WindowDefaultBackground}"
-								Padding="5">
+		<DataGrid Items="{Binding Levels}"
+				  Padding="0"
+				  RowHeight="22"
+				  GridLinesVisibility="All"
+				  Margin="0"
+				  FontSize="12">
+			<DataGrid.Columns>
+				<DataGridTextColumn Width="0.3*"/>
+				<DataGridTemplateColumn Header="Bids"										
+										Width="*">
+					<DataTemplate>
+						<Grid VerticalAlignment="Center"
+							  HorizontalAlignment="Right">
+							<ProgressBar VerticalAlignment="Stretch"
+										 Background="Transparent"
+										 ShowProgressText="False"
+										 FlowDirection="RightToLeft"
+										 Foreground="{DynamicResource UpBrush}"
+										 Margin="10,0,0,0"
+										 Value="{Binding PercentBid}"/>
+							<TextBlock HorizontalAlignment="Right"
+									   VerticalAlignment="Center"
+									   FontSize="12"			
+									   Margin="0,0,3,0"
+									   IsVisible="{Binding DisplayBid}"
+									   Text="{Binding Bid}"/>
+						</Grid>
+					</DataTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn Header="Price"										
+										Width="*">
+					<DataTemplate>
+						<Border Theme="{StaticResource RadioButtonGroupBorder}">
 							<TextBlock FontSize="12"
-									   Text="{Binding Price}" />
+									   VerticalAlignment="Center"
+									   HorizontalAlignment="Center"
+									   Text="{Binding Price}"/>
 						</Border>
-						<TextBlock Grid.Column="2"
-								   FontSize="12"
-								   VerticalAlignment="Center"
-								   HorizontalAlignment="Left"
-								   Margin="5,0,0,0"
-								   Text="{Binding Ask}" />
-
-					</Grid>
-				</DataTemplate>
-			</ItemsControl.ItemTemplate>
-		</ItemsControl>
+						
+					</DataTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn Header="Asks"
+										Width="*">
+					<DataTemplate>
+						<Grid VerticalAlignment="Center"
+							  HorizontalAlignment="Left">							
+							<ProgressBar VerticalAlignment="Stretch"
+										 Background="Transparent"
+										 ShowProgressText="False"
+										 Grid.Column="2"
+										 Margin="0,0,10,0"
+										 Foreground="{DynamicResource DownBrush}"
+										 Value="{Binding PercentAsk}"/>
+							<TextBlock FontSize="12"
+									   VerticalAlignment="Center"
+									   HorizontalAlignment="Left"
+									   IsVisible="{Binding DisplayAsk}"
+									   Margin="3,0,0,0"
+									   Text="{Binding Ask}"/>
+						</Grid>
+					</DataTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTextColumn Width="0.3*"/>
+			</DataGrid.Columns>
+		</DataGrid>
 		<ProgressBar Classes="Success"
 					 Maximum="100"
 					 Grid.Row="1"

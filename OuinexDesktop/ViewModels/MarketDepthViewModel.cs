@@ -60,13 +60,15 @@ namespace OuinexDesktop.ViewModels
                     // population des liste visible sur l'ui
                     for (int i = 0; i < levels; i++)
                     {
-                        Levels[i].Price = asks[i].Price.ToString();
-                        Levels[i].Ask = asks[i].Quantity.ToString();
-                        Levels[i].PercentAsk = (int)((100 / total) * asks[i].Quantity);
+                        Levels[i].Price = (double)asks[i].Price;
+                        Levels[i].Ask = (double)asks[i].Quantity;
+                        Levels[i].PercentAsk = (asks[i].Quantity /totalAsks ) * 100;
+                        Levels[i].Bid = double.NaN;
 
-                        Levels[i+levels].Price = bids[i].Price.ToString();
-                        Levels[i + levels].Bid = bids[i].Quantity.ToString();
-                        Levels[i + levels].PercentBid = (int)((100 / total) * bids[i].Quantity);
+                        Levels[i + levels].Price = (double)bids[i].Price;
+                        Levels[i + levels].Bid = (double)bids[i].Quantity;
+                        Levels[i + levels].PercentBid = (bids[i].Quantity/totalBids) * 100;
+                        Levels[i + levels].Ask = double.NaN;
                     }
 
                     // ici c'est la barre horizontale des volumes aux ticks

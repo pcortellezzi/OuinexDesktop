@@ -66,10 +66,10 @@
 					      Width="3"/>
 			<custom:TitledControl Grid.Column="6"
 								  Title="Market Depth">
-				<custom:DataContainer IsPathVisible="{Binding MarketWatchMVVM.OrderBook.IsEmptyOfData }"
-									  IsBusy="{Binding MarketWatchMVVM.OrderBook.IsBusy }"
+				<custom:DataContainer IsPathVisible="{Binding MarketWatchMVVM.MarketDepth.IsEmptyOfData }"
+									  IsBusy="{Binding MarketWatchMVVM.MarketDepth.IsBusy }"
 									  Path="M0.5,104.499999046326L116.5,104.499999046326 116.5,111.5 0.5,111.5z M8.50000083446503,91.5000008940697L116.5,91.5000008940697 116.5,98.5000009536743 8.50000083446503,98.5000009536743z M18.4999990463257,78.5000009536743L116.5,78.5000009536743 116.5,85.5000009536743 18.4999990463257,85.5000009536743z M53.5,65.5L116.5,65.5 116.5,72.5 53.5,72.5z M82.5,52.5L116.5,52.5 116.5,59.5 82.5,59.5z M49.5,39.5L116.5,39.5 116.5,46.5 49.5,46.5z M32.5,26.5L116.5,26.5 116.5,33.5 32.5,33.5z M18.4999990463257,13.5L116.5,13.5 116.5,20.5 18.4999990463257,20.5z M0.5,0.5L116.5,0.5 116.5,7.5 0.5,7.5z">
-					<shared:MarketDepth DataContext="{Binding MarketWatchMVVM.OrderBook}"/>
+					<shared:MarketDepth DataContext="{Binding MarketWatchMVVM.MarketDepth}"/>
 				</custom:DataContainer>
 			</custom:TitledControl>
 		</Grid>

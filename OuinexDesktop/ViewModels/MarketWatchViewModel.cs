@@ -15,7 +15,7 @@ namespace OuinexDesktop.ViewModels
         private bool _initialized = false;
         private bool _showLoading = true;
         private TickerViewModel _ticker;
-        private OrderBookViewModel _orderBook = new OrderBookViewModel();
+        private MarketDepthViewModel _orderBook = new MarketDepthViewModel();
         private CoinGeckoAPI _cmcAPI = new CoinGeckoAPI();
         private Symbol _selectedSymbol;
 
@@ -59,15 +59,18 @@ namespace OuinexDesktop.ViewModels
 
                 if(value != null)
                 {
+                    Task.Run(async () => await MarketDepth.Init(value));
                     Task.Run(async () => await OrderBook.Init(value));
                 }
             }
         }
 
-        public OrderBookViewModel OrderBook
+        public OrderBookViewModel OrderBook { get; } = new OrderBookViewModel();
+
+        public MarketDepthViewModel MarketDepth
         {
             get => _orderBook;
-            set => this.RaiseAndSetIfChanged(ref _orderBook, value, nameof(OrderBook));
+            set => this.RaiseAndSetIfChanged(ref _orderBook, value, nameof(MarketDepth));
         }
 
         public ObservableCollection<Symbol> Symbols { get; set; } = new ObservableCollection<Symbol>();

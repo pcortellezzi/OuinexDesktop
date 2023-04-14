@@ -4,11 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 		     xmlns:vm="clr-namespace:OuinexDesktop.ViewModels"
-			 x:DataType="vm:OrderBookViewModel"
+			 x:DataType="vm:MarketDepthViewModel"
              xmlns:controls="clr-namespace:OuinexDesktop.Views.Controls"
              x:Class="OuinexDesktop.Views.Shared.MarketDepth">
 	<Design.DataContext>
-		<vm:OrderBookViewModel/>
+		<vm:MarketDepthViewModel/>
 	</Design.DataContext>
 	<Panel>
 		<StackPanel VerticalAlignment="Center">
@@ -46,7 +46,12 @@
 			<TextBlock Grid.Row="1"
 					   IsVisible="true"
 					   Margin="5"
-					   Text="Spead"/>
+					   FontWeight="DemiBold"
+					   Text="Spead :"/>
+			<TextBlock Grid.Row="1"
+					   IsVisible="False"
+					   HorizontalAlignment="Center"
+					   Text="1"/>
 			<ItemsControl Items="{Binding Bids}"
 						  VerticalAlignment="Top"
 						  Grid.Row="2">

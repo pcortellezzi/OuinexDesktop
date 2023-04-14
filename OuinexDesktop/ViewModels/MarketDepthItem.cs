@@ -2,7 +2,7 @@
 
 namespace OuinexDesktop.ViewModels
 {
-    public class OrderBookItem : ViewModelBase
+    public class MarketDepthItem : ViewModelBase
     {
         private decimal _price, _volume;
         private int _percent;

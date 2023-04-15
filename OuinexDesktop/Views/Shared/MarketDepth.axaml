@@ -40,7 +40,7 @@
 				  FontSize="12">
 			<DataGrid.Columns>
 				<DataGridTextColumn Width="0.3*"/>
-				<DataGridTemplateColumn Header="Bids"										
+				<DataGridTemplateColumn Header="Bids"
 										Width="*">
 					<DataTemplate>
 						<Grid VerticalAlignment="Center"
@@ -55,15 +55,15 @@
 										 Value="{Binding PercentBid}"/>
 							<TextBlock HorizontalAlignment="Right"
 									   VerticalAlignment="Center"
-									   FontSize="12"			
+									   FontSize="12"
 									   Margin="0,0,3,0"
 									   IsVisible="{Binding DisplayBid}"
 									   Text="{Binding Bid}"/>
 						</Grid>
 					</DataTemplate>
 				</DataGridTemplateColumn>
-				<DataGridTemplateColumn Header="Price"										
-										Width="*">
+				<DataGridTemplateColumn Header="Price"
+										Width="auto">
 					<DataTemplate>
 						<Grid>
 							<Border Theme="{StaticResource RadioButtonGroupBorder}"/>
@@ -91,14 +91,14 @@
 									   HorizontalAlignment="Center"
 									   IsVisible="{Binding IsBestBid}"
 									   Text="{Binding Price}"/>
-						</Grid>						
+						</Grid>
 					</DataTemplate>
 				</DataGridTemplateColumn>
 				<DataGridTemplateColumn Header="Asks"
 										Width="*">
 					<DataTemplate>
 						<Grid VerticalAlignment="Center"
-							  HorizontalAlignment="Left">							
+							  HorizontalAlignment="Left">
 							<ProgressBar VerticalAlignment="Stretch"
 										 Background="Transparent"
 										 ShowProgressText="False"
@@ -118,8 +118,9 @@
 				</DataGridTemplateColumn>
 				<DataGridTextColumn Width="0.3*"/>
 			</DataGrid.Columns>
-			
+
 		</DataGrid>
+
 		<ProgressBar Classes="Success"
 					 Maximum="100"
 					 Grid.Row="3"

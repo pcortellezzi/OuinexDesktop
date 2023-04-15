@@ -16,7 +16,7 @@
     </Design.DataContext>
     <Grid RowDefinitions="2*,auto,*"
 		  Margin="3,0">
-		<Grid ColumnDefinitions="2*,auto,4*,auto,1*,auto,1*">
+		<Grid ColumnDefinitions="2*,auto,4*,auto,1.5*">
 			<custom:TitledControl Title="Markets">
 				<controls:MarketWatchWidgets DataContext="{Binding MarketWatchMVVM}"
 											 Margin="3"/>
@@ -44,31 +44,14 @@
 			<GridSplitter Grid.Column="3"
 						  Background="Transparent"
 					      Width="3"/>
-			<custom:TitledControl Grid.Column="4"
-								  Title="Order Book">
-				<StackPanel VerticalAlignment="Center"
-							HorizontalAlignment="Center">
-					<Path Stroke="Black"
-						  Data="M0.5,91.5L61.5,91.5 61.5,98.5 0.5,98.5z M0.5,80.5L61.5,80.5 61.5,87.5 0.5,87.5z M0.5,69.5L61.5,69.5 61.5,76.5 0.5,76.5z M0.5,58.5000009536743L61.5,58.5000009536743 61.5,65.5 0.5,65.5z M0.5,46.499999165535L124.5,46.499999165535 124.5,53.5 0.5,53.5z M63.5,33.5L124.5,33.5 124.5,40.4999995231628 63.5,40.4999995231628z M63.5,22.5L124.5,22.5 124.5,29.5 63.5,29.5z M63.5,11.5L124.5,11.5 124.5,18.5 63.5,18.5z M63.5,0.5L124.5,0.5 124.5,7.5 63.5,7.5z"
-						  StrokeThickness="0.2"
-						  Fill="{DynamicResource WindowDefaultBackground}"
-						  Stretch="Uniform"
-						  VerticalAlignment="Center"
-						  HorizontalAlignment="Center"
-						  Height="70"/>
-					<TextBlock Margin="10"
-							   Foreground="{DynamicResource WindowDefaultBackground}"
-							   Text="Select a ticker."/>
-				</StackPanel>
-			</custom:TitledControl>
-			<GridSplitter Grid.Column="5"
+			<GridSplitter Grid.Column="4"
 						  Background="Transparent"
 					      Width="3"/>
-			<custom:TitledControl Grid.Column="6"
+			<custom:TitledControl Grid.Column="5"
 								  Title="Market Depth">
 				<custom:DataContainer IsPathVisible="{Binding MarketWatchMVVM.MarketDepth.IsEmptyOfData }"
 									  IsBusy="{Binding MarketWatchMVVM.MarketDepth.IsBusy }"
-									  Path="M0.5,104.499999046326L116.5,104.499999046326 116.5,111.5 0.5,111.5z M8.50000083446503,91.5000008940697L116.5,91.5000008940697 116.5,98.5000009536743 8.50000083446503,98.5000009536743z M18.4999990463257,78.5000009536743L116.5,78.5000009536743 116.5,85.5000009536743 18.4999990463257,85.5000009536743z M53.5,65.5L116.5,65.5 116.5,72.5 53.5,72.5z M82.5,52.5L116.5,52.5 116.5,59.5 82.5,59.5z M49.5,39.5L116.5,39.5 116.5,46.5 49.5,46.5z M32.5,26.5L116.5,26.5 116.5,33.5 32.5,33.5z M18.4999990463257,13.5L116.5,13.5 116.5,20.5 18.4999990463257,20.5z M0.5,0.5L116.5,0.5 116.5,7.5 0.5,7.5z">
+									   Path="M0.5,91.5L61.5,91.5 61.5,98.5 0.5,98.5z M0.5,80.5L61.5,80.5 61.5,87.5 0.5,87.5z M0.5,69.5L61.5,69.5 61.5,76.5 0.5,76.5z M0.5,58.5000009536743L61.5,58.5000009536743 61.5,65.5 0.5,65.5z M0.5,46.499999165535L124.5,46.499999165535 124.5,53.5 0.5,53.5z M63.5,33.5L124.5,33.5 124.5,40.4999995231628 63.5,40.4999995231628z M63.5,22.5L124.5,22.5 124.5,29.5 63.5,29.5z M63.5,11.5L124.5,11.5 124.5,18.5 63.5,18.5z M63.5,0.5L124.5,0.5 124.5,7.5 63.5,7.5z" >
 					<shared:MarketDepth DataContext="{Binding MarketWatchMVVM.MarketDepth}"/>
 				</custom:DataContainer>
 			</custom:TitledControl>

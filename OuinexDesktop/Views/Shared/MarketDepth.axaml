@@ -14,8 +14,25 @@
 	<Design.DataContext>
 		<vm:MarketDepthViewModel/>
 	</Design.DataContext>
-	<Grid RowDefinitions="*,auto,auto">
+	<Grid RowDefinitions="auto, *,auto,auto,auto">
+		<StackPanel Orientation="Horizontal"
+					Margin="3">
+			<Label FontSize="12"
+				   VerticalAlignment="Center"
+				   Content="Display levels :"/>
+			<ComboBox Classes="Small"
+					  SelectedIndex="{Binding SelectedLevel, Mode=TwoWay}"
+					  FontSize="12"
+					  Margin="5,0">
+				<ComboBox.Items>
+					<ComboBoxItem Content="5" FontSize="12"/>
+					<ComboBoxItem Content="10" FontSize="12"/>
+					<ComboBoxItem Content="20" FontSize="12"/>
+				</ComboBox.Items>
+			</ComboBox>
+		</StackPanel>
 		<DataGrid Items="{Binding Levels}"
+				  Grid.Row="1"
 				  Padding="0"
 				  RowHeight="22"
 				  GridLinesVisibility="All"
@@ -34,6 +51,7 @@
 										 FlowDirection="RightToLeft"
 										 Foreground="{DynamicResource UpBrush}"
 										 Margin="10,0,0,0"
+										 Opacity="0.5"
 										 Value="{Binding PercentBid}"/>
 							<TextBlock HorizontalAlignment="Right"
 									   VerticalAlignment="Center"
@@ -47,13 +65,33 @@
 				<DataGridTemplateColumn Header="Price"										
 										Width="*">
 					<DataTemplate>
-						<Border Theme="{StaticResource RadioButtonGroupBorder}">
+						<Grid>
+							<Border Theme="{StaticResource RadioButtonGroupBorder}"/>
+							<Border Background="{DynamicResource UpBrush}"
+									VerticalAlignment="Stretch"
+									HorizontalAlignment="Stretch"
+									IsVisible="{Binding IsBestBid}"/>
+							<Border Background="{DynamicResource DownBrush}"
+									VerticalAlignment="Stretch"
+									HorizontalAlignment="Stretch"
+									IsVisible="{Binding IsBestAsk}"/>
 							<TextBlock FontSize="12"
 									   VerticalAlignment="Center"
 									   HorizontalAlignment="Center"
 									   Text="{Binding Price}"/>
-						</Border>
-						
+							<TextBlock FontSize="12"
+									   Foreground="White"
+									   VerticalAlignment="Center"
+									   HorizontalAlignment="Center"
+									   IsVisible="{Binding IsBestAsk}"
+									   Text="{Binding Price}"/>
+							<TextBlock FontSize="12"
+									   Foreground="White"
+									   VerticalAlignment="Center"
+									   HorizontalAlignment="Center"
+									   IsVisible="{Binding IsBestBid}"
+									   Text="{Binding Price}"/>
+						</Grid>						
 					</DataTemplate>
 				</DataGridTemplateColumn>
 				<DataGridTemplateColumn Header="Asks"
@@ -66,6 +104,7 @@
 										 ShowProgressText="False"
 										 Grid.Column="2"
 										 Margin="0,0,10,0"
+										 Opacity="0.5"
 										 Foreground="{DynamicResource DownBrush}"
 										 Value="{Binding PercentAsk}"/>
 							<TextBlock FontSize="12"
@@ -79,28 +118,27 @@
 				</DataGridTemplateColumn>
 				<DataGridTextColumn Width="0.3*"/>
 			</DataGrid.Columns>
+			
 		</DataGrid>
 		<ProgressBar Classes="Success"
 					 Maximum="100"
-					 Grid.Row="1"
+					 Grid.Row="3"
 					 Minimum="0"
 					 CornerRadius="0"
-					 Margin="5"
 					 VerticalAlignment="Stretch"
 					 Background="Red"
 					 ShowProgressText="False"
-					 Height="20"
+					 Height="10"
 					 Value="{Binding TotalBids}"/>
 		<ProgressBar Classes="Success"
 					 Maximum="100"
-					 Grid.Row="2"
+					 Grid.Row="4"
 					 Minimum="0"
 					 CornerRadius="0"
-					 Margin="5"
 					 VerticalAlignment="Stretch"
 					 Background="Red"
 					 ShowProgressText="False"
-					 Height="20"
+					 Height="10"
 					 Value="{Binding CumuledTotal}"/>
 	</Grid>
 </UserControl>

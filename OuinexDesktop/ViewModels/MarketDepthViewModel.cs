@@ -10,13 +10,17 @@ namespace OuinexDesktop.ViewModels
 {
     public class MarketDepthViewModel : ViewModelBase
     {
-        int levels = 10;
+        int[] _levels = { 5, 10, 20 };
+        int _selectedLevel = 0;
         private string _ticker = string.Empty;
+        private TickerViewModel _tickerViewModel;
 
         private BinanceSocketClient socket = new BinanceSocketClient();
 
         public async Task Init(TickerViewModel ticker)
         {
+            _tickerViewModel = ticker;
+
             await Dispatcher.UIThread.InvokeAsync(new Action(async () =>
             {
                 IsEmptyOfData = false;
@@ -37,12 +41,12 @@ namespace OuinexDesktop.ViewModels
                     return;
                 }
 
-                for (int i = 0; i < levels*2; i++)
+                for (int i = 0; i < _levels[_selectedLevel] *2; i++)
                 {
                     Levels.Add(new MarketDepthItem());
                 }
 
-                await socket.SpotStreams.SubscribeToPartialOrderBookUpdatesAsync(ticker.Symbol.Name, levels, 100, (data) =>
+                await socket.SpotStreams.SubscribeToPartialOrderBookUpdatesAsync(ticker.Symbol.Name, _levels[_selectedLevel], 100, (data) =>
                 {
                     // creation des listes bid & ask 
                     var asks = data.Data.Asks.ToList();
@@ -58,23 +62,25 @@ namespace OuinexDesktop.ViewModels
 
                    
                     // population des liste visible sur l'ui
-                    for (int i = 0; i < levels; i++)
+                    for (int i = 0; i < _levels[_selectedLevel]; i++)
                     {
                         Levels[i].Price = (double)asks[i].Price;
                         Levels[i].Ask = (double)asks[i].Quantity;
                         Levels[i].PercentAsk = (asks[i].Quantity /totalAsks ) * 100;
                         Levels[i].Bid = double.NaN;
+                        Levels[i].IsBestAsk = i == _levels[_selectedLevel] - 1;
 
-                        Levels[i + levels].Price = (double)bids[i].Price;
-                        Levels[i + levels].Bid = (double)bids[i].Quantity;
-                        Levels[i + levels].PercentBid = (bids[i].Quantity/totalBids) * 100;
-                        Levels[i + levels].Ask = double.NaN;
+                        Levels[i + _levels[_selectedLevel]].Price = (double)bids[i].Price;
+                        Levels[i + _levels[_selectedLevel]].Bid = (double)bids[i].Quantity;
+                        Levels[i + _levels[_selectedLevel]].PercentBid = (bids[i].Quantity/totalBids) * 100;
+                        Levels[i + _levels[_selectedLevel]].Ask = double.NaN;
+                        Levels[i + _levels[_selectedLevel]].IsBestBid = i + _levels[_selectedLevel] == _levels[_selectedLevel];
                     }
 
                     // ici c'est la barre horizontale des volumes aux ticks
                     _bids = totalBids;
                     _total = total;
-                    TotalBids = (int)((100 / _total) * _bids);
+                    TotalBids = (int)((_bids / _total) * 100);
 
                     // ici c'est la barre horizontale des volumes totauw
                     _cumuledBids+= totalBids;
@@ -107,6 +113,17 @@ namespace OuinexDesktop.ViewModels
         {
             get => _totalBids;
             set => this.RaiseAndSetIfChanged(ref _cumuledTotal, value, nameof(CumuledTotal));
+        }
+
+        public int SelectedLevel
+        {
+            get => _selectedLevel;
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _selectedLevel, value, nameof(SelectedLevel));
+
+                Task.Run(async () => await Init(_tickerViewModel));
+            }
         }
     }
 }

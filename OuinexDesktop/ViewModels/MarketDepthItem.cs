@@ -7,7 +7,7 @@ namespace OuinexDesktop.ViewModels
     {
         private double _price, _bid = double.NaN, _ask = double.NaN;
         private decimal _percentAsks, _percentBid;
-        private bool _displayAsk = false, _displayBid = false;
+        private bool _displayAsk = false, _displayBid = false, _isBestBid = false, _isBestAsk = false;
 
         public double Price
         {
@@ -57,6 +57,18 @@ namespace OuinexDesktop.ViewModels
         {
             get => _displayBid;
             set => this.RaiseAndSetIfChanged(ref _displayBid, value, nameof(DisplayBid));
+        }
+
+        public bool IsBestBid
+        {
+            get => _isBestBid;
+            set => this.RaiseAndSetIfChanged(ref _isBestBid, value, nameof(IsBestBid));
+        }
+
+        public bool IsBestAsk
+        {
+            get => _isBestAsk;
+            set => this.RaiseAndSetIfChanged(ref _isBestAsk, value, nameof(IsBestAsk));
         }
     }
 }

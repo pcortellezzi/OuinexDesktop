@@ -72,6 +72,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Shared/Spot/OrderBookControl.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Shared/Spot/SpotOrders.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Shared/Spot/WalletsGrid.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

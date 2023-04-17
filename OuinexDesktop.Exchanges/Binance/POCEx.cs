@@ -38,8 +38,11 @@ namespace OuinexDesktop.Exchanges
                 OrderSymbol = "BTC/USDT",
                 OrderType = OrderType.Pending,
                 Price = (decimal)31245.89,
-                Status = OrderStatus.PartiallyFilled
+                Status = OrderStatus.PartiallyFilled,
+                OrderSide = OrderSide.BUY
             });
+
+            Orders = orders;
         }
 
         public override async Task<Ticker> GetTickerAsync(Symbol symbol)

@@ -15,8 +15,8 @@
 	</UserControl.Resources>
 	<Grid RowDefinitions="*,auto">
 		<DataGrid Items="{Binding Wallets}"
-				    RowHeight="22"
-					  GridLinesVisibility="All"
+				  RowHeight="22"
+				  GridLinesVisibility="All"
 				  SelectionMode="Single"
 				  AutoGenerateColumns="False">
 			<DataGrid.Columns>
@@ -101,6 +101,23 @@
 					</DataGridTemplateColumn.CellTemplate>
 				</DataGridTemplateColumn>
 			</DataGrid.Columns>
+			<DataGrid.RowDetailsTemplate>
+				<DataTemplate>
+					<Grid Margin="10"
+						  RowDefinitions="auto,*">
+						<Label Content="History"/>
+						<DataGrid GridLinesVisibility="All"
+								  Grid.Row="1">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="Transaction type"/>
+								<DataGridTextColumn Header="Date"/>
+								<DataGridTextColumn Header="Amount"/>
+								<DataGridTextColumn Header="Price"/>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+				</DataTemplate>
+			</DataGrid.RowDetailsTemplate>
 		</DataGrid>
 
 		<Border Grid.Row="1"

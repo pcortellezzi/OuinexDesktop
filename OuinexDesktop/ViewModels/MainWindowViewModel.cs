@@ -4,6 +4,9 @@ using OuinexDesktop.Views.Controls;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Avalonia.Controls;
+using System.Collections.ObjectModel;
+using OuinexDesktop.Models;
+using DynamicData;
 
 namespace OuinexDesktop.ViewModels
 {
@@ -28,6 +31,7 @@ namespace OuinexDesktop.ViewModels
 
                 window.Show();
             });
+           
         }
 
         private void LoginMVVM_OnLogged()
@@ -40,6 +44,8 @@ namespace OuinexDesktop.ViewModels
                 await SpotWalletsMVVM.InitAsync();
                 await MarketWatchMVVM.InitStream();
             });
+
+            SpotOrders.AddRange(ExchangesConnector.Instances["POC-Binance"].Spot.Orders);
         }
 
         private void CreateAControl()
@@ -53,6 +59,8 @@ namespace OuinexDesktop.ViewModels
         public MarketWatchViewModel MarketWatchMVVM { get; } = new MarketWatchViewModel();
 
         public SpotWallets SpotWalletsMVVM { get; } = new SpotWallets();
+
+        public ObservableCollection<SpotOrder> SpotOrders { get; set; } = new ObservableCollection<SpotOrder>();
 
         public ICommand OpenMarketWatchWindow { get; }
     }

@@ -9,6 +9,7 @@
 			 xmlns:material="using:Material.Icons.Avalonia"
 			 xmlns:custom="using:OuinexDesktop.Views.CustomControls"
 			 xmlns:shared="using:OuinexDesktop.Views.Shared"
+			 xmlns:spot="using:OuinexDesktop.Views.Shared.Spot"
              d:DesignHeight="450"
              x:Class="OuinexDesktop.Views.Pages.MarketsPage">
     <Design.DataContext>
@@ -51,7 +52,7 @@
 								  Title="Market Depth">
 				<custom:DataContainer IsPathVisible="{Binding MarketWatchMVVM.MarketDepth.IsEmptyOfData }"
 									  IsBusy="{Binding MarketWatchMVVM.MarketDepth.IsBusy }"
-									   Path="M0.5,91.5L61.5,91.5 61.5,98.5 0.5,98.5z M0.5,80.5L61.5,80.5 61.5,87.5 0.5,87.5z M0.5,69.5L61.5,69.5 61.5,76.5 0.5,76.5z M0.5,58.5000009536743L61.5,58.5000009536743 61.5,65.5 0.5,65.5z M0.5,46.499999165535L124.5,46.499999165535 124.5,53.5 0.5,53.5z M63.5,33.5L124.5,33.5 124.5,40.4999995231628 63.5,40.4999995231628z M63.5,22.5L124.5,22.5 124.5,29.5 63.5,29.5z M63.5,11.5L124.5,11.5 124.5,18.5 63.5,18.5z M63.5,0.5L124.5,0.5 124.5,7.5 63.5,7.5z" >
+									  Path="M0.5,91.5L61.5,91.5 61.5,98.5 0.5,98.5z M0.5,80.5L61.5,80.5 61.5,87.5 0.5,87.5z M0.5,69.5L61.5,69.5 61.5,76.5 0.5,76.5z M0.5,58.5000009536743L61.5,58.5000009536743 61.5,65.5 0.5,65.5z M0.5,46.499999165535L124.5,46.499999165535 124.5,53.5 0.5,53.5z M63.5,33.5L124.5,33.5 124.5,40.4999995231628 63.5,40.4999995231628z M63.5,22.5L124.5,22.5 124.5,29.5 63.5,29.5z M63.5,11.5L124.5,11.5 124.5,18.5 63.5,18.5z M63.5,0.5L124.5,0.5 124.5,7.5 63.5,7.5z" >
 					<shared:MarketDepth DataContext="{Binding MarketWatchMVVM.MarketDepth}"/>
 				</custom:DataContainer>
 			</custom:TitledControl>
@@ -78,7 +79,8 @@
 								  Grid.Column="2"
 								  Title="Orders">
 				<custom:DataContainer Path="M22.11 21.46L2.39 1.73L1.11 3L3 4.9V19C3 20.11 3.9 21 5 21H19.1L20.84 22.73L22.11 21.46M5 19V6.89L17.11 19H5M8.2 5L6.2 3H19C20.1 3 21 3.89 21 5V17.8L19 15.8V5H8.2Z"
-									  IsPathVisible="true">					
+									  IsPathVisible="False">		
+					<spot:SpotOrders DataContext="{Binding}"/>
 				</custom:DataContainer>
 			</custom:TitledControl>
 			<GridSplitter Grid.Column="1"

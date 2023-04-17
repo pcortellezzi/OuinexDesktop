@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:vm="clr-namespace:OuinexDesktop.ViewModels"
+             xmlns:controls="clr-namespace:OuinexDesktop.Views.Controls"
+             x:DataType="vm:MainWindowViewModel"
+             x:Class="OuinexDesktop.Views.Shared.Spot.SpotOrders">
+	<UserControl.DataContext>
+		<vm:MainWindowViewModel/>
+	</UserControl.DataContext>
+	<DataGrid Items="{Binding SpotOrders}"
+			  RowHeight="22"
+			  GridLinesVisibility="All"
+			  SelectionMode="Single"
+			  FontSize="12"
+			  AutoGenerateColumns="False">
+		<DataGrid.Columns>
+			<DataGridTextColumn Header="Id"
+								Binding="{Binding OrderId}"/>
+			<DataGridTextColumn Header="Symbol"
+								Binding="{Binding OrderSymbol}"/>
+			<DataGridTextColumn Header="Time"
+								Binding="{Binding OrderTime}"/>
+			<DataGridTextColumn Header="Order Type"
+								Binding="{Binding OrderType}"/>
+			<DataGridTextColumn Header="Order Side"
+								Binding="{Binding OrderSide}"/>
+			<DataGridTextColumn Header="Status"
+								Binding="{Binding Status}"/>
+			<DataGridTextColumn Header="Filled Amount"
+								Binding="{Binding FilledAmount}"/>
+			<DataGridTextColumn Header="Order Size"
+								Binding="{Binding Amount}"/>
+		</DataGrid.Columns>
+	</DataGrid>
+</UserControl>

@@ -50,7 +50,7 @@
 										 ShowProgressText="False"
 										 FlowDirection="RightToLeft"
 										 Foreground="{DynamicResource UpBrush}"
-										 Margin="10,0,0,0"
+										 Margin="0,0,10,0"
 										 Opacity="0.5"
 										 Value="{Binding PercentBid}"/>
 							<TextBlock HorizontalAlignment="Right"
@@ -103,7 +103,7 @@
 										 Background="Transparent"
 										 ShowProgressText="False"
 										 Grid.Column="2"
-										 Margin="0,0,10,0"
+										 Margin="10,0,0,0"
 										 Opacity="0.5"
 										 Foreground="{DynamicResource DownBrush}"
 										 Value="{Binding PercentAsk}"/>

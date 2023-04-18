@@ -39,7 +39,20 @@ namespace OuinexDesktop.Exchanges
                 OrderType = OrderType.Pending,
                 Price = (decimal)31245.89,
                 Status = OrderStatus.PartiallyFilled,
-                OrderSide = OrderSide.BUY
+                OrderSide = OrderSide.BUY,
+                ExcecutedPrice = 31244
+            });
+
+            orders.Add(new SpotOrder
+            {
+                Amount = (decimal)1000,
+                FilledAmount = (decimal)876,
+                OrderSymbol = "DOGE/USDT",
+                OrderType = OrderType.StopLoss,
+                Price = (decimal)0.09278,
+                Status = OrderStatus.PartiallyFilled,
+                OrderSide = OrderSide.SELL,
+                ExcecutedPrice = (decimal)0.09
             });
 
             Orders = orders;

@@ -27,12 +27,16 @@
 								Binding="{Binding OrderType}"/>
 			<DataGridTextColumn Header="Order Side"
 								Binding="{Binding OrderSide}"/>
+			<DataGridTextColumn Header="Desired Price"
+								Binding="{Binding Price}"/>
 			<DataGridTextColumn Header="Status"
 								Binding="{Binding Status}"/>
 			<DataGridTextColumn Header="Filled Amount"
 								Binding="{Binding FilledAmount}"/>
-			<DataGridTextColumn Header="Order Size"
+			<DataGridTextColumn Header="Full Amount"
 								Binding="{Binding Amount}"/>
+			<DataGridTextColumn Header="Avg Executed Price"
+								Binding="{Binding ExcecutedPrice}"/>
 		</DataGrid.Columns>
 	</DataGrid>
 </UserControl>

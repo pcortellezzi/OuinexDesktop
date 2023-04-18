@@ -11,5 +11,6 @@
         public OrderType OrderType { get; set; }
         public DateTime OrderTime { get; } = DateTime.MinValue;
         public OrderSide OrderSide { get; set; }
+        public decimal ExcecutedPrice { get; set; }
     }
 }

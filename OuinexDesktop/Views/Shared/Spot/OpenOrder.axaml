@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,306 +16,280 @@
 			 xmlns:local="using:OuinexDesktop.Models"
 			 x:DataType="vm:SpotOpenOrderViewModel"
 			 xmlns:material="using:Material.Icons.Avalonia"
-			 Width="320"
 			 xmlns:sp="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
 			 xmlns:dd="using:Avalonia.Xaml.Interactions.DragAndDrop"
              x:Class="OuinexDesktop.Views.Controls.OpenOrder">
 	<UserControl.DataContext>
 		<vm:SpotOpenOrderViewModel/>
 	</UserControl.DataContext>
-	<Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto"
-		  ColumnDefinitions="auto,*,auto,auto">
-		<TextBlock Text="Create an order"
-                   FontSize="18"
-                   FontWeight="Bold"
-				   IsVisible="False"
-				   Margin="5"
-                   Grid.Row="0"
-                   Grid.Column="0"
-                   Grid.ColumnSpan="2"/>
+	<Grid ColumnDefinitions="300,*,300">
+		<Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto"
+			  ColumnDefinitions="auto,*,auto,auto"
+			  Width="300">
+			<TextBlock Text="Create an order"
+					   FontSize="18"
+					   FontWeight="Bold"
+					   IsVisible="False"
+					   Margin="5"
+					   Grid.Row="0"
+					   Grid.Column="0"
+					   Grid.ColumnSpan="2"/>
 
-		<TextBlock Text="Ticket:"
-                   Grid.Row="1"
-				   Margin="3"				   
-				   Classes="Small"
-				   VerticalAlignment="Center"
-                   Grid.Column="0"/>
-		<AutoCompleteBox Grid.Row="1"
-						 Items="{Binding Symbols}"
-						 SelectedItem="{Binding SelectedSymbol, Mode=TwoWay}"
-					     ValueMemberBinding="{ReflectionBinding FullName}"
-						 Margin="3"
-						 Classes="Small Bordered"
-						 Grid.ColumnSpan="3"
-						 VerticalAlignment="Center"
-						 Grid.Column="1">
-			<AutoCompleteBox.ItemTemplate>
-				<DataTemplate DataType="local:Symbol">
-					<TextBlock Text="{Binding Name}" />
-				</DataTemplate>
-			</AutoCompleteBox.ItemTemplate>
-		</AutoCompleteBox>
-
-		<TextBlock Text="Order Type:"
-				   Margin="3"
-				   VerticalAlignment="Center"
-                   Grid.Row="2"
-                   Grid.Column="0"/>
-	
-		<Border Theme="{StaticResource RadioButtonGroupBorder}"
-				Grid.Row="2"
-				Grid.ColumnSpan="3"
-				Margin="3"
-				VerticalAlignment="Center"
-				Grid.Column="1">
-			<Grid HorizontalAlignment="Stretch"
-				  ColumnDefinitions="*,*">
-				<RadioButton IsChecked="True"
-							 Name="isPending"
-							 FontWeight="Normal"
-							 Theme="{StaticResource ButtonRadioButton}">
-					<TextBlock Text="Pending"
-							   FontWeight="Normal"
-							   VerticalAlignment="Center"
-							   HorizontalAlignment="Center"/>
-				</RadioButton>
-				<RadioButton Theme="{StaticResource ButtonRadioButton}"
-							 Classes="Small"
+			<TextBlock Text="Ticket:"
+					   Grid.Row="1"
+					   Margin="3"
+					   Classes="Small"
+					   VerticalAlignment="Center"
+					   Grid.Column="0"/>
+			<AutoCompleteBox Grid.Row="1"
+							 Items="{Binding Symbols}"
+							 SelectedItem="{Binding SelectedSymbol, Mode=TwoWay}"
+							 ValueMemberBinding="{ReflectionBinding FullName}"
+							 Margin="3"
+							 Classes="Small Bordered"
+							 Grid.ColumnSpan="3"
+							 VerticalAlignment="Center"
 							 Grid.Column="1">
-					<TextBlock Text="Market"
-							   FontWeight="Normal"
-							   HorizontalAlignment="Center"
-							   VerticalAlignment="Center"/>
-				</RadioButton>
-			</Grid>
-		</Border>
+				<AutoCompleteBox.ItemTemplate>
+					<DataTemplate DataType="local:Symbol">
+						<TextBlock Text="{Binding Name}" />
+					</DataTemplate>
+				</AutoCompleteBox.ItemTemplate>
+			</AutoCompleteBox>
 
-		<TextBlock Text="Order Side:"
-				   Margin="3"
-				   VerticalAlignment="Center"
-                   Grid.Row="3"
-                   Grid.Column="0"/>
-		<Border Theme="{StaticResource RadioButtonGroupBorder}"
-				Grid.Row="3"
-				Grid.Column="1"
-				Grid.ColumnSpan="3"
-				Margin="3">
-			<Grid HorizontalAlignment="Stretch"
-				  ColumnDefinitions="*,*">
-				<RadioButton IsChecked="True"
-							 Theme="{StaticResource ButtonRadioButton}">
-					<Grid ColumnDefinitions="*,auto">
-						<TextBlock Text="Sell"
+			<TextBlock Text="Order Type:"
+					   Margin="3"
+					   VerticalAlignment="Center"
+					   Grid.Row="2"
+					   Grid.Column="0"/>
+
+			<Border Theme="{StaticResource RadioButtonGroupBorder}"
+					Grid.Row="2"
+					Grid.ColumnSpan="3"
+					Margin="3"
+					VerticalAlignment="Center"
+					Grid.Column="1">
+				<Grid HorizontalAlignment="Stretch"
+					  ColumnDefinitions="*,*">
+					<RadioButton IsChecked="True"
+								 Name="isPending"
+								 FontWeight="Normal"
+								 Theme="{StaticResource ButtonRadioButton}">
+						<TextBlock Text="Pending"
 								   FontWeight="Normal"
-								   Margin="5,0"
-								   Grid.ColumnSpan="2"
 								   VerticalAlignment="Center"
-								   HorizontalAlignment="Center"
-								   Foreground="Red"/>
-						<material:MaterialIcon Kind="TrendingDownVariant"
-											   Foreground="Red"
-											   Grid.ColumnSpan="2"
-											   VerticalAlignment="Center"
-											   HorizontalAlignment="Right"/>
-					</Grid>
-				</RadioButton>
-				<RadioButton Theme="{StaticResource ButtonRadioButton}"
-							IsChecked="{Binding IsBuy, Mode=TwoWay}"
-							 Grid.Column="1">
-					<Grid ColumnDefinitions="*,auto">
-						<TextBlock Text="Buy"								   
+								   HorizontalAlignment="Center"/>
+					</RadioButton>
+					<RadioButton Theme="{StaticResource ButtonRadioButton}"
+								 Classes="Small"
+								 Grid.Column="1">
+						<TextBlock Text="Market"
 								   FontWeight="Normal"
-								   Margin="5,0"
-								   Grid.ColumnSpan="2"
-								   VerticalAlignment="Center"
 								   HorizontalAlignment="Center"
-								   Foreground="LimeGreen"/>
-						<material:MaterialIcon Kind="TrendingUpVariant"
-											   Foreground="LimeGreen"
-											   Grid.ColumnSpan="2"
-											   VerticalAlignment="Center"
-											   HorizontalAlignment="Left"/>
-					</Grid>
-				</RadioButton>
-			</Grid>
-		</Border>
+								   VerticalAlignment="Center"/>
+					</RadioButton>
+				</Grid>
+			</Border>
 
-		<TextBlock Text="Volume:"
-                   Grid.Row="4"
-				   Margin="3"
-				   VerticalAlignment="Center"
-                   Grid.Column="0"/>
+			<TextBlock Text="Order Side:"
+					   Margin="3"
+					   VerticalAlignment="Center"
+					   Grid.Row="3"
+					   Grid.Column="0"/>
+			<Border Theme="{StaticResource RadioButtonGroupBorder}"
+					Grid.Row="3"
+					Grid.Column="1"
+					Grid.ColumnSpan="3"
+					Margin="3">
+				<Grid HorizontalAlignment="Stretch"
+					  ColumnDefinitions="*,*">
+					<RadioButton IsChecked="True"
+								 Theme="{StaticResource ButtonRadioButton}">
+						<Grid ColumnDefinitions="*,auto">
+							<TextBlock Text="Sell"
+									   FontWeight="Normal"
+									   Margin="5,0"
+									   Grid.ColumnSpan="2"
+									   VerticalAlignment="Center"
+									   HorizontalAlignment="Center"
+									   Foreground="Red"/>
+							<material:MaterialIcon Kind="TrendingDownVariant"
+												   Foreground="Red"
+												   Grid.ColumnSpan="2"
+												   VerticalAlignment="Center"
+												   HorizontalAlignment="Right"/>
+						</Grid>
+					</RadioButton>
+					<RadioButton Theme="{StaticResource ButtonRadioButton}"
+								IsChecked="{Binding IsBuy, Mode=TwoWay}"
+								 Grid.Column="1">
+						<Grid ColumnDefinitions="*,auto">
+							<TextBlock Text="Buy"
+									   FontWeight="Normal"
+									   Margin="5,0"
+									   Grid.ColumnSpan="2"
+									   VerticalAlignment="Center"
+									   HorizontalAlignment="Center"
+									   Foreground="LimeGreen"/>
+							<material:MaterialIcon Kind="TrendingUpVariant"
+												   Foreground="LimeGreen"
+												   Grid.ColumnSpan="2"
+												   VerticalAlignment="Center"
+												   HorizontalAlignment="Left"/>
+						</Grid>
+					</RadioButton>
+				</Grid>
+			</Border>
 
-		<TextBox Grid.Row="4"
-				 Margin="3"
-				 Watermark="Available 156.243"
-				 Classes="Small Bordered"
-				 InnerRightContent="ETH"
-				 Grid.ColumnSpan="2"
-				 VerticalAlignment="Center"
-                 Grid.Column="1"/>
-		<Slider Grid.Row="5"
-				Margin="3"
-				Grid.ColumnSpan="2"
-				Grid.Column="1"/>
-		<material:MaterialIcon Kind="InfoCircle"
-							   Grid.Row="4"
-							   ToolTip.Tip="Volume (or amount) is the size of your position exprimed in the quote currency of the ticker"
-							   Grid.Column="3"
-							   Margin="3"/>
-		
-		<TextBlock Text="Price:"
-                   Grid.Row="6"				   
-				   Margin="3"
-				   IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
-				   VerticalAlignment="Center"
-				   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
-                   Grid.Column="0"/>
+			<TextBlock Text="Volume:"
+					   Grid.Row="4"
+					   Margin="3"
+					   VerticalAlignment="Center"
+					   Grid.Column="0"/>
 
-		<TextBox Grid.Row="6"
-				 IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
-				 Margin="3"
-				 InnerRightContent="USDT"
-				 Classes="Small Bordered" 
-				 VerticalAlignment="Center"
-                 Grid.Column="1"/>
-		<material:MaterialIcon Kind="InfoCircle"
-							   Grid.Row="6"
-							   Grid.Column="2"
-							   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
+			<TextBox Grid.Row="4"
+					 Margin="3"
+					 Watermark="Available 156.243"
+					 Classes="Small Bordered"
+					 InnerRightContent="ETH"
+					 Grid.ColumnSpan="2"
+					 VerticalAlignment="Center"
+					 Grid.Column="1"/>
+			<Slider Grid.Row="5"
+					Margin="3"
+					Grid.ColumnSpan="2"
+					Grid.Column="1"/>
+			<material:MaterialIcon Kind="InfoCircle"
+								   Grid.Row="4"
+								   ToolTip.Tip="Volume (or amount) is the size of your position exprimed in the quote currency of the ticker"
+								   Grid.Column="3"
 								   Margin="3"/>
-		<ToggleButton Classes="Small"
-					  FontSize="12"
-					  Name="exitToggle"
-					  Content="Define an exit strategy"					 
-					  Grid.ColumnSpan="3"
-					  Grid.Row="7"/>
-		<Border Grid.Row="8" 
+
+			<TextBlock Text="Price:"
+					   Grid.Row="6"
+					   Margin="3"
+					   IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
+					   VerticalAlignment="Center"
+					   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
+					   Grid.Column="0"/>
+
+			<TextBox Grid.Row="6"
+					 IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
+					 Margin="3"
+					 InnerRightContent="USDT"
+					 Classes="Small Bordered"
+					 VerticalAlignment="Center"
+					 Grid.Column="1"/>
+			<material:MaterialIcon Kind="InfoCircle"
+								   Grid.Row="6"
+								   Grid.Column="2"
+								   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
+									   Margin="3"/>
+		
+		
+
+			<TextBlock Text="Validity:"
+					   Grid.Row="10"
+					   Margin="3"
+					   IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
+					   VerticalAlignment="Center"
+					   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
+					   Grid.Column="0"/>
+
+			<TimePicker Grid.Row="10"
+					 IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
+					 Margin="3"
+					 Classes="Small Bordered"
+					 VerticalAlignment="Center"
+					 Grid.Column="1"/>
+			<material:MaterialIcon Kind="InfoCircle"
+								   Grid.Row="10"
+								   Grid.Column="2"
+								   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
+								   Margin="3"/>
+
+			<Button Content="Create Order"
+					Classes="Small"
+					Margin="3"
+					VerticalAlignment="Center"
+					IsEnabled="False"
+					Grid.Row="11"
+					Grid.Column="0"
+					Grid.ColumnSpan="4"/>
+			<Button Content="Cancel"
+					Margin="3"
+					Click="Button_OnClick"
+					VerticalAlignment="Center"
+					Grid.Row="12"
+					Foreground="Red"
+					Classes="Small"
+					Grid.Column="0"
+					Grid.ColumnSpan="4"/>
+
+			<ToggleButton Name="chartToggle"
+						  Grid.Column="3"
+						  Width="30"
+						  Grid.Row="6"
+						  Classes="Small"
+						  Margin="3,3"
+						  ToolTip.Tip="Setup the prices using a chart"
+						  Grid.RowSpan="5">
+				<material:MaterialIcon Kind="ShowChart"/>
+			</ToggleButton>
+		</Grid>
+		<ContentPresenter x:DataType="vm:SpotOpenOrderViewModel"
+						  MinWidth="300"
+						  Grid.Column="1"
+						  Content="{Binding Chart}"/>
+		<Grid Grid.Column="2">
+			<Border Grid.Row="8"
 				Grid.ColumnSpan="3"
 				Theme="{StaticResource RadioButtonGroupBorder}"
-				IsVisible="{Binding ElementName=exitToggle, Path=IsChecked}"
 				Margin="3">
-			<Grid ColumnDefinitions="*,*"
-				  RowDefinitions="auto,*">
-				<Button Classes="Small"
-						Command="{Binding AddExitLevelCommand}"
-						Margin="3"
-						Content="Add an exit order"/>
-				<ScrollViewer   Grid.ColumnSpan="2"
-								Height="100"
-								VerticalScrollBarVisibility="Visible"
-								Grid.Row="1">
-					<ItemsControl Items="{Binding ExitLevels}">
-						<ItemsControl.ItemTemplate>
-							<DataTemplate>
-								<Grid ColumnDefinitions="*,*,*,auto">
-									<TextBlock VerticalAlignment="Center"
-											   Margin="3"
-											   Text="SLTP"/>
-									<TextBox Text="{Binding PriceString, Mode=TwoWay}"
-											 FontSize="12"
-											 Grid.Column="1"
-											 Classes="Small"
-											 VerticalAlignment="Center"
-											 Margin="3"/>
-									<TextBox Text="{Binding SizeString, Mode=TwoWay}"
-											 FontSize="12"
-											 Grid.Column="2"
-											 Watermark="Size"
-											 Classes="Small"
-											 VerticalAlignment="Center"
-											 Margin="3"/>
-									<Button Classes="Small Danger"
-											VerticalAlignment="Center"
-											Margin="3"
-											Command="{Binding RemoveLevelCommand}"
-											Grid.Column="3">
-										<material:MaterialIcon Kind="Remove"/>
-									</Button>
-								</Grid>
-							</DataTemplate>
-						</ItemsControl.ItemTemplate>
-					</ItemsControl>
-				</ScrollViewer>
+				<Grid ColumnDefinitions="*,*"
+					  RowDefinitions="auto,*">
+					<Button Classes="Small"
+							Command="{Binding AddExitLevelCommand}"
+							Margin="3"
+							Content="Add an exit order"/>
+					<ScrollViewer   Grid.ColumnSpan="2"
+									VerticalScrollBarVisibility="Visible"
+									Grid.Row="1">
+						<ItemsControl Items="{Binding ExitLevels}">
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<Grid ColumnDefinitions="*,*,*,auto">
+										<TextBlock VerticalAlignment="Center"
+												   Margin="3"
+												   Text="SLTP"/>
+										<TextBox Text="{Binding PriceString, Mode=TwoWay}"
+												 FontSize="12"
+												 Grid.Column="1"
+												 Classes="Small"
+												 VerticalAlignment="Center"
+												 Margin="3"/>
+										<TextBox Text="{Binding SizeString, Mode=TwoWay}"
+												 FontSize="12"
+												 Grid.Column="2"
+												 Watermark="Size"
+												 Classes="Small"
+												 VerticalAlignment="Center"
+												 Margin="3"/>
+										<Button Classes="Small Danger"
+												VerticalAlignment="Center"
+												Margin="3"
+												Command="{Binding RemoveLevelCommand}"
+												Grid.Column="3">
+											<material:MaterialIcon Kind="Remove"/>
+										</Button>
+									</Grid>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
+					</ScrollViewer>
 				</Grid>
-		</Border>
-	
-		
-		<TextBlock Text="Validity:"
-                   Grid.Row="10"
-				   Margin="3"
-				   IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
-				   VerticalAlignment="Center"
-				   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
-                   Grid.Column="0"/>
+			</Border>
 
-		<TimePicker Grid.Row="10"
-				 IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
-				 Margin="3"
-				 Classes="Small Bordered"
-				 VerticalAlignment="Center"
-                 Grid.Column="1"/>
-		<material:MaterialIcon Kind="InfoCircle"
-							   Grid.Row="10"
-							   Grid.Column="2"
-							   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
-							   Margin="3"/>
-
-		<Button Content="Create Order"
-				Classes="Small"
-			    Margin="3"
-			    VerticalAlignment="Center"
-				IsEnabled="False"
-                Grid.Row="11"
-                Grid.Column="0"
-                Grid.ColumnSpan="4"/>
-		<Button Content="Cancel"
-				Margin="3"
-				Click="Button_OnClick"
-				VerticalAlignment="Center"
-                Grid.Row="12"
-				Foreground="Red"
-				Classes="Small"
-                Grid.Column="0"
-                Grid.ColumnSpan="4"/>
-
-		<ToggleButton Name="chartToggle"
-					  Grid.Column="3"
-					  Width="30"
-					  Grid.Row="6"
-					  Classes="Small"
-					  Margin="3,3"
-					  ToolTip.Tip="Setup the prices using a chart"
-				 	  Grid.RowSpan="5">
-			<material:MaterialIcon Kind="ShowChart"/>
-		</ToggleButton>
-
-
-		<Popup x:Name="popup"
-               IsOpen="{Binding ElementName=chartToggle, Path=IsChecked}"
-			   x:DataType="UserControl"
-			   Width="450"
-               PlacementTarget="{Binding ElementName=main}"
-			   PlacementMode="RightEdgeAlignedBottom">
-			<Grid ColumnDefinitions="auto,*"
-				  RowDefinitions="auto,*">
-				<material:MaterialIcon Kind="Exchange"
-									   Grid.RowSpan="2"
-									   Height="25"
-									   IsVisible="False"
-									   Width="25"/>
-				<Border Theme="{StaticResource CardBorder}"
-						Grid.Row="1"
-						Grid.Column="1"
-						Classes="Shadow"
-						CornerRadius="1"
-						Margin="0"
-						Padding="0"
-						Name="chartBorder">
-					<ContentControl x:DataType="vm:SpotOpenOrderViewModel"
-									Content="{Binding Chart}"/>
-				</Border>
-			</Grid>
-		</Popup>
+		</Grid>
 	</Grid>
 </UserControl>

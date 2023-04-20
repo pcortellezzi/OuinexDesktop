@@ -9,8 +9,6 @@ namespace OuinexDesktop.Views.Controls
         public OpenOrder()
         {
             InitializeComponent();
-
-            this.popup.Opened += (s, e) => this.popup.Height = this.FindAncestorOfType<ContainerWindow>()?.Height == null ? 400 : this.FindAncestorOfType<ContainerWindow>().Height;
         }
 
         private void Button_OnClick(object? sender, RoutedEventArgs e)

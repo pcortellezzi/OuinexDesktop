@@ -137,15 +137,14 @@ namespace OuinexDesktop.ViewModels
         private void OpenATicketWindowExecute()
         {
             var window = new ContainerWindow()
-            {               
+            {
                 SizeToContent = SizeToContent.WidthAndHeight,
                 Title = "Create an Order",
-                WindowStartupLocation= WindowStartupLocation.CenterScreen,
-                CanResize=false
+                WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                CanResize = true
             };
 
             var content = new OpenOrder();
-            content.chartBorder.Height = window.Height;
             content.DataContext = new SpotOpenOrderViewModel()
             {
                 SelectedSymbol = this.Symbol

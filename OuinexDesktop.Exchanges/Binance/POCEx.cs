@@ -55,6 +55,31 @@ namespace OuinexDesktop.Exchanges
                 ExcecutedPrice = (decimal)0.09
             });
 
+            orders.Add(new SpotOrder
+            {
+                Amount = (decimal)1000,
+                FilledAmount = (decimal)876,
+                OrderSymbol = "DOGE/USDT",
+                OrderType = OrderType.StopLoss,
+                Price = (decimal)0.09278,
+                Status = OrderStatus.PartiallyFilled,
+                OrderSide = OrderSide.SELL,
+                ExcecutedPrice = (decimal)0.09
+            });
+
+
+            orders.Add(new SpotOrder
+            {
+                Amount = (decimal)1000,
+                FilledAmount = (decimal)876,
+                OrderSymbol = "DOGE/USDT",
+                OrderType = OrderType.StopLoss,
+                Price = (decimal)0.09278,
+                Status = OrderStatus.PartiallyFilled,
+                OrderSide = OrderSide.SELL,
+                ExcecutedPrice = (decimal)0.09
+            });
+
             Orders = orders;
         }
 

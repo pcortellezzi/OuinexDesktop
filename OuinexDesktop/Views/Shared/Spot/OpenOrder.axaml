@@ -4,11 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 Name="main"
+			 xmlns:vm="using:OuinexDesktop.ViewModels"
+			 xmlns:local="using:OuinexDesktop.Models"
+			 x:DataType="vm:SpotOpenOrderViewModel"
 			 xmlns:material="using:Material.Icons.Avalonia"
 			 Width="320"
 			 xmlns:sp="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
 			 xmlns:dd="using:Avalonia.Xaml.Interactions.DragAndDrop"
              x:Class="OuinexDesktop.Views.Controls.OpenOrder">
+	<UserControl.DataContext>
+		<vm:SpotOpenOrderViewModel/>
+	</UserControl.DataContext>
 	<Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto"
 		  ColumnDefinitions="auto,*,auto,auto">
 		<TextBlock Text="Create an order"
@@ -26,29 +32,27 @@
 				   Classes="Small"
 				   VerticalAlignment="Center"
                    Grid.Column="0"/>
-		<TextBox Grid.Row="1"
-				 Text="ETH/USDT"
-				 Margin="3"
-				 Classes="Small Bordered"
-				 Grid.ColumnSpan="3"
-				 VerticalAlignment="Center"
-                 Grid.Column="1">
-			<TextBox.InnerRightContent>
-				<Grid ColumnDefinitions="*,*">
-					<material:MaterialIcon Kind="Ticket"
-										   Margin="5,0"/>
-					<Label Content="Spot"
-						   Grid.Column="1"/>
-				</Grid>
-			</TextBox.InnerRightContent>
-		</TextBox>
+		<AutoCompleteBox Grid.Row="1"
+						 Items="{Binding Symbols}"
+						 SelectedItem="{Binding SelectedSymbol, Mode=TwoWay}"
+					     ValueMemberBinding="{ReflectionBinding FullName}"
+						 Margin="3"
+						 Classes="Small Bordered"
+						 Grid.ColumnSpan="3"
+						 VerticalAlignment="Center"
+						 Grid.Column="1">
+			<AutoCompleteBox.ItemTemplate>
+				<DataTemplate DataType="local:Symbol">
+					<TextBlock Text="{Binding Name}" />
+				</DataTemplate>
+			</AutoCompleteBox.ItemTemplate>
+		</AutoCompleteBox>
 
 		<TextBlock Text="Order Type:"
 				   Margin="3"
 				   VerticalAlignment="Center"
                    Grid.Row="2"
                    Grid.Column="0"/>
-
 	
 		<Border Theme="{StaticResource RadioButtonGroupBorder}"
 				Grid.Row="2"
@@ -93,7 +97,7 @@
 				<RadioButton IsChecked="True"
 							 Theme="{StaticResource ButtonRadioButton}">
 					<Grid ColumnDefinitions="*,auto">
-						<TextBlock Text="Short"
+						<TextBlock Text="Sell"
 								   FontWeight="Normal"
 								   Margin="5,0"
 								   Grid.ColumnSpan="2"
@@ -108,9 +112,10 @@
 					</Grid>
 				</RadioButton>
 				<RadioButton Theme="{StaticResource ButtonRadioButton}"
+							IsChecked="{Binding IsBuy, Mode=TwoWay}"
 							 Grid.Column="1">
 					<Grid ColumnDefinitions="*,auto">
-						<TextBlock Text="Long"
+						<TextBlock Text="Buy"								   
 								   FontWeight="Normal"
 								   Margin="5,0"
 								   Grid.ColumnSpan="2"
@@ -150,55 +155,16 @@
 							   ToolTip.Tip="Volume (or amount) is the size of your position exprimed in the quote currency of the ticker"
 							   Grid.Column="3"
 							   Margin="3"/>
-		<TextBlock Text="Stop Loss:"
-				   Margin="3"
-				   VerticalAlignment="Center"
-                   Grid.Row="6"
-                   Grid.Column="0"/>
-
-		<TextBox Grid.Row="6"
-				 Name="slTextBox"
-				 Foreground="OrangeRed"
-				 Classes="Small Bordered ClearButton"
-				 InnerRightContent="USDT"
-				 Margin="3"	 
-				 VerticalAlignment="Center"
-                 Grid.Column="1"/>
-		<material:MaterialIcon Kind="InfoCircle"
-							   Grid.Row="6"
-							   ToolTip.Tip="Volume (or amount) is the size of your position exprimed in the quote currency of the ticker"
-							   Grid.Column="2"
-							   Margin="3"/>
-
-		<TextBlock Text="Take Profit:"
-				   Margin="3"
-				   VerticalAlignment="Center"
-                   Grid.Row="8"
-                   Grid.Column="0"/>
-
-		<TextBox Grid.Row="8"
-				 Margin="3"
-				 InnerRightContent="USDT"
-				 Name="tpTextBox"
-				 Foreground="LimeGreen"
-				 Classes="Small Bordered ClearButton" 
-				 VerticalAlignment="Center"
-                 Grid.Column="1"/>
-		<material:MaterialIcon Kind="InfoCircle"
-							   Grid.Row="8"
-							   ToolTip.Tip="Volume (or amount) is the size of your position exprimed in the quote currency of the ticker"
-						       Grid.Column="2"
-						       Margin="3"/>
-
+		
 		<TextBlock Text="Price:"
-                   Grid.Row="9"				   
+                   Grid.Row="6"				   
 				   Margin="3"
 				   IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
 				   VerticalAlignment="Center"
 				   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
                    Grid.Column="0"/>
 
-		<TextBox Grid.Row="9"
+		<TextBox Grid.Row="6"
 				 IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
 				 Margin="3"
 				 InnerRightContent="USDT"
@@ -206,10 +172,37 @@
 				 VerticalAlignment="Center"
                  Grid.Column="1"/>
 		<material:MaterialIcon Kind="InfoCircle"
-							   Grid.Row="9"
+							   Grid.Row="6"
 							   Grid.Column="2"
 							   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
 								   Margin="3"/>
+		<ToggleButton Classes="Small"
+					  FontSize="12"
+					  Name="exitToggle"
+					  Content="Define an exit strategy"					 
+					  Grid.ColumnSpan="2"
+					  Grid.Row="7"/>
+		<Border Grid.Row="8" 
+				Grid.ColumnSpan="3"
+				Theme="{StaticResource RadioButtonGroupBorder}"
+				IsVisible="{Binding ElementName=exitToggle, Path=IsChecked}"
+				Margin="3">
+			<Grid ColumnDefinitions="*,*"
+				  RowDefinitions="auto,*">
+				<Button Classes="Small"
+						Command="{Binding AddExitLevelCommand}"
+						Margin="3"
+						Content="Add an exit order"/>
+				<ItemsControl Items="{Binding ExitLevels}"
+							  Grid.ColumnSpan="2"
+							  Grid.Row="1"
+						  Height="100">
+					
+				</ItemsControl>
+				</Grid>
+		</Border>
+	
+		
 		<TextBlock Text="Validity:"
                    Grid.Row="10"
 				   Margin="3"
@@ -228,7 +221,7 @@
 							   Grid.Row="10"
 							   Grid.Column="2"
 							   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
-								   Margin="3"/>
+							   Margin="3"/>
 
 		<Button Content="Create Order"
 				Classes="Small"
@@ -281,8 +274,8 @@
 						Margin="0"
 						Padding="0"
 						Name="chartBorder">
-					<sp:AvaPlot Name="avaPlot1"
-								Margin="0"/>
+					<ContentControl x:DataType="vm:SpotOpenOrderViewModel"
+									Content="{Binding Chart}"/>
 				</Border>
 			</Grid>
 		</Popup>

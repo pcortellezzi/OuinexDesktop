@@ -37,6 +37,17 @@
 								Binding="{Binding Amount}"/>
 			<DataGridTextColumn Header="Avg Executed Price"
 								Binding="{Binding ExcecutedPrice}"/>
+			<DataGridTemplateColumn>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<Button Margin="3,0"
+								Classes="Small"
+								Content="Modify"/>
+						<Button Content="Cancel"
+								Classes="Small Danger"/>
+					</StackPanel>
+				</DataTemplate>
+			</DataGridTemplateColumn>
 		</DataGrid.Columns>
 	</DataGrid>
 </UserControl>

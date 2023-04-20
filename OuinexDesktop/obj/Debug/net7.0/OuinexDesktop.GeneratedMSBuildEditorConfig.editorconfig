@@ -87,5 +87,8 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Windows/ContainerWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Windows/LoginWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/Alex/Documents/GitHub/ouinexpro/OuinexDesktop/Views/Windows/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

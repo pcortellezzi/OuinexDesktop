@@ -32,6 +32,8 @@ namespace OuinexDesktop.ViewModels
                 {
                     ExitLevels.Remove(level);
                     Chart.Plot.Remove(level.Hline);
+
+                    Chart.Refresh();
                 });
             });
         }

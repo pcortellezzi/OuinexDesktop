@@ -146,7 +146,10 @@ namespace OuinexDesktop.ViewModels
 
             var content = new OpenOrder();
             content.chartBorder.Height = window.Height;
-            content.DataContext = new SpotOpenOrderViewModel();
+            content.DataContext = new SpotOpenOrderViewModel()
+            {
+                SelectedSymbol = this.Symbol
+            };
 
             window.mainContainer.Children.Add(content);
             window.CustomTitle.Text = string.Format("Create order : {0}", Symbol.FullName);

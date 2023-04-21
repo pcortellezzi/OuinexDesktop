@@ -22,9 +22,9 @@
 	<UserControl.DataContext>
 		<vm:SpotOpenOrderViewModel/>
 	</UserControl.DataContext>
-	<Grid ColumnDefinitions="300,*,300">
+	<Grid ColumnDefinitions="auto,450,auto">
 		<Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto"
-			  ColumnDefinitions="auto,*,auto,auto"
+			  ColumnDefinitions="auto,*,auto"
 			  Width="300">
 			<TextBlock Text="Create an order"
 					   FontSize="18"
@@ -151,8 +151,8 @@
 					 Margin="3"
 					 Watermark="Available 156.243"
 					 Classes="Small Bordered"
-					 InnerRightContent="ETH"
-					 Grid.ColumnSpan="2"
+					 InnerRightContent="{Binding SelectedSymbol.BaseCurrency}"
+					 Grid.ColumnSpan="1"
 					 VerticalAlignment="Center"
 					 Grid.Column="1"/>
 			<Slider Grid.Row="5"
@@ -176,7 +176,7 @@
 			<TextBox Grid.Row="6"
 					 IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
 					 Margin="3"
-					 InnerRightContent="USDT"
+					 InnerRightContent="{Binding SelectedSymbol.QuoteCurrency}"
 					 Classes="Small Bordered"
 					 VerticalAlignment="Center"
 					 Grid.Column="1"/>
@@ -184,10 +184,7 @@
 								   Grid.Row="6"
 								   Grid.Column="2"
 								   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
-									   Margin="3"/>
-		
-		
-
+								   Margin="3"/>		
 			<TextBlock Text="Validity:"
 					   Grid.Row="10"
 					   Margin="3"
@@ -196,12 +193,15 @@
 					   ToolTip.Tip="Price field is enabled to manual change only for Pending Order"
 					   Grid.Column="0"/>
 
-			<TimePicker Grid.Row="10"
-					 IsEnabled="{Binding ElementName=isPending, Path=IsChecked}"
-					 Margin="3"
-					 Classes="Small Bordered"
-					 VerticalAlignment="Center"
-					 Grid.Column="1"/>
+			<ToggleButton Grid.Row="10"
+						  IsEnabled="{Binding IsBuy}"
+						  Margin="3"
+						  Classes="Small Bordered"
+						  VerticalAlignment="Center"
+						  Content="Define en exit strategy"
+						  Name="exitStrategyToggle"
+						  FontSize="12"
+						  Grid.Column="1"/>
 			<material:MaterialIcon Kind="InfoCircle"
 								   Grid.Row="10"
 								   Grid.Column="2"
@@ -225,23 +225,14 @@
 					Classes="Small"
 					Grid.Column="0"
 					Grid.ColumnSpan="4"/>
-
-			<ToggleButton Name="chartToggle"
-						  Grid.Column="3"
-						  Width="30"
-						  Grid.Row="6"
-						  Classes="Small"
-						  Margin="3,3"
-						  ToolTip.Tip="Setup the prices using a chart"
-						  Grid.RowSpan="5">
-				<material:MaterialIcon Kind="ShowChart"/>
-			</ToggleButton>
 		</Grid>
 		<ContentPresenter x:DataType="vm:SpotOpenOrderViewModel"
 						  MinWidth="300"
 						  Grid.Column="1"
 						  Content="{Binding Chart}"/>
-		<Grid Grid.Column="2">
+		<Grid Grid.Column="2"
+			  Width="300"
+			  IsVisible="{Binding ElementName=exitStrategyToggle, Path=IsChecked}">
 			<Border Grid.Row="8"
 				Grid.ColumnSpan="3"
 				Theme="{StaticResource RadioButtonGroupBorder}"
@@ -289,7 +280,6 @@
 					</ScrollViewer>
 				</Grid>
 			</Border>
-
 		</Grid>
 	</Grid>
 </UserControl>

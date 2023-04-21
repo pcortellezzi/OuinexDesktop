@@ -120,7 +120,7 @@ namespace OuinexDesktop.ViewModels
                             (double)data.ClosePrice,
                             data.OpenTime,
                             //TODO : coonvert time frime to timespan
-                            new TimeSpan(1, 0, 0)));
+                            new TimeSpan(0, 60, 0)));
                     }
 
                     await Dispatcher.UIThread.InvokeAsync(() =>

@@ -1,5 +1,4 @@
 ﻿using Avalonia.Controls;
-using Avalonia.Controls.Chrome;
 using OuinexDesktop.Models;
 using OuinexDesktop.Views;
 using OuinexDesktop.Views.Controls;

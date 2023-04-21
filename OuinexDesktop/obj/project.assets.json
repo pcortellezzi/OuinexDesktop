@@ -1570,6 +1570,20 @@
           "build/_._": {}
         }
       },
+      "OuinexDesktop.Charting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "ReactiveUI": "18.4.26",
+          "ScottPlot.Avalonia": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OuinexDesktop.Charting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OuinexDesktop.Charting.dll": {}
+        }
+      },
       "OuinexDesktop.Exchanges/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -4989,6 +5003,11 @@
         "tmds.dbus.sourcegenerator.nuspec"
       ]
     },
+    "OuinexDesktop.Charting/1.0.0": {
+      "type": "project",
+      "path": "../OuinexDesktop.Charting/OuinexDesktop.Charting.csproj",
+      "msbuildProject": "../OuinexDesktop.Charting/OuinexDesktop.Charting.csproj"
+    },
     "OuinexDesktop.Exchanges/1.0.0": {
       "type": "project",
       "path": "../OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj",
@@ -5039,6 +5058,7 @@
       "Avalonia.Themes.Fluent >= 11.0.0-preview6",
       "Avalonia.Xaml.Interactions.DragAndDrop >= 11.0.0-preview6",
       "Binance.Net >= 8.4.3",
+      "OuinexDesktop.Charting >= 1.0.0",
       "OuinexDesktop.Exchanges >= 1.0.0",
       "OuinexDesktop.Models >= 1.0.0",
       "OuinexDesktop.Services >= 1.0.0",
@@ -5082,6 +5102,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Charting\\OuinexDesktop.Charting.csproj": {
+              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Charting\\OuinexDesktop.Charting.csproj"
+            },
             "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj": {
               "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj"
             },

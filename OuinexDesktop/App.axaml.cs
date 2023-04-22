@@ -1,7 +1,6 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using OuinexDesktop.ViewModels;
 
 namespace OuinexDesktop
 {
@@ -16,7 +15,7 @@ namespace OuinexDesktop
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                 var vm = new MainWindowViewModel();
+                 /*var vm = new MainWindowViewModel();
                  var window = new MainWindow()
                  {
                      DataContext = vm
@@ -34,10 +33,13 @@ namespace OuinexDesktop
                      await ExchangesConnector.Instances["POC-Binance"].InitAsync();
                  });
 
-                Statics.MainWindow = window;
+                Statics.MainWindow = window;*/
+
+               desktop.MainWindow = new Window1();
             }
 
             base.OnFrameworkInitializationCompleted();
         }
+
     }
 }

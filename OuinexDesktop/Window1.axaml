@@ -10,5 +10,15 @@
 	<Window.DataContext>
 		<charts:StockChart/>
 	</Window.DataContext>
- <ContentControl Content="{Binding MainPlotArea}"/>
+	
+	<Grid RowDefinitions="auto, *">
+		<StackPanel Orientation="Horizontal">
+			<ComboBox Items="{Binding ChartTypes}"
+			  SelectedItem="{Binding SelectedChartType, Mode=TwoWay}"/>
+			<Button Command="{Binding AddDatasTestCommand}"
+					Content="Generate test datas"/>
+		</StackPanel>
+		<ContentControl Content="{Binding MainPlotArea}"
+						Grid.Row="1"/>
+	</Grid>
 </Window>

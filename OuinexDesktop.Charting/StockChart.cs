@@ -15,11 +15,11 @@ namespace OuinexDesktop.Charting
     public class StockChart : ReactiveObject
     {
         #region private fields
-        private ChartType _chartType = ChartType.Candlestick;
+        private ChartType _chartType = ChartType.OHLC;
         private AvaPlot _plot;
         private Crosshair _crossHair;
-
-
+        private OHLC[] _price;
+        private FinancePlot _candlesPlot, _ohlcsPlot;
 
 
 
@@ -33,10 +33,27 @@ namespace OuinexDesktop.Charting
         }
         #endregion
 
-        public ChartType ChartType
+        public ChartType SelectedChartType
         {
             get => _chartType;
-            set=> this.RaiseAndSetIfChanged(ref _chartType, value);
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _chartType, value);
+                
+                switch (_chartType)
+                {
+                    case ChartType.Candlestick:
+                        _candlesPlot.IsVisible = true;
+                        _ohlcsPlot.IsVisible = false;
+                        break;
+                    case ChartType.OHLC:
+                        _candlesPlot.IsVisible = false;
+                        _ohlcsPlot.IsVisible = true;
+                        break;
+                }
+
+                MainPlotArea.Refresh();
+            }
         }
 
         public AvaPlot MainPlotArea
@@ -51,7 +68,7 @@ namespace OuinexDesktop.Charting
 
             _crossHair = MainPlotArea.Plot.AddCrosshair(0, 0);
             _crossHair.IgnoreAxisAuto = true;
-            _crossHair.LineStyle = ScottPlot.LineStyle.Solid;
+            _crossHair.LineStyle = LineStyle.Solid;
             _crossHair.LineWidth = 1;
             _crossHair.Color = System.Drawing.Color.Black;
 
@@ -64,16 +81,50 @@ namespace OuinexDesktop.Charting
 
                 MainPlotArea.Refresh();
             };
+
+            GenerateTestDatas();
         }
 
         public void GenerateTestDatas()
         {
-            var datas = DataGen.RandomStockPrices(new Random(), 500);
+            _price = DataGen.RandomStockPrices(new Random(), 500);
 
-            foreach(var data in datas )
+            _candlesPlot = MainPlotArea.Plot.AddCandlesticks(_price);
+            _candlesPlot.IsVisible = false;
+            _candlesPlot.ColorUp = System.Drawing.Color.Black;
+
+            _ohlcsPlot = MainPlotArea.Plot.AddOHLCs(_price);
+
+            MainPlotArea.Refresh();
+
+            AddDatasTestCommand = ReactiveCommand.Create(() =>
             {
+                _price = DataGen.RandomStockPrices(new Random(), 500);
 
-            }
+                _candlesPlot.Clear();
+                _ohlcsPlot.Clear();
+
+                _candlesPlot.AddRange(_price);
+                _ohlcsPlot.AddRange(_price);
+                
+                MainPlotArea.Plot.AxisAuto();
+                MainPlotArea.Refresh();
+            });
+        }
+
+        public IEnumerable<ChartType> ChartTypes
+        {
+            get => Enum.GetValues(typeof(ChartType)).Cast<ChartType>();
+        }
+
+        public IReactiveCommand AddDatasTestCommand { get; private set; }
+    }
+
+    public class AnnotationManager
+    {
+        public AnnotationManager() 
+        {
+
         }
     }
 }

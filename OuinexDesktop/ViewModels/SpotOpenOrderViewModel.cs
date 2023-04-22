@@ -75,10 +75,10 @@ namespace OuinexDesktop.ViewModels
             Chart = new AvaPlot();
 
             Chart.Plot.YAxis.Layout(padding: 0);
+            Chart.Plot.XAxis.DateTimeFormat(true);
 
             crosshair = Chart.Plot.AddCrosshair(0, 0);
             crosshair.IgnoreAxisAuto = true;
-
             Chart.PointerMoved += (o, e) =>
             {
                 (double coordinateX, double coordinateY) = Chart.GetMouseCoordinates();

@@ -1,4 +1,5 @@
-﻿using ReactiveUI;
+﻿using Avalonia.Threading;
+using ReactiveUI;
 using ScottPlot;
 using ScottPlot.Avalonia;
 using ScottPlot.Plottable;
@@ -118,6 +119,7 @@ namespace OuinexDesktop.Charting
         }
 
         public IReactiveCommand AddDatasTestCommand { get; private set; }
+
     }
 
     public class AnnotationManager

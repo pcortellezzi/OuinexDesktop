@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 
 namespace CNergyTrader.Indicator
@@ -123,6 +124,8 @@ namespace CNergyTrader.Indicator
                  res = Math.Max(res, input[i]);
             }
 
+            Debug.WriteLine(index+" - "+res);
+
             return res;
         }
 
@@ -131,6 +134,21 @@ namespace CNergyTrader.Indicator
             var array = input.ToArray();
 
             return array.GetHighest(index, period);
+        }
+
+        public static double FindHighestPrice(this double[] prices, int index, int period)
+        {
+            int start_index = Math.Max(0, index - period + 1);
+            int end_index = Math.Min(index + 1, prices.Length);
+            double highest_price = double.MinValue;
+            for (int i = start_index; i < end_index; i++)
+            {
+                if (prices[i] > highest_price)
+                {
+                    highest_price = prices[i];
+                }
+            }
+            return highest_price;
         }
     }
 }

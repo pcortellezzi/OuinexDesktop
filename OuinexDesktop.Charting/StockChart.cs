@@ -1,9 +1,11 @@
-﻿using CNergyTrader.Indicator;
+﻿using Avalonia.Controls;
+using CNergyTrader.Indicator;
 using CNergyTrader.Indicator.Indicators;
 using ReactiveUI;
 using ScottPlot;
 using ScottPlot.Avalonia;
 using ScottPlot.Plottable;
+using System.Collections.ObjectModel;
 
 namespace OuinexDesktop.Charting
 {
@@ -68,6 +70,7 @@ namespace OuinexDesktop.Charting
         {
             MainPlotArea = new AvaPlot();
 
+
             _crossHair = MainPlotArea.Plot.AddCrosshair(0, 0);
             _crossHair.IgnoreAxisAuto = true;
             _crossHair.LineStyle = LineStyle.Solid;
@@ -83,6 +86,10 @@ namespace OuinexDesktop.Charting
 
                 MainPlotArea.Refresh();
             };
+
+            this.ChartsArea.RowDefinitions.Add(new RowDefinition());
+
+            this.ChartsArea.Children.Add(MainPlotArea);
 
             GenerateTestDatas();
         }
@@ -107,20 +114,37 @@ namespace OuinexDesktop.Charting
                 _ohlcsPlot.Clear();
 
                 _candlesPlot.AddRange(_price);
-                _ohlcsPlot.AddRange(_price);
-                
+                _ohlcsPlot.AddRange(_price);               
+        
+
+                foreach(var indicator in OnPriceIndicators)
+                {
+                    var opens = _price.Select(x => x.Open).ToArray();
+                    var closes = _price.Select(x => x.Close).ToArray();
+                    var highs = _price.Select(x => x.High).ToArray();
+                    var lows = _price.Select(x => x.Low).ToArray();
+
+                    indicator.Calculate(_price.Count(), null, opens, highs, lows, closes, null);
+                }
+
                 MainPlotArea.Plot.AxisAuto();
                 MainPlotArea.Refresh();
-
-                AddIndicator();
             });
+
+
+            AddIndicator();
+            test();
+            test2();
         }
+
 
         public void AddIndicator()
         {
-            var Indicator = new Ichimoku();
+            var Indicator = new BollingerBands();
 
             var manager = new OnPriceIndicatorItem(Indicator, MainPlotArea);
+
+            OnPriceIndicators.Add(Indicator);
 
             Indicator.Calculate(_price.Count(), null, _price.Select(x => x.Open).ToArray(), _price.Select(x => x.High).ToArray(), _price.Select(x => x.Low).ToArray(), _price.Select(x => x.Close).ToArray(), null);
 
@@ -133,35 +157,73 @@ namespace OuinexDesktop.Charting
         }
 
         public IReactiveCommand AddDatasTestCommand { get; private set; }
-    }
 
-    public class OnPriceIndicatorItem
-    {
-        private IndicatorBase _indicator;
-        private AvaPlot _priceArea;
+        public ObservableCollection<IndicatorBase> OnPriceIndicators { get; set; } = new ObservableCollection<IndicatorBase>();
 
-        public OnPriceIndicatorItem(IndicatorBase indicator, AvaPlot priceArea) 
+        public void test()
         {
-            _indicator = indicator;
-            _priceArea = priceArea;
+            var external = new AvaPlot();
+            external.Configuration.AddLinkedControl(MainPlotArea, vertical: false);
 
-            _indicator.Init();
-            setupSeries();
+            MainPlotArea.Configuration.AddLinkedControl(external, vertical: false);
+
+            _AddSubChart(external);
+
+            var Indicator = new RSI();
+
+            var manager = new OnPriceIndicatorItem(Indicator, external);
+
+            OnPriceIndicators.Add(Indicator);
+
+            Indicator.Calculate(_price.Count(), null, _price.Select(x => x.Open).ToArray(), _price.Select(x => x.High).ToArray(), _price.Select(x => x.Low).ToArray(), _price.Select(x => x.Close).ToArray(), null);
+
+            MainPlotArea.Plot.XAxis.IsVisible = false;
+            MainPlotArea.Refresh();
+
+            external.Plot.AxisAuto();
+            external.Refresh();
         }
 
-        private void setupSeries()
+        public void test2()
         {
-            foreach(var serie in _indicator.Series)
+            var external = new AvaPlot();
+            external.Configuration.AddLinkedControl(MainPlotArea, vertical: false);
+
+            MainPlotArea.Configuration.AddLinkedControl(external, vertical: false);
+
+            _AddSubChart(external);
+
+            var Indicator = new MACD();
+
+            var manager = new OnPriceIndicatorItem(Indicator, external);
+
+            OnPriceIndicators.Add(Indicator);
+
+            Indicator.Calculate(_price.Count(), null, _price.Select(x => x.Open).ToArray(), _price.Select(x => x.High).ToArray(), _price.Select(x => x.Low).ToArray(), _price.Select(x => x.Close).ToArray(), null);
+
+            external.Plot.AxisAuto();
+            external.Refresh();
+        }
+
+        private void _AddSubChart(UserControl chart)
+        {
+            ChartsArea.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(5, GridUnitType.Auto) });
+            ChartsArea.RowDefinitions.Add(new RowDefinition());
+
+            var splitter = new GridSplitter()
             {
-                var line = _priceArea.Plot.AddScatterLines(null, null, serie.DefaultColor);
-                line.OnNaN = ScatterPlot.NanBehavior.Gap;
-                line.StepDisplayRight = true;
-           
-                _indicator.OnCalculated += () =>
-                {
-                    line.Update(serie.Select(x => (double)serie.IndexOf(x)).ToArray(), serie.ToArray());
-                };
-            }
+                Height = 5,
+                VerticalAlignment = Avalonia.Layout.VerticalAlignment.Stretch,
+                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Stretch
+            };
+
+            ChartsArea.Children.Add(splitter);
+            Grid.SetRow(splitter, ChartsArea.RowDefinitions.Count - 2);
+
+            ChartsArea.Children.Add(chart);
+            Grid.SetRow(chart, ChartsArea.RowDefinitions.Count - 1);
         }
+
+        public Grid ChartsArea { get; private set;} = new Grid();
     }
 }

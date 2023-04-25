@@ -18,7 +18,8 @@
 			<Button Command="{Binding AddDatasTestCommand}"
 					Content="Generate test datas"/>
 		</StackPanel>
-		<ContentControl Content="{Binding MainPlotArea}"
+		<ContentControl Content="{Binding ChartsArea}"
+						Margin="10"
 						Grid.Row="1"/>
 	</Grid>
 </Window>

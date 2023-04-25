@@ -30,8 +30,8 @@ namespace CNergyTrader.Indicator.Indicators
 
             for (int i = 0; i < total; i++)
             {                
-                Bull.Append(time[i], i < Period ? double.NaN : low[i] - ema.Ma.Values.ToArray()[i]);
-                Bear.Append(time[i], i < Period ? double.NaN : high[i] - ema.Ma.Values.ToArray()[i]);
+                Bull.Append(i < Period ? double.NaN : low[i] - ema.Ma[i]);
+                Bear.Append(i < Period ? double.NaN : high[i] - ema.Ma[i]);
             }
         }
     }

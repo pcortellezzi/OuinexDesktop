@@ -36,12 +36,12 @@ namespace CNergyTrader.Indicator.Indicators
                     var std = close.GetStdDev(i, Period, meanDeviationList);
                     
                     double cci = (close[i] - meanDeviationList[i]) / (0.015 * std);
-                    Cci.Append(time[i], cci);
+                    Cci.Append(cci);
                 }
                 else
                 {
                     meanDeviationList[i] = 0.0;
-                    Cci.Append(time[i], double.NaN);
+                    Cci.Append(double.NaN);
                 }                 
             }
         }

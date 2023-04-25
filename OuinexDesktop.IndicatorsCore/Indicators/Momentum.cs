@@ -23,7 +23,7 @@ namespace CNergyTrader.Indicator.Indicators
         {
             for(int i = 0; i<total; i++)
             {
-                Values.Append(time[i], i < Period ? double.NaN : close[i] * 100 / close[i - Period]);
+                Values.Append(i < Period ? double.NaN : close[i] * 100 / close[i - Period]);
             }
         }
     }

@@ -15,8 +15,8 @@
         {
             for(int i = 0; i<total; i++)
             {
-                Volumes.Append(time[i], volume[i]);
-                Sma.Append(time[i], volume.GetSMA(i, 50));
+                Volumes.Append(volume[i]);
+                Sma.Append(volume.GetSMA(i, 50));
             }
         }
     }

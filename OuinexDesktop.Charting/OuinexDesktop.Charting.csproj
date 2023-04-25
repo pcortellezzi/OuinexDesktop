@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OuinexDesktop.IndicatorsCore\OuinexDesktop.IndicatorsCore.csproj" />
     <ProjectReference Include="..\ScottPlot.Avalonia\ScottPlot.Avalonia.csproj" />
   </ItemGroup>
 

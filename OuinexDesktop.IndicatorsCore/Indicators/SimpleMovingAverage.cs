@@ -18,7 +18,7 @@ namespace CNergyTrader.Indicator.Indicators
         {
             for (int i = 0; i < total; i++)
             {
-                Ma.Append(time[i], close.GetSMA(i, Period));
+                Ma.Append(close.GetSMA(i, Period));
             }
         }
     }

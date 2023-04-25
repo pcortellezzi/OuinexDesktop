@@ -22,7 +22,7 @@
                 lowValues[i] = low.GetEMA(i, 34, i == 0 ? low[i] : lowValues[i - 1]);
                 middleValues[i] = close.GetEMA(i, 34, i == 0 ? close[i] : middleValues[i - 1]);
 
-                Low.Append(time[i], (highValues[i] - lowValues[i]) - (middleValues[i] - lowValues[i])); 
+                Low.Append((highValues[i] - lowValues[i]) - (middleValues[i] - lowValues[i])); 
             }
         }
     }

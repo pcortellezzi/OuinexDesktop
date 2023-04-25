@@ -28,7 +28,7 @@ namespace CNergyTrader.Indicator.Indicators
                     if (close[i + j] > close[i + j + 1]) UpBarCount++;
                 }
 
-                Result.Append(time[i], 100 * UpBarCount / Period);
+                Result.Append(100 * UpBarCount / Period);
             }
         }
     }

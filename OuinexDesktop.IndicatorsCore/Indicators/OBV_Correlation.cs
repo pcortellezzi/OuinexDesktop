@@ -34,7 +34,7 @@
             for (int i = 0; i < total; i++)
             {
                 diff1[i] = close[i] - close.GetSMA(i, Period);
-                diff2[i] = this.OBV_.Result.Values.ToArray()[i] - OBV_.Result.GetSMA(i, Period);
+                diff2[i] = this.OBV_.Result[i] - OBV_.Result.GetSMA(i, Period);
 
 
                 double sum = 0, sump1 = 0, sump2 = 0;
@@ -45,7 +45,7 @@
                     sump2 += diff2[i - k] * diff2[i - k];
                 }
 
-                this.Result.Append(time[i], (sump1 * sump2 != 0) ? sum / Math.Sqrt(sump1 * sump2) : double.NaN);
+                this.Result.Append((sump1 * sump2 != 0) ? sum / Math.Sqrt(sump1 * sump2) : double.NaN);
             }
         }
     }

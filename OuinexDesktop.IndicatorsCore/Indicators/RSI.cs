@@ -73,9 +73,9 @@ namespace CNergyTrader.Indicator.Indicators
             for(int i = 0; i < rsi.Length; i++)
             {
                 if (i < Period)
-                    Values.Append(time[i], double.NaN);
+                    Values.Append(double.NaN);
                 else
-                    Values.Append(time[i], rsi[i]);
+                    Values.Append(rsi[i]);
             }
         }
     }

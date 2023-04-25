@@ -607,3 +607,5 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Avalonia
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Avalonia.Xaml.Interactivity.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Charting.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Charting.pdb
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.IndicatorsCore.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.IndicatorsCore.pdb

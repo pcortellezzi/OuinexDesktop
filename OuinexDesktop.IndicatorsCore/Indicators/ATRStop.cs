@@ -33,7 +33,7 @@ namespace CNergyTrader.Indicator.Indicators
             for (int i = 0; i < total; i++)
             {
                 double median = (high[i] + low[i]) / 2;
-                double atr = this.ATR_.Atr.Values.ToArray()[i];
+                double atr = this.ATR_.Atr[i];
 
                 _upBuffer[i] = median + 2 * atr;
                 _downBuffer[i] = median - 2 * atr;
@@ -41,8 +41,8 @@ namespace CNergyTrader.Indicator.Indicators
                 if (i < 1)
                 {
                     _trend[i] = 1;
-                    this.DownTrend.Append(time[i], double.NaN);
-                    this.UpTrend.Append(time[i], double.NaN);
+                    this.DownTrend.Append(double.NaN);
+                    this.UpTrend.Append(double.NaN);
                     continue;
                 }
 
@@ -79,13 +79,13 @@ namespace CNergyTrader.Indicator.Indicators
                 // Draw Indicator
                 if (_trend[i] == 1)
                 {
-                    this.UpTrend.Append(time[i], _downBuffer[i]);
-                    this.DownTrend.Append(time[i], double.NaN);
+                    this.UpTrend.Append(_downBuffer[i]);
+                    this.DownTrend.Append(double.NaN);
                 }
                 else if (_trend[i] == -1)
                 {
-                    this.DownTrend.Append(time[i], _upBuffer[i]);
-                    this.UpTrend.Append(time[i], double.NaN);
+                    this.DownTrend.Append(_upBuffer[i]);
+                    this.UpTrend.Append(double.NaN);
                 }
             }
         }

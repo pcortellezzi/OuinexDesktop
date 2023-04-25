@@ -40,7 +40,33 @@ namespace CNergyTrader.Indicator.Indicators
             for (int i = 0; i < total; i++)
             {
                 var atr = temp.GetSMA(i, Period);
-                this.Atr.Append(time[i], atr);
+                this.Atr.Append(atr);
+            }
+        }
+    }
+
+    public sealed class Donchian : IndicatorBase
+    {
+        public XYSerie Up { get; private set; } = new XYSerie("Up") { DefaultColor = Color.OrangeRed };
+
+        [IndicatorParameter]
+        public int Period { get; set; } = 14;
+
+        public Donchian()
+        {
+        }
+
+        public override void Init()
+        {
+            Name = $"Average True Range (ATR) [{this.Period}]";
+        }
+
+        protected override void Calculate_(int total, DateTime[] time, double[] open, double[] high, double[] low, double[] close, double[] volume)
+        {
+            for (int i = 0; i < total; i++)
+            {
+                var atr = low.GetLowest(i, Period);
+                this.Up.Append(atr);
             }
         }
     }

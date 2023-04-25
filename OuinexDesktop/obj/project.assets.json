@@ -1574,6 +1574,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "OuinexDesktop.IndicatorsCore": "1.0.0",
           "ReactiveUI": "18.4.26",
           "ScottPlot.Avalonia": "1.0.0"
         },
@@ -1596,6 +1597,16 @@
         },
         "runtime": {
           "bin/placeholder/OuinexDesktop.Exchanges.dll": {}
+        }
+      },
+      "OuinexDesktop.IndicatorsCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/OuinexDesktop.IndicatorsCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OuinexDesktop.IndicatorsCore.dll": {}
         }
       },
       "OuinexDesktop.Models/1.0.0": {
@@ -5012,6 +5023,11 @@
       "type": "project",
       "path": "../OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj",
       "msbuildProject": "../OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj"
+    },
+    "OuinexDesktop.IndicatorsCore/1.0.0": {
+      "type": "project",
+      "path": "../OuinexDesktop.IndicatorsCore/OuinexDesktop.IndicatorsCore.csproj",
+      "msbuildProject": "../OuinexDesktop.IndicatorsCore/OuinexDesktop.IndicatorsCore.csproj"
     },
     "OuinexDesktop.Models/1.0.0": {
       "type": "project",

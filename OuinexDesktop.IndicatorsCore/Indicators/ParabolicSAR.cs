@@ -109,7 +109,7 @@ namespace CNergyTrader.Indicator.Indicators
                         ExtSARBuffer[i + 1] = Math.Max(high[i], high[i - 1]);
                 }
 
-                Value.Append(time[i], ExtSARBuffer[i]);
+                Value.Append(ExtSARBuffer[i]);
             }
         }
     }

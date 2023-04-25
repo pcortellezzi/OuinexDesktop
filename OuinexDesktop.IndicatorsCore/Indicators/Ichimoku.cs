@@ -33,34 +33,34 @@ namespace CNergyTrader.Indicator.Indicators
             {
                 var highest = high.GetHighest(i, InpTenkan);
                 var lowest = low.GetLowest(i, InpTenkan);
-                Tenkan.Append(time[i], (highest + lowest) /2 );
+                Tenkan.Append((highest + lowest) /2 );
 
                 highest = high.GetHighest(i, InpKijun);
                 lowest = low.GetLowest(i, InpKijun);
-                Kijun.Append(time[i], (highest + lowest) / 2);
+                Kijun.Append((highest + lowest) / 2);
 
                 highest = high.GetHighest(i, InpSenkou);
                 lowest = low.GetLowest(i, InpSenkou);
 
-                _Cloud.Append(time[i], ((Tenkan.Values.ToArray()[i] + Kijun.Values.ToArray()[i]) / 2, (highest + lowest) / 2));
+               // _Cloud.Append(time[i], ((Tenkan[i] + Kijun[i]) / 2, (highest + lowest) / 2));
 
-                Chikou.Append(time[i], i < total - InpKijun ? close[i + InpKijun] : double.NaN);
+                Chikou.Append(i < total - InpKijun ? close[i + InpKijun] : double.NaN);
             }
 
       
-            var span = (time[1] - time[0]).TotalMinutes;
+            //var span = (time[1] - time[0]).TotalMinutes;
 
             for(int i =0; i<total+ InpKijun; i++)
             {
                 if (i < InpKijun)
                 {
-                    Cloud.Append(time[i], (double.NaN, double.NaN));
+                 //   Cloud.Append(time[i], (double.NaN, double.NaN));
                 }
                 else
                 {
-                    var newTime = time[i - InpKijun].AddMinutes(InpKijun * span);
+                    //var newTime = time[i - InpKijun].AddMinutes(InpKijun * span);
 
-                    Cloud.Append(newTime, (_Cloud.Values.ToArray()[i- InpKijun].Item1, _Cloud.Values.ToArray()[i - InpKijun].Item2));
+                   // Cloud.Append(newTime, (_Cloud.Values.ToArray()[i- InpKijun].Item1, _Cloud.Values.ToArray()[i - InpKijun].Item2));
                 }
             }
         }

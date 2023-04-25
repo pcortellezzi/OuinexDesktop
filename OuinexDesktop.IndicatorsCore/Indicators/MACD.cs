@@ -42,18 +42,18 @@ namespace CNergyTrader.Indicator.Indicators
 
             for (int i = 0; i < total; i++)
             {
-                var slow = this.Slow_.Ma.Values.ToArray()[i];
-                var fast = this.Fast_.Ma.Values.ToArray()[i];
+                var slow = this.Slow_.Ma[i];
+                var fast = this.Fast_.Ma[i];
 
                 var minus = fast - slow;
 
-                this.Minus_.Append(time[i], minus);
+                this.Minus_.Append(minus);
 
                 var signal = Minus_.GetSMA(i, Signal);
 
-                this.Main.Append(time[i], minus);
-                this.Signal_.Append(time[i], signal);
-                this.Histo.Append(time[i], minus - signal);
+                this.Main.Append(minus);
+                this.Signal_.Append(signal);
+                this.Histo.Append(minus - signal);
             }
         }
     }

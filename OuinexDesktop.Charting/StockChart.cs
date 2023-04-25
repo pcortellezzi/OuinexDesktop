@@ -1,4 +1,5 @@
-﻿using Avalonia.Threading;
+﻿using CNergyTrader.Indicator;
+using CNergyTrader.Indicator.Indicators;
 using ReactiveUI;
 using ScottPlot;
 using ScottPlot.Avalonia;
@@ -100,7 +101,7 @@ namespace OuinexDesktop.Charting
 
             AddDatasTestCommand = ReactiveCommand.Create(() =>
             {
-                _price = DataGen.RandomStockPrices(new Random(), 500);
+                _price = DataGen.RandomStockPrices(new Random(), 1500);
 
                 _candlesPlot.Clear();
                 _ohlcsPlot.Clear();
@@ -110,7 +111,20 @@ namespace OuinexDesktop.Charting
                 
                 MainPlotArea.Plot.AxisAuto();
                 MainPlotArea.Refresh();
+
+                AddIndicator();
             });
+        }
+
+        public void AddIndicator()
+        {
+            var Indicator = new Ichimoku();
+
+            var manager = new OnPriceIndicatorItem(Indicator, MainPlotArea);
+
+            Indicator.Calculate(_price.Count(), null, _price.Select(x => x.Open).ToArray(), _price.Select(x => x.High).ToArray(), _price.Select(x => x.Low).ToArray(), _price.Select(x => x.Close).ToArray(), null);
+
+            MainPlotArea.Refresh();
         }
 
         public IEnumerable<ChartType> ChartTypes
@@ -119,14 +133,35 @@ namespace OuinexDesktop.Charting
         }
 
         public IReactiveCommand AddDatasTestCommand { get; private set; }
-
     }
 
-    public class AnnotationManager
+    public class OnPriceIndicatorItem
     {
-        public AnnotationManager() 
-        {
+        private IndicatorBase _indicator;
+        private AvaPlot _priceArea;
 
+        public OnPriceIndicatorItem(IndicatorBase indicator, AvaPlot priceArea) 
+        {
+            _indicator = indicator;
+            _priceArea = priceArea;
+
+            _indicator.Init();
+            setupSeries();
+        }
+
+        private void setupSeries()
+        {
+            foreach(var serie in _indicator.Series)
+            {
+                var line = _priceArea.Plot.AddScatterLines(null, null, serie.DefaultColor);
+                line.OnNaN = ScatterPlot.NanBehavior.Gap;
+                line.StepDisplayRight = true;
+           
+                _indicator.OnCalculated += () =>
+                {
+                    line.Update(serie.Select(x => (double)serie.IndexOf(x)).ToArray(), serie.ToArray());
+                };
+            }
         }
     }
 }

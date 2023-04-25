@@ -16,7 +16,7 @@
         {
            for(int i = 0; i< total; i++)
             {
-                Ma.Append(time[i], close.GetEMA(i, Period, i == 0 ? close[i] : Ma.Values.ToArray()[i - 1]));
+                Ma.Append(close.GetEMA(i, Period, i == 0 ? close[i] : Ma[i - 1]));
             }
         }
     }

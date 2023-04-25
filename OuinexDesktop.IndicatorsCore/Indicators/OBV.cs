@@ -18,17 +18,17 @@ namespace CNergyTrader.Indicator.Indicators
             {
                 if (i == 0)
                 {
-                    this.Result.Append(time[i], volume[i]);
+                    this.Result.Append(volume[i]);
                     continue;
                 }
 
                 if (close[i] < close[i - 1])
                 {
-                    this.Result.Append(time[i], this.Result.Values.ToArray()[i - 1] - volume[i]);
+                    this.Result.Append(this.Result[i - 1] - volume[i]);
                 }
                 else
                 {
-                    this.Result.Append(time[i], close[i] > close[i - 1] ? this.Result.Values.ToArray()[i - 1] + volume[i] : this.Result.Values.ToArray()[i - 1]);
+                    this.Result.Append(close[i] > close[i - 1] ? this.Result[i - 1] + volume[i] : this.Result[i - 1]);
                 }
             }
         }

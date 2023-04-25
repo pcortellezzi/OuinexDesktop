@@ -28,7 +28,7 @@ namespace CNergyTrader.Indicator
 
         public static double GetSMA(this XYSerie input, int index, int period)
         {
-            var array = input.Values.ToArray();
+            var array = input.ToArray();
 
             return array.GetSMA(index, period);
         }
@@ -52,7 +52,7 @@ namespace CNergyTrader.Indicator
 
         public static double GetEMA(this XYSerie input, int index, int period, double previous)
         {
-            var array = input.Values.ToArray();
+            var array = input.ToArray();
 
             return array.GetEMA(index, period, previous);
         }
@@ -80,7 +80,7 @@ namespace CNergyTrader.Indicator
 
         public static double GetStdDev(this XYSerie input, int index, int period, double[] inputMa)
         {
-            var array = input.Values.ToArray();
+            var array = input.ToArray();
 
             return array.GetStdDev(index, period, inputMa);
         }
@@ -104,7 +104,7 @@ namespace CNergyTrader.Indicator
 
         public static double GetLowest(this XYSerie input, int index, int period)
         {
-            var array = input.Values.ToArray();
+            var array = input.ToArray();
 
             return array.GetLowest(index, period);
         }
@@ -120,7 +120,7 @@ namespace CNergyTrader.Indicator
 
             for (var i = index; i > index - period && i >= 0; i--)
             {
-                if (res < input[i]) res = input[i];
+                 res = Math.Max(res, input[i]);
             }
 
             return res;
@@ -128,7 +128,7 @@ namespace CNergyTrader.Indicator
 
         public static double GetHighest(this XYSerie input, int index, int period)
         {
-            var array = input.Values.ToArray();
+            var array = input.ToArray();
 
             return array.GetHighest(index, period);
         }

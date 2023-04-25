@@ -1,8 +1,10 @@
-﻿namespace CNergyTrader.Indicator.Indicators
+﻿using System.Drawing;
+
+namespace CNergyTrader.Indicator.Indicators
 {
     public sealed class BollingerBands : IndicatorBase
     {
-        public XYSerie Middle { get; } = new XYSerie("Middle");
+        public XYSerie Middle { get; } = new XYSerie("Middle") { DefaultColor = Color.Blue };
 
         public XYSerie Up { get; private set; } = new XYSerie("Up");
 
@@ -23,13 +25,13 @@
         {
             for (int i = 0; i < total; i++)
             {
-                var array = this.Middle.Values.Select(y => y).ToArray();
+                var array = this.Middle.ToArray();
                 var std = close.GetStdDev(i, Period, array);
                 var ma = close.GetSMA(i, Period);
 
-                this.Middle.Append(time[i], ma);
-                this.Down.Append(time[i], ma - (Deviation * std));
-                this.Up.Append(time[i], ma + (Deviation * std));
+                this.Middle.Append(ma);
+                this.Down.Append(ma - (Deviation * std));
+                this.Up.Append(ma + (Deviation * std));
             }
         }
     }

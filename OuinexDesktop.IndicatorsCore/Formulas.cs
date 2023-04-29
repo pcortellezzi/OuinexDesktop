@@ -124,8 +124,6 @@ namespace CNergyTrader.Indicator
                  res = Math.Max(res, input[i]);
             }
 
-            Debug.WriteLine(index+" - "+res);
-
             return res;
         }
 

@@ -140,7 +140,7 @@ namespace OuinexDesktop.Charting
 
         public void AddIndicator()
         {
-            var Indicator = new BollingerBands();
+            var Indicator = new RagheeWave();
 
             var manager = new OnPriceIndicatorItem(Indicator, MainPlotArea);
 
@@ -169,7 +169,7 @@ namespace OuinexDesktop.Charting
 
             _AddSubChart(external);
 
-            var Indicator = new RSI();
+            var Indicator = new Stochastic();
 
             var manager = new OnPriceIndicatorItem(Indicator, external);
 

@@ -5,6 +5,8 @@ namespace CNergyTrader.Indicator.Indicators
     public sealed class Stochastic : IndicatorBase
     {
         public XYYSerie Cloud { get; } = new  XYYSerie("Stochastic");
+        public XYSerie FastSerie { get; } = new XYSerie("Fast");
+        public XYSerie SlowSerie { get; } = new XYSerie("Slow");
 
         [IndicatorParameter]
         public int K { get; set; } = 5;
@@ -40,7 +42,9 @@ namespace CNergyTrader.Indicator.Indicators
                 fast[i] = sto.GetSMA(i, Fast);
                 slow[i] = fast.GetSMA(i, Slow);
 
-                Cloud.Append(time[i], (fast[i], slow[i]));
+                SlowSerie.Append(slow[i]);
+                FastSerie.Append(fast[i]);
+                Cloud.Append(i, (slow[i], fast[i]));
             }
         }
     }

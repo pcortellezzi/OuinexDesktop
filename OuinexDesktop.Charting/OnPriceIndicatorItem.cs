@@ -3,6 +3,8 @@ using ScottPlot.Avalonia;
 using ScottPlot.Plottable;
 using System.Threading.Tasks.Dataflow;
 using System.Drawing;
+using Avalonia.Controls.Shapes;
+using DynamicData;
 
 namespace OuinexDesktop.Charting
 {
@@ -17,10 +19,13 @@ namespace OuinexDesktop.Charting
             _priceArea = priceArea;
 
             _indicator.Init();
-            setupSeries();
+
+            displayXYSeries();
+            displayXYYSeries();
+            displayLevels();
         }
 
-        private void setupSeries()
+        private void displayXYSeries()
         {
             foreach(var serie in _indicator.Series)
             {
@@ -29,7 +34,7 @@ namespace OuinexDesktop.Charting
                     case PlotType.Line:
                         var line = _priceArea.Plot.AddScatterLines(null, null, serie.DefaultColor);
                         line.OnNaN = ScatterPlot.NanBehavior.Gap;
-
+                      
                         _indicator.OnCalculated += () =>
                         {
                             line.Update(serie.Select(x => (double)serie.IndexOf(x)).ToArray(), serie.ToArray());
@@ -54,6 +59,46 @@ namespace OuinexDesktop.Charting
                         break;
                 }               
             }
+        }
+
+        private void displayXYYSeries()
+        {
+            foreach(var xyy in _indicator.XyySeries)
+            {
+                _indicator.OnCalculated += () =>
+                {
+                    var xs = xyy.Select(x => (double)xyy.IndexOf(x)).ToArray();
+                    var y1 = xyy.Values.Select(x => x.Item1).ToArray();
+                    var y2 = xyy.Values.Select(x => x.Item2).ToArray();
+                    //  line.Update(serie.Select(x => (double)serie.IndexOf(x)).ToArray(), serie.ToArray());
+                    var fill = _priceArea.Plot.AddFill(xs,y2,y1);         
+                };
+            }
+        }
+
+        private void displayLevels()
+        {
+            if (_indicator.Levels.Count <= 0)
+                return;
+
+            foreach(var level in _indicator.Levels)
+            {
+                var line = _priceArea.Plot.AddHorizontalLine(level.Y, level.LevelColor, label: level.Y.ToString());
+            }
+        }
+
+
+        private IPlottable test(double[] bothX, double[] bothY)
+        {
+           var plottable = new ScottPlot.Plottable.Polygon(bothX, bothY)
+            {
+                Fill = true,
+                FillColor = System.Drawing.Color.Red,
+                LineWidth = 1,
+                LineColor = System.Drawing.Color.Black
+            };
+
+            return plottable;
         }
     }
 }

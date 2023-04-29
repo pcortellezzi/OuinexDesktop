@@ -4,7 +4,7 @@ using System.Drawing;
 namespace CNergyTrader.Indicator
 {
     [Browsable(false)]
-    public class XYYSerie : Dictionary<DateTime, (double,double)>
+    public class XYYSerie : Dictionary<int, (double,double)>
     {
         public string SerieName { get; set; }
         public bool IsEnabled { get; set; } = true;
@@ -16,9 +16,9 @@ namespace CNergyTrader.Indicator
             SerieName = serieName;
         }
 
-        public void Append(DateTime time, (double, double) values)
+        public void Append(int index, (double, double) values)
         {
-            Add(time, values);
+            Add(index, values);
         }
     }
 }

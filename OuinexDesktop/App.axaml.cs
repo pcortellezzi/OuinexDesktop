@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using OuinexDesktop.ViewModels;
 
 namespace OuinexDesktop
 {
@@ -35,7 +36,7 @@ namespace OuinexDesktop
 
                 Statics.MainWindow = window;*/
 
-               desktop.MainWindow = new Window1();
+              desktop.MainWindow = new Window1();
             }
 
             base.OnFrameworkInitializationCompleted();

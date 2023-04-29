@@ -19,7 +19,7 @@
                 highValues[i] = high.GetEMA(i, 34, i == 0 ? high[i] : highValues[i - 1]);
                 lowValues[i] = low.GetEMA(i, 34, i == 0 ? low[i] : lowValues[i - 1]);
                 
-                MainCloud.Append(time[i], (highValues[i], lowValues[i]));
+                MainCloud.Append(i, (highValues[i], lowValues[i]));
             }
         }
     }

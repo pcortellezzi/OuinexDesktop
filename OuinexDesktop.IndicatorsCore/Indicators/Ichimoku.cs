@@ -18,7 +18,7 @@ namespace CNergyTrader.Indicator.Indicators
         public XYSerie Kijun { get; } = new XYSerie("Kijun") { DefaultColor = Color.Red };
         public XYSerie Chikou { get; } = new XYSerie("Chikou") { DefaultColor = Color.Blue };
         public XYYSerie Cloud { get; } = new XYYSerie("Cloud");
-        
+        public XYSerie test { get; } = new XYSerie("testing");
 
         public override void Init()
         {
@@ -42,7 +42,7 @@ namespace CNergyTrader.Indicator.Indicators
                 highest = high.GetHighest(i, InpSenkou);
                 lowest = low.GetLowest(i, InpSenkou);
 
-               // _Cloud.Append(time[i], ((Tenkan[i] + Kijun[i]) / 2, (highest + lowest) / 2));
+                _Cloud.Append(i, ((Tenkan[i] + Kijun[i]) / 2, (highest + lowest) / 2));
 
                 Chikou.Append(i < total - InpKijun ? close[i + InpKijun] : double.NaN);
             }
@@ -54,13 +54,15 @@ namespace CNergyTrader.Indicator.Indicators
             {
                 if (i < InpKijun)
                 {
-                 //   Cloud.Append(time[i], (double.NaN, double.NaN));
+                    Cloud.Append(i, (double.NaN, double.NaN));
+                    test.Append(double.NaN);
                 }
                 else
                 {
                     //var newTime = time[i - InpKijun].AddMinutes(InpKijun * span);
 
-                   // Cloud.Append(newTime, (_Cloud.Values.ToArray()[i- InpKijun].Item1, _Cloud.Values.ToArray()[i - InpKijun].Item2));
+                    Cloud.Append(i+InpKijun, (_Cloud.Values.ToArray()[i- InpKijun].Item1, _Cloud.Values.ToArray()[i - InpKijun].Item2));
+                    test.Append((_Cloud.Values.ToArray()[i - InpKijun].Item2));
                 }
             }
         }

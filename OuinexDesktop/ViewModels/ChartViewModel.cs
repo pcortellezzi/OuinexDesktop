@@ -1,71 +1,70 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+using System.Linq;
 using System.Threading.Tasks;
 using Avalonia.Threading;
+using Binance.Net.Clients;
+using Microsoft.CodeAnalysis.FlowAnalysis;
 using ScottPlot;
-using ScottPlot.Avalonia;
+using StockPlot.Charts.Controls;
+using StockPlot.Charts.Models;
 
 namespace OuinexDesktop.ViewModels
 {
     public class ChartViewModel : ViewModelBase
     {
-        ScottPlot.Plottable.Crosshair Crosshair;
         public ChartViewModel() 
         {
-            MainChart.Plot.XAxis.DateTimeFormat(true);
-            MainChart.DoubleTapped += (s, e) =>
-            {
-                MainChart.Plot.AxisAuto();
-                MainChart.Refresh();
-            };
+            
+            
         }
 
         public async Task Populate(string symbol)
-        {           
+        {
+            IsEmptyOfData = false;
+            IsBusy = true;
 
-           await  Dispatcher.UIThread.InvokeAsync(new Action(async () =>
+            var client = new BinanceClient();
+
+            var request = await client.SpotApi.ExchangeData.GetUiKlinesAsync(symbol, Binance.Net.Enums.KlineInterval.OneHour, limit: 500);
+
+            if (request.Success)
             {
-                var client = new Binance.Net.Clients.BinanceClient();
+                var bars = request.Data.Select(x => new OHLC((double)x.OpenPrice, (double)x.HighPrice, (double)x.LowPrice, (double)x.ClosePrice, x.OpenTime, TimeSpan.FromMinutes(60))).ToArray();
 
-                var request = await client.SpotApi.ExchangeData.GetUiKlinesAsync(symbol, Binance.Net.Enums.KlineInterval.OneHour);
+                var _chartModel = new StockPricesModel(false);
+                _chartModel.Append(bars);
+                Chart.PricesModel = _chartModel;
+                var socket = new BinanceSocketClient();
 
-                if (request.Success)
+
+                IsBusy = false;
+                await socket.SpotStreams.SubscribeToKlineUpdatesAsync(symbol, Binance.Net.Enums.KlineInterval.OneHour, async (data) =>
                 {
-                    List<OHLC> prices = new List<OHLC>();              
-                //   var test = st
-
-                    foreach (var data in request.Data)
-                    {
-                        prices.Add(new OHLC((double)data.OpenPrice,
-                            (double)data.HighPrice,
-                            (double)data.LowPrice, 
-                            (double)data.ClosePrice, 
-                            data.OpenTime,
-                            //TODO : coonvert time frime to timespan
-                            new TimeSpan(1,0,0)));
-                    }
-                   
-
                     await Dispatcher.UIThread.InvokeAsync(() =>
                     {
-                        var test = MainChart.Plot.AddOHLCs(prices.ToArray());
-                       
-                        var bol = test.GetBollingerBands(20);
-                        
-                        MainChart.Plot.AddScatterLines(bol.xs, bol.sma, Color.Blue);
-                        MainChart.Plot.AddScatterLines(bol.xs, bol.lower, Color.Blue, lineStyle: LineStyle.Dash);
-                        MainChart.Plot.AddScatterLines(bol.xs, bol.upper, Color.Blue, lineStyle: LineStyle.Dash);
+                        var candle = data.Data.Data;
 
-                        MainChart.Plot.AddFill(bol.xs, bol.upper, bol.xs, bol.lower);
-                        //   candlePlot.YAxisIndex = 1;
-                        MainChart.Refresh();
+                        var toUpdate = _chartModel.Prices.FirstOrDefault(x => x.DateTime == candle.OpenTime);
 
+                        if (toUpdate != null)
+                        {
+                            toUpdate.Volume = (double)candle.Volume;
+                            toUpdate.High = (double)candle.HighPrice;
+                            toUpdate.Close = (double)candle.ClosePrice;
+                            toUpdate.Low = (double)candle.LowPrice;
+
+                            _chartModel.UpdateBar(toUpdate);
+                        }
+                        else
+                        {
+                            var newBar = new OHLC((double)candle.OpenPrice, (double)candle.HighPrice, (double)candle.LowPrice, (double)candle.ClosePrice, candle.OpenTime, TimeSpan.FromMinutes(60));
+                            _chartModel.Append(newBar);
+                        }
                     }, DispatcherPriority.Background);
-                }
-            }));
+                });               
+            }
         }
-        
-        public AvaPlot MainChart { get; private set; } = new AvaPlot();
+
+        public StockChart Chart { get; } = new StockChart() { DisplayPrice = StockPlot.Charts.DisplayPrice.OHLC };
     }
 }

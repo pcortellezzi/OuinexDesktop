@@ -3,6 +3,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="OuinexDesktop.Views.Controls.Charting.ChartControl">
-  
+			 xmlns:StockPlot="using:StockPlot.Charts.Controls"
+			 xmlns:viewModels="using:OuinexDesktop.ViewModels"
+			  xmlns:material="using:Material.Icons.Avalonia"
+			 x:DataType="viewModels:ChartViewModel"
+			 x:Class="OuinexDesktop.Views.Controls.Charting.ChartControl">
+	<Grid RowDefinitions="auto, *">
+		<Button Margin="3"
+				ToolTip.Tip="Add an indicator"
+				Classes="Small"
+				HorizontalAlignment="Left">
+			<material:MaterialIcon Kind="FunctionVariant"/>
+			<Button.Flyout >
+				<Flyout Placement="BottomEdgeAlignedLeft">
+					<Grid RowDefinitions="*,auto">
+						<ListBox Items="{Binding Chart.IndicatorsManager.Indicators}"
+								 SelectedItem="{Binding Chart.IndicatorsManager.SelectedIndicator, Mode=TwoWay}"/>
+						<Button Content="Add indicator"
+								Grid.Row="1"
+								Command="{Binding Chart.IndicatorsManager.AddSelectedIndicatorCommand}"/>
+					</Grid>
+				</Flyout>
+			</Button.Flyout>
+			</Button>
+				
+		<ContentPresenter Content="{Binding Chart}"
+						  Grid.Row="1"/>
+	</Grid>
 </UserControl>

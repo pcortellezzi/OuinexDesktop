@@ -1,7 +1,9 @@
-﻿using Avalonia.Controls.Notifications;
+﻿using Avalonia.Controls;
+using Avalonia.Controls.Notifications;
 using Avalonia.Threading;
 using OuinexDesktop.Models;
 using OuinexDesktop.Views;
+using OuinexDesktop.Views.Controls.Charting;
 using ReactiveUI;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -16,6 +18,7 @@ namespace OuinexDesktop.ViewModels
         private bool _showLoading = true;
         private TickerViewModel _ticker;
         private MarketDepthViewModel _orderBook = new MarketDepthViewModel();
+
         private CoinGeckoAPI _cmcAPI = new CoinGeckoAPI();
         private Symbol _selectedSymbol;
 
@@ -24,16 +27,20 @@ namespace OuinexDesktop.ViewModels
         {
             this.OpenChartCommand = ReactiveCommand.Create(async () =>
             {
-                var context = new ChartViewModel();
-
-                var chart = new ChartWindow()
+                await Dispatcher.UIThread.InvokeAsync(async () =>
                 {
-                    DataContext = context,
-                };
+                    var context = new ChartViewModel();
 
-                chart.Show();
+                    var wnd = new ContainerWindow();
+                    var chartControl = new ChartControl();
+                    wnd.mainContainer.Children.Add(chartControl);
+                    chartControl.DataContext = context;
 
-               await context.Populate(this.SelectedTicker.Symbol.Name);
+                    wnd.Show();
+
+                    await context.Populate(this.SelectedTicker.Symbol.Name);
+                });
+         
             });
         }
 
@@ -61,6 +68,7 @@ namespace OuinexDesktop.ViewModels
                 {
                     Task.Run(async () => await MarketDepth.Init(value));
                     Task.Run(async () => await OrderBook.Init(value));
+                    Task.Run(async()=> await Dispatcher.UIThread.InvokeAsync(async()=> await ChartMVVM.Populate(value.Symbol.Name)));
                 }
             }
         }
@@ -99,5 +107,7 @@ namespace OuinexDesktop.ViewModels
                 }
             }
         }
+
+        public ChartViewModel ChartMVVM { get; } = new ChartViewModel();
     }
 }

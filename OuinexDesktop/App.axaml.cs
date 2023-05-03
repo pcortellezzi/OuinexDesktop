@@ -16,7 +16,7 @@ namespace OuinexDesktop
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                 /*var vm = new MainWindowViewModel();
+                 var vm = new MainWindowViewModel();
                  var window = new MainWindow()
                  {
                      DataContext = vm
@@ -34,9 +34,7 @@ namespace OuinexDesktop
                      await ExchangesConnector.Instances["POC-Binance"].InitAsync();
                  });
 
-                Statics.MainWindow = window;*/
-
-              desktop.MainWindow = new Window1();
+                Statics.MainWindow = window;
             }
 
             base.OnFrameworkInitializationCompleted();

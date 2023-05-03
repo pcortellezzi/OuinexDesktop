@@ -11,7 +11,7 @@ namespace OuinexDesktop.ViewModels
     public class MarketDepthViewModel : ViewModelBase
     {
         int[] _levels = { 5, 10, 20 };
-        int _selectedLevel = 0;
+        int _selectedLevel = 1;
         private string _ticker = string.Empty;
         private TickerViewModel _tickerViewModel;
 

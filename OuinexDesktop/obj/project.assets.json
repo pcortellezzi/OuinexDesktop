@@ -906,7 +906,7 @@
           }
         }
       },
-      "ScottPlot/4.1.61": {
+      "ScottPlot/4.1.63": {
         "type": "package",
         "dependencies": {
           "System.Drawing.Common": "4.7.2",
@@ -1570,21 +1570,6 @@
           "build/_._": {}
         }
       },
-      "OuinexDesktop.Charting/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "OuinexDesktop.IndicatorsCore": "1.0.0",
-          "ReactiveUI": "18.4.26",
-          "ScottPlot.Avalonia": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OuinexDesktop.Charting.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OuinexDesktop.Charting.dll": {}
-        }
-      },
       "OuinexDesktop.Exchanges/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1597,16 +1582,6 @@
         },
         "runtime": {
           "bin/placeholder/OuinexDesktop.Exchanges.dll": {}
-        }
-      },
-      "OuinexDesktop.IndicatorsCore/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/OuinexDesktop.IndicatorsCore.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OuinexDesktop.IndicatorsCore.dll": {}
         }
       },
       "OuinexDesktop.Models/1.0.0": {
@@ -1630,20 +1605,6 @@
         },
         "runtime": {
           "bin/placeholder/OuinexDesktop.Services.dll": {}
-        }
-      },
-      "ScottPlot.Avalonia/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Avalonia": "11.0.0-preview6",
-          "ScottPlot": "4.1.61"
-        },
-        "compile": {
-          "bin/placeholder/ScottPlot.Avalonia.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ScottPlot.Avalonia.dll": {}
         }
       },
       "Semi.Avalonia/0.1.0-preview6.1": {
@@ -1685,6 +1646,33 @@
         },
         "runtime": {
           "bin/placeholder/Semi.Avalonia.DataGrid.dll": {}
+        }
+      },
+      "StockPlot.Charts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Avalonia": "11.0.0-preview6",
+          "Avalonia.Desktop": "11.0.0-preview6",
+          "Avalonia.ReactiveUI": "11.0.0-preview6",
+          "ScottPlot": "4.1.63",
+          "StockPlot.Indicators": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StockPlot.Charts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StockPlot.Charts.dll": {}
+        }
+      },
+      "StockPlot.Indicators/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/StockPlot.Indicators.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StockPlot.Indicators.dll": {}
         }
       },
       "SukiUI/2.0.0": {
@@ -2847,10 +2835,10 @@
         "reactiveui.nuspec"
       ]
     },
-    "ScottPlot/4.1.61": {
-      "sha512": "MdAL3fLlFMTlCGwc19w+IcPNQL77RQExZRsx5cfUdtjvJKk6X81PdQ/eKdYVIhYLhTOXJ7X60GeLU63iZg4hFA==",
+    "ScottPlot/4.1.63": {
+      "sha512": "ph9TskhXC31lySsZLDRzo5g1ujG1GnMDM/xPFeU6ntP2c58WEvf0nP7Pe5hAT7E5t7kwM0SAn0rsAqK6++PP5w==",
       "type": "package",
-      "path": "scottplot/4.1.61",
+      "path": "scottplot/4.1.63",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2863,7 +2851,7 @@
         "lib/net6.0/ScottPlot.xml",
         "lib/netstandard2.0/ScottPlot.dll",
         "lib/netstandard2.0/ScottPlot.xml",
-        "scottplot.4.1.61.nupkg.sha512",
+        "scottplot.4.1.63.nupkg.sha512",
         "scottplot.nuspec"
       ]
     },
@@ -5014,20 +5002,10 @@
         "tmds.dbus.sourcegenerator.nuspec"
       ]
     },
-    "OuinexDesktop.Charting/1.0.0": {
-      "type": "project",
-      "path": "../OuinexDesktop.Charting/OuinexDesktop.Charting.csproj",
-      "msbuildProject": "../OuinexDesktop.Charting/OuinexDesktop.Charting.csproj"
-    },
     "OuinexDesktop.Exchanges/1.0.0": {
       "type": "project",
       "path": "../OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj",
       "msbuildProject": "../OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj"
-    },
-    "OuinexDesktop.IndicatorsCore/1.0.0": {
-      "type": "project",
-      "path": "../OuinexDesktop.IndicatorsCore/OuinexDesktop.IndicatorsCore.csproj",
-      "msbuildProject": "../OuinexDesktop.IndicatorsCore/OuinexDesktop.IndicatorsCore.csproj"
     },
     "OuinexDesktop.Models/1.0.0": {
       "type": "project",
@@ -5038,11 +5016,6 @@
       "type": "project",
       "path": "../OuinexDesktop.Services/OuinexDesktop.Services.csproj",
       "msbuildProject": "../OuinexDesktop.Services/OuinexDesktop.Services.csproj"
-    },
-    "ScottPlot.Avalonia/1.0.0": {
-      "type": "project",
-      "path": "../ScottPlot.Avalonia/ScottPlot.Avalonia.csproj",
-      "msbuildProject": "../ScottPlot.Avalonia/ScottPlot.Avalonia.csproj"
     },
     "Semi.Avalonia/0.1.0-preview6.1": {
       "type": "project",
@@ -5059,6 +5032,16 @@
       "path": "../Semi.Avalonia.DataGrid/Semi.Avalonia.DataGrid.csproj",
       "msbuildProject": "../Semi.Avalonia.DataGrid/Semi.Avalonia.DataGrid.csproj"
     },
+    "StockPlot.Charts/1.0.0": {
+      "type": "project",
+      "path": "../../StockPlot/StockPlot.Charts/StockPlot.Charts.csproj",
+      "msbuildProject": "../../StockPlot/StockPlot.Charts/StockPlot.Charts.csproj"
+    },
+    "StockPlot.Indicators/1.0.0": {
+      "type": "project",
+      "path": "../../StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj",
+      "msbuildProject": "../../StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj"
+    },
     "SukiUI/2.0.0": {
       "type": "project",
       "path": "../SukiUI/SukiUI.csproj",
@@ -5074,14 +5057,14 @@
       "Avalonia.Themes.Fluent >= 11.0.0-preview6",
       "Avalonia.Xaml.Interactions.DragAndDrop >= 11.0.0-preview6",
       "Binance.Net >= 8.4.3",
-      "OuinexDesktop.Charting >= 1.0.0",
       "OuinexDesktop.Exchanges >= 1.0.0",
       "OuinexDesktop.Models >= 1.0.0",
       "OuinexDesktop.Services >= 1.0.0",
-      "ScottPlot.Avalonia >= 1.0.0",
       "Semi.Avalonia >= 0.1.0-preview6.1",
       "Semi.Avalonia.ColorPicker >= 0.1.0-preview6.1",
       "Semi.Avalonia.DataGrid >= 0.1.0-preview6.1",
+      "StockPlot.Charts >= 1.0.0",
+      "StockPlot.Indicators >= 1.0.0",
       "SukiUI >= 2.0.0"
     ]
   },
@@ -5118,9 +5101,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Charting\\OuinexDesktop.Charting.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Charting\\OuinexDesktop.Charting.csproj"
-            },
             "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj": {
               "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj"
             },
@@ -5129,9 +5109,6 @@
             },
             "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj": {
               "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj"
-            },
-            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\ScottPlot.Avalonia\\ScottPlot.Avalonia.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\ScottPlot.Avalonia\\ScottPlot.Avalonia.csproj"
             },
             "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj": {
               "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj"
@@ -5144,6 +5121,12 @@
             },
             "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\SukiUI\\SukiUI.csproj": {
               "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\SukiUI\\SukiUI.csproj"
+            },
+            "C:\\Users\\Alex\\Documents\\GitHub\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj": {
+              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj"
+            },
+            "C:\\Users\\Alex\\Documents\\GitHub\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj": {
+              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj"
             }
           }
         }

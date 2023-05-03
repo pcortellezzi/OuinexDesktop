@@ -584,8 +584,6 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\OuinexDe
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\OuinexDesktop.genruntimeconfig.cache
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\obj\Debug\net7.0\ref\OuinexDesktop.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\ScottPlot.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\ScottPlot.Avalonia.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\ScottPlot.Avalonia.pdb
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Exchanges.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Models.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Exchanges.pdb
@@ -605,7 +603,7 @@ C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Semi.Ava
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Semi.Avalonia.pdb
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Avalonia.Xaml.Interactions.DragAndDrop.dll
 C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\Avalonia.Xaml.Interactivity.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Charting.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.Charting.pdb
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.IndicatorsCore.dll
-C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\OuinexDesktop.IndicatorsCore.pdb
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\StockPlot.Charts.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\StockPlot.Indicators.dll
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\StockPlot.Charts.pdb
+C:\Users\Alex\Documents\GitHub\ouinexpro\OuinexDesktop\bin\Debug\net7.0\StockPlot.Indicators.pdb

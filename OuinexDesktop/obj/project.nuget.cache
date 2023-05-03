@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EvR3jQLoeE7drU3OKe32AcOKhQihbNTh005JzFQ6t/baN4UN8ZcWeJxsy9+Ve7WQKATSmgnjOfQI/OX8NjoOeg==",
+  "dgSpecHash": "8ahffYk2QlhdBCrGGsVTeeY5rW1L196ACMZCnFqpEhKGRyOJndRBIcWFMMU90aQ6czCMxakze+tIhYBDl0K6rg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj",
   "expectedPackageFiles": [
@@ -45,7 +45,7 @@
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\reactiveui\\18.4.26\\reactiveui.18.4.26.nupkg.sha512",
-    "C:\\Users\\Alex\\.nuget\\packages\\scottplot\\4.1.61\\scottplot.4.1.61.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\scottplot\\4.1.63\\scottplot.4.1.63.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\skiasharp\\2.88.3\\skiasharp.2.88.3.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.3\\skiasharp.nativeassets.linux.2.88.3.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.3\\skiasharp.nativeassets.macos.2.88.3.nupkg.sha512",

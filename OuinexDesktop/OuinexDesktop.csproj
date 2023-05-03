@@ -38,11 +38,11 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\OuinexDesktop.Charting\OuinexDesktop.Charting.csproj" />
+    <ProjectReference Include="..\..\StockPlot\StockPlot.Charts\StockPlot.Charts.csproj" />
+    <ProjectReference Include="..\..\StockPlot\StockPlot.Indicators\StockPlot.Indicators.csproj" />
     <ProjectReference Include="..\OuinexDesktop.Exchanges\OuinexDesktop.Exchanges.csproj" />
     <ProjectReference Include="..\OuinexDesktop.Models\OuinexDesktop.Models.csproj" />
     <ProjectReference Include="..\OuinexDesktop.Services\OuinexDesktop.Services.csproj" />
-    <ProjectReference Include="..\ScottPlot.Avalonia\ScottPlot.Avalonia.csproj" />
     <ProjectReference Include="..\Semi.Avalonia.ColorPicker\Semi.Avalonia.ColorPicker.csproj" />
     <ProjectReference Include="..\Semi.Avalonia.DataGrid\Semi.Avalonia.DataGrid.csproj" />
     <ProjectReference Include="..\Semi.Avalonia\Semi.Avalonia.csproj" />

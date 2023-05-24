@@ -11,7 +11,9 @@
 		DragDrop.AllowDrop="True"
 		TransparencyLevelHint="Mica"
 		ExtendClientAreaTitleBarHeightHint="0">
-	<Border >
+	<Border Theme="{StaticResource CardBorder}"
+			Padding="0"
+			CornerRadius="0">
 		<Grid RowDefinitions="auto, *">
 			<Border x:Name="titleBar"				
 					Height="30"

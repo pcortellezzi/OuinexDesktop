@@ -5,29 +5,120 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 xmlns:StockPlot="using:StockPlot.Charts.Controls"
 			 xmlns:viewModels="using:OuinexDesktop.ViewModels"
-			  xmlns:material="using:Material.Icons.Avalonia"
+			 xmlns:material="using:Material.Icons.Avalonia"
 			 x:DataType="viewModels:ChartViewModel"
 			 x:Class="OuinexDesktop.Views.Controls.Charting.ChartControl">
-	<Grid RowDefinitions="auto, *">
-		<Button Margin="3"
+	<Grid RowDefinitions="auto, *"
+		  ColumnDefinitions="auto,*">
+		<StackPanel Orientation="Horizontal"
+					Grid.Column="1">
+			<Button Margin="3"
+					FontSize="12"
+					Height="20"
 				ToolTip.Tip="Add an indicator"
 				Classes="Small"
 				HorizontalAlignment="Left">
-			<material:MaterialIcon Kind="FunctionVariant"/>
-			<Button.Flyout >
-				<Flyout Placement="BottomEdgeAlignedLeft">
-					<Grid RowDefinitions="*,auto">
-						<ListBox Items="{Binding Chart.IndicatorsManager.Indicators}"
-								 SelectedItem="{Binding Chart.IndicatorsManager.SelectedIndicator, Mode=TwoWay}"/>
-						<Button Content="Add indicator"
-								Grid.Row="1"
-								Command="{Binding Chart.IndicatorsManager.AddSelectedIndicatorCommand}"/>
-					</Grid>
-				</Flyout>
-			</Button.Flyout>
+				<StackPanel Orientation="Horizontal">
+					<material:MaterialIcon Kind="FunctionVariant"
+										   VerticalAlignment="Center"/>
+				</StackPanel>
+				<Button.Flyout >
+					<Flyout Placement="BottomEdgeAlignedLeft">
+						<Grid RowDefinitions="*,auto">
+							<ListBox Items="{Binding Chart.IndicatorsManager.Indicators}"
+									 Classes="Small"
+									 FontSize="10"
+									 SelectedItem="{Binding Chart.IndicatorsManager.SelectedIndicator, Mode=TwoWay}"/>
+							<Button Content="Add indicator"
+									Grid.Row="1"
+									Classes="Small"
+									Command="{Binding Chart.IndicatorsManager.AddSelectedIndicatorCommand}"/>
+						</Grid>
+					</Flyout>
+				</Button.Flyout>
 			</Button>
+
+			<Button Margin="3" 
+					Height="20"
+					FontSize="12"
+					Classes="Small"
+					HorizontalAlignment="Left">
+				<StackPanel Orientation="Horizontal">
+					<material:MaterialIcon Kind="ClockAuto"/>
+				</StackPanel>
+				<Button.Flyout >
+					<Flyout Placement="BottomEdgeAlignedLeft">
+						<Grid RowDefinitions="*,auto">
+							<ListBox Items="{Binding Intervals}"
+									 Classes="Small"
+									 FontSize="10"
+									 SelectedItem="{Binding SelectedInterval, Mode=TwoWay}"/>
+						</Grid>
+					</Flyout>
+				</Button.Flyout>
+			</Button>
+		</StackPanel>
 				
 		<ContentPresenter Content="{Binding Chart}"
+						  Grid.Column="1"
 						  Grid.Row="1"/>
+		<ItemsControl Grid.Row="1"
+					  Grid.Column="1"
+					  Margin="25,25,0,0"
+					  Background="Transparent"
+					  Name="indicatorPanel"
+					  VerticalAlignment="Top"
+					  Items="{Binding Chart.IndicatorsManager.OnPriceIndicators}"
+					  HorizontalAlignment="Left">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<Button Name="nameTxtBlock"
+								VerticalAlignment="Center"
+								Margin="3"
+								FontWeight="Regular"
+								FontSize="10"
+								Padding="0"
+								Command="{Binding ShowPropertiesCommand}"
+								Background="Transparent"
+								Content="{Binding Indicator.Name} "/>
+						<Button VerticalAlignment="Center"
+								IsVisible="{Binding ElementName=indicatorPanel, Path=IsPointerOver}"
+								Margin="3"
+								Command="{Binding ShowPropertiesCommand}"
+								Background="Transparent"
+								ToolTip.Tip="Indicator parametters"
+								Padding="0"
+								HorizontalAlignment="Left">
+							<material:MaterialIcon Kind="Settings"/>
+						</Button>
+						<Button VerticalAlignment="Center"
+								IsVisible="{Binding ElementName=indicatorPanel, Path=IsPointerOver}"
+								Margin="3"
+								Command="{Binding RemoveIndicatorCommand}"
+								Background="Transparent"
+								ToolTip.Tip="Remove indicator"
+								Padding="0"
+								HorizontalAlignment="Left">
+							<Path Data="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"
+								  Height="10"
+								  Stretch="Uniform"
+								  Fill="OrangeRed"/>
+						</Button>
+					</StackPanel>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+		<StackPanel Grid.Row="1">
+			<Button FontSize="10"
+					Command="{Binding CreateTrendLineCommand}"
+					Classes="Small">
+				<material:MaterialIcon Kind="HorizontalLine"/>
+			</Button>
+			<Button FontSize="10"
+					Classes="Small">
+				<material:MaterialIcon Kind="VerticalRotateClockwise"/>
+			</Button>
+		</StackPanel>
 	</Grid>
 </UserControl>

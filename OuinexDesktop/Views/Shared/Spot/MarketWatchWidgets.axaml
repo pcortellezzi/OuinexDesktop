@@ -191,6 +191,7 @@
 						</RadioButton>
 						<RadioButton Classes="Small"
 									 Name="listSelector"
+									 IsChecked="true"
 									 ToolTip.Tip="Simple rates"
 									 Theme="{DynamicResource ButtonRadioButton}">
 							<material:MaterialIcon Kind="ListBoxOutline"/>

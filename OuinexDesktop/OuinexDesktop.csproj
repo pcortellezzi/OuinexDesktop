@@ -6,6 +6,7 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <ApplicationIcon>Assets\window-ico.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +22,10 @@
     <None Remove="Assets\logo-white.png" />
     <None Remove="Assets\ouinex-footer2.png" />
     <None Remove="Assets\window-ico.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\window-ico.ico" />
   </ItemGroup>
 
 

@@ -8,19 +8,16 @@
         Option
     }
 
-    public enum TimeFrime
+    public enum TimeFrime :int
     {
-        M1,
-        M5,
-        M15,
-        M30,
-        H1,
-        H2,
-        H4,
-        Daily,
-        Weekly,
-        Monthly,
-        Year
+        M1 =1,
+        M5=5,
+        M15=15,
+        M30=30,
+        H1=60,
+        H2=120,
+        H4=240,
+        Daily=1440
     }
 
     public enum TradeSide

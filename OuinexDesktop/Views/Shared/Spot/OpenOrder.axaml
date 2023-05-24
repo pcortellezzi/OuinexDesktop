@@ -22,7 +22,7 @@
 	<UserControl.DataContext>
 		<vm:SpotOpenOrderViewModel/>
 	</UserControl.DataContext>
-	<Grid ColumnDefinitions="auto,450,auto">
+	<Grid ColumnDefinitions="auto,auto,450">
 		<Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto"
 			  ColumnDefinitions="auto,*,auto"
 			  Width="300">
@@ -228,9 +228,9 @@
 		</Grid>
 		<ContentPresenter x:DataType="vm:SpotOpenOrderViewModel"
 						  MinWidth="300"
-						  Grid.Column="1"
+						  Grid.Column="2"
 						  Content="{Binding Chart}"/>
-		<Grid Grid.Column="2"
+		<Grid Grid.Column="1"
 			  Width="300"
 			  IsVisible="{Binding ElementName=exitStrategyToggle, Path=IsChecked}">
 			<Border Grid.Row="8"

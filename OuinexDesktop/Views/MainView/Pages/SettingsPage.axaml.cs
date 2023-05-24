@@ -26,11 +26,13 @@ public partial class SettingsPage : UserControl
         {
             SukiUI.ColorTheme.LoadLightTheme(Application.Current);
             app.RequestedThemeVariant = ThemeVariant.Light;
+            StockPlot.Charts.Helpers.PlotHelper.SetWhiteStyle();
         }
         else
         {
             SukiUI.ColorTheme.LoadDarkTheme(Application.Current);
-            app.RequestedThemeVariant = ThemeVariant.Dark;            
+            app.RequestedThemeVariant = ThemeVariant.Dark;
+            StockPlot.Charts.Helpers.PlotHelper.SetBlackStyle();
         }
 
         Statics.Theme = app.RequestedThemeVariant;

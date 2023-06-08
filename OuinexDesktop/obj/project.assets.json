@@ -854,23 +854,23 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Win32.SystemEvents/6.0.0": {
+      "Microsoft.Win32.SystemEvents/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -1082,30 +1082,26 @@
           }
         }
       },
-      "System.Drawing.Common/6.0.0": {
+      "System.Drawing.Common/7.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "6.0.0"
+          "Microsoft.Win32.SystemEvents": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Drawing.Common.dll": {
+          "lib/net7.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.Drawing.Common.dll": {
+          "lib/net7.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/net6.0/System.Drawing.Common.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
+          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -1656,7 +1652,8 @@
           "Avalonia.Desktop": "11.0.0-preview6",
           "Avalonia.ReactiveUI": "11.0.0-preview6",
           "ScottPlot": "4.1.63",
-          "StockPlot.Indicators": "1.0.0"
+          "StockPlot.Indicators": "1.0.0",
+          "System.Drawing.Common": "7.0.0"
         },
         "compile": {
           "bin/placeholder/StockPlot.Charts.dll": {}
@@ -2716,32 +2713,34 @@
         "runtime.json"
       ]
     },
-    "Microsoft.Win32.SystemEvents/6.0.0": {
-      "sha512": "hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
+    "Microsoft.Win32.SystemEvents/7.0.0": {
+      "sha512": "2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
       "type": "package",
-      "path": "microsoft.win32.systemevents/6.0.0",
+      "path": "microsoft.win32.systemevents/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Win32.SystemEvents.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Win32.SystemEvents.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/Microsoft.Win32.SystemEvents.dll",
-        "lib/net461/Microsoft.Win32.SystemEvents.xml",
+        "lib/net462/Microsoft.Win32.SystemEvents.dll",
+        "lib/net462/Microsoft.Win32.SystemEvents.xml",
         "lib/net6.0/Microsoft.Win32.SystemEvents.dll",
         "lib/net6.0/Microsoft.Win32.SystemEvents.xml",
-        "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
-        "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
+        "lib/net7.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net7.0/Microsoft.Win32.SystemEvents.xml",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+        "microsoft.win32.systemevents.7.0.0.nupkg.sha512",
         "microsoft.win32.systemevents.nuspec",
         "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.xml",
-        "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -3295,41 +3294,39 @@
         "system.diagnostics.debug.nuspec"
       ]
     },
-    "System.Drawing.Common/6.0.0": {
-      "sha512": "NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
+    "System.Drawing.Common/7.0.0": {
+      "sha512": "KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
       "type": "package",
-      "path": "system.drawing.common/6.0.0",
+      "path": "system.drawing.common/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Drawing.Common.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
-        "buildTransitive/netcoreapp3.1/_._",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
-        "lib/net461/System.Drawing.Common.dll",
-        "lib/net461/System.Drawing.Common.xml",
+        "lib/net462/System.Drawing.Common.dll",
+        "lib/net462/System.Drawing.Common.xml",
         "lib/net6.0/System.Drawing.Common.dll",
         "lib/net6.0/System.Drawing.Common.xml",
-        "lib/netcoreapp3.1/System.Drawing.Common.dll",
-        "lib/netcoreapp3.1/System.Drawing.Common.xml",
+        "lib/net7.0/System.Drawing.Common.dll",
+        "lib/net7.0/System.Drawing.Common.xml",
         "lib/netstandard2.0/System.Drawing.Common.dll",
         "lib/netstandard2.0/System.Drawing.Common.xml",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "runtimes/unix/lib/net6.0/System.Drawing.Common.dll",
-        "runtimes/unix/lib/net6.0/System.Drawing.Common.xml",
-        "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll",
-        "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.xml",
         "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
         "runtimes/win/lib/net6.0/System.Drawing.Common.xml",
-        "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.dll",
-        "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.xml",
-        "system.drawing.common.6.0.0.nupkg.sha512",
+        "runtimes/win/lib/net7.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/net7.0/System.Drawing.Common.xml",
+        "system.drawing.common.7.0.0.nupkg.sha512",
         "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -5069,64 +5066,56 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alex\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/damien/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj",
+      "projectUniqueName": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/OuinexDesktop.csproj",
       "projectName": "OuinexDesktop",
-      "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\OuinexDesktop.csproj",
-      "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop\\obj\\",
+      "projectPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/OuinexDesktop.csproj",
+      "packagesPath": "/home/damien/.nuget/packages/",
+      "outputPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/damien/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj"
+            "/home/damien/Documents/GitHub/StockPlot/StockPlot.Charts/StockPlot.Charts.csproj": {
+              "projectPath": "/home/damien/Documents/GitHub/StockPlot/StockPlot.Charts/StockPlot.Charts.csproj"
             },
-            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj"
+            "/home/damien/Documents/GitHub/StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj": {
+              "projectPath": "/home/damien/Documents/GitHub/StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj"
             },
-            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj"
+            "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj": {
+              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj"
             },
-            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj"
+            "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Models/OuinexDesktop.Models.csproj": {
+              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Models/OuinexDesktop.Models.csproj"
             },
-            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj"
+            "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Services/OuinexDesktop.Services.csproj": {
+              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Services/OuinexDesktop.Services.csproj"
             },
-            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia\\Semi.Avalonia.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\Semi.Avalonia\\Semi.Avalonia.csproj"
+            "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia.ColorPicker/Semi.Avalonia.ColorPicker.csproj": {
+              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia.ColorPicker/Semi.Avalonia.ColorPicker.csproj"
             },
-            "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\SukiUI\\SukiUI.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\ouinexpro\\SukiUI\\SukiUI.csproj"
+            "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia.DataGrid/Semi.Avalonia.DataGrid.csproj": {
+              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia.DataGrid/Semi.Avalonia.DataGrid.csproj"
             },
-            "C:\\Users\\Alex\\Documents\\GitHub\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj"
+            "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia/Semi.Avalonia.csproj": {
+              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia/Semi.Avalonia.csproj"
             },
-            "C:\\Users\\Alex\\Documents\\GitHub\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj"
+            "/home/damien/Documents/GitHub/ouinexpro/SukiUI/SukiUI.csproj": {
+              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/SukiUI/SukiUI.csproj"
             }
           }
         }
@@ -5186,7 +5175,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.105/RuntimeIdentifierGraph.json"
       }
     }
   }

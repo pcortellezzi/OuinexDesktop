@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "omeYMp3to5dCE7Cbbf93Dt8kYiVfKi67zYZe01cbwNTAYwEgBB/tGf+zkcNSu2JbnolZkghQWaQbJMlAcwE0yw==",
+  "dgSpecHash": "uBrL8NzogKY2v08ls7HIrvs8l3U8ydUW/JOaHMXAMsm4dZZljNVi4ljIkm0JDdnzXthZ/WgI2AulpQnAYsx+Dw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop\\OuinexDesktop.csproj",
+  "projectFilePath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop\\OuinexDesktop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dsdev\\.nuget\\packages\\avalonia\\11.0.0-preview6\\avalonia.11.0.0-preview6.nupkg.sha512",
     "C:\\Users\\dsdev\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.0.2023020321\\avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",
@@ -21,8 +21,8 @@
     "C:\\Users\\dsdev\\.nuget\\packages\\avalonia.x11\\11.0.0-preview6\\avalonia.x11.11.0.0-preview6.nupkg.sha512",
     "C:\\Users\\dsdev\\.nuget\\packages\\avalonia.xaml.interactions.draganddrop\\11.0.0-preview6\\avalonia.xaml.interactions.draganddrop.11.0.0-preview6.nupkg.sha512",
     "C:\\Users\\dsdev\\.nuget\\packages\\avalonia.xaml.interactivity\\11.0.0-preview6\\avalonia.xaml.interactivity.11.0.0-preview6.nupkg.sha512",
-    "C:\\Users\\dsdev\\.nuget\\packages\\binance.net\\8.4.3\\binance.net.8.4.3.nupkg.sha512",
-    "C:\\Users\\dsdev\\.nuget\\packages\\cryptoexchange.net\\5.4.1\\cryptoexchange.net.5.4.1.nupkg.sha512",
+    "C:\\Users\\dsdev\\.nuget\\packages\\binance.net\\8.5.1\\binance.net.8.5.1.nupkg.sha512",
+    "C:\\Users\\dsdev\\.nuget\\packages\\cryptoexchange.net\\5.4.3\\cryptoexchange.net.5.4.3.nupkg.sha512",
     "C:\\Users\\dsdev\\.nuget\\packages\\dynamicdata\\7.13.1\\dynamicdata.7.13.1.nupkg.sha512",
     "C:\\Users\\dsdev\\.nuget\\packages\\harfbuzzsharp\\2.8.2.3\\harfbuzzsharp.2.8.2.3.nupkg.sha512",
     "C:\\Users\\dsdev\\.nuget\\packages\\harfbuzzsharp.nativeassets.linux\\2.8.2.3\\harfbuzzsharp.nativeassets.linux.2.8.2.3.nupkg.sha512",

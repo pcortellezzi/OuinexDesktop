@@ -22,8 +22,8 @@ C:\Users\dsdev\.nuget\packages\avalonia.win32\11.0.0-preview6\lib\net6.0\Avaloni
 C:\Users\dsdev\.nuget\packages\avalonia.x11\11.0.0-preview6\lib\net6.0\Avalonia.X11.dll
 C:\Users\dsdev\.nuget\packages\avalonia.xaml.interactions.draganddrop\11.0.0-preview6\lib\net6.0\Avalonia.Xaml.Interactions.DragAndDrop.dll
 C:\Users\dsdev\.nuget\packages\avalonia.xaml.interactivity\11.0.0-preview6\lib\net6.0\Avalonia.Xaml.Interactivity.dll
-C:\Users\dsdev\.nuget\packages\binance.net\8.4.3\lib\netstandard2.1\Binance.Net.dll
-C:\Users\dsdev\.nuget\packages\cryptoexchange.net\5.4.1\lib\netstandard2.1\CryptoExchange.Net.dll
+C:\Users\dsdev\.nuget\packages\binance.net\8.5.1\lib\netstandard2.1\Binance.Net.dll
+C:\Users\dsdev\.nuget\packages\cryptoexchange.net\5.4.3\lib\netstandard2.1\CryptoExchange.Net.dll
 C:\Users\dsdev\.nuget\packages\dynamicdata\7.13.1\lib\net7.0\DynamicData.dll
 C:\Users\dsdev\.nuget\packages\harfbuzzsharp\2.8.2.3\lib\net6.0\HarfBuzzSharp.dll
 C:\Users\dsdev\.nuget\packages\material.icons.avalonia\2.0.0-preview3\lib\netstandard2.0\Material.Icons.Avalonia.dll
@@ -44,19 +44,20 @@ C:\Users\dsdev\.nuget\packages\microsoft.win32.systemevents\7.0.0\lib\net7.0\Mic
 C:\Users\dsdev\.nuget\packages\microsoft.netcore.app.ref\7.0.15\ref\net7.0\mscorlib.dll
 C:\Users\dsdev\.nuget\packages\microsoft.netcore.app.ref\7.0.15\ref\net7.0\netstandard.dll
 C:\Users\dsdev\.nuget\packages\newtonsoft.json\13.0.3\lib\net6.0\Newtonsoft.Json.dll
-C:\Users\dsdev\Desktop\Alien 2024\ouinex\GitHub\ouinexpro2\OuinexDesktop.Exchanges\obj\Debug\net6.0\ref\OuinexDesktop.Exchanges.dll
-C:\Users\dsdev\Desktop\Alien 2024\ouinex\GitHub\ouinexpro2\OuinexDesktop.Models\obj\Debug\net6.0\ref\OuinexDesktop.Models.dll
-C:\Users\dsdev\Desktop\Alien 2024\ouinex\GitHub\ouinexpro2\OuinexDesktop.Services\obj\Debug\net6.0\ref\OuinexDesktop.Services.dll
+C:\Users\dsdev\Documents\GitHub\OuinexDesktop\OuinexDesktop.Exchanges\obj\Debug\net6.0\ref\OuinexDesktop.Exchanges.dll
+C:\Users\dsdev\Documents\GitHub\OuinexDesktop\OuinexDesktop.Models\obj\Debug\net6.0\ref\OuinexDesktop.Models.dll
+C:\Users\dsdev\Documents\GitHub\OuinexDesktop\OuinexDesktop.Services\obj\Debug\net6.0\ref\OuinexDesktop.Services.dll
 C:\Users\dsdev\.nuget\packages\reactiveui\18.4.26\lib\net7.0\ReactiveUI.dll
 C:\Users\dsdev\.nuget\packages\scottplot\4.1.63\lib\net6.0\ScottPlot.dll
-C:\Users\dsdev\Desktop\Alien 2024\ouinex\GitHub\ouinexpro2\Semi.Avalonia.ColorPicker\obj\Debug\net6.0\ref\Semi.Avalonia.ColorPicker.dll
-C:\Users\dsdev\Desktop\Alien 2024\ouinex\GitHub\ouinexpro2\Semi.Avalonia.DataGrid\obj\Debug\net6.0\ref\Semi.Avalonia.DataGrid.dll
-C:\Users\dsdev\Desktop\Alien 2024\ouinex\GitHub\ouinexpro2\Semi.Avalonia\obj\Debug\net6.0\ref\Semi.Avalonia.dll
+C:\Users\dsdev\Documents\GitHub\OuinexDesktop\Semi.Avalonia.ColorPicker\obj\Debug\net6.0\ref\Semi.Avalonia.ColorPicker.dll
+C:\Users\dsdev\Documents\GitHub\OuinexDesktop\Semi.Avalonia.DataGrid\obj\Debug\net6.0\ref\Semi.Avalonia.DataGrid.dll
+C:\Users\dsdev\Documents\GitHub\OuinexDesktop\Semi.Avalonia\obj\Debug\net6.0\ref\Semi.Avalonia.dll
 C:\Users\dsdev\.nuget\packages\skiasharp\2.88.3\lib\net6.0\SkiaSharp.dll
 C:\Users\dsdev\.nuget\packages\splat\14.6.8\lib\net7.0\Splat.dll
-C:\Users\dsdev\Desktop\Alien 2024\ouinex\GitHub\StockPlot\StockPlot.Charts\obj\Debug\net7.0\ref\StockPlot.Charts.dll
-C:\Users\dsdev\Desktop\Alien 2024\ouinex\GitHub\StockPlot\StockPlot.Indicators\obj\Debug\net7.0\ref\StockPlot.Indicators.dll
-C:\Users\dsdev\Desktop\Alien 2024\ouinex\GitHub\ouinexpro2\SukiUI\bin\Debug\netstandard2.0\SukiUI.dll
+C:\Users\dsdev\Documents\GitHub\OuinexDesktop\StockPlot\StockPlot.Charts\obj\Debug\net7.0\ref\StockPlot.Charts.dll
+C:\Users\dsdev\Documents\GitHub\OuinexDesktop\StockPlot\StockPlot\obj\Debug\net7.0\ref\StockPlot.dll
+C:\Users\dsdev\Documents\GitHub\OuinexDesktop\StockPlot\StockPlot.Indicators\obj\Debug\net7.0\ref\StockPlot.Indicators.dll
+C:\Users\dsdev\Documents\GitHub\OuinexDesktop\SukiUI\bin\Debug\netstandard2.0\SukiUI.dll
 C:\Users\dsdev\.nuget\packages\microsoft.netcore.app.ref\7.0.15\ref\net7.0\System.AppContext.dll
 C:\Users\dsdev\.nuget\packages\microsoft.netcore.app.ref\7.0.15\ref\net7.0\System.Buffers.dll
 C:\Users\dsdev\.nuget\packages\microsoft.netcore.app.ref\7.0.15\ref\net7.0\System.Collections.Concurrent.dll

@@ -359,10 +359,10 @@
           }
         }
       },
-      "Binance.Net/8.4.3": {
+      "Binance.Net/8.5.1": {
         "type": "package",
         "dependencies": {
-          "CryptoExchange.Net": "5.4.1"
+          "CryptoExchange.Net": "5.4.3"
         },
         "compile": {
           "lib/netstandard2.1/Binance.Net.dll": {
@@ -375,7 +375,7 @@
           }
         }
       },
-      "CryptoExchange.Net/5.4.1": {
+      "CryptoExchange.Net/5.4.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.0",
@@ -1644,6 +1644,25 @@
           "bin/placeholder/Semi.Avalonia.DataGrid.dll": {}
         }
       },
+      "StockPlot/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Avalonia": "11.0.0-preview6",
+          "Avalonia.Desktop": "11.0.0-preview6",
+          "Avalonia.Diagnostics": "11.0.0-preview6",
+          "Avalonia.ReactiveUI": "11.0.0-preview6",
+          "Avalonia.Themes.Fluent": "11.0.0-preview6",
+          "Binance.Net": "8.5.1",
+          "StockPlot.Charts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StockPlot.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StockPlot.dll": {}
+        }
+      },
       "StockPlot.Charts/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -2056,14 +2075,14 @@
         "lib/netstandard2.1/Avalonia.Xaml.Interactivity.xml"
       ]
     },
-    "Binance.Net/8.4.3": {
-      "sha512": "vDPn31xvxQaDInpEYRnThZZrt6UMAwFZOsi0lKTGOo/OTcFtimikbGf6xUpwTWg8/Sfllm2ieFN1J31NqT5YZg==",
+    "Binance.Net/8.5.1": {
+      "sha512": "bYO9JI+nQBbfPeeUjGOvyiePJRuz5Ey4eAdtPbQE6xf7hzcweWbnD3tyu+x0zwV+7zKHHIDvjsFf2OE3s4fWjQ==",
       "type": "package",
-      "path": "binance.net/8.4.3",
+      "path": "binance.net/8.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "binance.net.8.4.3.nupkg.sha512",
+        "binance.net.8.5.1.nupkg.sha512",
         "binance.net.nuspec",
         "icon.png",
         "lib/netstandard2.0/Binance.Net.dll",
@@ -2072,14 +2091,14 @@
         "lib/netstandard2.1/Binance.Net.xml"
       ]
     },
-    "CryptoExchange.Net/5.4.1": {
-      "sha512": "SWH8ZueUjRCZbY1GtoiqUXciUzv7YXQBasF+lZOl/y6WUDRNZwawEhyAdpHRajG3xuAZd65wSdo21/S0hrJHqg==",
+    "CryptoExchange.Net/5.4.3": {
+      "sha512": "k30y4J1jMjxyR+oOXohNyi41t7xqhGkUGh8ufCUrRlyYDG019PAqxSLH8WUyjYVbgG//LBMo/v6GbmmK5xrMKg==",
       "type": "package",
-      "path": "cryptoexchange.net/5.4.1",
+      "path": "cryptoexchange.net/5.4.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "cryptoexchange.net.5.4.1.nupkg.sha512",
+        "cryptoexchange.net.5.4.3.nupkg.sha512",
         "cryptoexchange.net.nuspec",
         "lib/netstandard2.0/CryptoExchange.Net.dll",
         "lib/netstandard2.0/CryptoExchange.Net.xml",
@@ -5029,15 +5048,20 @@
       "path": "../Semi.Avalonia.DataGrid/Semi.Avalonia.DataGrid.csproj",
       "msbuildProject": "../Semi.Avalonia.DataGrid/Semi.Avalonia.DataGrid.csproj"
     },
+    "StockPlot/1.0.0": {
+      "type": "project",
+      "path": "../StockPlot/StockPlot/StockPlot.csproj",
+      "msbuildProject": "../StockPlot/StockPlot/StockPlot.csproj"
+    },
     "StockPlot.Charts/1.0.0": {
       "type": "project",
-      "path": "../../StockPlot/StockPlot.Charts/StockPlot.Charts.csproj",
-      "msbuildProject": "../../StockPlot/StockPlot.Charts/StockPlot.Charts.csproj"
+      "path": "../StockPlot/StockPlot.Charts/StockPlot.Charts.csproj",
+      "msbuildProject": "../StockPlot/StockPlot.Charts/StockPlot.Charts.csproj"
     },
     "StockPlot.Indicators/1.0.0": {
       "type": "project",
-      "path": "../../StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj",
-      "msbuildProject": "../../StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj"
+      "path": "../StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj",
+      "msbuildProject": "../StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj"
     },
     "SukiUI/2.0.0": {
       "type": "project",
@@ -5053,13 +5077,14 @@
       "Avalonia.ReactiveUI >= 11.0.0-preview6",
       "Avalonia.Themes.Fluent >= 11.0.0-preview6",
       "Avalonia.Xaml.Interactions.DragAndDrop >= 11.0.0-preview6",
-      "Binance.Net >= 8.4.3",
+      "Binance.Net >= 8.5.1",
       "OuinexDesktop.Exchanges >= 1.0.0",
       "OuinexDesktop.Models >= 1.0.0",
       "OuinexDesktop.Services >= 1.0.0",
       "Semi.Avalonia >= 0.1.0-preview6.1",
       "Semi.Avalonia.ColorPicker >= 0.1.0-preview6.1",
       "Semi.Avalonia.DataGrid >= 0.1.0-preview6.1",
+      "StockPlot >= 1.0.0",
       "StockPlot.Charts >= 1.0.0",
       "StockPlot.Indicators >= 1.0.0",
       "SukiUI >= 2.0.0"
@@ -5072,11 +5097,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop\\OuinexDesktop.csproj",
+      "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop\\OuinexDesktop.csproj",
       "projectName": "OuinexDesktop",
-      "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop\\OuinexDesktop.csproj",
+      "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop\\OuinexDesktop.csproj",
       "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop\\obj\\",
+      "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5098,32 +5123,35 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj": {
-              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj"
+            "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj"
             },
-            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj": {
-              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj"
+            "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj"
             },
-            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj": {
-              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj"
+            "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj"
             },
-            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj": {
-              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj"
+            "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj"
             },
-            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj": {
-              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj"
+            "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj"
             },
-            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia\\Semi.Avalonia.csproj": {
-              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia\\Semi.Avalonia.csproj"
+            "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia\\Semi.Avalonia.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia\\Semi.Avalonia.csproj"
             },
-            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\SukiUI\\SukiUI.csproj": {
-              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\SukiUI\\SukiUI.csproj"
+            "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj"
             },
-            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj": {
-              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj"
+            "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj"
             },
-            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj": {
-              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj"
+            "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot\\StockPlot.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot\\StockPlot.csproj"
+            },
+            "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\SukiUI\\SukiUI.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\SukiUI\\SukiUI.csproj"
             }
           }
         }
@@ -5164,7 +5192,7 @@
           },
           "Binance.Net": {
             "target": "Package",
-            "version": "[8.4.3, )"
+            "version": "[8.5.1, )"
           }
         },
         "imports": [

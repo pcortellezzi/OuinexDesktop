@@ -37,20 +37,21 @@
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-preview6" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-preview6" />
     <PackageReference Include="Avalonia.Xaml.Interactions.DragAndDrop" Version="11.0.0-preview6" />
-    <PackageReference Include="Binance.Net" Version="8.4.3" />
+    <PackageReference Include="Binance.Net" Version="8.5.1" />
 
   </ItemGroup>
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\StockPlot\StockPlot.Charts\StockPlot.Charts.csproj" />
-    <ProjectReference Include="..\..\StockPlot\StockPlot.Indicators\StockPlot.Indicators.csproj" />
     <ProjectReference Include="..\OuinexDesktop.Exchanges\OuinexDesktop.Exchanges.csproj" />
     <ProjectReference Include="..\OuinexDesktop.Models\OuinexDesktop.Models.csproj" />
     <ProjectReference Include="..\OuinexDesktop.Services\OuinexDesktop.Services.csproj" />
     <ProjectReference Include="..\Semi.Avalonia.ColorPicker\Semi.Avalonia.ColorPicker.csproj" />
     <ProjectReference Include="..\Semi.Avalonia.DataGrid\Semi.Avalonia.DataGrid.csproj" />
     <ProjectReference Include="..\Semi.Avalonia\Semi.Avalonia.csproj" />
+    <ProjectReference Include="..\StockPlot\StockPlot.Charts\StockPlot.Charts.csproj" />
+    <ProjectReference Include="..\StockPlot\StockPlot.Indicators\StockPlot.Indicators.csproj" />
+    <ProjectReference Include="..\StockPlot\StockPlot\StockPlot.csproj" />
     <ProjectReference Include="..\SukiUI\SukiUI.csproj" />
   </ItemGroup>
 </Project>

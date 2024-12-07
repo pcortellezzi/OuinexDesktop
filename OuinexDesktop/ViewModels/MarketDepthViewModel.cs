@@ -49,45 +49,48 @@ namespace OuinexDesktop.ViewModels
                 await socket.SpotStreams.SubscribeToPartialOrderBookUpdatesAsync(ticker.Symbol.Name, _levels[_selectedLevel], 100, (data) =>
                 {
                     // creation des listes bid & ask 
-                    var asks = data.Data.Asks.ToList();
-                    asks.Reverse();
-
-                    var bids = data.Data.Bids.ToList();
-
-                    // total des volumes à trader pour les deux listes
-
-                    var totalAsks = asks.Sum(x => x.Quantity);
-                    var totalBids = bids.Sum(x => x.Quantity);
-                    var total = totalAsks+ totalBids; ;
-
-                   
-                    // population des liste visible sur l'ui
-                    for (int i = 0; i < _levels[_selectedLevel]; i++)
+                    lock (Levels)
                     {
-                        Levels[i].Price = (double)asks[i].Price;
-                        Levels[i].Ask = (double)asks[i].Quantity;
-                        Levels[i].PercentAsk = (asks[i].Quantity /totalAsks ) * 100;
-                        Levels[i].Bid = double.NaN;
-                        Levels[i].IsBestAsk = i == _levels[_selectedLevel] - 1;
+                        var asks = data.Data.Asks.ToList();
+                        asks.Reverse();
 
-                        Levels[i + _levels[_selectedLevel]].Price = (double)bids[i].Price;
-                        Levels[i + _levels[_selectedLevel]].Bid = (double)bids[i].Quantity;
-                        Levels[i + _levels[_selectedLevel]].PercentBid = (bids[i].Quantity/totalBids) * 100;
-                        Levels[i + _levels[_selectedLevel]].Ask = double.NaN;
-                        Levels[i + _levels[_selectedLevel]].IsBestBid = i + _levels[_selectedLevel] == _levels[_selectedLevel];
+                        var bids = data.Data.Bids.ToList();
+
+                        // total des volumes à trader pour les deux listes
+
+                        var totalAsks = asks.Sum(x => x.Quantity);
+                        var totalBids = bids.Sum(x => x.Quantity);
+                        var total = totalAsks + totalBids; ;
+
+
+                        // population des liste visible sur l'ui
+                        for (int i = 0; i < _levels[_selectedLevel]; i++)
+                        {
+                            Levels[i].Price = (double)asks[i].Price;
+                            Levels[i].Ask = (double)asks[i].Quantity;
+                            Levels[i].PercentAsk = (asks[i].Quantity / totalAsks) * 100;
+                            Levels[i].Bid = double.NaN;
+                            Levels[i].IsBestAsk = i == _levels[_selectedLevel] - 1;
+
+                            Levels[i + _levels[_selectedLevel]].Price = (double)bids[i].Price;
+                            Levels[i + _levels[_selectedLevel]].Bid = (double)bids[i].Quantity;
+                            Levels[i + _levels[_selectedLevel]].PercentBid = (bids[i].Quantity / totalBids) * 100;
+                            Levels[i + _levels[_selectedLevel]].Ask = double.NaN;
+                            Levels[i + _levels[_selectedLevel]].IsBestBid = i + _levels[_selectedLevel] == _levels[_selectedLevel];
+                        }
+
+                        // ici c'est la barre horizontale des volumes aux ticks
+                        _bids = totalBids;
+                        _total = total;
+                        TotalBids = (int)((_bids / _total) * 100);
+
+                        // ici c'est la barre horizontale des volumes totauw
+                        _cumuledBids += totalBids;
+                        _cumuledBids1 += total;
+                        CumuledTotal = (int)((100 / _cumuledBids1) * _cumuledBids);
+
+                        IsBusy = false;
                     }
-
-                    // ici c'est la barre horizontale des volumes aux ticks
-                    _bids = totalBids;
-                    _total = total;
-                    TotalBids = (int)((_bids / _total) * 100);
-
-                    // ici c'est la barre horizontale des volumes totauw
-                    _cumuledBids+= totalBids;
-                    _cumuledBids1+= total;
-                    CumuledTotal = (int)((100 / _cumuledBids1) * _cumuledBids);
-
-                    IsBusy = false;
                 });                
             }));           
         }

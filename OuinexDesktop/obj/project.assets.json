@@ -5066,56 +5066,64 @@
     ]
   },
   "packageFolders": {
-    "/home/damien/.nuget/packages/": {}
+    "C:\\Users\\dsdev\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/OuinexDesktop.csproj",
+      "projectUniqueName": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop\\OuinexDesktop.csproj",
       "projectName": "OuinexDesktop",
-      "projectPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/OuinexDesktop.csproj",
-      "packagesPath": "/home/damien/.nuget/packages/",
-      "outputPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop/obj/",
+      "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop\\OuinexDesktop.csproj",
+      "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/damien/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/damien/Documents/GitHub/StockPlot/StockPlot.Charts/StockPlot.Charts.csproj": {
-              "projectPath": "/home/damien/Documents/GitHub/StockPlot/StockPlot.Charts/StockPlot.Charts.csproj"
+            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj"
             },
-            "/home/damien/Documents/GitHub/StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj": {
-              "projectPath": "/home/damien/Documents/GitHub/StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj"
+            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj"
             },
-            "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj": {
-              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj"
+            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj"
             },
-            "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Models/OuinexDesktop.Models.csproj": {
-              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Models/OuinexDesktop.Models.csproj"
+            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj"
             },
-            "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Services/OuinexDesktop.Services.csproj": {
-              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/OuinexDesktop.Services/OuinexDesktop.Services.csproj"
+            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj"
             },
-            "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia.ColorPicker/Semi.Avalonia.ColorPicker.csproj": {
-              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia.ColorPicker/Semi.Avalonia.ColorPicker.csproj"
+            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia\\Semi.Avalonia.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\Semi.Avalonia\\Semi.Avalonia.csproj"
             },
-            "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia.DataGrid/Semi.Avalonia.DataGrid.csproj": {
-              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia.DataGrid/Semi.Avalonia.DataGrid.csproj"
+            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\SukiUI\\SukiUI.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\ouinexpro2\\SukiUI\\SukiUI.csproj"
             },
-            "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia/Semi.Avalonia.csproj": {
-              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/Semi.Avalonia/Semi.Avalonia.csproj"
+            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj"
             },
-            "/home/damien/Documents/GitHub/ouinexpro/SukiUI/SukiUI.csproj": {
-              "projectPath": "/home/damien/Documents/GitHub/ouinexpro/SukiUI/SukiUI.csproj"
+            "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj": {
+              "projectPath": "C:\\Users\\dsdev\\Desktop\\Alien 2024\\ouinex\\GitHub\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj"
             }
           }
         }
@@ -5170,12 +5178,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.105/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

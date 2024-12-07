@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -78,7 +79,8 @@ namespace OuinexDesktop.ViewModels
         public StockChart Chart { get; } = new StockChart() 
         { 
             DisplayPrice = StockPlot.Charts.DisplayPrice.Candlestick,
-            CandleUpColor = Avalonia.Media.Brush.Parse("#2ABD8B")
+            CandleUpColor = Avalonia.Media.Brush.Parse("#2ABD8B"),
+            CandleWickColor= Avalonia.Media.Brushes.Black
         };
 
         public List<KlineInterval> Intervals { get; } = Enum.GetValues(typeof(KlineInterval)).Cast<KlineInterval>().ToList();

@@ -33,9 +33,11 @@
 		</StackPanel>
 		<DataGrid Items="{Binding Levels}"
 				  Grid.Row="1"
+				  CanUserReorderColumns="True"
 				  Padding="0"
 				  RowHeight="22"
 				  GridLinesVisibility="All"
+				  VerticalScrollBarVisibility="Hidden"
 				  Margin="0"
 				  FontSize="12">
 			<DataGrid.Columns>

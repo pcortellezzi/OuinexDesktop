@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OuinexDesktop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83733de54532cd09ce75b53fa502fdf851b2d325")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9e20cb78d60627e7db7c95a9dc8091e6d8915ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("OuinexDesktop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OuinexDesktop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:avaPlot="using:ScottPlot.Avalonia"
+             x:Class="StockPlot.Charts.Controls.SubIndicator">
+	<Grid>
+		<avaPlot:AvaPlot Name="plotArea"/>
+		<StackPanel Orientation="Horizontal"
+					VerticalAlignment="Top"
+					HorizontalAlignment="Left"
+					Margin="10,2">
+			<Button Name="nameTxtBlock"
+					VerticalAlignment="Center"
+					FontWeight="Regular"
+					Margin="3"
+					Background="Transparent"
+					FontSize="10"
+					Padding="0"
+					Content="Name of the indicator"/>
+			<Button VerticalAlignment="Center"
+					Margin="3"
+					Name="removeBTN"
+					Background="Transparent"
+					ToolTip.Tip="Remove indicator"
+					Padding="0"
+					HorizontalAlignment="Left">
+				<Path Data="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"
+					  Height="10"
+					  Stretch="Uniform"
+					  Fill="OrangeRed"/>
+			</Button>
+		</StackPanel>
+	</Grid>
+</UserControl>

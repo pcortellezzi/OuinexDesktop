@@ -38,7 +38,7 @@ namespace OuinexDesktop.ViewModels
                     Bids.Add(new MarketDepthItem());
                 }
 
-                await socket.SpotStreams.SubscribeToBookTickerUpdatesAsync(ticker.Symbol.Name, (data) =>
+                await socket.SpotApi.ExchangeData.SubscribeToBookTickerUpdatesAsync(ticker.Symbol.Name, (data) =>
                 {
                   
                    

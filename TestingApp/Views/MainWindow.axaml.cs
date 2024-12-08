@@ -6,7 +6,7 @@ namespace TestingApp.Views
     {
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }

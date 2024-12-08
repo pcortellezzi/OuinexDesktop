@@ -30,28 +30,27 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.0-preview6" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.0.0-preview6" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0-preview6" />
+    <PackageReference Include="Avalonia" Version="11.2.2" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.2.2" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.2" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-preview6" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-preview6" />
-    <PackageReference Include="Avalonia.Xaml.Interactions.DragAndDrop" Version="11.0.0-preview6" />
-    <PackageReference Include="Binance.Net" Version="8.5.1" />
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.2" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.2" />
+    <PackageReference Include="Avalonia.Xaml.Interactions.DragAndDrop" Version="11.2.0.1" />
+    <PackageReference Include="Binance.Net" Version="10.13.2" />
+    <PackageReference Include="Material.Icons.Avalonia" Version="2.1.10" />
+    <PackageReference Include="Semi.Avalonia" Version="11.2.1.1" />
+    <PackageReference Include="Semi.Avalonia.ColorPicker" Version="11.2.1.1" />
+    <PackageReference Include="Semi.Avalonia.DataGrid" Version="11.2.1.1" />
+    <PackageReference Include="SukiUI" Version="6.0.0-rc" />
 
   </ItemGroup>
 
 
   <ItemGroup>
+    <ProjectReference Include="..\..\StockPlot\StockPlot.Charts\StockPlot.Charts.csproj" />
     <ProjectReference Include="..\OuinexDesktop.Exchanges\OuinexDesktop.Exchanges.csproj" />
     <ProjectReference Include="..\OuinexDesktop.Models\OuinexDesktop.Models.csproj" />
     <ProjectReference Include="..\OuinexDesktop.Services\OuinexDesktop.Services.csproj" />
-    <ProjectReference Include="..\Semi.Avalonia.ColorPicker\Semi.Avalonia.ColorPicker.csproj" />
-    <ProjectReference Include="..\Semi.Avalonia.DataGrid\Semi.Avalonia.DataGrid.csproj" />
-    <ProjectReference Include="..\Semi.Avalonia\Semi.Avalonia.csproj" />
-    <ProjectReference Include="..\StockPlot\StockPlot.Charts\StockPlot.Charts.csproj" />
-    <ProjectReference Include="..\StockPlot\StockPlot.Indicators\StockPlot.Indicators.csproj" />
-    <ProjectReference Include="..\StockPlot\StockPlot\StockPlot.csproj" />
-    <ProjectReference Include="..\SukiUI\SukiUI.csproj" />
   </ItemGroup>
 </Project>

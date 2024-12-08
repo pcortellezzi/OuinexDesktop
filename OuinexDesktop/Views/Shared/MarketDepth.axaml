@@ -31,7 +31,7 @@
 				</ComboBox.Items>
 			</ComboBox>
 		</StackPanel>
-		<DataGrid Items="{Binding Levels}"
+		<DataGrid ItemsSource="{Binding Levels}"
 				  Grid.Row="1"
 				  CanUserReorderColumns="True"
 				  Padding="0"
@@ -44,79 +44,79 @@
 				<DataGridTextColumn Width="0.3*"/>
 				<DataGridTemplateColumn Header="Bids"
 										Width="*">
-					<DataTemplate>
-						<Grid VerticalAlignment="Center"
-							  HorizontalAlignment="Right">
-							<ProgressBar VerticalAlignment="Stretch"
-										 Background="Transparent"
-										 ShowProgressText="False"
-										 FlowDirection="RightToLeft"
-										 Foreground="{DynamicResource UpBrush}"
-										 Margin="0,0,10,0"
-										 Opacity="0.5"
-										 Value="{Binding PercentBid}"/>
-							<TextBlock HorizontalAlignment="Right"
-									   VerticalAlignment="Center"
-									   FontSize="12"
-									   Margin="0,0,3,0"
-									   IsVisible="{Binding DisplayBid}"
-									   Text="{Binding Bid}"/>
-						</Grid>
-					</DataTemplate>
+					<!-- <DataTemplate> -->
+					<!-- 	<Grid VerticalAlignment="Center" -->
+					<!-- 		  HorizontalAlignment="Right"> -->
+					<!-- 		<ProgressBar VerticalAlignment="Stretch" -->
+					<!-- 					 Background="Transparent" -->
+					<!-- 					 ShowProgressText="False" -->
+					<!-- 					 FlowDirection="RightToLeft" -->
+					<!-- 					 Foreground="{DynamicResource UpBrush}" -->
+					<!-- 					 Margin="0,0,10,0" -->
+					<!-- 					 Opacity="0.5" -->
+					<!-- 					 Value="{Binding PercentBid}"/> -->
+					<!-- 		<TextBlock HorizontalAlignment="Right" -->
+					<!-- 				   VerticalAlignment="Center" -->
+					<!-- 				   FontSize="12" -->
+					<!-- 				   Margin="0,0,3,0" -->
+					<!-- 				   IsVisible="{Binding DisplayBid}" -->
+					<!-- 				   Text="{Binding Bid}"/> -->
+					<!-- 	</Grid> -->
+					<!-- </DataTemplate> -->
 				</DataGridTemplateColumn>
 				<DataGridTemplateColumn Header="Price"
 										Width="auto">
-					<DataTemplate>
-						<Grid>
-							<Border Theme="{StaticResource RadioButtonGroupBorder}"/>
-							<Border Background="{DynamicResource UpBrush}"
-									VerticalAlignment="Stretch"
-									HorizontalAlignment="Stretch"
-									IsVisible="{Binding IsBestBid}"/>
-							<Border Background="{DynamicResource DownBrush}"
-									VerticalAlignment="Stretch"
-									HorizontalAlignment="Stretch"
-									IsVisible="{Binding IsBestAsk}"/>
-							<TextBlock FontSize="12"
-									   VerticalAlignment="Center"
-									   HorizontalAlignment="Center"
-									   Text="{Binding Price}"/>
-							<TextBlock FontSize="12"
-									   Foreground="White"
-									   VerticalAlignment="Center"
-									   HorizontalAlignment="Center"
-									   IsVisible="{Binding IsBestAsk}"
-									   Text="{Binding Price}"/>
-							<TextBlock FontSize="12"
-									   Foreground="White"
-									   VerticalAlignment="Center"
-									   HorizontalAlignment="Center"
-									   IsVisible="{Binding IsBestBid}"
-									   Text="{Binding Price}"/>
-						</Grid>
-					</DataTemplate>
+					<!-- <DataTemplate> -->
+					<!-- 	<Grid> -->
+					<!-- 		<Border Theme="{StaticResource RadioButtonGroupBorder}"/> -->
+					<!-- 		<Border Background="{DynamicResource UpBrush}" -->
+					<!-- 				VerticalAlignment="Stretch" -->
+					<!-- 				HorizontalAlignment="Stretch" -->
+					<!-- 				IsVisible="{Binding IsBestBid}"/> -->
+					<!-- 		<Border Background="{DynamicResource DownBrush}" -->
+					<!-- 				VerticalAlignment="Stretch" -->
+					<!-- 				HorizontalAlignment="Stretch" -->
+					<!-- 				IsVisible="{Binding IsBestAsk}"/> -->
+					<!-- 		<TextBlock FontSize="12" -->
+					<!-- 				   VerticalAlignment="Center" -->
+					<!-- 				   HorizontalAlignment="Center" -->
+					<!-- 				   Text="{Binding Price}"/> -->
+					<!-- 		<TextBlock FontSize="12" -->
+					<!-- 				   Foreground="White" -->
+					<!-- 				   VerticalAlignment="Center" -->
+					<!-- 				   HorizontalAlignment="Center" -->
+					<!-- 				   IsVisible="{Binding IsBestAsk}" -->
+					<!-- 				   Text="{Binding Price}"/> -->
+					<!-- 		<TextBlock FontSize="12" -->
+					<!-- 				   Foreground="White" -->
+					<!-- 				   VerticalAlignment="Center" -->
+					<!-- 				   HorizontalAlignment="Center" -->
+					<!-- 				   IsVisible="{Binding IsBestBid}" -->
+					<!-- 				   Text="{Binding Price}"/> -->
+					<!-- 	</Grid> -->
+					<!-- </DataTemplate> -->
 				</DataGridTemplateColumn>
 				<DataGridTemplateColumn Header="Asks"
 										Width="*">
-					<DataTemplate>
-						<Grid VerticalAlignment="Center"
-							  HorizontalAlignment="Left">
-							<ProgressBar VerticalAlignment="Stretch"
-										 Background="Transparent"
-										 ShowProgressText="False"
-										 Grid.Column="2"
-										 Margin="10,0,0,0"
-										 Opacity="0.5"
-										 Foreground="{DynamicResource DownBrush}"
-										 Value="{Binding PercentAsk}"/>
-							<TextBlock FontSize="12"
-									   VerticalAlignment="Center"
-									   HorizontalAlignment="Left"
-									   IsVisible="{Binding DisplayAsk}"
-									   Margin="3,0,0,0"
-									   Text="{Binding Ask}"/>
-						</Grid>
-					</DataTemplate>
+					<!-- <DataTemplate> -->
+					<!-- 	<Grid VerticalAlignment="Center" -->
+					<!-- 		  HorizontalAlignment="Left"> -->
+					<!-- 		<ProgressBar VerticalAlignment="Stretch" -->
+					<!-- 					 Background="Transparent" -->
+					<!-- 					 ShowProgressText="False" -->
+					<!-- 					 Grid.Column="2" -->
+					<!-- 					 Margin="10,0,0,0" -->
+					<!-- 					 Opacity="0.5" -->
+					<!-- 					 Foreground="{DynamicResource DownBrush}" -->
+					<!-- 					 Value="{Binding PercentAsk}"/> -->
+					<!-- 		<TextBlock FontSize="12" -->
+					<!-- 				   VerticalAlignment="Center" -->
+					<!-- 				   HorizontalAlignment="Left" -->
+					<!-- 				   IsVisible="{Binding DisplayAsk}" -->
+					<!-- 				   Margin="3,0,0,0" -->
+					<!-- 				   Text="{Binding Ask}"/> -->
+					<!-- 	</Grid> -->
+					<!-- </DataTemplate> -->
 				</DataGridTemplateColumn>
 				<DataGridTextColumn Width="0.3*"/>
 			</DataGrid.Columns>

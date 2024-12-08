@@ -20,16 +20,16 @@
 	<UserControl.Styles>
 		<Styles>
 			<Styles.Resources>
-				<Template x:Key="down">
+				<Control x:Key="down">
 					<Path Fill="#EC5656"
 					      Stretch="Uniform"
 					      Data="M16,18L18.29,15.71L13.41,10.83L9.41,14.83L2,7.41L3.41,6L9.41,12L13.41,8L19.71,14.29L22,12V18H16Z"/>
-				</Template>
-				<Template x:Key="up">
+				</Control>
+				<Control x:Key="up">
 					<Path Fill="#34a560"
 						  Stretch="Uniform"
 						  Data="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"/>
-				</Template>
+				</Control>
 			</Styles.Resources>
 			<Style Selector="Border.Up">
 				<Style.Animations>
@@ -208,7 +208,7 @@
 					  SelectedItem="{Binding SelectedTicker, Mode=TwoWay}"
 					  IsVisible="{Binding ElementName=listSelector, Path=IsChecked}"
 					  RowDetailsVisibilityMode="Collapsed"
-					  Items="{Binding Tickers}">
+					  ItemsSource="{Binding Tickers}">
 				<DataGrid.Columns>
 					<DataGridTextColumn Header="Ticker"
 										FontWeight="DemiBold"

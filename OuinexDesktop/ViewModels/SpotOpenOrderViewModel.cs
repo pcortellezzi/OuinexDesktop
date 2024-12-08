@@ -7,6 +7,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Avalonia.Controls;
+using ScottPlot;
+using ScottPlot.Plottables;
 
 namespace OuinexDesktop.ViewModels
 {
@@ -23,7 +27,7 @@ namespace OuinexDesktop.ViewModels
 
             AddExitLevelCommand = ReactiveCommand.Create(() =>
             {
-                var price = _plot != null ? (_plot.GetAxisLimits().YMax + _plot.GetAxisLimits().YMin) / 2 : 0;
+                var price = _plot != null ? (_plot.Axes.YAxis.Max + _plot.Axes.YAxis.Min) / 2 : 0;
 
                 var level = new SpotOrderExitLevel(false, Chart, price);
                 ExitLevels.Add(level);
@@ -74,11 +78,11 @@ namespace OuinexDesktop.ViewModels
         {
             Chart = new AvaPlot();
 
-            Chart.Plot.YAxis.Layout(padding: 0);
-            Chart.Plot.XAxis.DateTimeFormat(true);
+            //TODO: Chart.Plot.YAxis.Layout(padding: 0);
+            //TODO: Chart.Plot.XAxis.DateTimeFormat(true);
 
-            crosshair = Chart.Plot.AddCrosshair(0, 0);
-            crosshair.IgnoreAxisAuto = true;
+            crosshair = Chart.Plot.Add.Crosshair(0, 0);
+            crosshair.EnableAutoscale = false;
             Chart.PointerMoved += (o, e) =>
             {
                 (double coordinateX, double coordinateY) = Chart.GetMouseCoordinates();
@@ -94,17 +98,17 @@ namespace OuinexDesktop.ViewModels
             Chart.Refresh();
         }
 
-        public IReactiveCommand AddExitLevelCommand { get; }
+        public ICommand AddExitLevelCommand { get; }
 
-        private FinancePlot _plot;
+        private CandlestickPlot _plot;
         private async Task Populate()
         {
             await Dispatcher.UIThread.InvokeAsync(new Action(async () =>
             {
-                if (_plot != null)
-                    _plot.Clear();
+                /*TODO: if (_plot != null)
+                    _plot.Clear();*/
 
-                var client = new Binance.Net.Clients.BinanceClient();
+                var client = new Binance.Net.Clients.BinanceRestClient();
 
                 var request = await client.SpotApi.ExchangeData.GetUiKlinesAsync(this.SelectedSymbol.Name, Binance.Net.Enums.KlineInterval.OneHour, limit: 100);
 
@@ -125,8 +129,8 @@ namespace OuinexDesktop.ViewModels
 
                     await Dispatcher.UIThread.InvokeAsync(() =>
                     {
-                       _plot = Chart.Plot.AddCandlesticks(prices.ToArray());
-                        Chart.Plot.AxisAuto();
+                       _plot = Chart.Plot.Add.Candlestick(prices.ToArray());
+                        Chart.Plot.Axes.AutoScale();
                         Chart.Refresh();
                         
                     }, DispatcherPriority.Background);
@@ -141,20 +145,21 @@ namespace OuinexDesktop.ViewModels
         private bool _isSl = true;
         private string _priceString, _sizeString;
         private AvaPlot _plot;
-        private HLine _line;
+        private HorizontalLine _line;
 
         public SpotOrderExitLevel(bool isStopLoss, AvaPlot plot, double price)
         {
             _isSl = isStopLoss;
             _plot = plot;
-
-            _line = _plot.Plot.AddHorizontalLine(price, _isSl ? System.Drawing.Color.OrangeRed : System.Drawing.Color.Green, 2, label: "Stop Loss");
-
-            _line.DragEnabled = true;
+            
+            _line = _plot.Plot.Add.HorizontalLine(price, 2, _isSl ? Colors.OrangeRed : Colors.Green);
+            _line.Text = "Stop Loss";
+            _line.IsDraggable = true;
             _line.IsVisible = true;
-            _line.PositionLabel = true;
+            //_line.PositionLabel = true;
 
-            _line.Dragged += (s, e) => PriceString = _line.Y.ToString();
+            //_line.Dragged += (s, e) =>
+            PriceString = _line.Y.ToString();
             _priceString = price.ToString();
 
             plot.Refresh();
@@ -184,9 +189,9 @@ namespace OuinexDesktop.ViewModels
             }
         }
 
-        public IReactiveCommand RemoveLevelCommand { get; set; }
+        public ICommand RemoveLevelCommand { get; set; }
 
-        public HLine Hline
+        public HorizontalLine Hline
         {
             get => _line;
         }

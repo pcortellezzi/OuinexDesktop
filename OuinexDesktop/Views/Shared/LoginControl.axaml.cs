@@ -13,7 +13,7 @@ namespace OuinexDesktop.Views.Controls
 
         private void Button_OnClick(object? sender, RoutedEventArgs e)
         {
-            InteractiveContainer.CloseDialog();
+            //TODO: InteractiveContainer.CloseDialog();
         }
     }
 }

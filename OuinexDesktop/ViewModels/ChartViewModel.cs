@@ -35,7 +35,7 @@ namespace OuinexDesktop.ViewModels
 
             await socket.UnsubscribeAllAsync();
 
-            var client = new BinanceClient();
+            var client = new BinanceRestClient();
 
             var request = await client.SpotApi.ExchangeData.GetUiKlinesAsync(_symbol, _selectedInterval, limit: 500);
 
@@ -49,7 +49,7 @@ namespace OuinexDesktop.ViewModels
                 
                  
                 IsBusy = false;
-                await socket.SpotStreams.SubscribeToKlineUpdatesAsync(_symbol, _selectedInterval, async (data) =>
+                await socket.SpotApi.ExchangeData.SubscribeToKlineUpdatesAsync(_symbol, _selectedInterval, async (data) =>
                 {
                     await Dispatcher.UIThread.InvokeAsync(() =>
                     {
@@ -57,9 +57,8 @@ namespace OuinexDesktop.ViewModels
 
                         var toUpdate = _chartModel.Prices.FirstOrDefault(x => x.DateTime == candle.OpenTime);
 
-                        if (toUpdate != null)
+                        if (toUpdate.Open == (double)candle.OpenPrice)
                         {
-                            toUpdate.Volume = (double)candle.Volume;
                             toUpdate.High = (double)candle.HighPrice;
                             toUpdate.Close = (double)candle.ClosePrice;
                             toUpdate.Low = (double)candle.LowPrice;
@@ -80,7 +79,7 @@ namespace OuinexDesktop.ViewModels
         { 
             DisplayPrice = StockPlot.Charts.DisplayPrice.Candlestick,
             CandleUpColor = Avalonia.Media.Brush.Parse("#2ABD8B"),
-            CandleWickColor= Avalonia.Media.Brushes.Black
+            //CandleWickColor = Avalonia.Media.Brushes.Black
         };
 
         public List<KlineInterval> Intervals { get; } = Enum.GetValues(typeof(KlineInterval)).Cast<KlineInterval>().ToList();

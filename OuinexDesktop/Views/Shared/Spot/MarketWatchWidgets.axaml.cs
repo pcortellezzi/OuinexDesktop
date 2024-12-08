@@ -3,9 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
 using OuinexDesktop.Models;
 using OuinexDesktop.ViewModels;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace OuinexDesktop.Views.Controls
@@ -23,8 +21,8 @@ namespace OuinexDesktop.Views.Controls
         private void Value_OnInit()
         {
             _symbolList = ExchangesConnector.Instances.First().Value.Spot.Symbols.ToList();
-            this.allSymbolsGrid.Items = _symbolList;
-            this.searchBox.Items = _symbolList;
+            this.allSymbolsGrid.ItemsSource = _symbolList;
+            this.searchBox.ItemsSource = _symbolList;
            
             this.searchBox.Watermark = string.Format("Search from {0} symbols", _symbolList.Count);
             this.searchBox.SelectionChanged += SearchBox_SelectionChanged;
@@ -68,11 +66,11 @@ namespace OuinexDesktop.Views.Controls
                 var filteredData = _symbolList.Where(d => d.FullName.ToLower().Contains(searchText)).ToList();
 
                 // set the Items property of the DataGrid to the filtered ObservableCollection
-                this.allSymbolsGrid.Items = filteredData;
+                this.allSymbolsGrid.ItemsSource = filteredData;
             }
             else
             {
-                this.allSymbolsGrid.Items = _symbolList;
+                this.allSymbolsGrid.ItemsSource = _symbolList;
             }
         }
 

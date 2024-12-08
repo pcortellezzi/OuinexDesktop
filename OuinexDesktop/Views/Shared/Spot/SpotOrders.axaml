@@ -10,7 +10,7 @@
 	<UserControl.DataContext>
 		<vm:MainWindowViewModel/>
 	</UserControl.DataContext>
-	<DataGrid Items="{Binding SpotOrders}"
+	<DataGrid ItemsSource="{Binding SpotOrders}"
 			  RowHeight="22"
 			  GridLinesVisibility="All"
 			  SelectionMode="Single"

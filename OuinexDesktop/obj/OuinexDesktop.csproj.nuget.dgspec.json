@@ -1,40 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop\\OuinexDesktop.csproj": {}
+    "/home/philippe/Projects/OuinexDesktop/OuinexDesktop/OuinexDesktop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj": {
+    "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj",
+        "projectUniqueName": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj",
         "projectName": "OuinexDesktop.Exchanges",
-        "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj",
-        "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Exchanges\\obj\\",
+        "projectPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj",
+        "packagesPath": "/home/philippe/.nuget/packages/",
+        "outputPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Exchanges/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/philippe/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj"
+              "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Models/OuinexDesktop.Models.csproj": {
+                "projectPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Models/OuinexDesktop.Models.csproj"
               }
             }
           }
@@ -51,7 +45,7 @@
           "dependencies": {
             "Binance.Net": {
               "target": "Package",
-              "version": "[8.4.3, )"
+              "version": "[10.13.2, )"
             }
           },
           "imports": [
@@ -68,15 +62,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
+              "version": "[6.0.35, 6.0.35]"
             }
           ],
           "frameworkReferences": {
@@ -84,33 +70,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.110/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj": {
+    "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Models/OuinexDesktop.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj",
+        "projectUniqueName": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Models/OuinexDesktop.Models.csproj",
         "projectName": "OuinexDesktop.Models",
-        "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj",
-        "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Models\\obj\\",
+        "projectPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Models/OuinexDesktop.Models.csproj",
+        "packagesPath": "/home/philippe/.nuget/packages/",
+        "outputPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Models/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/philippe/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -142,15 +122,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
+              "version": "[6.0.35, 6.0.35]"
             }
           ],
           "frameworkReferences": {
@@ -158,33 +130,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.110/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj": {
+    "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Services/OuinexDesktop.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj",
+        "projectUniqueName": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Services/OuinexDesktop.Services.csproj",
         "projectName": "OuinexDesktop.Services",
-        "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj",
-        "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Services\\obj\\",
+        "projectPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Services/OuinexDesktop.Services.csproj",
+        "packagesPath": "/home/philippe/.nuget/packages/",
+        "outputPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Services/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/philippe/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -222,15 +188,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
+              "version": "[6.0.35, 6.0.35]"
             }
           ],
           "frameworkReferences": {
@@ -238,68 +196,44 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.110/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop\\OuinexDesktop.csproj": {
+    "/home/philippe/Projects/OuinexDesktop/OuinexDesktop/OuinexDesktop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop\\OuinexDesktop.csproj",
+        "projectUniqueName": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop/OuinexDesktop.csproj",
         "projectName": "OuinexDesktop",
-        "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop\\OuinexDesktop.csproj",
-        "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop\\obj\\",
+        "projectPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop/OuinexDesktop.csproj",
+        "packagesPath": "/home/philippe/.nuget/packages/",
+        "outputPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/philippe/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Exchanges\\OuinexDesktop.Exchanges.csproj"
+              "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj": {
+                "projectPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Exchanges/OuinexDesktop.Exchanges.csproj"
               },
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Models\\OuinexDesktop.Models.csproj"
+              "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Models/OuinexDesktop.Models.csproj": {
+                "projectPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Models/OuinexDesktop.Models.csproj"
               },
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\OuinexDesktop.Services\\OuinexDesktop.Services.csproj"
+              "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Services/OuinexDesktop.Services.csproj": {
+                "projectPath": "/home/philippe/Projects/OuinexDesktop/OuinexDesktop.Services/OuinexDesktop.Services.csproj"
               },
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj"
-              },
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj"
-              },
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia\\Semi.Avalonia.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia\\Semi.Avalonia.csproj"
-              },
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj"
-              },
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj"
-              },
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot\\StockPlot.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot\\StockPlot.csproj"
-              },
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\SukiUI\\SukiUI.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\SukiUI\\SukiUI.csproj"
+              "/home/philippe/Projects/StockPlot/StockPlot.Charts/StockPlot.Charts.csproj": {
+                "projectPath": "/home/philippe/Projects/StockPlot/StockPlot.Charts/StockPlot.Charts.csproj"
               }
             }
           }
@@ -316,774 +250,51 @@
           "dependencies": {
             "Avalonia": {
               "target": "Package",
-              "version": "[11.0.0-preview6, )"
+              "version": "[11.2.2, )"
             },
             "Avalonia.Desktop": {
               "target": "Package",
-              "version": "[11.0.0-preview6, )"
+              "version": "[11.2.2, )"
             },
             "Avalonia.Diagnostics": {
               "target": "Package",
-              "version": "[11.0.0-preview6, )"
+              "version": "[11.2.2, )"
             },
             "Avalonia.ReactiveUI": {
               "target": "Package",
-              "version": "[11.0.0-preview6, )"
+              "version": "[11.2.2, )"
             },
             "Avalonia.Themes.Fluent": {
               "target": "Package",
-              "version": "[11.0.0-preview6, )"
+              "version": "[11.2.2, )"
             },
             "Avalonia.Xaml.Interactions.DragAndDrop": {
               "target": "Package",
-              "version": "[11.0.0-preview6, )"
+              "version": "[11.2.0.1, )"
             },
             "Binance.Net": {
               "target": "Package",
-              "version": "[8.5.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj": {
-      "version": "0.1.0-preview6.1",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj",
-        "projectName": "Semi.Avalonia.ColorPicker",
-        "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.ColorPicker\\Semi.Avalonia.ColorPicker.csproj",
-        "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.ColorPicker\\obj\\",
-        "projectStyle": "PackageReference",
-        "crossTargeting": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0",
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          },
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Avalonia": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.Controls.ColorPicker": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
-        },
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
-          "dependencies": {
-            "Avalonia": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.Controls.ColorPicker": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj": {
-      "version": "0.1.0-preview6.1",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj",
-        "projectName": "Semi.Avalonia.DataGrid",
-        "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.DataGrid\\Semi.Avalonia.DataGrid.csproj",
-        "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia.DataGrid\\obj\\",
-        "projectStyle": "PackageReference",
-        "crossTargeting": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0",
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          },
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Avalonia": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.Controls.DataGrid": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
-        },
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
-          "dependencies": {
-            "Avalonia": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.Controls.DataGrid": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia\\Semi.Avalonia.csproj": {
-      "version": "0.1.0-preview6.1",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia\\Semi.Avalonia.csproj",
-        "projectName": "Semi.Avalonia",
-        "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia\\Semi.Avalonia.csproj",
-        "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\Semi.Avalonia\\obj\\",
-        "projectStyle": "PackageReference",
-        "crossTargeting": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0",
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          },
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Avalonia": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.26, 6.0.26]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
-        },
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
-          "dependencies": {
-            "Avalonia": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj",
-        "projectName": "StockPlot.Charts",
-        "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj",
-        "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Charts\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "dependencies": {
-            "Avalonia": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.Desktop": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.ReactiveUI": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "ScottPlot": {
-              "target": "Package",
-              "version": "[4.1.63, )"
-            },
-            "System.Drawing.Common": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj",
-        "projectName": "StockPlot.Indicators",
-        "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Indicators\\StockPlot.Indicators.csproj",
-        "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Indicators\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot\\StockPlot.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot\\StockPlot.csproj",
-        "projectName": "StockPlot",
-        "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot\\StockPlot.csproj",
-        "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {
-              "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj": {
-                "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\StockPlot\\StockPlot.Charts\\StockPlot.Charts.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "dependencies": {
-            "Avalonia": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.Desktop": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.Diagnostics": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.ReactiveUI": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.Themes.Fluent": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Binance.Net": {
-              "target": "Package",
-              "version": "[8.5.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\SukiUI\\SukiUI.csproj": {
-      "version": "2.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\SukiUI\\SukiUI.csproj",
-        "projectName": "SukiUI",
-        "projectPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\SukiUI\\SukiUI.csproj",
-        "packagesPath": "C:\\Users\\dsdev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dsdev\\Documents\\GitHub\\OuinexDesktop\\SukiUI\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\dsdev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
-          "dependencies": {
-            "Avalonia": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.Controls.DataGrid": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
-            },
-            "Avalonia.Themes.Simple": {
-              "target": "Package",
-              "version": "[11.0.0-preview6, )"
+              "version": "[10.13.2, )"
             },
             "Material.Icons.Avalonia": {
               "target": "Package",
-              "version": "[2.0.0-preview3, )"
+              "version": "[2.1.10, )"
             },
-            "NETStandard.Library": {
-              "suppressParent": "All",
+            "Semi.Avalonia": {
               "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
+              "version": "[11.2.1.1, )"
             },
-            "ReactiveUI": {
+            "Semi.Avalonia.ColorPicker": {
               "target": "Package",
-              "version": "[18.4.26, )"
+              "version": "[11.2.1.1, )"
+            },
+            "Semi.Avalonia.DataGrid": {
+              "target": "Package",
+              "version": "[11.2.1.1, )"
+            },
+            "SukiUI": {
+              "target": "Package",
+              "version": "[6.0.0-rc, )"
             }
           },
           "imports": [
@@ -1097,7 +308,170 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.110/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/philippe/Projects/StockPlot/StockPlot.Charts/StockPlot.Charts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/philippe/Projects/StockPlot/StockPlot.Charts/StockPlot.Charts.csproj",
+        "projectName": "StockPlot.Charts",
+        "projectPath": "/home/philippe/Projects/StockPlot/StockPlot.Charts/StockPlot.Charts.csproj",
+        "packagesPath": "/home/philippe/.nuget/packages/",
+        "outputPath": "/home/philippe/Projects/StockPlot/StockPlot.Charts/obj/",
+        "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "/home/philippe/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/philippe/Projects/StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj": {
+                "projectPath": "/home/philippe/Projects/StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            },
+            "Avalonia.ReactiveUI": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            },
+            "ScottPlot": {
+              "target": "Package",
+              "version": "[5.0.47, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.110/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/philippe/Projects/StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/philippe/Projects/StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj",
+        "projectName": "StockPlot.Indicators",
+        "projectPath": "/home/philippe/Projects/StockPlot/StockPlot.Indicators/StockPlot.Indicators.csproj",
+        "packagesPath": "/home/philippe/.nuget/packages/",
+        "outputPath": "/home/philippe/Projects/StockPlot/StockPlot.Indicators/obj/",
+        "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "/home/philippe/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "ScottPlot": {
+              "target": "Package",
+              "version": "[5.0.47, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.110/RuntimeIdentifierGraph.json"
         }
       }
     }

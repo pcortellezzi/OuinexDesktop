@@ -2,7 +2,6 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using OuinexDesktop.Views.Controls;
-using SukiUI.Controls;
 using System.Collections;
 
 namespace OuinexDesktop.Views.Pages;

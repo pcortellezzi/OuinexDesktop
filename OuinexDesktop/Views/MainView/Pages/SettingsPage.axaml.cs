@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
-using DynamicData.Kernel;
+using SukiUI;
 
 namespace OuinexDesktop.Views.Pages;
 
@@ -24,13 +24,13 @@ public partial class SettingsPage : UserControl
 
         if ((sender as ComboBox).SelectedIndex == 0)
         {
-            SukiUI.ColorTheme.LoadLightTheme(Application.Current);
+            SukiTheme.GetInstance().ChangeBaseTheme(ThemeVariant.Light);
             app.RequestedThemeVariant = ThemeVariant.Light;
             StockPlot.Charts.Helpers.PlotHelper.SetWhiteStyle();
         }
         else
         {
-            SukiUI.ColorTheme.LoadDarkTheme(Application.Current);
+            SukiTheme.GetInstance().ChangeBaseTheme(ThemeVariant.Dark);
             app.RequestedThemeVariant = ThemeVariant.Dark;
             StockPlot.Charts.Helpers.PlotHelper.SetBlackStyle();
         }

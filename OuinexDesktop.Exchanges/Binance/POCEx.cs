@@ -87,14 +87,14 @@ namespace OuinexDesktop.Exchanges
         {
             var result = new POCTicker();
 
-            var client = new BinanceClient();
+            var client = new BinanceRestClient();
 
             var t = await client.SpotApi.ExchangeData.GetTickerAsync(symbol.Name);
 
             result.Update(t.Data.BestBidPrice, t.Data.BestAskPrice, t.Data.HighPrice, t.Data.LowPrice, t.Data.PriceChangePercent);
             Thread.Sleep(100);
 
-            var subscribeResult = await socketClient.SpotStreams.SubscribeToTickerUpdatesAsync(symbol.Name, (t) =>
+            var subscribeResult = await socketClient.SpotApi.ExchangeData.SubscribeToTickerUpdatesAsync(symbol.Name, (t) =>
             {
                 result.Update(t.Data.BestBidPrice, t.Data.BestAskPrice, t.Data.HighPrice, t.Data.LowPrice, t.Data.PriceChangePercent);
             });

@@ -14,7 +14,7 @@
 		<converters:DecimalToStringConverter x:Key="DecimalToStringConverter"/>
 	</UserControl.Resources>
 	<Grid RowDefinitions="*,auto">
-		<DataGrid Items="{Binding Wallets}"
+		<DataGrid ItemsSource="{Binding Wallets}"
 				  RowHeight="22"
 				  GridLinesVisibility="All"
 				  SelectionMode="Single"

@@ -46,7 +46,7 @@ namespace OuinexDesktop.ViewModels
                     Levels.Add(new MarketDepthItem());
                 }
 
-                await socket.SpotStreams.SubscribeToPartialOrderBookUpdatesAsync(ticker.Symbol.Name, _levels[_selectedLevel], 100, (data) =>
+                await socket.SpotApi.ExchangeData.SubscribeToPartialOrderBookUpdatesAsync(ticker.Symbol.Name, _levels[_selectedLevel], 100, (data) =>
                 {
                     // creation des listes bid & ask 
                     lock (Levels)
